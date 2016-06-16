@@ -1,0 +1,568 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Modifier Classes</h1>
+      <p>
+        Classes to change specific property values on an as-needed basis.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Display Modifiers
+    </div>
+    <ul>
+      <li>.display-none</li>
+      <li>.display-block</li>
+      <li>.display-inline</li>
+      <li>.display-inline-block</li>
+      <li>.display-inline-all<br />
+          <small>parent class that turns all direct children into display inline-block</small>
+      </li>
+    </ul>
+
+    <div class="cs-pattern-intro">
+      Visibility Modifiers
+    </div>
+
+    <ul>
+      <li>.resize-vertical</li>
+      <li><span class="opacity-25">.opacity-25</span></li>
+      <li><span class="opacity-50">.opacity-50</span></li>
+      <li><span class="opacity-75">.opacity-75</span></li>
+      <li>.move-off-screen</li>
+      <li>.sr-only</li>
+      <li>.is-invisible</li>
+      <li>.is-visible</li>
+      <li>.replace-text</li>
+    </ul>
+
+    <div class="cs-pattern-intro">
+      Position Modifiers
+    </div>
+    <ul>
+      <li>.position-relative</li>
+    </ul>
+
+
+    <div class="cs-pattern-intro">
+      Radius Modifiers
+    </div>
+    <ul>
+      <li>.no-radius</li>
+      <li>.add-radius</li>
+    </ul>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Margin Classes</h1>
+      <p>
+        Margin helpers that are set to !important, to ensure they will
+        always set/reset the appropriate margin.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Fixed pixel margin modifiers
+    </div>
+
+    <ul class="cs-multi-col--3">
+      <li>.m-0</li>
+      <li>.m-center</li>
+
+      <li>.mt-0</li>
+      <li>.mt-8</li>
+      <li>.mt-12</li>
+      <li>.mt-20</li>
+      <li>.mt-32</li>
+
+      <li>.mb-0</li>
+      <li>.mb-8</li>
+      <li>.mb-12</li>
+      <li>.mb-20</li>
+      <li>.mb-32</li>
+
+      <li>.ml-0</li>
+      <li>.ml-8</li>
+      <li>.ml-12</li>
+      <li>.ml-20</li>
+
+      <li>.mr-0</li>
+      <li>.mr-8</li>
+      <li>.mr-12</li>
+      <li>.mr-20</li>
+    </ul>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Base margin modifiers (ems) based on value of <code>$base-margin</code>
+    </div>
+
+    <ul>
+      <li>
+        .pull-up
+        <small class="display-block">
+          negative margin-top
+        </small>
+      </li>
+      <li>
+        .pull-down
+        <small class="display-block">
+          negative margin-down
+        </small>
+      </li>
+      <li>
+        .pull-left
+        <small class="display-block">
+          negative margin-left
+        </small>
+      </li>
+      <li>
+        .pull-right
+        <small class="display-block">
+          negative margin-right
+        </small>
+      </li>
+
+      <li>
+        .push-up
+        <small class="display-block">
+          margin-top
+        </small>
+      </li>
+      <li>
+        .push-down
+        <small class="display-block">
+          margin-bottom
+        </small>
+      </li>
+      <li>
+        .push-left
+        <small class="display-block">
+          margin-left
+        </small>
+      </li>
+      <li>
+        .push-right
+        <small class="display-block">
+          margin-left
+        </small>
+      </li>
+    </ul>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Width Classes</h1>
+      <p>
+        Use these classes to create grid columns, or to give
+        specific elements specific percentage based widths.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <ul class="cs-multi-col--3">
+      <li>.width-10</li>
+      <li>.width-20</li>
+      <li>.width-25</li>
+      <li>.width-30</li>
+      <li>.width-33</li>
+      <li>.width-40</li>
+      <li>.width-50</li>
+      <li>.width-60</li>
+      <li>.width-66</li>
+      <li>.width-70</li>
+      <li>.width-75</li>
+      <li>.width-80</li>
+      <li>.width-90</li>
+      <li>.width-100</li>
+    </ul>
+
+    <p>
+      Width classes without suffixes will stay their designated width at all screen sizes. The following suffixes will set the designated width at only the specified
+      breakpoint and above.
+    </p>
+
+    <ul class="cs-multi-col--3">
+      <li>
+        --sm
+      </li>
+      <li>
+        --portrait
+      </li>
+      <li>
+        --md
+      </li>
+      <li>
+        --lg
+      </li>
+      <li>
+        --1024
+      </li>
+    </ul>
+
+    <p><b>Example:</b></p>
+    <div class="demo-block width-40">
+      .width-40
+    </div>
+    <div class="demo-block width-40--sm">
+      .width-40--sm
+    </div>
+    <div class="demo-block width-40--portrait">
+      .width-40--portrait
+    </div>
+    <div class="demo-block width-40--md">
+      .width-40--md
+    </div>
+    <div class="demo-block width-40--lg">
+      .width-40--lg
+    </div>
+    <div class="demo-block width-40--1024">
+      .width-40--1024
+    </div>
+    <div class="demo-block width-60--portrait width-40--1024">
+      .width-60--portrait.width-40--1024
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Min &amp; Max Width Modifiers</h1>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="cs-pattern-intro">
+      Min Width Modifiers
+    </div>
+
+    <ul>
+      <li>Min-width 200: .mw-200</li>
+      <li>Min-width 300: .mw-300</li>
+      <li>Min-width 400: .mw-400</li>
+    </ul>
+
+    <div class="cs-pattern-intro">
+      Max Width Modifiers
+    </div>
+
+    <ul>
+      <li>Max-width 200: .mxw-200</li>
+      <li>Max-width 300: .mxw-300</li>
+      <li>Max-width 400: .mxw-400</li>
+      <li>Max-width 600: .mxw-600</li>
+    </ul>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Text Alignment
+      </h1>
+      <p>
+
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <p class="txt-left">
+      Left Aligned text
+      <br />
+      <small>Typically not required as text is left aligned by default</small>
+    </p>
+
+    <p class="txt-center">
+      Center Aligned Text
+    </p>
+
+    <p class="txt-right">
+      Right Aligned Text
+    </p>
+
+    <p class="txt-right--sm">
+      Right Aligned Text at larger screens
+      <br />
+      <small>
+        Text right aligned unless the browser is smaller than
+        the predefined break point, in which the text becomes
+        left aligned.
+      </small>
+    </p>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Smart Aligned Text
+    </div>
+    <div class="txt-smart-center">
+      <p>Regular centered text</p>
+
+      <p class="txt-smart-center__content">
+        Centered Text that will left align once the text wraps to a second line.
+      </p>
+
+      <p>Regular centered text, again</p>
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Vertical Alignment (classes)</h1>
+      <p>
+        Useful for aligning inline-block or table cell content
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <ul>
+      <li>
+        .v-align-mid
+      </li>
+      <li>
+        .v-align-all-mid<br />
+        <small>
+          Applies vertical-align: middle; to
+          all child elements of a container
+        </small>
+      </li>
+      <li>
+        .v-align-bottom
+      </li>
+      <li>
+        .v-align-top
+      </li>
+      <li>
+        .v-align-text-bottom
+      </li>
+      <li>
+        .v-align-baseline
+      </li>
+    </ul>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Text Modifiers (classes)</h1>
+      <p>
+        Classes to mimic semantic styling for when it's only appropriate
+        to change the visual presentation of an element.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <ul class="cs-multi-col--3">
+      <li>
+        <p class="txt-lighter">
+          .txt-lighter : 200
+        </p>
+      </li>
+      <li>
+        <p class="txt-light">
+          .txt-light : 300
+        </p>
+      </li>
+      <li>
+        <p>
+          <b class="txt-normal">
+            .txt-normal : 400
+          </b>
+        </p>
+      </li>
+      <li>
+        <p class="txt-bold">
+          .txt-bold : 600
+        </p>
+      </li>
+      <li>
+        <p class="txt-bolder">
+          .txt-bolder : 800
+        </p>
+      </li>
+      <li>
+        <p class="txt-italic">
+          .txt-italic
+        </p>
+      </li>
+      <li>
+        <p>
+          <i class="txt-straight">
+            .txt-straight
+          </i>
+        </p>
+      </li>
+      <li>
+        <p class="txt-highlight">
+          .txt-highlight
+        </p>
+      </li>
+      <li>
+        <p class="txt-underline">
+          .txt-underline
+        </p>
+      </li>
+      <li>
+        <p class="">
+          <a href="#!" class="txt-no-underline">.txt-no-underline</a>
+        </p>
+      </li>
+      <li>
+        <p class="txt-uppercase">
+          .txt-uppercase
+        </p>
+      </li>
+      <li>
+        <p class="txt-nowrap">
+          .txt-nowrap
+        </p>
+      </li>
+      <li>
+        <div style="max-width: 300px">
+          <p class="txt-truncate">
+            .txt-truncate and here is some more copy so you can see what happens
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <hr />
+
+    <p>
+      The following modifiers only work in webkit and FireFox on OSX:
+    </p>
+
+    <ul>
+      <li>
+        .txt-smooth-thin
+      </li>
+      <li>
+        .txt-smooth-auto
+      </li>
+    </ul>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Color Modifiers</h1>
+      <p>
+        ...
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <h3 class="color-primary">
+      h3.color-primary
+    </h3>
+
+    <h3 class="color-secondary">
+      h3.color-secondary
+    </h3>
+
+    <h3>
+      <a href="#link" class="color-default">
+        h3 > a.color-default
+      </a>
+    </h3>
+
+    <p class="color-inverse">
+      <span style="background: #1a1a1a">.color-inverse</span>
+    </p>
+
+    <p class="color-success">
+      .color-success
+    </p>
+
+    <p class="color-info">
+      .color-info
+    </p>
+
+    <p class="color-warning">
+      .color-warning
+    </p>
+
+    <p class="color-error">
+      .color-error
+    </p>
+
+
+    <p class="border-color-error" style="border: 1px solid">
+      .border-color-error
+    </p>
+
+    <p class="border-color-success" style="border: 1px solid">
+      .border-color-success
+    </p>
+
+    <p class="border-color-info" style="border: 1px solid">
+      .border-color-info
+    </p>
+
+    <p class="border-color-warning" style="border: 1px solid">
+      .border-color-warning
+    </p>
+
+
+    <p class="bg-color-error color-inverse">
+      .backgound-color-error
+    </p>
+
+    <p class="bg-color-success color-inverse">
+      .backgound-color-success
+    </p>
+
+    <p class="bg-color-info color-inverse">
+      .backgound-color-info
+    </p>
+
+    <p class="bg-color-warning color-inverse">
+      .backgound-color-warning
+    </p>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

@@ -1,0 +1,373 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Flex Grids</h1>
+      <p>
+        The base flex box grid. Utilizes -left margin/ +left padding
+        to create column gutters.
+      </p>
+      <p>
+        <b>Note:</b> flexbox grids are not truly meant for full page layouts. A standard two column layout may be better suited to use a float-based grid until the CSS grid layout properties are finalized.
+      </p>
+      <p>
+        <b>Note:</b> use only what you need for float and flexbox grids. Remove (comment out) unused width or modifier classes so as to not add unnecessary bloat to your compiled CSS.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-50--sm">
+        <div class="demo-block">
+          100 / 50
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm">
+        <div class="demo-block">
+          100 / 50
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm flex-w-33--md">
+        <div class="demo-block">
+          100 / 50 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm flex-w-33--md">
+        <div class="demo-block">
+          100 / 50 / 33
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-60--portrait">
+        <div class="demo-block">
+          100 / 60
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-40--portrait">
+        <div class="demo-block">
+          100 / 40
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-50--sm flex-w-60--portrait flex-w-70--md flex-w-80--lg">
+        <div class="demo-block">
+          100 / 50 / 60 / 70 / 80
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm flex-w-40--portrait flex-w-30--md flex-w-20--lg">
+        <div class="demo-block">
+          100 / 50 / 40 / 40 / 20
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 mt-20">Non-Wrapping Grids</div>
+      <div class="flex-area">
+        <div class="flex-w-70"><div class="demo-block">70%</div></div>
+        <div class="flex-w-30"><div class="demo-block">30%</div></div>
+      </div>
+
+      <div class="flex-area">
+        <div class="flex-w-50 flex-w-75--portrait">
+          <div class="demo-block">50 / 75</div>
+        </div>
+        <div class="flex-w-50 flex-w-25--portrait">
+          <div class="demo-block">50 / 25</div>
+        </div>
+      </div>
+
+
+
+    <div class="mb-12 mt-20">
+      Extra Top/Bottom Margin
+    </div>
+      <div class="flex-area flex-area--add-buffer">
+        <div class="flex-w-70"><div class="demo-block">70%</div></div>
+        <div class="flex-w-30"><div class="demo-block">30%</div></div>
+      </div>
+
+      <div class="flex-area">
+        <div class="flex-w-50 flex-w-75--portrait">
+          <div class="demo-block">50 / 75</div>
+        </div>
+        <div class="flex-w-50 flex-w-25--portrait">
+          <div class="demo-block">50 / 25</div>
+        </div>
+      </div>
+
+
+    <div class="mb-12 mt-20">
+      Remove Bottom Margins from Flex Columns <small>(demo blocks still have margins)</small>
+    </div>
+      <div class="flex-area flex-area--mt-0">
+        <div class="flex-w-70"><div class="demo-block">70%</div></div>
+        <div class="flex-w-30"><div class="demo-block">30%</div></div>
+      </div>
+
+      <div class="flex-area">
+        <div class="flex-w-50 flex-w-75--portrait">
+          <div class="demo-block">50 / 75</div>
+        </div>
+        <div class="flex-w-50 flex-w-25--portrait">
+          <div class="demo-block">50 / 25</div>
+        </div>
+      </div>
+
+
+
+    <div class="mb-12 mt-20">
+      Remove Gutters
+    </div>
+    <div class="flex-area flex-area--no-gutter">
+      <div class="flex-w-100 flex-w-60--portrait">
+        <div class="demo-block">
+          100 / 60
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-40--portrait">
+        <div class="demo-block">
+          100 / 40
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 mt-20">
+      2x Gutters
+    </div>
+    <div class="flex-area flex-area--2x-gutter">
+      <div class="flex-w-100 flex-w-60--portrait">
+        <div class="demo-block">
+          100 / 60
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-40--portrait">
+        <div class="demo-block">
+          100 / 40
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+    </div>
+
+
+  </div><!--/.cs-content-->
+
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Flex Grid: Space Between</h1>
+      <p>
+        This Flex Grid helper removes the default negative margin/positive padding
+        gutter setup, and instead uses flexboxe's property <code>justify-content: space-between</code> to create gutters based on 'free space' from smaller column sizes.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="flex-area flex-area--space-between">
+      <div class="flex-w-100 flex-w-32--md">
+        <div class="demo-block">
+          100 / 100 / 32
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-49--sm flex-w-32--md">
+        <div class="demo-block">
+          100 / 49 / 32
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-49--sm flex-w-32--md">
+        <div class="demo-block">
+          100 / 49 / 32
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area flex-area--space-between">
+      <div class="flex-w-100 flex-w-59--portrait">
+        <div class="demo-block">
+          100 / 59
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-39--portrait">
+        <div class="demo-block">
+          100 / 39
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-32--md">
+        <div class="demo-block">
+          100 / 32
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-32--md">
+        <div class="demo-block">
+          100 / 32
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-32--md">
+        <div class="demo-block">
+          100 / 32
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area flex-area--space-between">
+      <div class="flex-w-100 flex-w-49--sm flex-w-59--portrait flex-w-69--md flex-w-79--lg">
+        <div class="demo-block">
+          100 / 49 / 59 / 69 / 79
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-49--sm flex-w-39--portrait flex-w-29--md flex-w-19--lg">
+        <div class="demo-block">
+          100 / 49 / 39 / 39 / 19
+        </div>
+      </div>
+    </div>
+
+  </div><!--/.cs-content-->
+
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Grid Classes</h1>
+      <p>
+        The following classes are used in constructing responsive flexbox grids and content patterns.  Please see the full flexbox mixin library and additional
+        documentation within the sass > _base > _layout > >flexbox.scss for more information.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+      <ul class="cs-multi-col--3">
+        <li>.flex-w-19</li>
+        <li>.flex-w-20</li>
+        <li>.flex-w-24</li>
+        <li>.flex-w-25</li>
+        <li>.flex-w-29</li>
+        <li>.flex-w-30</li>
+        <li>.flex-w-32</li>
+        <li>.flex-w-33</li>
+        <li>.flex-w-39</li>
+        <li>.flex-w-40</li>
+        <li>.flex-w-44</li>
+        <li>.flex-w-45</li>
+        <li>.flex-w-49</li>
+        <li>.flex-w-50</li>
+        <li>.flex-w-55</li>
+        <li>.flex-w-54</li>
+        <li>.flex-w-59</li>
+        <li>.flex-w-60</li>
+        <li>.flex-w-65</li>
+        <li>.flex-w-66</li>
+        <li>.flex-w-69</li>
+        <li>.flex-w-70</li>
+        <li>.flex-w-74</li>
+        <li>.flex-w-75</li>
+        <li>.flex-w-79</li>
+        <li>.flex-w-80</li>
+        <li>.flex-w-100</li>
+      </ul>
+
+      <p>
+        All of the above classes also come with min-width break-point suffixes.
+        All breakpoints are coded in ems, based on a 16px base. The pixel equivalent is listed with the suffix for clarity.
+      </p>
+
+      <ul>
+        <li>--sm</li>
+        <li>--portrait</li>
+        <li>--md</li>
+        <li>--lg</li>
+        <li>--1024</li>
+      </ul>
+
+      <hr />
+
+      <p>.flex-area Helpers:</p>
+
+      <ul class="cs-multi-col--3">
+        <li>.flex-area--space-between</li>
+        <li>.flex-area--mt-0</li>
+        <li>.flex-area--add-buffer</li>
+        <li>.flex-area--no-gutter</li>
+        <li>.flex-area--2x-gutter</li>
+        <li>.flex-area--v-center</li>
+      </ul>
+
+      <p>
+        Flex column (flex-w-#) helpers
+      </p>
+      <ul class="cs-multi-col--3">
+        <li>.flex-align-bottom</li>
+        <li>.flex-order-# (1-5)</li>
+        <li>.flex-end</li>
+        <li>.flex-end--sm</li>
+        <li>.flex-end--portrait</li>
+        <li>.flex-end--md</li>
+      </ul>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

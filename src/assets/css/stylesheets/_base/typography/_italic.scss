@@ -1,0 +1,85 @@
+/** --------------------------------------------------------------------
+
+  Italic Elements
+
+  <i> *
+  The HTML <i> Element represents a range of text that is set off
+  from the normal text for some reason, for example, technical terms,
+  foreign language phrases, or fictional character thoughts. It is
+  typically displayed in italic type.
+
+  <em> *
+  The HTML Emphasis Element (<em>) marks text that has stress emphasis.
+  The <em> element can be nested, with each level of nesting indicating
+  a greater degree of emphasis.
+
+  * - source https://developer.mozilla.org
+
+
+  ***
+    Like with bold fonts, if the font stack has individual files
+    for each of the different font weights/styles, then use
+    font-family to declare the appropriate italic style, and set the
+    font-style to normal so it doesn't double italic.
+
+    Set these values in _base-elements.scss
+  ***
+
+--------------------------------------------------------------------- */
+
+// declare vars here
+
+// ---------------------------------------------------------------------
+
+i,
+em,
+.txt-italic {
+
+  @if $body--style--italic != italic {
+    font-family: $body--style--italic;
+  }
+  @else {
+    font-style: $body--style--italic;
+  }
+
+}
+
+
+// negate italics from elements that would otherwise
+// be italic...
+// Users with dyslexia have a harder time reading italic
+// fonts. So there may be instances where this is appropriate.
+.txt-straight {
+  @if $body--style--italic != italic {
+    font-family: $body--weight--normal;
+  }
+  @else {
+    font-style: normal;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    This is semantically <i>italic</i>
+    and not for icons...
+  </p>
+
+  <p>
+    I want to have
+    <span class="txt-italic">italic text here</span>.
+  </p>
+
+  <p>
+    <em class="txt-straight">
+      This was italic
+    </em>
+    but the styling has been removed without negating
+    the semantic meaning.
+  </p>
+
+*/

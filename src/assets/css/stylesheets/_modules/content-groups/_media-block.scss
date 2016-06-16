@@ -1,0 +1,152 @@
+/** --------------------------------------------------------------------
+
+  Media Object
+
+--------------------------------------------------------------------- */
+
+$media-block--margin-top:               $base-margin !default;
+
+$media-block__title--size:              $txt-up-3 !default;
+$media-block__title--margin-bottom:     .125em !default;
+$media-block__title--line-height:       1.2 !default;
+
+$media-block__sub-title--margin-bottom: .25em !default;
+
+$media-block__object--margin:           0 0 .5em !default;
+$media-block__object--padding-side:      0 !default;
+$media-block__object--padding-gutter:    1em !default;
+$media-block__object--width:            140px !default;
+$media-block__object--width--md:        80px !default;
+$media-block__object--width--sm:        50px !default;
+
+//------------------------------------------------------------------------
+
+// Standard Media Element
+.media-block {
+  margin-top: $media-block--margin-top;
+  overflow: hidden;
+
+  &__content,
+  &__object {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+
+  &__title {
+    @include font-size($media-block__title--size);
+    line-height: $media-block__title--line-height;
+    margin-bottom: $media-block__title--margin-bottom;
+  }
+
+  &__sub-title {
+    margin-bottom: $media-block__sub-title--margin-bottom;
+    margin-top: 0;
+  }
+
+  // the .media-object contains the photo, illustration, video,
+  // icon / avatar or other like media item.
+  &__object {
+    margin: $media-block__object--margin;
+    padding-left: $media-block__object--padding-side;
+    padding-right: $media-block__object--padding-gutter;
+    width: $media-block__object--width--sm;
+
+    @media screen and ( min-width: $bp-small ) {
+      width: $media-block__object--width--md;
+    }
+
+    @media screen and ( min-width: $bp-medium ) {
+      width: $media-block__object--width;
+    }
+
+    // ensure that media elements within the object container
+    // don't actually break out of the container
+    > * {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // helpers
+
+  &--right {
+
+    .media-block__object {
+
+      @media screen and ( min-width: $bp-small ) {
+        padding-left: $media-block__object--padding-gutter;
+        padding-right: $media-block__object--padding-side;
+      }
+    }
+  }
+
+  &--sm {
+
+    .media-block__object {
+      width: $media-block__object--width--sm;
+    }
+  }
+
+  &--lg {
+
+    .media-block__object {
+      width: $media-block__object--width;
+    }
+  }
+
+  &--align-bottom {
+
+    .media-block__object {
+      vertical-align: bottom;
+    }
+  }
+
+  &--align-middle {
+
+    .media-block__object {
+      vertical-align: middle;
+    }
+  }
+
+  &--stacks {
+
+    @media screen and ( max-width: $bp-small ) {
+      .media-block__content,
+      .media-block__object {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+} // end .media-block
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="media-block">
+    <div class="media-block__object">
+      <img src="http://placekitten.com/400/400" alt="" />
+    </div>
+    <div class="media-block__content">
+      <h2 class="media-block__title">
+        Title for Media Element
+      </h2>
+      <p class="media-block__sub-title">
+        sub title
+      </p>
+      <p>
+        Paragraph text to go along with media element.
+      </p>
+    </div>
+  </div>
+
+*/

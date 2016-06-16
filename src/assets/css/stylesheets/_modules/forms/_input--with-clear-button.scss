@@ -1,0 +1,91 @@
+/** --------------------------------------------------------------------
+
+  Input with Clear Button
+
+--------------------------------------------------------------------- */
+
+$input-has-clear--padding-right:        32px !default;
+
+$input-clear-btn--bg:                   $c-white !default;
+$input-clear-btn--border:               1px solid $c-grey !default;
+$input-clear-btn--height:               24px !default;
+$input-clear-btn--line-height:          .5em !default;
+$input-clear-btn--padding:              4px !default;
+$input-clear-btn--radius:               100% !default;
+$input-clear-btn--width:                24px !default;
+
+$input-clear-btn--alt--bg:              $c-lightest-grey !default;
+$input-clear-btn--alt--color:           $c-off-black !default;
+
+//------------------------------------------------------------------------
+
+input.has-clear-btn {
+  padding-right: $input-has-clear--padding-right !important;
+
+  + .#{$ns}btn--clear {
+    bottom: 0;
+    margin: auto;
+    opacity: .75;
+    position: absolute;
+    right: $base-unit;
+    top: 0;
+    visibility: hidden;
+    z-index: 2;
+  }
+}
+
+.#{$ns}btn--clear {
+  background: $input-clear-btn--bg;
+  border-radius: $input-clear-btn--radius;
+  border: $input-clear-btn--border;
+  box-shadow: none;
+  height: $input-clear-btn--height;
+  line-height: $input-clear-btn--line-height !important;
+  padding: $input-clear-btn--padding;
+  width: $input-clear-btn--width;
+
+  &:hover,
+  &:focus {
+    background: $input-clear-btn--alt--bg;
+    color: $input-clear-btn--alt--color;
+    opacity: 1;
+  }
+}
+
+
+.text-input--inverse + .#{$ns}btn--clear {
+    color: $c-light-grey;
+
+    &:hover,
+    &:focus {
+      color: $c-white;
+      opacity: .95;
+    }
+  }
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="searchSite">
+      Search:
+    </label>
+    <div role="search" class="position-relative">
+      <input type="search"
+             name="searchSite"
+             id="searchSite"
+             class="has-clear-btn"
+             placeholder="Search for..." />
+
+      <button type="button"
+              class="btn--clear"
+              aria-label="Clear input"
+              aria-controls="searchSite">
+        <span aria-hidden="true">&#x2a09;</span>
+      </button>
+    </div>
+  </div>
+
+*/

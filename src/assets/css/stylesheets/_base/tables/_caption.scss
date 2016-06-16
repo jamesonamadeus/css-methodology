@@ -1,0 +1,62 @@
+/** --------------------------------------------------------------------
+
+  Caption Element
+
+  The <caption> tag must be inserted immediately after the <table> tag.
+  Only one caption per table may be specified.
+
+  While it is not necessary for each table to have a caption, a
+  caption is generally very helpful.
+
+  By default, a table caption would be center-aligned above a table.
+  However, the CSS properties "text-align" and "caption-side" can
+  be used to re-align and place the caption.
+
+  Here the caption has been styled to be aligned to the left side of
+  the table, at the top.
+
+--------------------------------------------------------------------- */
+
+$caption--border-size:                 1px !default;
+$caption--border-bottom:     $caption--border-size solid $table--border--color !default;
+$caption--font-size:                   $txt-up-1 !default;
+$caption--padding:                     $table__cell--padding !default;
+$caption--text-align:                  left !default;
+
+//------------------------------------------------------------------------
+
+caption {
+  @include font-size($caption--font-size);
+  border-bottom: $caption--border-bottom;
+  caption-side: top;
+  margin-bottom: (-$caption--border-size); // overlaps table top border
+  padding: $caption--padding;
+  text-align: $caption--text-align; // *
+}
+
+// *
+// if .txt-center is added to a <table>, a 
+// .txt-center will also need to be added to
+// the caption to negate it's default left
+// alignment style, set here.
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <table>
+    <caption>
+      Caption Text Here
+    </caption>
+
+    <thead>
+      ...
+    </thead>
+
+    <tbody>
+      ...
+    </tbody>
+  </table>
+
+*/

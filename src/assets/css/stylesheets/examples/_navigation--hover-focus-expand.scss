@@ -1,0 +1,138 @@
+/** --------------------------------------------------------------------
+
+  Navigation: Expand on hover/focus
+
+--------------------------------------------------------------------- */
+
+// vars go here
+
+//------------------------------------------------------------------------
+
+.expand-header {
+  background: #e9e9e9;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100px;
+  transition: width .2s ease-in-out;
+  z-index: 99;
+  will-change: width;
+
+  &:hover,
+  &.child-focus {
+    width: 200px;
+
+    .expand-header__nav__list__label {
+      transform: translate(50px, -50%);
+    }
+
+    .expand-header__nav__list__icon {
+      transform: translateX(0px);
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    width: 200px;
+  }
+
+
+  &__nav {
+
+
+    &__list {
+
+
+      li {
+        position: relative;
+      }
+
+      .is-current {
+        background: $c-white;
+
+        &:before,
+        &:after {
+          background: $c-white;
+          top: 0;
+          content: '';
+          height: 100%;
+          position: absolute;
+          width: 100%;
+        }
+
+        &:before {
+          left: 100%;
+        }
+
+        &:after {
+          right: 100%;
+        }
+
+        a:before {
+          background: $c-white;
+        }
+
+      }
+
+      a {
+        display: block;
+        padding: 12px 0;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+
+        // this is being used as a blocker
+        // for the text moving in/out
+        &:before {
+          content: '';
+          bottom: 1px;
+          width: 20px;
+          position: absolute;
+          left: 0;
+          top: 1px;
+          background: #e9e9e9;
+          z-index: 8;
+        }
+
+        &:hover,
+        &:focus {
+          font-weight: 600;
+        }
+
+      } //a
+
+      &__label {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translate(-180px, -50%);
+        transition: transform .2s ease-in-out;
+        will-change: transform;
+
+        @media screen and (min-width: 1500px) {
+          transform: translate(50px, -50%);
+        }
+      }
+
+      &__icon {
+        background: #ccc;
+        border-radius: 100%;
+        display: block;
+        height: 34px;
+        width: 34px;
+        position: relative;
+        z-index: 9;
+        transform: translateX(10px);
+        transition: transform .2s ease-in-out;
+        will-change: transform;
+
+        @media screen and (min-width: 1500px) {
+          transform: translateX(0px);
+        }
+      }
+    }
+  }
+
+}

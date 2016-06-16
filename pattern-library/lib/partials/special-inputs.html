@@ -1,0 +1,257 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        File Upload Input
+      </h1>
+      <p>
+        Examples of native and customized file upload inputs.
+      </p>
+      <p>
+        Customized file uploads require JavaScript
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Default File Upload
+    </div>
+    <label for="normal_file">
+      Upload a File
+    </label>
+    <input type="file" id="normal_file" name="normal_file">
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Default File Upload [disabled]
+    </div>
+    <label for="normal_file" disabled>
+      Upload a File
+    </label>
+    <input type="file" id="normal_file" disabled name="normal_file">
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Default File Upload with text-input class
+    </div>
+    <label for="normal_file2">
+      Upload a File
+    </label>
+    <input type="file" class="text-input" id="normal_file2" name="normal_file2">
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Default File Upload with text-input class [disabled]
+    </div>
+    <label for="normal_file2" disabled>
+      Upload a File
+    </label>
+    <input type="file" class="text-input" disabled id="normal_file2" name="normal_file2">
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+        Default Multi File Upload with text-input class
+      </div>
+      <label for="multi_file">
+        Upload File(s)
+      </label>
+      <input type="file" multiple class="text-input" id="multi_file" name="multi_file">
+
+      <hr />
+
+      <div class="cs-pattern-intro">
+        Custom File Upload
+      </div>
+
+      <div data-action="custom-file" id="file_up_1">
+        <label for="input_file1">
+          <span class="txt-label">
+            Upload a File
+          </span>
+
+          <div class="text-input custom-file__input-wrap">
+            <input type="file" id="input_file1" class="custom-file__input" />
+          </div>
+        </label>
+      </div>
+
+      <hr />
+
+      <div class="cs-pattern-intro">
+        Custom File Upload [disabled]
+      </div>
+
+      <div data-action="custom-file" id="file_up_2">
+        <label for="input_file2" disabled>
+          <span class="txt-label">
+            Upload a File
+          </span>
+
+          <div class="text-input custom-file__input-wrap">
+            <input type="file" id="input_file2" class="custom-file__input" disabled />
+          </div>
+        </label>
+      </div>
+
+      <hr />
+
+      <div class="cs-pattern-intro">
+        Custom File Upload (Multiple)
+      </div>
+
+      <div data-action="custom-file" id="file_up_3">
+        <label for="input_file3">
+          <span class="txt-label">
+            Upload a File
+          </span>
+
+          <div class="text-input custom-file__input-wrap">
+            <input type="file" multiple id="input_file3" class="custom-file__input" />
+          </div>
+        </label>
+      </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Date Inputs
+      </h1>
+      <p>
+        Date inputs are styled like normal text inputs, but some
+        browsers have fully implemented these inputs, giving them
+        additional functionality beyond normal text inputs.
+      </p>
+
+      <p>
+        Since these inputs are not consistent across all browsers,
+        it may make sense to not use these inputs just yet, or if
+        you do use them, use them in conjunction with a plug-in/polyfill
+        for the browsers that don't support their native functionality.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="form-row">
+      <label for="txt4">
+        Date Input
+      </label>
+      <input type="date" name="txt4" id="txt4" placeholder="MM/DD/YYYY" />
+    </div>
+
+    <div class="form-row">
+      <label for="datetime_local">
+        Date: Datetime-local Input
+      </label>
+      <input type="datetime-local" name="datetime_local" id="datetime_local" />
+    </div>
+
+    <div class="form-row">
+      <label for="month_input">
+        Date: Month Input
+      </label>
+      <input type="month" name="month_input" id="month_input" />
+    </div>
+
+    <div class="form-row">
+      <label for="week_input">
+        Date: Week Input
+      </label>
+      <input type="week" name="week_input" id="week_input" />
+    </div>
+
+    <div class="form-row">
+      <label for="time_input">
+        Date: Time Input
+      </label>
+      <input type="time" name="time_input" id="time_input" />
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Color Input
+      </h1>
+      <p>
+        The color input is not fully supported in all browsers yet.
+        For browsers that don't support the color input, it will
+        fall back to a normal text input styling.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="form-row">
+      <label for="color_input">
+        Select a Color:
+      </label>
+      <input type="color" id="color_input" name="color_input">
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Range Input
+      </h1>
+      <p>
+        ...
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="form-row">
+      <label for="range_input">
+        Range:
+      </label>
+      <input type="range" id="range_input" name="range_input">
+    </div>
+
+
+    <form oninput="result.value=parseInt(range_input_a.value)">
+      <div class="form-row">
+        <label for="range_input_2">
+          Range with visual output value:
+        </label>
+        <div class="flex-area flex-area--v-center">
+          <div class="flex-w-80">
+            <input type="range" class="m-0" id="range_input_2" name="range_input_a" value="30">
+          </div>
+          <div class="flex-w-20">
+            <output name="result" class="text-input">30</output>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

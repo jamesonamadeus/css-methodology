@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Float Labels
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+  </head>
+  <body>
+
+    <div class="page">
+      <header role="banner" class="content-area content-area--divider-bottom mxw-600">
+        <h1 class="txt-up-5">
+          Floating Input Labels
+        </h1>
+
+        <p>
+          Proposed pattern for positioning labels on top of input areas, until
+          user focus. At that point, label is floated above input.
+        </p>
+
+        <p>
+          If text is entered, then the label stays anchored above the input. If the input is blurred, and the user input is null, then the label will return to it's 'floated' position on top of the form input.
+        </p>
+
+      </header>
+
+      <form action="#" method="post" data-action="float-labels" class="content-area mxw-600 mt-20">
+        <div class="form-row mb-32">
+          <label class="float-label" for="name">
+            Name:
+          </label>
+          <input id="name" title="Name Field" class="js-has-float-label" type="text">
+        </div>
+
+        <div class="form-row mb-32">
+          <label class="float-label" for="email">
+            Email:
+          </label>
+          <input id="email" title="Email Field" class="js-has-float-label" type="email">
+        </div>
+
+        <div class="form-row">
+          <label class="float-label" for="comments">
+            Comments:
+          </label>
+          <textarea id="comments" title="Comments Field" class="js-has-float-label"></textarea>
+        </div>
+      </form><!-- /.content-area -->
+
+      <div class="content-area mxw-600">
+        <p>
+          <b>Question:</b> Should this be considered an anti-pattern due to the changing position of the form element's label?
+        </p>
+      </div>
+
+    </div> <!-- /.page -->
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.min.js"></script>
+
+  </body>
+</html>

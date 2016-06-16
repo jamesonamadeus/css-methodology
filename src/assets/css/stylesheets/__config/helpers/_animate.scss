@@ -1,0 +1,85 @@
+/** --------------------------------------------------------------------
+
+  CSS Animation
+
+  Source: https://gist.github.com/Integralist/3931680
+
+--------------------------------------------------------------------- */
+
+$browsers: -moz-, -ms-, -webkit-, "";
+
+// Setup for animation inclusion
+@mixin animation ( $animation-values... ) {
+
+  @each $b in $browsers {
+    #{$b}animation: $animation-values;
+  }
+}
+
+
+// Setup for keyframes
+@mixin keyframe( $animation-name ) {
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  // Create CSS keyframe animations for all vendors in one go:
+
+  .class-to-animate {
+    @include animation( 10s 5s name );
+  }
+
+  @include keyframe( name ) {
+    from {
+      font-size: 1em;
+    }
+
+    to {
+      font-size: 5em;
+    }
+  }
+
+*/
+
+
+
+/** --------------------------------------------------------------------
+
+  Preserve 3d
+
+--------------------------------------------------------------------- */
+
+@mixin preserve-3d () {
+  transform-style: preserve-3d;
+}
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  .example {
+    @include preserve-3d;
+  }
+
+*/

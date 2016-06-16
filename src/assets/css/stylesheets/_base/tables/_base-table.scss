@@ -1,0 +1,99 @@
+/** --------------------------------------------------------------------
+
+  Table Elements
+
+--------------------------------------------------------------------- */
+
+$table--bg:                   $c-white !default;
+
+$table--border--color:        $c-grey !default;
+$table--border:               1px solid $table--border--color !default;
+
+// <th> & <td> padding
+$table__cell--padding:        $base-unit3 !default;
+
+//------------------------------------------------------------------------
+
+// default styling for tables
+table {
+  @extend %reset--border;
+  @extend %reset--spacing;
+  background: $table--bg;
+  border: $table--border;
+  border-bottom: 0; // *
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+tr {
+  border-bottom: $table--border;
+  // last <tr> instance acts as table border bottom
+}
+
+// consistent padding and alignment 
+// of text within table cells
+td,
+th {
+  border-right: $table--border;
+  overflow: hidden; // don't let content bleed out
+  padding: $table__cell--padding;
+  vertical-align: top;
+
+  &:last-child {
+    border-right: 0;
+  }
+}
+
+// Table Headings should be bold to set them
+// apart from other table cells
+th {
+  @extend .#{$ns}txt-bold;
+}
+
+// no inherit styling for the following
+// but placing here to complete list of elements
+// tbody { }
+// thead { }
+// tfoot { }
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <table>
+    <caption>Caption</caption>
+    <thead>
+      <tr>
+        <th scope="col">
+          Heading
+        </th>
+        <th scope="col">
+          Heading
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <td>
+        ...
+      </td>
+      <td>
+        ...
+      </td>
+    </tfoot>
+    <tbody>
+      <td>
+        ...
+      </td>
+      <td>
+        ...
+      </td>
+    </tbody>
+  </table>
+
+*/
+

@@ -1,0 +1,117 @@
+/** --------------------------------------------------------------------
+
+  Transparent Text Inputs
+
+  For use when an input may be auto populated and thus not a required
+  input field for a user to re-fill out, but is not considered a read
+  only input field.
+
+  An example use case for a transparent input would be an input
+  that doubles as a section heading that can be modified and saved
+  upon form/page submit.
+
+--------------------------------------------------------------------- */
+
+// icon requires url, repeat, x/y pos.  if no icon, set to 'none' w/out quotes
+$transparent-input--icon:    url(../icons/icon-edit.svg) no-repeat right center !default;
+
+$transparent-input--border:               1px dotted $c-light-blue !default;
+$transparent-input--padding--no-icon:     0 !default;
+$transparent-input--padding--has-icon:    0 20px 0 0 !default;
+$transparent-input--transition-time:     .2s !default;
+
+// hover & focus states
+$transparent-input--alt--border-color:    $c-grey !default;
+$transparent-input--alt--outline:         1px solid rgba($c-light-blue,0) !default;
+
+$transparent-input--focus--border-color:  transparent !default;
+$transparent-input--focus--outline:       4px solid rgba($c-light-blue, .25) !default;
+$transparent-input--focus--bg-color:      $c-white !default;
+
+// inverse
+$transparent-input--include-inverse:        true !default;
+
+$transparent-input--inverse--color:         $c-white !default;
+$transparent-input--inverse--border-color:  $c-light-grey !default;
+$transparent-input--inverse--outline:       1px solid rgba(0,0,0,0) !default;
+
+$transparent-input--inverse--alt-bg:        rgba(0,0,0,.25) !default;
+$transparent-input--inverse--alt-outline:   4px solid $transparent-input--inverse--alt-bg !default;
+
+//------------------------------------------------------------------------
+
+input.#{$ns}text-input--transparent {
+  @if $transparent-input--icon != none {
+    background: transparent $transparent-input--icon;
+  }
+  @else {
+    background: transparent;
+  }
+  border: none;
+  border-bottom: $transparent-input--border;
+  border-radius: 0;
+  box-shadow: none;
+  outline-color: transparent;
+  outline-offset: 0;
+  @if $transparent-input--icon != none {
+    padding: $transparent-input--padding--has-icon;
+  }
+  @else {
+    padding: $transparent-input--padding--no-icon;
+  }
+  transition: outline $transparent-input--transition-time ease-in-out;
+
+  &:hover,
+  &:focus {
+    border: none;
+    border-bottom: $transparent-input--border;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border-bottom-color: $transparent-input--alt--border-color;
+    outline: $transparent-input--alt--outline;
+  }
+
+  &:focus {
+    background-color: $transparent-input--focus--bg-color;
+    border-bottom-color: $transparent-input--focus--border-color;
+    outline: $transparent-input--focus--outline;
+  }
+
+  @if $transparent-input--include-inverse == true {
+    // when using a transparent input on a dark background
+    &--inverse {
+      color: $transparent-input--inverse--color;
+
+       &:hover {
+        border-bottom-color: $transparent-input--inverse--border-color;
+        outline: $transparent-input--inverse--outline;
+      }
+
+      &:focus {
+        background-color: $transparent-input--inverse--alt-bg;
+        outline: $transparent-input--inverse--alt-outline;
+      }
+    }
+  } // end if
+
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <input type="text"
+         class="text-input--transparent"
+         name="ti"
+         id="ti" />
+
+  <input type="text"
+         class="text-input--transparent text-input--transparent--inverse"
+         name="ti2"
+         id="ti2" />
+
+*/

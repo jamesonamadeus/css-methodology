@@ -1,0 +1,61 @@
+/** ----------------------------------------------------------------------------
+
+  Initial Cap / Intro Paragraphs
+
+ ---------------------------------------------------------------------------- */
+
+$txt-initial-cap--family:               $f-brand !default;
+$txt-initial-cap--size:                 3em !default;
+$txt-initial-cap--line-height:          .9em !default;
+$txt-initial-cap--pad-right:            .1em !default;
+$txt-initial-cap--margin-top:           5px !default;
+
+//------------------------------------------------------------------------
+
+.txt-initial-cap:first-letter, // 1
+.has-intro-paragraph > p:first-of-type:first-letter { // 2
+  float: left;
+  font-family: $txt-initial-cap--family;
+  font-size: $txt-initial-cap--size;
+  line-height: $txt-initial-cap--line-height;
+  margin-top: $txt-initial-cap--margin-top;
+  padding-right: $txt-initial-cap--pad-right;
+}
+
+// or
+
+.has-intro-paragraph > p:first-of-type {
+  @extend .txt-p--lg;
+}
+
+/**
+
+  1 - for use directly on an element (paragraph)
+  2 - for use on parent of paragraph
+
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="txt-initial-cap">
+    First letter is big!
+  </p>
+
+  <!-- or -->
+
+  <article class="has-initial-cap">
+    <header>
+      <h2>
+        Title goes here
+      </h2>
+      <p>
+        Subtext won't get initial cap
+      </p>
+    </header>
+
+    <p>
+      But this first letter is big!
+    </p>
+  </article>
+
+*/

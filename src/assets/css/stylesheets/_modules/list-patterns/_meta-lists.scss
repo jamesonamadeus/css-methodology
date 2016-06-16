@@ -1,0 +1,101 @@
+/** --------------------------------------------------------------------
+
+  Meta List
+
+  Pattern specifically for metadata listings
+
+--------------------------------------------------------------------- */
+
+$meta-list--margin:                      .25em 0 0 !default;
+
+$meta-list__title--color:                $c-dark-grey !default;
+$meta-list__title--font-size:            14 !default;
+$meta-list__title--weight:               600 !default;
+$meta-list__title--margin:               0 8px 4px 0 !default;
+$meta-list__title--letter-spacing:       .02em !default;
+
+$meta-list__item--margin:                .25em .5em 0 0 !default;
+$meta-list__item--font-size:             $meta-list__title--font-size !default;
+
+// true or false
+$meta-list--social--include:             true !default;
+
+//------------------------------------------------------------------------
+
+.meta-list {
+  margin: $meta-list--margin;
+
+  &__title {
+    @include font-size($meta-list__title--font-size);
+    color: $meta-list__title--color;
+    display: inline-block;
+    font-weight: $meta-list__title--weight;
+    margin: $meta-list__title--margin;
+
+    @if $meta-list__title--letter-spacing != 0 {
+      letter-spacing: $meta-list__title--letter-spacing;
+    }
+  }
+
+  &__listing {
+    display: inline;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__listing__item {
+    @include font-size($meta-list__item--font-size);
+    display: inline-block;
+    margin: $meta-list__item--margin;
+  }
+
+  // if var is set to true, output the following
+  // modifier class for social lists. if false, do not compile.
+  @if $meta-list--social--include == true {
+
+    &--social {
+      .meta-list__title {
+        margin-bottom: 0;
+      }
+
+      .meta-list__title,
+      .meta-list__listing__item {
+        vertical-align: middle;
+      }
+    }
+
+  }
+
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="meta-list">
+    <p class="meta-list__title">
+      metas:
+    </p>
+
+    <ul class="meta-list__listing">
+      <li class="meta-list__listing__item">
+        <a href="#!">
+          meta Name
+        </a>
+      </li>
+      <li class="meta-list__listing__item">
+        <a href="#!">
+          meta Name Goes
+        </a>
+      </li>
+      <li class="meta-list__listing__item">
+        <a href="#!">
+          meta Name Here
+        </a>
+      </li>
+    </ul>
+  </div>
+
+*/

@@ -1,0 +1,76 @@
+/** --------------------------------------------------------------------
+
+  Blockquote Callout
+
+--------------------------------------------------------------------- */
+
+$bq-callout--margin:                    2em 0 !default;
+
+$bq-callout__quote--font-size:          28 !default;
+$bq-callout__quote--color:              $c-primary !default;
+$bq-callout__quote--margin:             0 0 16px !default;
+$bq-callout__quote--font-style:         italic !default;
+$bq-callout__quote--line-height:        1.5 !default;
+
+$bq-callout__source--border:            3px solid $c-primary !default;
+$bq-callout__source--float:             right !default;
+$bq-callout__source--padding:           .3em 1em !default;
+
+
+// ---------------------------------------------------------------------
+
+.blockquote-callout {
+  margin: $bq-callout--margin;
+  overflow: hidden;
+
+  &__quote,
+  &__quote p {
+    @include font-size($bq-callout__quote--font-size);
+    color: $bq-callout__quote--color;
+    font-style: $bq-callout__quote--font-style;
+    line-height: $bq-callout__quote--line-height;
+    margin: $bq-callout__quote--margin;
+  }
+
+  &__source {
+    border-left: $bq-callout__source--border;
+    padding: $bq-callout__source--padding;
+
+    @if $bq-callout__source--float != none {
+      float: $bq-callout__source--float;
+    }
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <figure class="blockquote-callout">
+    <blockquote class="blockquote-callout__quote">
+      <p>
+        ....
+      </p>
+    </blockquote>
+    <figcaption class="blockquote-callout__source">
+      <cite>
+        Source
+      </cite>
+      <!--
+        html5 W3C spec allows cite to be the name
+        of a person.
+
+        The HTML living Standard (whatwg) states
+        that the cite element should not
+        be used for a person, but instead used for a
+        body of work/publication.
+
+        As the W3C spec is what is actually implemented
+        by browsers, so it makes sense to follow
+        this rule.
+      -->
+    </figcaption>
+  </figure>
+
+*/

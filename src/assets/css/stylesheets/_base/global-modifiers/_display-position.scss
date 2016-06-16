@@ -1,0 +1,80 @@
+/** --------------------------------------------------------------------
+
+  Display & Positioning Classes
+
+  ** NOTE: display none is located in the _visibility.scss file **
+
+--------------------------------------------------------------------- */
+
+// display block or none
+.#{$ns}display-block {
+  display: block;
+}
+
+
+.#{$ns}display-inline {
+  display: inline;
+  margin: 0 !important;
+  width: auto !important;
+}
+
+
+// Inline-block Individual Elements
+// OR
+// ALL elements within a parent element
+.#{$ns}display-inline-block,
+.#{$ns}display-inline-all > * {
+  display: inline-block !important;
+  margin: 0 $base-unit 0 0;
+  vertical-align: middle;
+  width: auto !important;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+
+// Set an element as position relative
+.#{$ns}position-relative {
+  position: relative;
+  z-index: 2;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="#!" class="display-block">
+    Block level link
+  </a>
+
+
+  <h3 class="display-inline">
+    Inline heading (for reasons?)
+  </h3>
+
+
+  <div class="display-inline-block">
+    Inline block div
+  </div>
+
+
+  <ul class="display-inline-all">
+    <li>
+      list elements are now all display inline-block
+    </li>
+    <li>
+      ...
+    </li>
+  </ul>
+
+
+  <div class="position-relative">
+    Now absolutely positioned elements will be positioned
+    relative to this parent <div> container.
+  </div>
+
+*/

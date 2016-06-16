@@ -1,0 +1,49 @@
+/** --------------------------------------------------------------------
+
+  Textarea Element
+
+--------------------------------------------------------------------- */
+
+$textarea--native-styling:         $txt-input--native-styling !default;
+
+$textarea--max-height:                  500px !default; // settle down there...
+$textarea--min-height:                  56px !default;
+$textarea--min-width:                   3.75em !default;
+$textarea--resize:                      vertical !default;
+$textarea--vertical-align:              top !default;
+
+//------------------------------------------------------------------------
+
+textarea {
+  @extend %reset--form-elements;
+  @extend %html5-block;
+
+  @if $textarea--native-styling != false {
+    @extend input[type="text"];
+  }
+
+  max-height: $textarea--max-height;
+  min-height: $textarea--min-height;
+  min-width: $textarea--min-width;
+  overflow: auto; // undoes reset--form-elements value
+  resize: $textarea--resize;
+  vertical-align: $textarea--vertical-align;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <textarea id="example"
+            name="example"
+            placeholder="Enter your message here..."></textarea>
+
+  <!--
+    Any white space or characters between the
+    opening and closing tags will be rendered in the
+    textarea. So keep the start/end tags touching
+    99.99999% of the time.
+  -->
+
+*/

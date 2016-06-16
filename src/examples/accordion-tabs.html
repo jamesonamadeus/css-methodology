@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Generate Tabs or Accordions on Load
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+  </head>
+  <body>
+
+    <div class="page">
+      <div class="content-area">
+
+        <h1 class="txt-up-4">
+          Generated Accordion <b>Or</b> Tab
+        </h1>
+
+        <div data-generate="600" id="gen1">
+          <div data-tab-label="My label">
+            <p>
+              This is where content would go 1
+            </p>
+            <p>
+              <a href="#!">test</a>
+            </p>
+          </div>
+          <div data-tab-label="My other label">
+            <p>
+              This is where content would go 2
+            </p>
+            <p>
+              <a href="#!">test</a>
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div data-generate="900" id="gen2">
+          <div>
+            <p>
+              This is where content would go 1
+            </p>
+            <p>
+              <a href="#!">test</a>
+            </p>
+          </div>
+          <div>
+            <p>
+              This is where content would go 2
+            </p>
+            <p>
+              <a href="#!">test</a>
+            </p>
+          </div>
+        </div>
+
+      </div> <!-- /.content-area -->
+
+    </div> <!-- /.page -->
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.concat.js"></script>
+
+  </body>
+</html>

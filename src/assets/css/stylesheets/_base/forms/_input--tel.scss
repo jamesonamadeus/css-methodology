@@ -1,0 +1,47 @@
+/** --------------------------------------------------------------------
+
+  Telephone Input Element
+
+--------------------------------------------------------------------- */
+
+$tel-input--native-styling:         $txt-input--native-styling !default;
+
+//------------------------------------------------------------------------
+
+@if $tel-input--native-styling != false {
+
+  input[type="tel"] {
+    @extend input[type="text"];
+  }
+  
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="enter_tel">
+      Enter Web Address
+    </label>
+    <input type="tel" id="enter_tel" placeholder="http://..." />
+  </div>
+
+
+  Patterns:
+  (see http://html5pattern.com/Phones)
+
+  USA phone pattern:
+  pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+
+  French phone pattern:
+  pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"
+
+  UK phone pattern:
+  pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$"
+
+  Global phone pattern:
+  pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}"
+
+*/

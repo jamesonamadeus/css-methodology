@@ -1,0 +1,32 @@
+/** --------------------------------------------------------------------
+
+  Responsive Video Container
+
+--------------------------------------------------------------------- */
+
+.responsive-video-container {
+  @include maintain-ratio ( 16 9 );
+
+  &__media {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="responsive-video-container">
+    <!--
+      video element, or iframe goes here
+    -->
+    <ELEMENT class="responsive-video-container__media" />
+  </div>
+
+*/

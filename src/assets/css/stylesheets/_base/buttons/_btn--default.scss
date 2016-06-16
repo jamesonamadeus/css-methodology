@@ -1,0 +1,127 @@
+/** --------------------------------------------------------------------
+
+  Generic Buttons
+
+  There can be multiple button style in a project, but there generally
+  needs to be a base button styling for all others to extend upon.
+
+  Use the .#{$ns}btn class to create this base, and the btn-- helper classes
+  to create different styling variations (as needed).
+
+--------------------------------------------------------------------- */
+
+$btn--bg:                   $c-almost-white !default;
+$btn--color:                $c-dark-grey !default;
+$btn--border:               1px solid $c-grey !default;
+$btn--bs:                   0px 2px 0px 0px $c-grey !default;
+$btn--radius:               6px !default;
+
+$btn--font-size:            inherit !default;
+$btn--font-weight:          400 !default;
+
+$btn--pad-tb:                1em !default;
+$btn--pad-lr:                2em !default;
+
+$btn--padding:              $btn--pad-tb $btn--pad-lr !default;
+
+$btn--txt-shadow:           none !default;
+$btn--txt-transform:        uppercase !default;
+
+
+  // hover & focus states
+  $btn--alt-bg:             $c-off-white !default;
+  $btn--alt-color:          darken($btn--color, 10%) !default;
+  $btn--alt-border-color:   $btn--alt-color !default;
+
+  $btn--active-bg:          $btn--alt-bg !default;
+  $btn--active-color:       $btn--alt-color !default;
+  $btn--active-bs:          0px 0px 0px 0px rgba($c-grey, 0) !default;
+
+
+// Has Transitions
+$btn--has-transition:       true !default;
+
+$button--native-styling:            true !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn {
+  @include btnGeneral;
+  background: $btn--bg;
+  border: $btn--border;
+  color: $btn--color;
+
+  @if $btn--bs != none {
+    box-shadow: $btn--bs;
+  }
+
+  @if $btn--has-transition == true {
+    transition: background-color .15s ease-in-out;
+  }
+
+  @if $btn--txt-shadow != none {
+    text-shadow: $btn--txt-shadow;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $btn--alt-bg;
+    border-color: $btn--alt-border-color;
+    color: $btn--alt-color;
+  }
+
+  &:active,
+  &[aria-pressed="true"] {
+    background-color: $btn--active-bg;
+    border-color: $btn--alt-border-color;
+    color: $btn--active-color;
+
+    @if $btn--bs != none {
+      box-shadow: $btn--active-bs;
+    }
+  }
+
+}
+
+
+
+
+@if $button--native-styling == true {
+
+  button,
+  [type="reset"],
+  [type="submit"],
+  [type="button"] {
+    @extend .#{$ns}btn;
+  }
+
+} // end if
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!-- no need for a .btn class on default buttons/input buttons -->
+  <button type="button">
+    Text
+  </button>
+
+  <!-- or -->
+
+  <input type="button" value="Label here" />
+
+  <!--
+    If an <a> is used as a true replacement for a button,
+    (e.g. isn't used as a type of a jump link, or link to
+    another file) be sure to use the role="button" and
+    apply the necessary JavaScript hooks to allow for
+    standard keyboard controls that map to expected
+    functionality for buttons.
+  -->
+
+  <a href="#!" role="button" class="btn">
+    Text
+  </a>
+
+*/

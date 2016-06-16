@@ -1,0 +1,56 @@
+/** --------------------------------------------------------------------
+
+  Groups and Pills
+
+--------------------------------------------------------------------- */
+
+$group--pill__radius:                     8px !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}group {
+
+  > * {
+    display: inline-block;
+    margin: 0;
+    vertical-align: bottom;
+  }
+}
+
+
+.#{$ns}group--pill {
+  @extend .clearfix;
+
+  > * {
+    border-radius: 0;
+    float: left;
+    margin-left: -1px; // hacky
+  }
+
+  > :first-child,
+  > :last-child {
+    position: relative;
+    z-index: 2;
+  }
+
+  > :first-child {
+    border-radius: $group--pill__radius 0 0 $group--pill__radius;
+  }
+
+  > :last-child {
+    border-radius: 0 $group--pill__radius $group--pill__radius 0;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="group group--pill">
+    <button class="is-active" type="button">Button</button>
+    <button class="" type="button">Button</button>
+    <button class="" type="button">Button</button>
+  </div>
+
+*/

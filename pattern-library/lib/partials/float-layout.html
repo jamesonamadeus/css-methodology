@@ -1,0 +1,427 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Float Helpers</h1>
+      <p>
+        Use floats to align content to the left or right of a content area.
+      </p>
+      <p>
+        To ensure that a container doesn't collapse in on itself,
+        due to its floating children, appropriately apply a class of
+        <code>.clearfix</code> or <code>.overflow-clear</code> to the
+        parent container of the floating elements.
+      </p>
+
+      <p>Listing of float helper classes:</p>
+      <ul>
+        <li>.float-left, .float-left--sm</li>
+        <li>.float-right, .float-right--sm</li>
+        <li>.float-left--spacing</li>
+        <li>.float-right--spacing</li>
+        <li>.float-left--breakout</li>
+        <li>.float-right--breakout</li>
+        <li>.clearfix</li>
+        <li>.clear-both</li>
+        <li>.overflow-clear</li>
+      </ul>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="clearfix" style="max-width: 800px; margin: auto; padding: 40px 16px; border: 1px solid #ccc;">
+
+
+      <div class="cs-pattern-intro">
+        Standard Floats
+      </div>
+
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+        <span class="float-left">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Left
+          </span>
+        </span>
+
+        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+        <span class="float-right">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Right
+          </span>
+        </span>
+
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+      </p>
+
+      <hr class="clear-both" />
+
+      <div class="cs-pattern-intro">
+        Floats with added Spacing
+      </div>
+
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+        <div class="float-left float-left--spacing">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Left
+          </span>
+        </div>
+
+        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+        <div class="float-right float-right--spacing">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Right
+          </span>
+        </div>
+
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+      </p>
+
+      <hr class="clear-both" />
+
+      <div class="cs-pattern-intro">
+        Floats with added Spacing (at screens larger than $bp-small)
+      </div>
+
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+        <div class="float-left--sm float-left--spacing">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Left
+          </span>
+        </div>
+
+        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+        <div class="float-right--sm float-right--spacing">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Right
+          </span>
+        </div>
+
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+      </p>
+
+      <hr class="clear-both" />
+
+      <div class="cs-pattern-intro">
+        Breakout Floats
+      </div>
+
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+        <span class="float-left float-left--breakout">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Left
+          </span>
+        </span>
+
+        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+
+        <span class="float-right float-right--breakout">
+          <span class="demo-block" style="margin: 0; padding: 8px;">
+            Float Right
+          </span>
+        </span>
+
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+      </p>
+
+
+    </div> <!-- /.clearfix -->
+
+
+  </div><!--/.cs-content-->
+
+</section><!--/.cs-content-section-->
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Float Grids</h1>
+      <p>
+        In instances where using flexbox would be overkill, or it's not well supported (older browsers), use a float-based grid.
+      </p>
+      <p>
+        See the modifier classes > width modifiers for the full list of
+        available classes that double as columns with the float-grids.
+      </p>
+      <p>
+        <b>Note:</b> use only what you need for float and flexbox grids. Remove (comment out) unused width or modifier classes so as to not add unnecessary bloat to your compiled CSS.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="cs-pattern-intro">Unchanging Grid</div>
+    <div class="float-grid">
+      <div class="width-50">
+        <div class="demo-block">
+          50%
+        </div>
+      </div>
+      <div class="width-50">
+        <div class="demo-block">
+          50%
+        </div>
+      </div>
+
+      <div class="width-33">
+        <div class="demo-block">
+          33%
+        </div>
+      </div>
+      <div class="width-33">
+        <div class="demo-block">
+          33%
+        </div>
+      </div>
+      <div class="width-33">
+        <div class="demo-block">
+          33%
+        </div>
+      </div>
+
+      <div class="width-60">
+        <div class="demo-block">
+          60%
+        </div>
+      </div>
+      <div class="width-40">
+        <div class="demo-block">
+          40%
+        </div>
+      </div>
+
+      <div class="width-25">
+        <div class="demo-block">
+          25%
+        </div>
+      </div>
+      <div class="width-25">
+        <div class="demo-block">
+          25%
+        </div>
+      </div>
+      <div class="width-25">
+        <div class="demo-block">
+          25%
+        </div>
+      </div>
+      <div class="width-25">
+        <div class="demo-block">
+          25%
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cs-pattern-intro">Responsive Grid</div>
+    <div class="float-grid">
+      <div class="width-100 width-50--sm width-25--lg">
+        <div class="demo-block">
+          100 / 50sm / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-25--lg">
+        <div class="demo-block">
+          100 / 50sm / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-60--portrait width-25--lg">
+        <div class="demo-block">
+          100 / 60md / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-40--portrait width-25--lg">
+        <div class="demo-block">
+          100 / 40md / 25lg
+        </div>
+      </div>
+    </div>
+
+    <div class="float-grid">
+      <div class="width-100 width-33--lg">
+        <div class="demo-block">
+          100 / 33lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-33--lg">
+        <div class="demo-block">
+          100 / 50sm / 33lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-33--lg">
+        <div class="demo-block">
+          100 / 50sm / 33lg
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-pattern-intro">
+      Responsive Grid (2x gutter)
+    </div>
+    <div class="float-grid float-grid--2x-gutter">
+      <div class="width-100 width-50--sm width-25--lg">
+        <div class="demo-block">
+          100 / 50sm / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-25--lg">
+        <div class="demo-block">
+          100 / 50sm / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-60--portrait width-25--lg">
+        <div class="demo-block">
+          100 / 60md / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-40--portrait width-25--lg">
+        <div class="demo-block">
+          100 / 40md / 25lg
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-pattern-intro">
+      Responsive Grid (no gutter)
+    </div>
+    <div class="float-grid float-grid--no-gutter">
+      <div class="width-100 width-50--sm width-25--lg">
+        <div class="demo-block">
+          100 / 50sm / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-25--lg">
+        <div class="demo-block">
+          100 / 50sm / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-60--portrait width-25--lg">
+        <div class="demo-block">
+          100 / 60md / 25lg
+        </div>
+      </div>
+      <div class="width-100 width-40--portrait width-25--lg">
+        <div class="demo-block">
+          100 / 40md / 25lg
+        </div>
+      </div>
+    </div>
+
+    <div class="float-grid">
+      <div class="width-100 width-33--lg">
+        <div class="demo-block">
+          100 / 33lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-33--lg">
+        <div class="demo-block">
+          100 / 50sm / 33lg
+        </div>
+      </div>
+      <div class="width-100 width-50--sm width-33--lg">
+        <div class="demo-block">
+          100 / 50sm / 33lg
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cs-pattern-intro">Grids within Grids</div>
+    <p>
+      66/33 ($bp-medium) grid with 50/50 ($bp-small) sub-grids<br />
+      Utilizes mt-0--md to ensure that margin tops don't double up
+      at the medium breakpoint.
+    </p>
+    <div class="float-grid float-grid--gutters-narrow">
+      <div class="width-100 width-66--md">
+        <div class="float-grid">
+          <div class="width-100 width-50--sm">
+            <div class="demo-block">
+              ...
+            </div>
+          </div>
+          <div class="width-100 width-50--sm">
+            <div class="demo-block">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="width-100 width-33--md mt-0--md">
+        <div class="float-grid">
+          <div class="width-100 width-50--sm">
+            <div class="demo-block">
+              ...
+            </div>
+          </div>
+          <div class="width-100 width-50--sm">
+            <div class="demo-block">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cs-pattern-intro">Grids within a content-area</div>
+
+    <div class="content-area">
+      <div class="float-grid pull-up">
+        <div class="width-100 width-33--lg">
+          <div class="demo-block">
+            100 / 33lg
+          </div>
+        </div>
+        <div class="width-100 width-50--sm width-33--lg">
+          <div class="demo-block">
+            100 / 50sm / 33lg
+          </div>
+        </div>
+        <div class="width-100 width-50--sm width-33--lg">
+          <div class="demo-block">
+            100 / 50sm / 33lg
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area content-area--callout">
+      <div class="float-grid pull-up">
+        <div class="width-100 width-33--lg">
+          <div class="demo-block">
+            100 / 33lg
+          </div>
+        </div>
+        <div class="width-100 width-50--sm width-33--lg">
+          <div class="demo-block">
+            100 / 50sm / 33lg
+          </div>
+        </div>
+        <div class="width-100 width-50--sm width-33--lg">
+          <div class="demo-block">
+            100 / 50sm / 33lg
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!--/.cs-content-->
+
+</section><!--/.cs-content-section-->

@@ -1,0 +1,63 @@
+/** --------------------------------------------------------------------
+
+  Input With Tooltip
+
+--------------------------------------------------------------------- */
+
+$input-tooltip--bg:                           $c-info !default;
+$input-tooltip--color:                        $c-white !default;
+$input-tooltip--border:                       1px solid $c-info !default;
+$input-tooltip--padding:                      4px 6px !default;
+
+//------------------------------------------------------------------------
+
+.input--has-tooltip {
+
+  + [role="tooltip"] {
+    background: $input-tooltip--bg;
+    border: $input-tooltip--border;
+    color: $input-tooltip--color;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: $input-tooltip--padding;
+    position: absolute;
+    top: 99%;
+    transform: translateY(-4px);
+    transition: transform .2s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:focus + [role="tooltip"] {
+    opacity: 1;
+    position: absolute;
+    transform: translateY(0px);
+    visibility: visible;
+  }
+
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label class="is-required" for="txt_required">
+      Input Label
+      <span class="sr-only">
+        required
+      </span>
+    </label>
+    <input type="text" aria-describedby="input_help_area" aria-required="true" class="input--has-tooltip" id="txt_required" name="txt_required">
+
+    <p role="tooltip" id="input_help_area">
+      Instructions for required input so
+      that people don't enter invalid info.
+    </p>
+  </div>
+
+*/

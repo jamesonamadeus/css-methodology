@@ -1,0 +1,112 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Containers</h1>
+      <p>
+        Standard container classes we can use to ensure consistent
+        content layout and grouping.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      .page
+    </div>
+    <div class="page">
+      <p>
+        The .page allows for top level padding,
+        setting of a maximum width and ensuring that any
+        off-screen content elements won't trigger
+        horizontal browser scrolling.
+      </p>
+    </div>
+
+    <div class="cs-pattern-intro">
+      .content-area(s)
+    </div>
+    <div class="content-area">
+      <p>content-area</p>
+      <p>
+        Content areas allow for uniform padding and max-width
+      </p>
+      <p>
+        Last direct child of a content-area has a margin-bottom: 0
+      </p>
+    </div>
+
+    <div class="content-area">
+      <p>content-area + content-area</p>
+
+      <p>
+        When content areas directly follow a previous content area
+        in the DOM, a margin-top is added to create more white space.
+      </p>
+    </div>
+
+    <div class="content-area content-area--wide">
+      <p>content-area--wide</p>
+
+      <p>
+        The --wide suffix increases the max-width of the content-area.
+      </p>
+    </div>
+
+    <div class="content-area content-area--full-width">
+      <p>content-area--full-width</p>
+
+      <p>
+        The --full-width suffix negates the default max-width of a content-area.
+      </p>
+    </div>
+
+    <div class="content-area content-area--divider-bottom content-area--divider-top">
+      <p>content-area--divider-bottom</p>
+      <p>content-area--divider-top</p>
+
+      <p>
+        Adding a content-area divider helper class will add
+        a border-top or border bottom to the content-area. To semantically create
+        a content division, make sure the content-area is an
+        appropriate HTML5 element (e.g. section) or use a &lt;hr />
+        in place of the divider helper class.
+      </p>
+    </div>
+
+    <div class="content-area content-area--offset">
+      <p>content-area--offset</p>
+
+      <p>
+        When content areas directly follow a previous content area
+        in the DOM, a margin-top is added to create more white space.
+      </p>
+    </div>
+
+    <div class="content-area content-area--callout">
+      <p>content-area.content-area--callout</p>
+
+      <p>
+        Adding a content-area--divider helper class will add
+        a border-top to the content-area. To semantically create
+        a content division, make sure the content-area is an
+        appropriate HTML5 element (e.g. section) or use a &lt;hr />
+        in place of the divider helper class.
+      </p>
+    </div>
+
+    <div class="content-area content-area--callout-secondary">
+      <p>content-area.content-area--callout-secondary</p>
+    </div>
+
+    <div class="content-area content-area--callout-tertiary">
+      <p>content-area.content-area--callout-tertiary</p>
+    </div>
+
+    <div class="content-area content-area--callout-quaternary">
+      <p>content-area.content-area--callout-quaternary</p>
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

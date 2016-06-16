@@ -1,0 +1,62 @@
+/** --------------------------------------------------------------------
+
+  Search Input Element
+
+--------------------------------------------------------------------- */
+
+$search-input--native-styling:         $txt-input--native-styling !default;
+
+//------------------------------------------------------------------------
+
+input[type="search"] {
+
+  @if $search-input--native-styling != false {
+    @extend input[type="text"];
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none; // *
+            appearance: none;
+  }
+
+  // *
+  // Remove inner padding & search cancel button in Safari & Chrome on
+  // OS X. Safari (but not Chrome) clips the cancel button when the
+  // search input has padding (& `textfield` appearance).
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!--
+    The following example has little layout styling
+    associated with this mark-up, as this is meant to just
+    show the minimal mark-up expected to create a proper
+    search
+
+    For a search pattern optimized for layout, please see the
+    _search-pattern.scss file.
+  -->
+
+  <form action="#!" method="post">
+
+    <div class="form-row" role="search">
+
+      <label for="search_input">
+        Search for:
+      </label>
+
+      <input type="search" id="search_input" />
+
+      <button type="submit">
+        Submit Search
+      </button>
+    </div>
+
+  </form>
+
+*/

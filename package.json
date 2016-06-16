@@ -1,0 +1,30 @@
+{
+  "name": "fts-grunt",
+  "version": "0.1.0",
+  "author": "Fresh Tilled Soil",
+  "description": "Fresh Tilled Soil default grunt config",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:freshtilledsoil/FTS-grunt.git"
+  },
+  "devDependencies": {
+    "glob": "~4.3.1",
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~2.2.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-connect": "~0.9.0",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-cssmin": "~0.11.0",
+    "grunt-contrib-imagemin": "~1.0.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-uglify": "~0.7.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-svgstore": "~1.0.0",
+    "grunt-svgmin": "^3.1.2"
+  },
+  "dependencies": {
+    "load-grunt-tasks": "~2.0.0"
+  },
+  "license": "MIT"
+}

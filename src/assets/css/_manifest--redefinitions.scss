@@ -1,0 +1,27 @@
+/*
+  *****************************************************************************
+  *
+  *  Redefining Variables
+  *
+  *  Variables are defined within each Sass partial file as !default values.
+  *
+  *  Redefining variables here will allow you to keep any modifications to
+  *  the components, separate from the original file, allowing for
+  *  an easier return to default values if need be, by just deleting the
+  *  redefined variable value.
+  *
+  *****************************************************************************
+*/
+
+
+// Set NameSpacing if needed, otherwise leave blank
+//-----------------------------------------------------------------------------
+
+$ns : '' !default;
+
+
+// Redefine pre-set variables
+//-----------------------------------------------------------------------------
+
+// ex
+// $body--color: blue;

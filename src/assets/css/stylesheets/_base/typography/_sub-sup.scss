@@ -1,0 +1,50 @@
+/** --------------------------------------------------------------------
+
+  Sub/Sup Elements
+
+  Following base prevents sub & sups from affecting the
+  normal type scale's line-height.
+
+  These elements should be used for their semantic, typographical
+  reasons, and should not be used for styling purposes.
+
+  For example, <sup> text has a very specific meaning when used
+  in mathematical formulas.
+
+--------------------------------------------------------------------- */
+
+$sub--bottom:                         -.25em !default;
+$sup--top:                            -.5em !default;
+
+//------------------------------------------------------------------------
+
+sub,
+sup {
+  @extend .txt-down-1;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: $sub--bottom;
+}
+
+sup {
+  top: $sup--top;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    H<sub>2</sub>O
+  </p>
+
+  <p>
+    Normal text <sup>superscript text</sup>
+  </p>
+
+*/

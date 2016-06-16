@@ -1,0 +1,35 @@
+/** --------------------------------------------------------------------
+
+  Page wrapper
+
+--------------------------------------------------------------------- */
+
+$page--max-width:                 false !default;
+$page--padding:                   0 !default;
+
+//------------------------------------------------------------------------
+
+.page {
+  height: 100%;
+  overflow-x: hidden;
+  padding: $page--padding;
+
+  @if $page--max-width != false {
+    margin: auto;
+    max-width: $page--max-width;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <body>
+		<div class="page">
+			...
+		</div>
+  </body>
+
+*/

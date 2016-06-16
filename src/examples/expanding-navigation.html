@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Expanding Navigation Demo
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+    <style>
+
+      .init-onload-reveal .onload-reveal {
+        transform: translate(0px, 0px);
+        opacity: 1;
+      }
+
+      .onload-reveal--x {
+        transform: translate(-20px, 0px);
+      }
+
+      .onload-reveal--y {
+        transform: translate(0px, -20px);
+      }
+
+      .onload-reveal {
+        transition: transform .25s .2s ease-in-out,
+                    opacity .25s .2s ease-in-out;
+        opacity: 0;
+      }
+
+      .onload-reveal--delay-1 {
+        transition: transform .25s .6s ease-in-out,
+                    opacity .25s .6s ease-in-out;
+      }
+
+      .onload-reveal--delay-2 {
+        transition: transform .25s .9s ease-in-out,
+                    opacity .25s .9s ease-in-out;
+      }
+
+
+      html,body {
+        background: #fff;
+      }
+
+      html, body, .page, .page__main {
+        height: 100%;
+      }
+
+      .page {
+        padding-left: 100px;
+        position: relative;
+      }
+
+      @media screen and (min-width: 1500px) {
+        .page { padding-left: 200px; }
+      }
+
+      .list-dividers > li {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+      }
+
+      .list-dividers > li:last-child {
+        border-bottom: 0;
+      }
+
+      /** --------------------------------------------------------------------
+
+        Navigation: Expand on hover/focus
+
+      --------------------------------------------------------------------- */
+      .expand-header {
+        background: #fafafa;
+        border-right: 1px solid #ccc;
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100px;
+        transition: width .2s ease-in-out;
+        z-index: 99;
+        will-change: width;
+      }
+      .expand-header:hover, .expand-header.child-focus {
+        width: 200px;
+      }
+      .expand-header:hover .expand-header__nav__list__label, .expand-header.child-focus .expand-header__nav__list__label {
+        transform: translate(50px, -50%);
+      }
+      .expand-header:hover .expand-header__nav__list__icon, .expand-header.child-focus .expand-header__nav__list__icon {
+        transform: translateX(0px);
+      }
+      @media screen and (min-width: 1500px) {
+        .expand-header {
+          width: 200px;
+        }
+      }
+      .expand-header__nav__list li {
+        position: relative;
+      }
+      .expand-header__nav__list .is-current {
+        background: #fff;
+      }
+      .expand-header__nav__list .is-current:before, .expand-header__nav__list .is-current:after {
+        background: #fff;
+        top: 0;
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+      .expand-header__nav__list .is-current:before {
+        left: 100%;
+      }
+      .expand-header__nav__list .is-current:after {
+        right: 100%;
+      }
+      .expand-header__nav__list .is-current a:before {
+        background: #fff;
+      }
+      .expand-header__nav__list a {
+        display: block;
+        padding: 12px 0;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .expand-header__nav__list a:before {
+        content: '';
+        bottom: 1px;
+        width: 20px;
+        position: absolute;
+        left: 0;
+        top: 1px;
+        background: #fafafa;
+        z-index: 8;
+      }
+      .expand-header__nav__list a:hover, .expand-header__nav__list a:focus {
+        font-weight: 600;
+      }
+      .expand-header__nav__list__label {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translate(-180px, -50%);
+        transition: transform .2s ease-in-out;
+        will-change: transform;
+      }
+      @media screen and (min-width: 1500px) {
+        .expand-header__nav__list__label {
+          transform: translate(50px, -50%);
+        }
+      }
+      .expand-header__nav__list__icon {
+        background: #aaa;
+        border-radius: 100%;
+        display: block;
+        height: 34px;
+        width: 34px;
+        position: relative;
+        z-index: 9;
+        transform: translateX(10px);
+        transition: transform .2s ease-in-out;
+        will-change: transform;
+      }
+      @media screen and (min-width: 1500px) {
+        .expand-header__nav__list__icon {
+          transform: translateX(0px);
+        }
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="page onload-reveal onload-reveal--x">
+
+      <header role="banner" class="page__banner expand-header">
+        <div class="content-area">
+          <h1 class="txt-down-1">
+            App Title
+          </h1>
+
+          <nav role="navigation" aria-label="Main" class="expand-header__nav">
+            <ul class="expand-header__nav__list">
+              <li>
+                <a href="#!">
+                  <span class="expand-header__nav__list__icon"></span>
+                  <span class="expand-header__nav__list__label">
+                    Products
+                  </span>
+                </a>
+              </li>
+              <li class="is-current">
+                <a href="#!">
+                  <span class="expand-header__nav__list__icon"></span>
+                  <span class="expand-header__nav__list__label">
+                    Support Center
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <span class="expand-header__nav__list__icon"></span>
+                  <span class="expand-header__nav__list__label">
+                    News &amp; Events
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <span class="expand-header__nav__list__icon"></span>
+                  <span class="expand-header__nav__list__label">
+                    Community
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <span class="expand-header__nav__list__icon"></span>
+                  <span class="expand-header__nav__list__label">
+                    Contact
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="page__main onload-reveal onload-reveal--delay-1 onload-reveal--y" aria-label="Content">
+
+      <!--   <section class="content-area content-area--full-width content-area--divider-bottom">
+          <h2 class="txt-up-2">
+            Section Title
+          </h2>
+          <p>content goes here</p>
+
+        </section> -->
+
+        <div class="float-grid">
+
+          <section id="ticket_inbox" class="width-100 width-40--md width-33--1024">
+            <div class="content-area pull-up">
+              <h2 class="txt-up-3">
+                Section Title
+              </h2>
+              <p>content goes here. </p>
+              <p><a href="#!">example link to grab focus</a></p>
+            </div>
+          </section>
+
+          <article class="width-100 width-60--md width-66--1024">
+            <div class="content-area pull-up">
+              <h3 class="txt-up-3">
+                Article Title
+              </h3>
+              <p>article content goes here. </p>
+              <p><a href="#!">example link to grab focus</a></p>
+            </div>
+          </article>
+
+        </div> <!-- /.flex-area -->
+
+      </main>
+
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script>
+
+    </script>
+
+
+    <script>
+      var html = document.querySelector('html'); // IE8 +
+
+      // classList only has partial support in IE 10+
+      // but full support with Edge (IE 12)
+      // but more importantly it is still not supported with
+      // Opera Mini 5-8, at all.
+      html.classList.remove('no-js');
+      html.classList.add('init-onload-reveal');
+
+
+
+      // if child has focus
+      if ( 'querySelector' in document && 'addEventListener' in window ) {
+
+        var eNav = document.querySelector('.expand-header');
+        var eNavLink = document.querySelectorAll('.expand-header__nav__list a');
+        var i;
+
+
+        for ( i = 0, len = eNavLink.length; i < len; i++ ) {
+
+          eNavLink[i].addEventListener('focus', function ( e ) {
+
+            eNav.classList.add('child-focus');
+
+          });
+
+          eNavLink[i].addEventListener('blur', function ( e ) {
+
+            eNav.classList.remove('child-focus');
+
+          });
+
+        }
+
+      } // end if querySelector
+
+      // fake selection of ticket
+
+
+    </script>
+
+  </body>
+</html>

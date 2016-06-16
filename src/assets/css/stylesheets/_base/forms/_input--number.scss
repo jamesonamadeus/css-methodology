@@ -1,0 +1,39 @@
+/** --------------------------------------------------------------------
+
+  Number Input Element
+
+--------------------------------------------------------------------- */
+
+$number-input--native-styling:      $txt-input--native-styling !default;
+
+//------------------------------------------------------------------------
+
+@if $number-input--native-styling != false {
+
+  input[type="number"] {
+    @extend input[type="text"];
+  }
+
+}
+
+// Fix the cursor style for Chrome's increment / decrement buttons. For certain
+// `font-size` values of the `input`, it causes the cursor style of the
+// decrement button to change from `default` to `text`.
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="enter_num">
+      Enter Web Address
+    </label>
+    <input type="number" id="enter_num" />
+  </div>
+
+*/

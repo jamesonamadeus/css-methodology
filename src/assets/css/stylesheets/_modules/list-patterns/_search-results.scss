@@ -1,0 +1,151 @@
+/** --------------------------------------------------------------------
+
+  Search Results
+
+--------------------------------------------------------------------- */
+
+$search-item--space-for-img--sm:               75px !default;
+$search-item--space-for-img--lg:               100px !default;
+
+$search-item__title--font-size--sm:           $txt-up-2 !default;
+$search-item__title--font-size:               $txt-up-3 !default;
+$search-item__title--margin-bottom:           6px !default;
+
+$search-item__meta--font-size:                $txt-down-1 !default;
+$search-item__meta--color:                    $c-dark-green !default;
+
+$search-item__desc--font-size--sm:            15 !default;
+$search-item__desc--font-size:                $txt-up-1 !default;
+
+$search-item__child--margin:                  .125em !default;
+
+$search-item__img-wrap--width--sm:            65px !default;
+$search-item__img-wrap--width--lg:            90px !default;
+
+$search-item__img-wrap--width--hover-md:      130px !default;
+$search-item__img-wrap--width--hover-lg:      170px !default;
+
+// ---------------------------------------------------------------------
+
+.search-results {
+
+  &__item {
+    position: relative;
+    // ensures that if the __details wrapper is forgotten, then
+    // the image will at least stay within the list-item
+
+    &__title {
+      @include font-size ( $search-item__title--font-size--sm );
+      margin-bottom: $search-item__title--margin-bottom;
+
+      @media screen and ( min-width: $bp-small ) {
+        @include font-size ( $search-item__title--font-size );
+      }
+    }
+
+    &__details {
+      padding-left: $search-item--space-for-img--sm;
+      position: relative;
+
+      @media screen and ( min-width: $bp-medium ) {
+        padding-left: $search-item--space-for-img--lg;
+      }
+    }
+
+    &__meta {
+      @include font-size($search-item__meta--font-size);
+      color: $search-item__meta--color;
+      margin-top: 0;
+    }
+
+    &__desc {
+      @include font-size ( $search-item__desc--font-size--sm );
+      margin-top: 0;
+      margin-bottom: $search-item__child--margin;
+
+      @media screen and ( min-width: $bp-small ) {
+        @include font-size ( $search-item__desc--font-size );
+      }
+    }
+
+    &__img-wrap {
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: width .2s ease;
+      width: $search-item__img-wrap--width--sm;
+
+      &:hover {
+        z-index: 8;
+      }
+
+
+      @media screen and ( min-width: $bp-small ) {
+
+        &:hover {
+          width: $search-item__img-wrap--width--hover-md;
+        }
+      } // $bp-small
+
+      @media screen and ( min-width: $bp-medium ) {
+        width: $search-item__img-wrap--width--lg;
+
+        &:hover {
+          width: $search-item__img-wrap--width--hover-lg;
+        }
+      } // $bp-medium
+
+      > img,
+      > picture {
+        width: 100%;
+      }
+
+    }
+  }
+
+  // allow images to be right aligned
+  // these images don't break to new line on small screens
+  &--right-images {
+
+    .search-results__item__details {
+      padding-left: 0;
+      padding-right: $search-item--space-for-img--sm;
+
+      @media screen and ( min-width: $bp-medium ) {
+        padding-right: $search-item--space-for-img--lg;
+      }
+    }
+
+    .search-results__item__img-wrap {
+      left: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &--stacked-images {
+
+    @media screen and ( max-width: $bp-small ) {
+
+      .search-results__item__details {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .search-results__item__img-wrap {
+        position: static;
+      }
+
+    }
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+
+*/

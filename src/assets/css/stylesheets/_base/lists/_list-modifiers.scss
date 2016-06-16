@@ -1,0 +1,44 @@
+/** --------------------------------------------------------------------
+
+  List Modifiers
+
+--------------------------------------------------------------------- */
+
+ // Remove default list styling 
+ // removes list markings, margins & padding
+.#{$ns}list-clean {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+// list numbers/bullets are positioned inline
+// wrapping lines will flow under the list
+// item's number/bullet
+.#{$ns}list-inside {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+
+// For when you have a list where the bullets
+// don't really have a semantic order, but
+// numbering them would just look so cool...
+.#{$ns}list-number {
+  list-style-type: decimal;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <ul class="list-number">
+    <li>
+      1. not •
+    </li>
+  </ul>
+
+*/

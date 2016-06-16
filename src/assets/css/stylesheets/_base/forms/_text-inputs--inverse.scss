@@ -1,0 +1,52 @@
+/** --------------------------------------------------------------------
+
+  Inverse Inputs (inputs on dark backgrounds)
+
+--------------------------------------------------------------------- */
+
+$text-input--inverse--bg:                        $c-off-black !default;
+$text-input--inverse--border:                    1px solid $c-black !default;
+$text-input--inverse--bs:                        none !default;
+$text-input--inverse--color:                     $c-white !default;
+
+// states
+  $text-input--inverse--border-color--focus:     $c-grey !default;
+  $text-input--inverse--bs--focus:               inset 0 0 0 1px $c-grey !default; // *
+
+// child
+$text-input--inverse__arrow--color:              $c-lighter-grey !default;
+
+//------------------------------------------------------------------------
+
+input.#{$ns}text-input--inverse,
+textarea.#{$ns}text-input--inverse {
+  background: $text-input--inverse--bg !important;
+  border: $text-input--inverse--border !important;
+  box-shadow: $text-input--inverse--bs !important;
+  color: $text-input--inverse--color !important;
+
+  &:focus {
+    border-color: $text-input--inverse--border-color--focus !important;
+    box-shadow: $text-input--inverse--bs--focus !important;
+  }
+
+  &[readonly],
+  &[readonly]:focus {
+    color: $text-input--inverse--color !important;
+    border: $text-input--inverse--border !important;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="inverse_example">
+      Input Label
+    </label>
+    <input type="text" class="input--inverse" id="inverse_example" />
+  </div>
+
+*/

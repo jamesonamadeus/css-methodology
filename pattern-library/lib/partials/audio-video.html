@@ -1,0 +1,148 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Native Audio</h1>
+      <p>Examples of the native audio element</p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Audio with basic src and child track elements.
+    </div>
+    <audio src="lib/media/find-item2.wav" controls>
+      Your browser does not support the <code>audio</code> element.
+      <track kind="captions" src="captions.en.vtt" srclang="en" label="English">
+      <track kind="captions" src="captions.de.vtt" srclang="de" label="Dutch">
+    </audio>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Audio with child source element.
+    </div>
+    <audio controls>
+      Your browser does not support the <code>audio</code> element.
+      <source src="lib/media/find-item3.wav" type="audio/wav">
+    </audio>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Native Video</h1>
+      <p>Examples of the native video element</p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <video width="640" height="360" controls="">
+      <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+      <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+      <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+      <img src="#!"
+           alt=""
+           title="Your browser does not support video playback. Please download the video.">
+    </video>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Responsive Video Container</h1>
+      <p>Default 16:9 Aspect Ratio</p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      iFrame Video Source
+    </div>
+    <div class="responsive-video-container">
+      <iframe src="https://www.youtube.com/embed/tKXdQpwX9-c?rel=0&amp;controls=0&amp;showinfo=0"
+              class="responsive-video-container__media"
+              frameborder="0"
+              allowfullscreen
+              title="Title of the video / other helpful text"></iframe>
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Native Video Source
+    </div>
+    <div class="responsive-video-container">
+      <video controls class="responsive-video-container__media">
+        <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+        <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+        <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+        <img src="#!"
+             alt=""
+             title="Your browser does not support video playback. Please download the video.">
+      </video>
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Figure Containing Responsive Video Container</h1>
+      <p>Default 16:9 Aspect Ratio</p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Without Caption
+    </div>
+
+    <figure>
+      <div class="responsive-video-container">
+        <iframe src="https://www.youtube.com/embed/tKXdQpwX9-c?rel=0&amp;controls=0&amp;showinfo=0"
+                class="responsive-video-container__media"
+                frameborder="0"
+                allowfullscreen
+                title="Title of the video / other helpful text"></iframe>
+      </div>
+    </figure>
+
+    <div class="cs-pattern-intro">
+      With Caption
+    </div>
+
+    <figure>
+      <div class="responsive-video-container">
+        <iframe src="https://www.youtube.com/embed/tKXdQpwX9-c?rel=0&amp;controls=0&amp;showinfo=0"
+                class="responsive-video-container__media"
+                frameborder="0"
+                allowfullscreen
+                title="Title of the video / other helpful text"></iframe>
+      </div>
+      <figcaption>
+        Caption describing video / potentially linking to or revealing transcript, goes here.
+      </figcaption>
+    </figure>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

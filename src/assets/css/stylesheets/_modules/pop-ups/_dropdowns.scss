@@ -1,0 +1,191 @@
+/** --------------------------------------------------------------------
+
+  Drop Down Component
+
+--------------------------------------------------------------------- */
+
+// dd global
+$dd-global--border:                 1px solid $c-light-grey !default;
+
+// trigger & links specific
+$dd-trigger--padding:               8px 20px 8px 20px !default;
+$dd__links--decoration:             none !default;
+  // States
+  $dd-links--alt-bg:                $c-grey !default;
+  $dd-links--alt-color:             $c-white !default;
+
+
+// content 'menu' area specific
+$dd-content-area--bg:               $c-white !default;
+$dd-content-area--min-width:        144px !default;
+
+// ---------------------------------------------------------------------
+
+// if there's no JavaScript available, this will let users
+// access the links within the drop down.
+.no-js {
+
+  .dd-area__content {
+    display: none;
+
+    &:target {
+      display: block;
+    }
+  }
+}
+
+.dd-area {
+  position: relative;
+  white-space: nowrap;
+
+  li {
+    margin: 0;
+  }
+
+  // all links should be block level elements
+  // to make sure highlights / touch & click areas are maximized
+  a {
+    display: block;
+    text-decoration: $dd__links--decoration;
+  }
+
+  // but just the trigger should have these additional styles
+  &__trigger {
+    border: $dd-global--border;
+    padding: $dd-trigger--padding;
+    position: relative;
+    z-index: 6;
+
+    &[aria-expanded="true"],
+    &.is-expanded,
+    &:focus,
+    &:active {
+      background: $dd-links--alt-bg;
+      color: $dd-links--alt-color;
+    }
+
+    &[aria-expanded="true"]:hover,
+    &[aria-expanded="true"]:focus {
+      background: darken($dd-links--alt-bg, 10%);
+    }
+
+    &:after {
+      background: url('../icons/icon-arrow-down.svg') no-repeat center center;
+      background-size: 100% auto;
+      content: '';
+      height: 14px;
+      pointer-events: none; // *
+      position: absolute;
+      right: 8px;
+      speak: none;
+      top: 40%;
+      width: 14px;
+    }
+  }
+
+  // the drop down menu/content goes here
+  &__content {
+    background: $dd-content-area--bg;
+    border: $dd-global--border;
+    margin: 0;
+    left: 0;
+    min-width: $dd-content-area--min-width;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: opacity ease-in-out .2s,
+                transform ease-in-out .2s;
+    z-index: 5;
+
+    &[aria-expanded="true"] {
+      opacity: 1;
+      transform: translateY(0px);
+      visibility: visible;
+    }
+
+    // links within a drop down should not be accessible unless the drop
+    // down is open. So visibility hidden will hide the drop down
+    // contents from keyboard & screen reader focus until
+    // the user actively opens the drop down.
+    &[aria-expanded="false"] {
+      opacity: 0;
+      transform: translateY(-20px);
+      visibility: hidden;
+    }
+
+    &__title {
+      margin: 0;
+      padding: 12px 12px 4px;
+    }
+
+    // links inside the drop down menu should have these styles
+    a {
+      border-bottom: $dd-global--border;
+      margin-bottom: 0;
+      padding: 12px;
+      position: relative;
+
+      &:hover,
+      &:focus {
+        background: $dd-links--alt-bg;
+        color: $dd-links--alt-color;
+      }
+    }
+  }
+}
+
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="list-clean dd-area js-dropdown">
+    <a class="dd-area__trigger" href="#!">
+      Trigger Label
+    </a>
+
+    <div class="dd-area__content js-dropdown__reveal">
+      <ul class="list-clean">
+        <li class="dd-area__content__title">
+          <h2 class="txt-up-1">
+            Title if required
+            <!--
+              use the appropriate <h#> element here.
+              This example is from the header of a doucment,
+              so a <h2> is used as it's the next element
+              expected in the heading DOM order.
+
+              It may be applicable to use a <p> here instead.
+            -->
+          </h2>
+        </li>
+        <li>
+          <a href="#!">Settings</a>
+        </li>
+        <li>
+          <a href="#!">Log Out</a>
+        </li>
+      </ul>
+
+      <!--
+        This example shows you can have two lists within a drop down.
+        (actually any sort of content could be placed within a
+         drop down. But be mindful of the amount of content you
+         place here, as a drop down should be used for short form
+         navigations and content. If a large amount of content is
+         required, it may make sense to use an inline modal, or
+         overlay modal instead)
+      -->
+      <ul class="list-clean">
+        <li class="dd-area__content__title">
+          <h2 class="txt-up-1">Other Applications</h2>
+        </li>
+        <li><a href="#!">Other option 1</a></li>
+        <li><a href="#!">Other option 2</a></li>
+      </ul>
+    </div>
+  </div>
+
+*/

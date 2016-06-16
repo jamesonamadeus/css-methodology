@@ -1,0 +1,111 @@
+/** --------------------------------------------------------------------
+
+  Pixel to REM Font Size
+
+--------------------------------------------------------------------- */
+
+@mixin font-size ( $size: 16, $parentSize: 16 ) {
+  font-size: $size + 0px;
+  font-size: 0rem + $size/$parentSize;
+}
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  @include font-size ( 24 );
+
+*/
+
+
+
+/** --------------------------------------------------------------------
+
+  Text Selection Styling
+
+  Include this into elements to have text selection
+  colors be specific to region
+
+--------------------------------------------------------------------- */
+
+@mixin select-text( $select-bg, $txt-color, $txt-shadow ) {
+  ::-moz-selection {
+    background:   $select-bg;
+    color:        $txt-color;
+    text-shadow:  $txt-shadow;
+  }
+
+  ::selection {
+    background:   $select-bg;
+    color:        $txt-color;
+    text-shadow:  $txt-shadow;
+  }
+}
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  @include select-text( #000, #fff, none );
+
+*/
+
+
+
+/** --------------------------------------------------------------------
+
+  Declaring Fonts w/ Font-Face
+
+--------------------------------------------------------------------- */
+
+@mixin font-face ( $family, $file-path, $weight: normal, $style: normal ) {
+  @font-face {
+    font-family: $family;
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$file-path}.woff') format('woff'),
+           url('#{$file-path}.ttf') format('truetype'),
+           url('#{$file-path}.svg##{$family}') format('svg');
+     font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  @include font-face( Open Sans, assets/fonts/file-name );
+
+*/
+
+
+
+/** --------------------------------------------------------------------
+
+  Text Truncation
+
+  All the rules needed for the text truncate, with the variable
+  setting the max width of a text-truncating element
+
+--------------------------------------------------------------------- */
+
+@mixin truncate-text( $truncation-boundary ) {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: $truncation-boundary;
+}
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  @include truncate-text(100%);
+
+*/

@@ -1,0 +1,57 @@
+/** --------------------------------------------------------------------
+
+  Primary (Brand) Call To Action Button Knockout Buttons
+
+--------------------------------------------------------------------- */
+
+$btn--primary--ko--bg:                   transparent !default;
+$btn--primary--ko--color:                $btn--primary--bg !default;
+$btn--primary--ko--border:               1px solid $btn--primary--bg !default;
+$btn--primary--ko--bs:                   inset 0 0 0 1px $btn--primary--alt-bg !default;
+
+// states
+$btn--primary--ko--alt-bg:               transparent !default;
+$btn--primary--ko--alt-bs:               inset 0 0 0 2px rgba($btn--primary--ko--color, 0) !default;
+$btn--primary--ko--alt-bs--active:       inset 0 0 0 2px rgba($btn--primary--ko--color, 1) !default;
+$btn--primary--ko--alt-color:            $btn--primary--ko--color !default;
+
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--primary-knockout {
+  background-color: $btn--primary--ko--bg;
+  border: $btn--primary--ko--border;
+  box-shadow: $btn--primary--ko--bs;
+  color: $btn--primary--ko--color;
+
+  &:focus,
+  &:hover {
+    background-color: $btn--primary--ko--alt-bg;
+    border-color: $btn--primary--ko--color;
+    box-shadow: $btn--primary--ko--alt-bs;
+    color: $btn--primary--ko--alt-color;
+  }
+
+  &:active,
+  &.is-active {
+    background: $btn--primary--ko--alt-bg;
+    box-shadow: $btn--primary--ko--alt-bs--active;
+    color: $btn--primary--ko--alt-color;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--primary-knockout">
+    Text
+  </button>
+
+  <a href="#!" class="btn btn--secondary-knockout">
+    Text
+  </a>
+
+*/

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Modal Dialogs
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+  </head>
+  <body id="body">
+
+    <div id="page" class="content-area mxw-600">
+
+      <div class="content-area">
+        <h1 class="txt-up-4">
+          Example Title
+        </h1>
+
+        <p>
+          Example paragraph goes here.
+          <a data-action="modal-open"
+             data-modal-open="small_modal"
+             data-set-modal-title="Test Title"
+             href="#small_modal">
+            Open Small Modal
+          </a>
+        </p>
+
+        <div id="small_modal" class="a11y-modal no-js-hide-modal">
+
+          <div class="modal modal--sm">
+
+            <div class="modal__intro">
+              <h3 id="small_modal_title"
+                  data-modal-title
+                  class="modal__intro__title">
+                Small Modal Window
+              </h3>
+              <p>
+                intro text <a href="#!">test</a>
+              </p>
+            </div>
+
+            <div class="modal__content">
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+              <p>
+                Content goes here that talks about a thing that you couldn't do
+                in the normal DOM flow for some reason. <a href="#!">test</a>
+              </p>
+            </div>
+
+
+            <!-- Outro content here -->
+            <div class="modal__outro txt-center">
+              <p>Outro message</p>
+              <a data-modal-close
+                 class="modal__outro__close"
+                 href="#x">
+                <span aria-hidden="true">⨉</span>
+              </a>
+            </div>
+
+          </div> <!-- end .modal -->
+        </div>
+
+        <div class="form-row">
+          <label for="ex_txt">
+            Example Text Input
+          </label>
+          <input type="text" id="ex_txt" />
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 class="txt-up-4">
+        Example of a normal sized modal
+      </h2>
+      <p>
+        But first a big block of lipsum text to push the modal and button down the page.
+      </p>
+      <blockquote class="content-area">
+        <p>
+          "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+        </p>
+        <footer class="txt-right">
+          <cite>
+            <a href="http://lipsum.com/" target="_blank">
+              lipsum.com
+            </a>
+          </cite>
+        </footer>
+      </blockquote>
+
+      <button type="button"
+        class="btn--sm btn--primary"
+         data-modal-alert="true"
+         data-action="modal-open"
+         aria-controls="normal_modal"
+         data-set-modal-title="Test Title">
+        Launch Modal
+      </button>
+
+
+      <div id="normal_modal"
+           class="a11y-modal no-js-hide-modal"
+           data-modal-alert="true"
+           data-modal-stay="true">
+
+        <div class="modal">
+
+          <div class="modal__intro">
+            <h3 id="normal_modal"
+                data-modal-title
+                class="modal__intro__title">
+              Normal Modal Window
+            </h3>
+            <p>
+              intro text
+            </p>
+          </div>
+
+
+          <!-- main modal content here -->
+          <div class="modal__content">
+            <p>
+              Content goes here that talks about a thing that you couldn't do
+              in the normal DOM flow for some reason.
+            </p>
+          </div>
+
+
+          <!-- Outro content here -->
+          <div class="modal__outro txt-center">
+            <p>Outro message</p>
+            <a data-modal-close
+               class="modal__outro__close"
+               href="#x">
+              <span aria-hidden="true">⨉</span>
+            </a>
+          </div>
+
+        </div> <!-- end .modal -->
+      </div>
+
+
+    </div> <!-- /.page -->
+
+    <div class="content-area mxw-600">
+      <p>additional test area</p>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor/a11y.new.modal.js"></script>
+
+  </body>
+</html>

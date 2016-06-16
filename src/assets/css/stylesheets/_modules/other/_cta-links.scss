@@ -1,0 +1,82 @@
+/** --------------------------------------------------------------------
+
+  Call To Action Links
+
+  Alternate link color from unstyled/primary links.
+
+  Useful as a class to give extra visual importance to a
+  particular link(s).
+
+--------------------------------------------------------------------- */
+
+$link--cta--pad:                    20px !default;
+$link--cta--text-decoration:        none !default;
+
+$link--cta__icon--bg-img:           url('../icons/icon-arrow-right--link.svg') !default;
+$link--cta__icon--bg-position:      center center !default;
+$link--cta__icon--bg-size:          auto 100% !default;
+$link--cta__icon--content:          '' !default;
+$link--cta__icon--height:           12px !default;
+$link--cta__icon--marign-left:      $base-unit !default;
+$link--cta__icon--width:            12px !default;
+
+$link--cta__icon--has-transition:   true !default;
+$link--cta__icon--transform--init:  translateX(0px) !default;
+$link--cta__icon--transform--end:   translateX(-2px) !default;
+
+// ---------------------------------------------------------------------
+
+.link--cta {
+  display: inline-block;
+  overflow: hidden; // *
+  padding-right: $link--cta--pad; // allow space for cta icon
+  position: relative;
+  text-decoration: $link--cta--text-decoration;
+
+  // * without overflow: hidden, links that have visually hidden, off screen, text
+  //   create large active areas which look really bad.  Setting overflow hidden
+  //   restricts the active, outlined, style back to just the visible link text.
+
+  &:after {
+    background-image: $link--cta__icon--bg-img;
+    background-repeat: no-repeat;
+    background-position: $link--cta__icon--bg-position;
+    background-size: $link--cta__icon--bg-size;
+    content: $link--cta__icon--content;
+    display: inline-block;
+    height: $link--cta__icon--height;
+    margin-left: $link--cta__icon--marign-left;
+    speak: none;
+    width: $link--cta__icon--width;
+
+    @if $link--cta__icon--has-transition == true {
+      transform: $link--cta__icon--transform--init;
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+
+    &:after {
+      text-decoration: none;
+
+      @if $link--cta__icon--has-transition == true {
+        transform: $link--cta__icon--transform--end;
+      }
+    }
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="#link" class="link--cta">
+    Call To Action link style
+  </a>
+
+*/

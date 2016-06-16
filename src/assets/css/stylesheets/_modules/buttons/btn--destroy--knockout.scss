@@ -1,0 +1,54 @@
+/** --------------------------------------------------------------------
+
+  Destroy Knockout Buttons
+
+  @requires: btn--destroy variables
+
+--------------------------------------------------------------------- */
+
+$btn--destroy--ko--bg:              transparent !default;
+$btn--destroy--ko--alt-bg:          $btn--destroy--ko--bg !default;
+$btn--destroy--ko--color:           $btn--destroy--bg !default;
+$btn--destroy--ko--border-color:    $btn--destroy--bg !default;
+$btn--destroy--ko--bs:              inset 0 0 0 1px $btn--destroy--alt-bg !default;
+
+// states
+$btn--destroy--ko--alt-bg:          transparent !default;
+$btn--destroy--ko--alt-bs:          inset 0 0 0 2px rgba($btn--destroy--ko--color, 0) !default;
+$btn--destroy--ko--alt-bs--active:  inset 0 0 0 2px rgba($btn--destroy--ko--color, 1) !default;
+$btn--destroy--ko--alt-color:       $btn--destroy--ko--color !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--destroy-knockout {
+  background-color: $btn--destroy--ko--bg;
+  border-color: $btn--destroy--ko--border-color;
+  box-shadow: $btn--destroy--ko--bs;
+  color: $btn--destroy--ko--color;
+
+  &:focus,
+  &:hover {
+    background-color: $btn--destroy--ko--alt-bg;
+    border-color: $btn--destroy--ko--color;
+    box-shadow: $btn--destroy--ko--alt-bs;
+    color: $btn--destroy--ko--alt-color;
+  }
+
+  &:active {
+    background: $btn--destroy--ko--alt-bg;
+    box-shadow: $btn--destroy--ko--alt-bs--active;
+    color: $btn--destroy--ko--alt-color;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--destroy-knockout">
+    ...
+  </button>
+
+*/

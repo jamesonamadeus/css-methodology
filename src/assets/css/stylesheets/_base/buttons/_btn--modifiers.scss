@@ -1,0 +1,83 @@
+/** --------------------------------------------------------------------
+
+  Button Sizing Modifiers
+
+--------------------------------------------------------------------- */
+
+$btn--small--font-size:               80% !default;
+$btn--small--padding:                 .8em ($btn--pad-lr / 2) !default;
+
+$btn--large--font-size:               110% !default;
+$btn--large--padding:                 $btn--pad-lr * 1.75 !default;
+
+$btn--min--min-width:                 200px !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--sm {
+  font-size: $btn--small--font-size !important;
+  padding: $btn--small--padding;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--sm">
+    Text label
+  </button>
+
+*/
+
+
+
+.#{$ns}btn--lg {
+  font-size: $btn--large--font-size !important;
+  padding-left: $btn--large--padding;
+  padding-right: $btn--large--padding;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--lg">
+    Text label
+  </button>
+
+*/
+
+
+.#{$ns}btn--wide {
+  display: block;
+  width: 100%;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--wide">
+    Text label
+  </button>
+
+*/
+
+
+.#{$ns}btn--min-width {
+  min-width: $btn--min--min-width;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--min-width">
+    Text label
+  </button>
+
+*/

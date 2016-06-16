@@ -1,0 +1,49 @@
+/** --------------------------------------------------------------------
+
+  Stylize Scrollbars
+
+  Style scroll bars for Webkit and Internet Explorer
+
+  If scroll bars are styled, they don't fade away when not in
+  use, like they do in OSX. So only use this is you want scroll bars
+  to be permanently visible.
+
+  NOTE: updating scroll bars works best on a site/application wide
+  declaration. Trying to style individual overflow components will
+  have mixed to no results depending on the browser.
+
+--------------------------------------------------------------------- */
+
+@mixin scrollbar($size, $c-main, $c-secondary: lighten($c-main, 25%)) {
+  ::-webkit-scrollbar {
+    height: $size;
+    width: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $c-main;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $c-secondary;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $c-main;
+    scrollbar-track-color: $c-secondary;
+  }
+}
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  // no need to be included in a selector
+  // just include the @include anywhere in a .scss file
+
+  @include scrollbar( 6px, rgba(0,0,0,.2), rgba(150,150,150,.5) );
+
+*/

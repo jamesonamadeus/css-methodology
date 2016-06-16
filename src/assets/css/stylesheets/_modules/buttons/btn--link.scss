@@ -1,0 +1,65 @@
+/** --------------------------------------------------------------------
+
+  Link Buttons
+
+  There may be times when a button is the semantically appropriate element
+  for the UI, but it has been styled to not look like a button, but
+  more resembles a link.
+
+  In this case, the btn--link class will remove all normal button styling
+  and reapply styling to resemble all typical link states.
+
+--------------------------------------------------------------------- */
+
+$btn--link--color:                  $link--color !default;
+
+$btn--link--alt-color:              $link--color--alt !default;
+$btn--link--alt-outline:            1px dotted $c-light-grey !default;
+$btn--link--alt-outline-offset:     $base-unit !default;
+
+// ---------------------------------------------------------------------
+
+// make sure all typical button styling is removed
+.#{$ns}btn--link,
+.#{$ns}btn--link:hover,
+.#{$ns}btn--link:focus,
+.#{$ns}btn--link:active,
+.#{$ns}btn--link.is-active {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  color: $btn--link--color !important;
+  padding: 0 !important;
+  text-shadow: none;
+  text-transform: none;
+  text-decoration: underline !important;
+}
+
+// links just get a color change on hover
+.#{$ns}btn--link:hover {
+  color: $btn--link--alt-color !important;
+}
+
+// on focus and active states, color, outline
+// and text decoration change
+.#{$ns}btn--link:focus,
+.#{$ns}btn--link:active,
+.#{$ns}btn--link.is-active {
+  color: $btn--link--alt-color !important;
+  outline: $btn--link--alt-outline;
+  outline-offset: $btn--link--alt-outline-offset;
+  text-decoration: none !important;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--link">
+    Text
+  </button>
+
+*/

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Inputs with descriptions
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+    <style>
+      .page {
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="page">
+
+      <header role="banner" class="content-area content-area--divider-bottom mxw-600">
+        <h1 class="txt-up-5">
+          Inputs with Messages
+        </h1>
+
+        <p>
+          Error, warning and instructional messages.
+          These are only examples and there is no true form validation.
+        </p>
+      </header>
+
+      <div class="content-area mxw-600">
+
+        <h2 class="txt-up-3">
+          Input with error message within label</small>
+        </h2>
+
+        <div class="form-row">
+          <label for="unique_ID_has_error1" class="display-block">
+            Name
+
+            <input type="text"
+                   id="unique_ID_has_error1"
+                   name="unique_ID_has_error1"
+                   class="border-color-error" />
+
+            <span class="input-message color-error" id="unique_error_id">
+              You did not enter a name in our database
+            </span>
+          </label>
+        </div>
+
+        <hr />
+
+        <h2 class="txt-up-3">
+          Input with aria-describedby error message
+        </h2>
+
+        <div class="form-row">
+          <label for="unique_ID_has_error2">
+            Email:
+          </label>
+          <input type="email"
+                 id="unique_ID_has_error2"
+                 name="unique_ID_has_error2"
+                 class="border-color-error"
+                 aria-describedby="unique_error_id" />
+
+          <p class="input-message color-error" id="unique_error_id">
+            The email address you entered is already in our database.
+          </p>
+        </div>
+
+
+        <hr />
+
+        <h2 class="txt-up-3">
+          Input with instructional tooltip
+        </h2>
+
+        <div class="form-row">
+          <label for="txt_required" class="is-required">
+            Password
+            <span class="sr-only">
+              required
+            </span>
+          </label>
+          <input type="password"
+                 name="txt_required"
+                 id="txt_required"
+                 class="input--has-tooltip"
+                 aria-required="true"
+                 aria-describedby="input_help_area" />
+
+          <p id="input_help_area" role="tooltip">
+            Passwords should consist of a bunch of characters you'll never remember.
+          </p>
+        </div>
+
+      </div> <!-- /.content-area -->
+
+    </div> <!-- /.page -->
+
+  </body>
+</html>

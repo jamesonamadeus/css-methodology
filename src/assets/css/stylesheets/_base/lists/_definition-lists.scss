@@ -1,0 +1,59 @@
+/** --------------------------------------------------------------------
+
+  Definition List Selectors
+
+--------------------------------------------------------------------- */
+
+$dl__dt--margin:                    $base-margin 0 0 !default;
+$dl__dd--margin:                    $base-margin / 2 !default;
+
+//------------------------------------------------------------------------
+
+dl {
+  @extend %list-elements-margin;
+
+  &.list-clean {
+
+    dd {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+dt {
+  @extend .#{$ns}txt-bold; // bold titles by default
+  margin: $dl__dt--margin;
+}
+
+dd {
+  @extend %list-elements-margin;
+  margin-bottom: 0;
+  margin-top: $dl__dd--margin;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <dl>
+    <dt>
+      Term
+    </dt>
+    <dd>
+      Explination of term
+    </dd>
+  </dl>
+
+
+  <dl class="list-clean">
+    <dt>
+      Term
+    </dt>
+    <dd>
+      Explination of term
+    </dd>
+  </dl>
+
+*/

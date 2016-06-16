@@ -1,0 +1,55 @@
+/** --------------------------------------------------------------------
+
+  Abbr Element
+
+  enclose any text that is abbreviated in <abbr> with a title
+  attribute that displays the full text of the abbreviation.
+
+  The title attribute only needs to appear on the first instance
+  of an abbreviation within a single markup file.
+
+--------------------------------------------------------------------- */
+
+// declare vars here
+
+// ---------------------------------------------------------------------
+
+abbr[title] {
+  @extend %help;
+}
+
+// remove double underlines and reset
+// cursor to that of a clickable element
+// when an abbr is used inside an <a>
+a > abbr[title] {
+  border-bottom: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    ...
+    <abbr title="Thank goodness it's Friday">
+     TGIF
+    </abbr>
+  </p>
+
+
+  <p>
+    ...
+    <!--
+      tgif abbr already declared once
+      before, so no need for title attr
+    -->
+    <abbr>
+     TGIF
+    </abbr>
+  </p>
+
+*/

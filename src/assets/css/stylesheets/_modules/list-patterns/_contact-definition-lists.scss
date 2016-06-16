@@ -1,0 +1,61 @@
+/** --------------------------------------------------------------------
+
+  Definition Lists Styled for Contact Information
+
+--------------------------------------------------------------------- */
+
+$contact-dl__item--font-size:               14 !default;
+$contact-dl__item--line-height:             1.4 !default;
+$contact-dl__item--margin:                  0 0 6px !default;
+
+$contact-dl__sibling-title--margin-top:     40px !default;
+
+// ---------------------------------------------------------------------
+
+.dl-contacts {
+
+  dd {
+    margin: 0;
+
+    li {
+      @include font-size($contact-dl__item--font-size);
+      line-height: $contact-dl__item--line-height;
+      margin: $contact-dl__item--margin;
+    }
+
+    + dt {
+      margin-top: $contact-dl__sibling-title--margin-top;
+    }
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <dl class="list-clean dl-contacts">
+    <dt>
+      Western Europe Office
+    </dt>
+    <dd>
+      <ul class="list-clean">
+        <li>
+          Fidelis Cybersecurity GmbH<br>
+          Friedrichstrasse 88<br>
+          10117 Berlin
+        </li>
+        <li>
+          <b class="txt-uppercase txt-down-1">Main:</b>
+          <a href="#">+44 (0) 203 021 2500</a>
+        </li>
+        <li>
+          <b class="txt-uppercase txt-down-1">Fax:</b>
+          <a href="#">+49.30.408 173 - 450</a>
+        </li>
+      </ul>
+    </dd>
+  </dl>
+
+*/

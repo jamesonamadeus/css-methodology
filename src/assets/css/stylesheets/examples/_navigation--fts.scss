@@ -1,0 +1,157 @@
+/** --------------------------------------------------------------------
+
+  Site Navigation
+
+--------------------------------------------------------------------- */
+
+$nav-container--display:                    block !default;
+
+//------------------------------------------------------------------------
+
+// Set up pseudo content hooks for the JS
+@media screen and (max-width: $bp-wide) {
+
+  body:before {
+    @include move-off-screen;
+    content: "widescreen";
+    speak: none;
+  }
+}
+
+@media screen and (max-width: $bp-large) {
+
+  body:before {
+    content: "largescreen";
+  }
+
+}
+
+@media screen and (max-width: $bp-medium) {
+
+  body:before {
+    content: "mediumscreen";
+  }
+
+}
+
+
+
+// <nav>
+.page__main-nav {
+  display: none;
+
+  @media screen and (min-width: $bp-medium) {
+    display: $nav-container--display;
+  }
+
+  &[aria-expanded="true"] {
+    display: block;
+  }
+}
+
+// <ul>
+.nav-menu {
+  background: $c-off-white;
+  text-align: center;
+
+  // <li>
+  &__item {
+    border-top: 1px solid $c-grey;
+    overflow: hidden;
+    padding: 12px 0;
+    text-align: left;
+
+    @media screen and (min-width: $bp-medium) {
+      border-top: 0;
+      display: inline-block;
+      overflow: visible;
+      padding: 0;
+      position: relative;
+    }
+
+    &:hover,
+    &:focus,
+    &.child-has-focus {
+
+      > a {
+        text-decoration: none;
+
+        @media screen and (min-width: $bp-medium) {
+          background: $c-blue;
+          color: $c-white;
+        }
+      }
+
+      .sub-menu,
+      .children {
+        left: auto;
+        margin-right: -1px;
+        right: 0;
+        top: 100%;
+
+        a {
+          color: $c-blue;
+
+          &:hover,
+          &:focus {
+            color: $c-dark-blue;
+          }
+        }
+
+      }
+    }
+
+    a {
+      border-bottom: 0;
+      display: inline-block;
+      padding: 0 10px;
+      transition: background linear .15s;
+
+      @media screen and (min-width: $bp-medium) {
+        padding: 20px 16px;
+      }
+    }
+  }
+}
+
+// <li> > <ul>
+.sub-menu {
+  clear: both;
+
+  @media screen and (min-width: $bp-medium) {
+    @include move-off-screen;
+    background: $c-white;
+    border: 1px solid $c-grey;
+    margin-top: 0;
+    width: 200px;
+  }
+
+  // <li> > <ul> > <li>
+  .nav-menu__item {
+    display: block;
+
+    a {
+      display: block;
+      border-bottom: 1px solid $c-grey;
+      padding: 10px 15px;
+
+      @media screen and (min-width: $bp-medium) {
+        background: none;
+        padding: 8px 16px;
+      }
+
+      &:hover,
+      &:focus {
+        background: $c-off-white;
+      }
+    }
+
+    &:last-child a {
+      border-bottom: none;
+    }
+  }
+
+  &[aria-expanded="false"] {
+    display: none;
+  }
+}

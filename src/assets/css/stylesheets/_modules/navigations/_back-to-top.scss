@@ -1,0 +1,91 @@
+/** --------------------------------------------------------------------
+
+  Back to Top Link (button)
+
+--------------------------------------------------------------------- */
+
+$btt--background:                   $c-blue !default;
+  $btt--background--alt:            darken($btt--background, 10%) !default;
+$btt--border-radius:                4px 4px 0 0 !default;
+$btt--padding:                      30px !default;
+$btt--position:                     fixed !default;
+$btt--position--right:              1px !default;
+$btt--position--bottom:             0 !default;
+
+$btt__icon--background:             url('../icons/icon-arrow-up--white.svg') no-repeat center center !default;
+$btt__icon--height:                 16px !default;
+$btt__icon--width:                  25px !default;
+
+//------------------------------------------------------------------------
+
+.link--back-to-top {
+  background: $btt--background;
+  border-radius: $btt--border-radius;
+  bottom: $btt--position--bottom;
+  opacity: 0;
+  overflow: hidden;
+  padding: $btt--padding;
+  position: $btt--position;
+  right: $btt--position--right;
+  transform: translateY(100px);
+  transition: transform .2s ease-in-out;
+
+  &:after {
+    background: $btt__icon--background;
+    bottom: 0;
+    content: '';
+    height: $btt__icon--height;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    speak: none;
+    top: 0;
+    transform: translateY(0px);
+    transition: transform .2s ease-in-out;
+    width: $btt__icon--width;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $btt--background--alt;
+  }
+
+  &:active:after {
+    transform: translateY(2px);
+  }
+}
+
+// class that can be added to the HTML (default in JS)
+// or any top level page container that will ensure that
+// the back to top button is only visible when
+// a user has traversed down the document.
+.show-back-to-top {
+
+  .link--back-to-top {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform .2s ease-in-out;
+  }
+}
+
+// and if there's no JS, then let's just always show it
+// at the very bottom of the site.
+.no-js .link--back-to-top {
+  opacity: 1;
+  position: absolute;
+  transform: none;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="#!" class="js-back-to-top link--back-to-top">
+    <span class="sr-only">
+      Back to top of the page
+    </span>
+  </a>
+
+*/

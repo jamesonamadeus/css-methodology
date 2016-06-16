@@ -1,0 +1,77 @@
+/** --------------------------------------------------------------------
+
+  Clears
+
+--------------------------------------------------------------------- */
+
+.#{$ns}clear-both {
+  clear: both;
+}
+
+
+// only use this to clear if there's no possibility of
+// needing content to be positioned outside of the
+// content area of the floats. e.g. no drop downs.
+.#{$ns}overflow-clear {
+  overflow: hidden;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="float-left">
+    Content floated left...
+  </div>
+  <div class="clear-both">
+    This content won't be caught up in a float.
+  </div>
+
+
+  <div class="overflow-clear">
+    Any content that's floated within this container
+    will not spill out / cause this container to
+    collapse in on itself.
+
+    However, no content can be positioned outside of this
+    container without becoming invisible, due to
+    the overflow being hidden.
+  </div>
+
+*/
+
+
+/** --------------------------------------------------------------------
+
+  Clearfix
+
+  For IE8+ & modern browsers
+  http://css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+
+  :after display block:
+  http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+
+--------------------------------------------------------------------- */
+
+.#{$ns}clearfix {
+
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="clearfix">
+    Any content that's floated within this container
+    will not spill out / cause this container to
+    collapse in on itself.
+  </div>
+
+*/

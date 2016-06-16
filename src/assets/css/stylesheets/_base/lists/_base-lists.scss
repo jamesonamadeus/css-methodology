@@ -1,0 +1,76 @@
+/** --------------------------------------------------------------------
+
+  List Elements
+
+--------------------------------------------------------------------- */
+
+$list--margin:                          $base-margin 0 0 !default;
+$list--base-spacing:                    1em !default;
+$list__item--margin:                    $base-margin 0 0 !default;
+
+//------------------------------------------------------------------------
+
+// Normalize margins on list elements
+%list-elements-margin {
+  margin: $list--margin;
+  padding-left: $list--base-spacing;
+}
+
+// ---------------------------------------------------------------------
+
+// Unordered lists
+ul {
+  @extend %list-elements-margin;
+}
+
+
+// Ordered Lists
+ol {
+  @extend %list-elements-margin;
+
+  ol {
+    list-style-type: lower-alpha;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+
+// List Item
+li {
+  line-height: inherit;
+  margin: $list__item--margin;
+
+  ol:first-of-type,
+  ul:first-of-type {
+    margin-top: $list--base-spacing;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <ul>
+    <li>
+      ...
+    </li>
+    <li>
+      ...
+    </li>
+  </ul>
+
+  <ol>
+    <li>
+      ...
+    </li>
+    <li>
+      ...
+    </li>
+  </ol>
+
+*/

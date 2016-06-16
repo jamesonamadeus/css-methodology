@@ -1,0 +1,55 @@
+/** --------------------------------------------------------------------
+
+  Secondary Knockout Buttons
+
+  @requires btn--secondary variables
+
+--------------------------------------------------------------------- */
+
+$btn--secondary--ko--bg:                transparent !default;
+$btn--secondary--ko--alt-bg:            $btn--secondary--ko--bg !default;
+$btn--secondary--ko--color:             $btn--secondary--bg !default;
+$btn--secondary--ko--border-color:      $btn--secondary--bg !default;
+$btn--secondary--ko--bs:                inset 0 0 0 1px $btn--secondary--alt-bg !default;
+
+// states
+$btn--secondary--ko--alt-bg:            transparent !default;
+$btn--secondary--ko--alt-bs:            inset 0 0 0 2px rgba($btn--secondary--ko--color, 0) !default;
+$btn--secondary--ko--alt-bs--active:    inset 0 0 0 2px rgba($btn--secondary--ko--color, 1) !default;
+$btn--secondary--ko--alt-color:         $btn--secondary--ko--color !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--secondary-knockout {
+  background-color: $btn--secondary--ko--bg;
+  border-color: $btn--secondary--ko--border-color;
+  box-shadow: $btn--secondary--ko--bs;
+  color: $btn--secondary--ko--color;
+
+  &:focus,
+  &:hover {
+    background-color: $btn--secondary--ko--alt-bg;
+    border-color: $btn--secondary--ko--border-color;
+    box-shadow: $btn--secondary--ko--alt-bs;
+    color: $btn--secondary--ko--alt-color;
+  }
+
+  &:active,
+  &.is-active {
+    background: $btn--secondary--ko--alt-bg;
+    box-shadow: $btn--secondary--ko--alt-bs--active;
+    color: $btn--secondary--ko--alt-color;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--secondary-knockout">
+    ...
+  </button>
+
+*/

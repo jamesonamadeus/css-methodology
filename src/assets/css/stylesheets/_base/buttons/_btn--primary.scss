@@ -1,0 +1,54 @@
+/** --------------------------------------------------------------------
+
+  Primary (Brand) Call To Action Button
+
+--------------------------------------------------------------------- */
+
+$btn--primary--bg:                   $c-blue !default;
+$btn--primary--border:               1px solid $c-blue !default;
+$btn--primary--bs:                   0px 2px 0px 0px $c-dark-blue !default;
+$btn--primary--color:                $c-off-white !default;
+
+  // hover & focus states
+  $btn--primary--alt-bg:             $c-dark-blue !default;
+  $btn--primary--alt-color:          $c-white !default;
+  // active state
+  $btn--primary--active-bg:          darken($btn--primary--alt-bg, 10%) !default;
+  $btn--primary--active-color:       $btn--primary--color !default;
+  $btn--primary--active-bs:          0px 0px 0px 0px rgba($c-dark-blue, 0) !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--primary {
+  background: $btn--primary--bg;
+  border: $btn--primary--border;
+  color: $btn--primary--color;
+
+  @if $btn--bs != none {
+    box-shadow: $btn--primary--bs;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $btn--primary--alt-bg;
+    color: $btn--primary--alt-color;
+  }
+
+  &:active,
+  &[aria-pressed="true"] {
+    background-color: $btn--primary--active-bg;
+    color: $btn--primary--active-color;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--primary">
+    Text
+  </button>
+
+*/

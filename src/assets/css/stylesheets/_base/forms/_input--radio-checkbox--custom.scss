@@ -1,0 +1,232 @@
+/** --------------------------------------------------------------------
+
+  Stylized Check Box / Radio Button Elements
+
+  We can't actually style a native check box or radio element,
+  so instead we hide them so we can style a <label> or <span>
+  in their place.
+
+--------------------------------------------------------------------- */
+
+$custom-cb__icon--border:         1px solid #979797 !default;
+
+// styling icon
+$custom-cb__icon--bg:             $c-white !default;
+$custom-cb__icon--hw:             14px !default; // height width
+$custom-cb__icon--margin-right:   $base-unit !default;
+$custom-cb__icon--v-align:        middle !default;
+
+$custom-radio__icon--radius:      100% !default;
+$custom-cb__icon--radius:         3px !default;
+
+$custom-cb__icon--size:           70% !default;
+$custom-cb__icon--positioning:    2px !default;
+
+// states
+$custom-cb--focus--bg:            $c-light-grey !default;
+$custom-cb--focus--color:         $btn--alt-color !default;
+$custom-cb--focus__icon--border:  1px solid $c-light-blue !default;
+
+$custom-cb--invalid--bg:          $c-red !default;
+$custom-cb--invalid--color:       $c-red !default;
+$custom-cb--invalid--bs:          inset 1px 2px 2px 0 rgba(204,208,217,.57) !default;
+
+$custom-cb__icon--checked--bg:    url('../icons/icon-check.svg') 50% 50% transparent no-repeat !default;
+
+$custom-radio__icon--checked:     $c-blue !default;
+
+$custom-cb__icon--disabled--color:  $c-lighter-grey !default;
+
+//------------------------------------------------------------------------
+
+// Shared styling
+%hide-input--cr {
+  height: 1px;
+  left: (-$custom-cb__icon--positioning);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: (-$custom-cb__icon--positioning);
+  width: 1px;
+}
+
+// ---------------------------------------------------------------------
+
+// Styled check box/radio button container class
+.custom-cr {
+  display: inline-block;
+  margin: 0;
+  overflow: hidden; // 1
+  padding: 2px 0; // 2
+  position: relative;
+  vertical-align: sub;
+
+  /*
+    1 overflow hidden must be set to negate any focus rings
+      that could extend outside of the visual element's area
+      due to the checkbox/radio button being visually hidden
+      from view.
+
+    2 add padding to ensure that layout discrepancies between browsers
+      don't place the custom check/radio beyond the overflow hidden
+      which would cut off the top/bottom of the custom design
+  */
+
+  // some markup patterns require the custom check box to be located
+  // outside of the label. Position static will allow for that.
+  &--static {
+    position: static;
+  }
+
+
+  // hide the input
+  input {
+    @extend %hide-input--cr;
+  }
+
+
+  // The 'icon' representing the radio button or check box
+  &__icon {
+    background: $custom-cb__icon--bg;
+    border: $custom-cb__icon--border;
+    border-radius: $custom-cb__icon--radius;
+    display: inline-block;
+    height: $custom-cb__icon--hw;
+    margin-right: $custom-cb__icon--margin-right;
+    margin-top: -1px; // magic number!
+    pointer-events: none;
+    position: relative;
+    vertical-align: $custom-cb__icon--v-align;
+    width: $custom-cb__icon--hw;
+
+    //
+    &:after {
+      background: rgba(0,0,0,0);
+      bottom: 0;
+      content: '';
+      height: 0%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      speak: none;
+      top: 0;
+      transition: height .15s ease-in-out,
+                  width .15s ease-in-out;
+      width: 0%;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+    vertical-align: $custom-cb__icon--v-align;
+  }
+
+  &--lg {
+
+    .custom-cr__icon {
+      height: $custom-cb__icon--hw * 1.5;
+      margin-right: $custom-cb__icon--margin-right * 2;
+      width: $custom-cb__icon--hw * 1.5;
+    }
+  }
+
+  // Active state for the visual representation of the
+  // checked input element
+  input:checked + &__icon {
+    background: $custom-cb__icon--bg;
+    color: $custom-cb--focus--color;
+  }
+
+
+  // if it's a check box, give it a check
+  input[type="checkbox"]:checked + &__icon:after {
+    background: $custom-cb__icon--checked--bg;
+    height: $custom-cb__icon--hw;
+    left: $custom-cb__icon--positioning;
+    top: (-$custom-cb__icon--positioning);
+    width: $custom-cb__icon--hw;
+  }
+
+
+  // if it's a radio button, make it rounded like a radio
+  input[type="radio"] + &__icon {
+    border-radius: $custom-radio__icon--radius;
+
+    &:after {
+      border-radius: $custom-radio__icon--radius;
+    }
+  }
+
+  input[type="radio"]:checked + &__icon:after {
+    background: $custom-radio__icon--checked;
+    height: $custom-cb__icon--size;
+    width: $custom-cb__icon--size;
+  }
+
+
+  // When an input is focused, make sure there is a
+  // visual indication it has been focused
+  input:focus + &__icon {
+    background-color: $custom-cb--focus--bg;
+    border: $custom-cb--focus__icon--border;
+    color: $custom-cb--focus--color;
+  }
+
+
+  // apply invalid styling to the custom icon
+  // if the input is invalid
+  input:invalid + &__icon,
+  input.border-color-error + &__icon {
+    border-color: $custom-cb--invalid--color;
+  }
+
+  // If a custom check box / radio is disabled
+  // this is applied to the <label>
+  &[disabled] {
+    opacity: $cb-radio--disabled--opacity;
+    pointer-events: none;
+  }
+
+  input[disabled] + &__icon {
+    background: $custom-cb__icon--disabled--color;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <label class="custom-cr">
+    <input type="checkbox"
+          id="customCheckEx"
+          name="customCheckEx" />
+    <span class="custom-cr__icon"></span>
+    <span class="custom-cr__content">
+      Text Label
+    </span>
+  </label>
+
+
+  <!--
+
+    Be sure to apply a disabled attribute to both
+    the label AND the hidden input.  If only
+    placed on the label, the input could still
+    be accessed via keyboard controls.
+
+  -->
+
+  <label class="custom-cr" disabled>
+    <input type="checkbox"
+           id="customCheckEx"
+           name="customCheckEx"
+           disabled />
+    <span class="custom-cr__icon"></span>
+    <span class="custom-cr__content">
+      Text Label
+    </span>
+  </label>
+
+*/

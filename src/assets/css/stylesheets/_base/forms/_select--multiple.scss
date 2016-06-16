@@ -1,0 +1,74 @@
+/** --------------------------------------------------------------------
+
+  Multi-Select Element
+
+--------------------------------------------------------------------- */
+
+// multi selects
+$multi-select--padding:                   .25em !default;
+$multi-select--resize:                    vertical !default;
+$multi-select--min-height:                60px !default;
+$multi-select--max-height:                400px !default;
+  // States
+  $multi-select__option--hover-color:     inherit !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}multiple-select-box {
+  height: auto;
+
+  select {
+    height: auto;
+    padding: $multi-select--padding;
+  }
+
+  option {
+    padding: $multi-select--padding;
+  }
+
+  &--resize select {
+    max-height: $multi-select--max-height;
+    min-height: $multi-select--min-height;
+    resize: $multi-select--resize;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <label for="select-id-here">
+    Select Something
+  </label>
+
+  <div class="multiple-select-box">
+    <select id="select-id-here" multiple size="5">
+      <option>...</option>
+      <option>...</option>
+      <option>...</option>
+    </select>
+  </div>
+
+
+  <!--
+
+    can resize
+
+  -->
+
+  <label for="select-id-here">
+    Select Something
+  </label>
+
+  <div class="multiple-select-box
+              multiple-select-box--resize">
+    <select id="select-id-here" multiple size="5">
+      <option>...</option>
+      <option>...</option>
+      <option>...</option>
+    </select>
+  </div>
+
+*/

@@ -1,0 +1,55 @@
+/** --------------------------------------------------------------------
+
+  Secondary Call to Action Button Styling
+
+  Use as a Call to Action button that needs to have
+  visual distinction from normal button styles.
+
+--------------------------------------------------------------------- */
+
+$btn--secondary--bg:                   $c-green !default;
+$btn--secondary--color:                $c-white !default;
+$btn--secondary--border:               1px solid $btn--secondary--bg !default;
+$btn--secondary--bs:                   0px 2px 0px 0px $c-dark-green !default;
+
+  // hover & focus states
+  $btn--secondary--alt-bg:             $c-dark-green !default;
+  $btn--secondary--alt-color:          $btn--secondary--color !default;
+
+  $btn--secondary--active-bg:          darken($btn--secondary--alt-bg, 10%) !default;
+  $btn--secondary--active-color:       $btn--secondary--color !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--secondary {
+  background: $btn--secondary--bg;
+  border: $btn--secondary--border;
+  box-shadow: $btn--secondary--bs;
+  color: $btn--secondary--color;
+
+  &:focus,
+  &:hover {
+    background-color: $btn--secondary--alt-bg;
+    border-color: $btn--secondary--alt-bg;
+    color: $btn--secondary--alt-color;
+  }
+
+  &:active,
+  &[aria-pressed="true"] {
+    background-color: $btn--secondary--active-bg;
+    border-color: $btn--secondary--active-bg;
+    color: $btn--secondary--active-color;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--secondary">
+    Text
+  </button>
+
+*/

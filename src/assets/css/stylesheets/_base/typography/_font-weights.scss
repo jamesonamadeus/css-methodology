@@ -1,0 +1,103 @@
+/** --------------------------------------------------------------------
+
+  Weights
+
+  If there are different font files for each of the different weights,
+  then instead of setting the font weight to a specific label or number
+  value, instead the font-family: ###: and font-weight: normal; should
+  be used to set the appropriate style.
+
+--------------------------------------------------------------------- */
+
+// vars declared in _base-elements.scss in root
+
+// ---------------------------------------------------------------------
+
+b,
+strong,
+.#{$ns}txt-bold {
+
+  @if $font-weight-define == family {
+    font-family: $body--weight--bold;
+    font-weight: normal;
+  }
+  @else {
+    font-weight: $body--weight--bold;
+  }
+
+}
+
+
+// additional weight modifiers
+@if $body--weight--lighter != null {
+
+  .txt-lighter {
+    @if $font-weight-define == family {
+      font-family: $body--weight--lighter;
+      font-weight: normal;
+    }
+    @else {
+      font-weight: $body--weight--lighter;
+    }
+  }
+
+}
+
+
+@if $body--weight--light != null {
+
+  .txt-light {
+    @if $font-weight-define == family {
+      font-family: $body--weight--light;
+      font-weight: normal;
+    }
+    @else {
+      font-weight: $body--weight--light;
+    }
+  }
+
+}
+
+
+@if $body--weight--bolder != null {
+
+  .txt-bolder {
+    @if $font-weight-define == family {
+      font-family: $body--weight--bolder;
+      font-weight: normal;
+    }
+    @else {
+      font-weight: $body--weight--bolder;
+    }
+  }
+
+}
+
+
+.txt-normal {
+  @if $font-weight-define == family {
+    font-family: $body--weight--normal;
+    font-weight: normal;
+  }
+  @else {
+    font-weight: $body--weight--normal;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    I want to have
+    <span class="txt-bold">bold text here</span>
+    without any semantic meaning behind it.
+  </p>
+
+  <p>
+    This text has
+    <b>semantic bold meaning</b>.
+  </p>
+
+*/

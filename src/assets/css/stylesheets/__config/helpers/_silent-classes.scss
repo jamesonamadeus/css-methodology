@@ -1,0 +1,35 @@
+/** --------------------------------------------------------------------
+
+  Basic HTML Element Normalize / Reset Styling
+
+--------------------------------------------------------------------- */
+
+// Reset default spacing styling
+%reset--spacing {
+  margin: 0;
+  padding: 0;
+}
+
+
+// Reset default border styling
+%reset--border {
+  border: 0;
+  outline: 0;
+}
+
+
+/** --------------------------------------------------------------------
+
+  Help Cursor on Desktop Hover
+
+  by default, the %help silent class is extended into
+  <abbr> and <dfn> elements that have [title] attributes set.
+
+--------------------------------------------------------------------- */
+
+%help {
+  border-bottom: none;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}

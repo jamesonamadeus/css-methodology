@@ -1,0 +1,165 @@
+/** --------------------------------------------------------------------
+
+  Pagination Navigation
+
+--------------------------------------------------------------------- */
+
+$pagination--bg:                        $c-off-white !default;
+$pagination--border:                    1px solid $c-light-grey !default;
+$pagination--padding:                   1.25em !default;
+
+$pagination__nav--margin:               0 !default;
+$pagination__nav--padding:              0 50px !default;
+
+$pagination__link--padding:             0 .5em !default;
+$pagination__link--weight:              inherit !default;
+
+$pagination__link--background:          $c-white !default;
+$pagination__link--border-alt:          1px solid $c-grey !default;
+
+$pagination__placeholder-link--weight:  600 !default;
+
+$pagination__desc--font-size:           .75em !default;
+
+//------------------------------------------------------------------------
+
+.pagination {
+  @extend .clearfix;
+  border-top: $pagination--border;
+  padding: $pagination--padding 0;
+  text-align: center;
+
+  &__nav {
+    list-style: none;
+    margin: $pagination__nav--margin;
+    padding: $pagination__nav--padding;
+    position: relative;
+
+    li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    &__link {
+      border: 1px solid transparent;
+      display: block;
+      font-weight: $pagination__link--weight;
+      padding: $pagination__link--padding;
+
+      // current link doesn't have an href, because it's the
+      // current link...
+      &:not([href]) {
+        font-weight: $pagination__placeholder-link--weight;
+      }
+
+      &:link:hover,
+      &:link:focus {
+        background: $pagination__link--background;
+        border: $pagination__link--border-alt;
+      }
+
+    }
+
+    &__previous,
+    &__next {
+      border: 1px solid transparent;
+      padding: $pagination__link--padding;
+      position: absolute;
+      text-decoration: underline;
+      top: 0;
+
+      &:hover,
+      &:focus {
+        background: $pagination__link--background;
+        border: $pagination__link--border-alt;
+      }
+    }
+
+    &__previous {
+      left: 0;
+    }
+
+    &__next {
+      right: 0;
+    }
+  }
+
+  @media screen and ( min-width: $bp-tiny ) {
+
+    &__nav {
+      display: inline-block;
+    }
+  } // @media
+
+
+  // offset the pagination from the rest of the document
+  // by giving it a background
+  &--offset {
+    background: $pagination--bg;
+  }
+
+
+  // add borders to pagination links to make them
+  // seem 'button-y'
+  &--link-borders {
+
+    .pagination__nav__link {
+      @extend .btn;
+      text-decoration: none;
+    }
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="pagination">
+    <ul class="pagination__nav" role="navigation" aria-labelledby="pagination_label">
+      <li>
+        <a href="#!" class="pagination__nav__link">
+          <abbr class="pagination__nav__previous" title="previous">Prev</abbr>
+          <span class="sr-only">Page</span>
+          1
+        </a>
+      </li>
+      <li>
+        <a class="is-current pagination__nav__link" aria-disabled="true">
+          <span class="sr-only">
+            You are currently on page
+          </span>
+          2
+        </a>
+      </li>
+      <li>
+        <a href="#!" class="pagination__nav__link">
+          <span class="pagination__nav__next">Next</span>
+          <span class="sr-only">Page</span>
+          3
+        </a>
+      </li>
+      <li>
+        <a href="#!" class="pagination__nav__link">
+          <span class="sr-only">Page</span>
+          4
+        </a>
+      </li>
+      <li>
+        <a href="#!" class="pagination__nav__link">
+          <span class="sr-only">Page</span>
+          5
+        </a>
+      </li>
+    </ul>
+
+    <p class="pagination__desc" id="pagination_label">
+      Showing
+      <span>x</span>
+      of
+      <span>y</span>
+    </p>
+  </div>
+
+*/

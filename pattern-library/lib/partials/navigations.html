@@ -1,0 +1,255 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Sidebar Navigation</h1>
+      <p>Secondary Page-parent specific navigation located at the bottom of the sidebar.</p>
+      <p>**note - main navigation is part of the header landmark. see landmarks for that markup pattern.</p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <nav role="navigation" aria-label="Secondary"
+         class="sidebar-nav aside-block"
+         id="sidebar_nav">
+
+      <ul class="list-clean">
+        <li>
+          <a href="#!">
+            Link 1
+          </a>
+        </li>
+        <li class="is-current">
+          <a href="#!">
+            Link 2 (current)
+            <span class="sr-only">
+              current page
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Breadcrumb Navigation</h1>
+      <p>
+        Breadcrumb navigation setup for optimal screen readability.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+  <nav role="navigation">
+    <h3 class="sr-only">
+      You are here:
+    </h3>
+    <ol class="crumbs">
+      <li>
+        <a href="#!">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#!">
+          Sub Page name
+        </a>
+      </li>
+      <li>
+        <a>Current Page name</a>
+        <!-- active crumb does not require href -->
+      </li>
+    </ol>
+  </nav>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Pagination</h1>
+      <p>
+        Accessible pagination pattern that has added ARIA, screen reader only text for additional link context and no link redundancy.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div>
+      Pagination: Previous, Pages, Next
+    </div>
+
+    <div class="pagination">
+      <ul class="pagination__nav" role="navigation" aria-label="Pages">
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="pagination__nav__previous" aria-label="Previous">
+              <span aria-hidden="true">Prev</span>
+            </span>
+            <span class="sr-only">Page</span>
+            1
+          </a>
+        </li>
+        <li>
+          <a class="is-current pagination__nav__link" aria-disabled="true">
+            <span class="sr-only">
+              You are currently on page
+            </span>
+            2
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="pagination__nav__next">Next</span>
+            <span class="sr-only">Page</span>
+            3
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            4
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            5
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div>
+      Pagination: First, Pages, Last
+    </div>
+
+    <div class="pagination">
+      <ul class="pagination__nav" role="navigation" aria-label="Pages">
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            First <span class="sr-only">Page</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            4
+          </a>
+        </li>
+        <li>
+          <a class="is-current pagination__nav__link" aria-disabled="true">
+            <span class="sr-only">
+              You are currently on page
+            </span>
+            5
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            6
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            7
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            8
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            Last <span class="sr-only">Page</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div>
+      Pagination: First, Previous, Pages, Next, Last
+    </div>
+    <div class="pagination">
+      <ul class="pagination__nav" role="navigation" aria-label="Pages">
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            First
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span aria-label="Previous">
+              <span aria-hidden="true">Prev</span>
+            </span>
+            <span class="sr-only">Page</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            4
+          </a>
+        </li>
+        <li>
+          <a class="is-current pagination__nav__link" aria-disabled="true">
+            <span class="sr-only">
+              You are currently on page
+            </span>
+            5
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            6
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            7
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            <span class="sr-only">Page</span>
+            8
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            Next
+            <span class="sr-only">Page</span>
+          </a>
+        </li>
+        <li>
+          <a href="#!" class="pagination__nav__link">
+            Last <span class="sr-only">Page</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

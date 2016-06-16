@@ -1,0 +1,84 @@
+/** --------------------------------------------------------------------
+
+  Horizontal List Selectors
+
+--------------------------------------------------------------------- */
+
+$list-horizontal__item--margin:       2px 10px 2px 0 !default;
+$list-horizontal__item--padding:      0 12px 0 0 !default;
+
+$list-horizontal__item--pipe--color:    $c-grey !default;
+$list-horizontal__item--pipe--width:    1px !default;
+$list-horizontal__item--pipe--tb:       4px !default; //*
+
+//* sets top and bottom values.  set to zero to make pipe
+//  100% height. Any value above zero will reduce the height
+//  by the set value x2, centering the pipe vertically.
+
+//------------------------------------------------------------------------
+
+.#{$ns}list-horizontal {
+  @extend .list-clean;
+
+  li {
+    display: inline-block;
+    margin: $list-horizontal__item--margin;
+    padding: $list-horizontal__item--padding;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+    }
+  } // end li
+
+  &.has-pipes > li {
+
+    &:after {
+      background: $list-horizontal__item--pipe--color;
+      content: '';
+      bottom: $list-horizontal__item--pipe--tb;
+      position: absolute;
+      right: 0;
+      top: $list-horizontal__item--pipe--tb;
+      width: $list-horizontal__item--pipe--width;
+    }
+
+    // there shouldn't be a pipe if there's no list
+    // item after it.  so remove the pipe.
+    &:last-child:after {
+      display: none;
+    }
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <ul class="list-horizontal">
+    <li>
+      first
+    </li>
+    <li>
+      second
+    </li>
+    <li>
+      third
+    </li>
+  </ul>
+
+  <ul class="list-horizontal has-pipes">
+    <li>
+      first
+    </li>
+    <li>
+      second
+    </li>
+    <li>
+      third
+    </li>
+  </ul>
+
+*/

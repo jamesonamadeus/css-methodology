@@ -1,0 +1,107 @@
+/** --------------------------------------------------------------------
+
+  Flexbox Grid Container
+
+  The flex-area class sets the stage for direct children with
+  a class of 'flex-w-#' to become columns.
+
+  The helper classes here are for use on the top level .flex-area
+  container only.
+
+--------------------------------------------------------------------- */
+
+$flex-area--push:         1em !default;
+$flex-area--pull:         (-$flex-area--push) !default;
+
+$flex-area--margin:       $base-margin !default;
+
+//------------------------------------------------------------------------
+
+.flex-area {
+  @include flexbox();
+  @include flex-wrap(wrap);
+  margin-left: $flex-area--pull;
+
+  > [class*="flex-w-"] {
+    min-width: 0; // ***
+    padding-left: $flex-area--push;
+    margin-top: $flex-area--margin;
+  }
+
+  // use space between to create gutters between columns
+  &--space-between {
+    @include justify-content(space-between);
+    margin-left: 0;
+
+    > [class*="flex-w-"] {
+      padding-left: 0;
+    }
+  }
+
+  // add margin to top/bottom of flex-area
+  &--add-buffer {
+    margin-bottom: $flex-area--margin;
+    margin-top: $flex-area--margin;
+  }
+
+  // remove margin bottom from flex-area
+  &--mt-0 {
+
+    > [class*="flex-w-"] {
+      margin-top: 0;
+    }
+  }
+
+  // don't want gutters?
+  // ok. that's cool
+  &--no-gutter {
+    margin-left: 0;
+
+    > [class*="flex-w-"] {
+      padding-left: 0;
+    }
+  }
+
+  // want double gutters?
+  // you can do that too.
+  &--2x-gutter {
+    margin-left: $flex-area--pull * 2;
+
+    > [class*="flex-w-"] {
+      padding-left: $flex-area--push * 2;
+    }
+  }
+
+  // set flexbox columns to be
+  // vertically centered
+  &--v-center {
+    @include align-items(center);
+  }
+
+  &--nowrap {
+    @include flex-wrap(nowrap);
+  }
+}
+
+ol.flex-area,
+ul.flex-area {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="flex-area">
+    <div class="flex-w-100 flex-w-50--portrait">
+      ...
+    </div>
+    <div class="flex-w-100 flex-w-50--portrait">
+      ...
+    </div>
+  </div>
+
+*/

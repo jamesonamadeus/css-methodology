@@ -1,0 +1,26 @@
+/** --------------------------------------------------------------------
+
+  Media Elements: Audio
+
+--------------------------------------------------------------------- */
+
+audio {
+  @extend %reset--media-elements;
+
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <audio controls="">
+    Your browser does not support the <code>audio</code> element.
+    <source src="lib/media/find-item3.wav" type="audio/wav">
+  </audio>
+
+*/

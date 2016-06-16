@@ -1,0 +1,30 @@
+/** --------------------------------------------------------------------
+
+  File Input Element
+
+--------------------------------------------------------------------- */
+
+// declare vars here
+
+//------------------------------------------------------------------------
+
+input[type="file"] {
+  display: block;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="normal_file">
+      Upload a File
+    </label>
+
+    <input type="file"
+           id="normal_file"
+           name="normal_file" />
+  </div>
+
+*/

@@ -1,0 +1,53 @@
+/** --------------------------------------------------------------------
+
+  Responsive Box that maintains aspect ratio
+
+  source: https://gist.github.com/brianmcallister/2932463
+
+--------------------------------------------------------------------- */
+
+@mixin maintain-ratio( $ratio: 1 1 ) {
+
+  // vars
+  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+  $width: 100%;
+
+  @if length($ratio) < 2 or length($ratio) > 2 {
+    @warn "$ratio must be a list with two values.";
+  }
+
+  height: 0;
+  padding-bottom: $height;
+  position: relative;
+  width: $width;
+}
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  .responsive-video-container {
+    @include maintain-ratio ( 16 9 );
+  }
+
+  .responsive-video-container__media {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  <!--
+    Mark-up:
+  -->
+
+  <div class="responsive-video-container">
+    <iframe src="#youtube_link"
+            title="desc title here"
+            class="responsive-video-container__media"></iframe>
+  </div>
+
+*/

@@ -1,0 +1,357 @@
+/** --------------------------------------------------------------------
+
+  Cards
+
+--------------------------------------------------------------------- */
+
+// global primary spacing unit
+$card--spacing:                         20px !default;
+
+
+// card wrapper
+$card--background:                      $c-white !default;
+
+$card--border-color:                    $c-lighter-grey !default;
+$card--border-color--accent:            false !default;
+$card--border:                          1px solid $card--border-color !default;
+$card--border-radius:                   $base-unit !default;
+$card--border--accent:                  6px solid $card--border-color--accent !default;
+
+
+// title
+$card__title--font-size:                22 !default;
+$card__title--font-weight:              600 !default;
+$card__title--line-height:              1.3 !default;
+$card__title__link--color:              $body--color !default;
+$card__title__link--color--alt:         $link--color--alt !default;
+
+$card__title--border-bottom:            1px solid $c-grey !default;
+$card__title--border-bottom--margin:    0 $card--spacing 8px !default;
+$card__title--border-bottom__text:      16px 0 !default;
+
+$card__title__text:                     16px $card--spacing 8px !default;
+
+$card__title__read-more--color:         $link--color !default;
+$card__title__read-more--font-size:     16 !default;
+$card__title__read-more--padding:       $card--spacing !default;
+
+$card__title__read-more--color--alt:    $link--color--alt !default;
+
+
+// meta
+$card__meta--color:                     $c-dark-grey !default;
+$card__meta--font-size:                 13 !default;
+$card__meta--line-height:               1.4 !default;
+$card__meta--margin:                    0 0 10px !default;
+$card__meta--padding-lr:                $card--spacing !default;
+
+$card__meta__item--margin:              2px 0 !default;
+$card__meta__item--after--bg:           $c-grey !default;
+$card__meta__item--after--margin:       2px 8px !default;
+$card__meta__item--after--height:       12px !default;
+
+$card__meta__item--callout--bg:         $c-white !default;
+$card__meta__item--callout--border:     1px solid $c-grey !default;
+$card__meta__item--callout--font-weight: 600 !default;
+$card__meta__item--callout--padding:    4px 8px !default;
+$card__meta__item--callout--z-index:    9 !default;
+
+
+// primary content area
+$card__content--padding:                8px 20px 20px !default;
+
+
+// outro/actions area
+$card__action--bg:                      $c-almost-white !default;
+$card__action--min-height:              60px !default;
+$card__action--padding:                 $card--spacing !default;
+
+$card__action--no-padding--margin-top:  $card--spacing !default;
+
+//------------------------------------------------------------------------
+
+//  Class to give emphasis to a block of content.
+.#{$ns}card {
+  background: $card--background;
+  border: $card--border;
+  position: relative;
+
+  @if $card--border-radius != 0 {
+    border-radius: $card--border-radius;
+  } // @if
+
+  @if $card--border--accent != false {
+
+    &--accent-border {
+      border-bottom: $card--border--accent;
+    }
+
+  } // @if
+
+  &--has-media {
+    overflow: hidden;
+  }
+
+  // no background color for a card
+  &--is-clean {
+    background: none !important;
+    border: none;
+  }
+
+  &[tabindex]:focus {
+    outline: 0;
+  }
+
+
+  &__title {
+    @include font-size( $card__title--font-size );
+    font-weight: $card__title--font-weight;
+    line-height: $card__title--line-height;
+    margin: 0;
+    order: 2;
+
+    &--has-border {
+      border-bottom: $card__title--border-bottom;
+      margin: $card__title--border-bottom--margin;
+
+      .card__title__text {
+        padding: $card__title--border-bottom__text;
+      }
+    }
+
+    &__text {
+      display: block;
+      padding: $card__title__text;
+    }
+
+    a {
+      color: $card__title__link--color;
+      display: block;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $card__title__link--color--alt;
+        text-decoration: underline;
+      }
+
+      .card__title__read-more {
+        @include font-size ( $card__title__read-more--font-size );
+        bottom: 0;
+        color: $card__title__read-more--color;
+        padding: $card__title__read-more--padding;
+        position: absolute;
+        right: 0;
+
+        // reposition read more link to left
+        &--left {
+          right: auto;
+          left: 0;
+        }
+
+        // reposition read more link to the center
+        &--center {
+          left: 0;
+          text-align: center;
+        }
+
+        &:hover {
+          color: $card__title__read-more--color--alt;
+        }
+      }
+
+    } //a
+
+  } // __title
+
+
+  &__media-element {
+    display: block;
+    vertical-align: bottom;
+    width: 100%;
+
+    // to make sure that meta tags, positioned on top of the image
+    // don't obscure a broken image message
+    img:after {
+      font-size: 16px;
+      padding-top: 26px;
+      text-align: center;
+    }
+
+  }
+
+  // container for meta information
+  // can be either a list or a single <p> element
+  &__meta {
+    @include font-size( $card__meta--font-size );
+    color: $card__meta--color;
+    line-height: $card__meta--line-height;
+    margin: $card__meta--margin;
+    padding-left: $card__meta--padding-lr;
+    padding-right: $card__meta--padding-lr;
+
+    &__list {
+
+      &__item {
+        display: inline-block;
+        margin: $card__meta__item--margin;
+        vertical-align: bottom;
+
+        &:after {
+          background: $card__meta__item--after--bg;
+          content: '';
+          display: inline-block;
+          height: $card__meta__item--after--height;
+          margin: $card__meta__item--after--margin;
+          vertical-align: bottom;
+          width: 1px;
+        }
+
+        &:last-child:after {
+          display: none;
+        }
+      }
+    }
+
+    &__callout {
+      background: $card__meta__item--callout--bg;
+      border: $card__meta__item--callout--border;
+      font-weight: $card__meta__item--callout--font-weight;
+      left: 0;
+      margin: 0 !important;
+      padding: $card__meta__item--callout--padding;
+      position: absolute;
+      top: 0;
+      z-index: $card__meta__item--callout--z-index;
+
+      &:after {
+        display: none;
+      }
+
+    } // __callout
+
+  } // __meta
+
+
+
+  // CHILD ELMENTS
+  &__intro {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__child {
+      flex-basis: 100%;
+      flex-grow: 1;
+      max-width: 100%;
+
+      &--1 {
+        order: 1;
+      }
+
+      &--2 {
+        order: 2;
+      }
+
+      &--3 {
+        order: 3;
+      }
+    }
+
+  } // __intro
+
+
+
+  &__content {
+    padding: $card__content--padding;
+
+    + .card__action {
+      margin-top: -4px;
+    }
+  }
+
+
+
+  &__action {
+    background: $card__action--bg;
+    min-height: $card__action--min-height; //*
+    padding: $card__action--padding;
+
+    // *
+    // if using the read-more false link from the title as a link
+    // pattern, this min-height needs to be here to ensure that
+    // the action wrapper will look as if the read more link
+    // is actually a child of the action wrapper
+
+    &--no-padding {
+      padding: 0;
+      margin-top: $card__action--no-padding--margin-top;
+    }
+
+  } // __action
+
+} // .card
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!--
+    if card has image, has-image class adds an overflow:hidden;
+    to the card, so that the image doesn't break out of the
+    rounded corners on the card.
+  -->
+
+  <div class="card has-image">
+
+    <!-- if has image -->
+    <div class="card__img">
+      <a href="#!">
+        <img src="#" alt="" />
+      </a>
+    </div>
+
+    <div class="flex-area flex-area--no-gutter">
+      <h3 class="card__title flex-w-100 flex-order-2">
+        <a href="#!">
+          Title
+        </a>
+      </h3>
+
+      <!--
+        this should be positioned before title
+        but after it in the DOM order, so flexbox
+      -->
+      <p class="card__type flex-w-100 flex-order-1">
+        Type
+      </p>
+    </div>
+
+    <!-- if has date/meta info -->
+    <p class="card__meta">
+      <time>date goes here</time>
+    </p>
+
+    <!-- main card text content -->
+    <div class="card__desc">
+      <p>
+        ...
+      </p>
+    </div>
+
+    <!-- if has logo -->
+    <div class="card__logo">
+      <img src="#" alt="business!" />
+    </div>
+
+    <!-- call to action section is for home page only -->
+    <div class="card__action txt-center">
+      <a href="#!">
+        CTA Text here
+      </a>
+    </div>
+
+    <!-- include tags HTML here -->
+  </div>
+
+*/

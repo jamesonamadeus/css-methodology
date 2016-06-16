@@ -1,0 +1,73 @@
+/** --------------------------------------------------------------------
+
+  Form Container Elements/Classes
+
+--------------------------------------------------------------------- */
+
+$form-row--margin:                  $base-margin 0 0 !default;
+$form-row--padding:                 .25em 0 !default;
+
+//------------------------------------------------------------------------
+
+// form {
+//  /*no default styles*/
+// }
+
+
+// reset/normalize fieldset styling
+fieldset {
+  @extend %reset--border;
+  @extend %reset--spacing;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <fieldset>
+    <div class="form-row">
+      <input type="radio" name="rad" id="r1">
+      <label for="r1">label 1</label>
+    </div>
+    <div class="form-row">
+      <input type="radio" name="rad" id="r2">
+      <label for="r2">label 2</label>
+    </div>
+  </fieldset>
+
+*/
+
+
+
+
+
+// Form row container
+// for containing inputs + their labels to create
+// consistent spacing/grouping of elements.
+.#{$ns}form-row {
+  margin: $form-row--margin;
+  padding: $form-row--padding;
+  position: relative;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+
+    <label for="example">
+      Label Here
+    </label>
+
+    <input type="text" id="example" placeholder="Example..." />
+
+  </div>
+
+*/

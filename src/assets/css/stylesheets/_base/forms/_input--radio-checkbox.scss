@@ -1,0 +1,63 @@
+/** --------------------------------------------------------------------
+
+  Default Check Box / Radio Button Elements
+
+--------------------------------------------------------------------- */
+
+$cb-radio--margin:                2px !default;
+$cb-radio--disabled--opacity:     .5 !default;
+
+//------------------------------------------------------------------------
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin: $cb-radio--margin;  // reset/make consistent margin.
+  padding: 0; // IE 8-10 give these excess padding. so reset.
+
+  // remove focus outline. 
+  // relies on browser box-shadow for unstyed focus states
+  &:focus {
+    outline: none;
+  }
+
+  // **
+  // in instances where a radio is disabled,
+  // make sure the label for it is also disabled
+  // (if it appears after the input)
+  &[disabled] + label {
+    opacity: $cb-radio--disabled--opacity;
+    pointer-events: none;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <input type="checkbox" id="cb1" name="cb1" />
+  <label for="cb1">
+    Check box 1
+  </label>
+
+  <!-- ** this won't work with disabled selector -->
+  <label for="cb2">
+    <input type="checkbox" id="cb2" name="cb2" />
+    Check box 1
+  </label>
+
+
+  <input type="radio" id="rdo1" name="rdo" />
+  <label for="rdo1">
+    Radio 1
+  </label>
+
+  <!-- ** this won't work with disabled selector -->
+  <label for="rdo2">
+    <input type="radio" id="rdo2" name="rdo" />
+    Radio 2
+  </label>
+
+
+*/

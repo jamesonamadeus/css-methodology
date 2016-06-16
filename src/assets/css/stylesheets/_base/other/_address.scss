@@ -1,0 +1,73 @@
+/** --------------------------------------------------------------------
+
+  Address
+
+--------------------------------------------------------------------- */
+
+$address--margin:                  $base-margin 0 !default;
+
+//------------------------------------------------------------------------
+
+address,
+.vcard {
+  display: block;
+  margin: $address--margin;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!--
+    Address in context to article information
+  -->
+  <article role="article">
+    ...
+
+    <address>
+      Contact <a href="#!">Author name</a>. Or
+      <a href="#!2">Person 2</a> in reference to blah blah blah
+      about this article.
+    </address>
+  </article>
+
+
+  <!--
+    Address in context of a contact page
+  -->
+  <address>
+    <p>
+      Person or Company Name<br />
+      123 Fake Street<br />
+      City, State, Zip<br />
+      Country
+    </p>
+  </address>
+
+
+  <!--
+    Accepted schema.org pattern for vcard / address pattern
+    that can be used in any context that it is applicable.
+  -->
+  <div class="vcard" itemscope itemtype="http://schema.org/LocalBusiness">
+    <p class="fn" itemprop="name">
+      <a href="#!" class="url">
+        Name
+      </a>
+    </p>
+    <p class="adr">
+      <span class="street-address">123 Fake Street</span><br />
+      <span class="city">City</span>,
+      <span class="state">MA</span>
+      <span class="postal-code">00000</span><br />
+      <span class="country-name">Country</span>
+    </p>
+    <!-- if telephone is applicable -->
+    <p class="tel" itemprop="telephone">
+      <a href="tel:+15555555555">555-555-5555</a>
+    </p>
+  </div>
+
+*/

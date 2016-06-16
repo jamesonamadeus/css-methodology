@@ -1,0 +1,150 @@
+/** --------------------------------------------------------------------
+
+  Range Input
+
+--------------------------------------------------------------------- */
+
+$range--animate-time:       .2s !default;
+
+$range--margin:             1.125em 0 !default;
+$range--global-radius:      2px !default;
+$range--global--bs--inset:  inset 0 2px 0 0 $c-off-white !default;
+$range--global--bs:         0 2px 3px #ddd !default;
+$range--global--border:     1px solid $c-light-grey !default;
+
+$range--ms--bs-1:           1px 1px 1px #0a0a0a !default;
+$range--ms--bs-2:           0px 0px 1px #0d0d0d !default;
+
+
+$range__track--bg:          $txt-input--bg-color !default;
+$range__track--border:      $txt-input--border !default;
+$range__track--height:      8px !default;
+
+$range__thumb--bg:          $c-white !default;
+$range__thumb--radius:      4px !default;
+$range__thumb--border:      $range__track--border !default;
+$range__thumb--bs:          0 2px 3px #ddd, $range--global--bs--inset !default;
+$range__thumb--height:      16px !default;
+$range__thumb--margin-top:  -6px !default;
+$range__thumb--width:       $range__thumb--height * 2 !default;
+
+//------------------------------------------------------------------------
+
+input[type='range'] {
+  -webkit-appearance: none;
+  margin: $range--margin;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    animate: $range--animate-time;
+    background: $range__track--bg;
+    border-radius: $range--global-radius;
+    border: $range__track--border;
+    box-shadow: $range--global--bs--inset;
+    cursor: pointer;
+    height: $range__track--height;
+    width: 100%;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: $range__thumb--bg;
+    border-radius: $range__thumb--radius;
+    border: $range__thumb--border;
+    box-shadow: $range__thumb--bs;
+    cursor: pointer;
+    height: $range__thumb--height;
+    margin-top: $range__thumb--margin-top;
+    width: $range__thumb--width;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: $range__track--bg;
+  }
+
+  &::-moz-range-track {
+    animate: $range--animate-time;
+    background: $range__track--bg;
+    border-radius: 1.3px;
+    border: .2px solid #010101;
+    border: $range--global--border;
+    box-shadow: $range--global--bs--inset;
+    cursor: pointer;
+    height: $range__track--height;
+    width: 100%;
+  }
+
+  &::-moz-range-thumb {
+    background: $c-white;
+    border-radius: $range--global-radius;
+    border: $range--global--border;
+    box-shadow: $range--global--bs,
+                $range--global--bs--inset;
+    cursor: pointer;
+    height: $range__thumb--height;
+    width: $range__thumb--width;
+  }
+
+  &::-ms-track {
+    animate: $range--animate-time;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+    cursor: pointer;
+    height: $range__track--height;
+    width: 100%;
+  }
+
+  &::-ms-fill-lower {
+    background: #2a6495;
+    border-radius: 2.6px;
+    border: 0.2px solid #010101;
+    box-shadow: $range--ms--bs-1,
+                $range--ms--bs-2;
+  }
+
+  &::-ms-fill-upper {
+    background: #3071a9;
+    border-radius: 2.6px;
+    border: 0.2px solid #010101;
+    box-shadow: $range--ms--bs-1,
+                $range--ms--bs-2;
+  }
+
+  &::-ms-thumb {
+    background: $c-white;
+    border-radius: $range--global-radius;
+    border: $range--global--border;
+    box-shadow: $range--global--bs;
+    cursor: pointer;
+    height: $range__thumb--height;
+    width: $range__thumb--width;
+  }
+
+  &:focus::-ms-fill-lower {
+    background: #3071a9;
+  }
+
+  &:focus::-ms-fill-upper {
+    background: #367ebd;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="enter_range">
+      Adjust Range
+    </label>
+    <input type="range" id="enter_range" />
+  </div>
+
+*/

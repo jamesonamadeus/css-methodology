@@ -1,0 +1,53 @@
+/** --------------------------------------------------------------------
+
+  Destroy/Reset Buttons
+
+--------------------------------------------------------------------- */
+
+$btn--destroy--bg:                   $c-red !default;
+$btn--destroy--color:                $c-white !default;
+$btn--destroy--border:               1px solid $btn--destroy--bg !default;
+$btn--destroy--bs:                   0px 2px 4px 0px rgba(0,0,0,0.25) !default;
+
+  // hover & focus states
+  $btn--destroy--alt-bg:             $c-dark-red !default;
+  $btn--destroy--alt-color:          $btn--destroy--color !default;
+
+  $btn--destroy--active-bg:          darken($btn--destroy--alt-bg, 10%) !default;
+  $btn--destroy--active-color:       $btn--destroy--color !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--destroy {
+  background: $btn--destroy--bg;
+  border: $btn--destroy--border;
+  box-shadow: $btn--destroy--bs;
+  color: $btn--destroy--color;
+
+  &:focus,
+  &:hover {
+    background-color: $btn--destroy--alt-bg;
+    border-color: $btn--destroy--alt-bg;
+    color: $btn--destroy--alt-color;
+  }
+
+  &:active,
+  &[aria-pressed="true"] {
+    background-color: $btn--destroy--active-bg;
+    border-color: $btn--destroy--active-bg;
+    color: $btn--destroy--active-color;
+  }
+
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--destroy">
+    Delete
+  </button>
+
+*/

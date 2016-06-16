@@ -1,0 +1,115 @@
+/** --------------------------------------------------------------------
+
+  Set Width Definition List Columns
+
+--------------------------------------------------------------------- */
+
+$dl-set-width--spacing:             1em !default;
+
+$dl-set-width--border:              1px solid $c-grey !default;
+$dl-set-width--spacing:             $base-margin !default;
+$dl-set-width--padding:             0 0 $dl-set-width--spacing 0 !default;
+
+$dl-set-width__dt--width:           200px !default;
+
+$dl-set-width__dd-sibling--margin:  $dl-set-width__dt--width !default;
+
+$dl-set-width__dd--width:           calc(100% - 220px) !default;
+
+// ---------------------------------------------------------------------
+
+// Global set width definition title width fluid
+// <dd> area
+.dl-set-width {
+  @extend .clearfix;
+  border-bottom: $dl-set-width--border;
+  margin-top: $dl-set-width--spacing;
+  padding: $dl-set-width--padding;
+
+  dt,
+  dd {
+    margin: ($dl-set-width--spacing / 2) 0 0;
+  }
+
+  dd + dt {
+    border-top: $dl-set-width--border;
+    margin-top: $dl-set-width--spacing;
+    padding-top: $dl-set-width--spacing;
+  }
+
+  @media screen and ( min-width: $bp-tiny ) {
+
+    > dt {
+      float: left;
+      width: $dl-set-width__dt--width;
+    }
+
+    > dd {
+      float: left;
+    }
+
+    dd + dt + dd {
+      border-top: $dl-set-width--border;
+      margin-top: $dl-set-width--spacing;
+      padding-top: $dl-set-width--spacing;
+    }
+
+    > dt + dd {
+      width: $dl-set-width__dd--width;
+    }
+
+    > dd + dd {
+      margin-left: $dl-set-width__dd-sibling--margin;
+      width: 100%;
+    }
+
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!-- ex1 -->
+
+  <dl class="dl-set-width">
+    <dt>
+      Term
+    </dt>
+    <dd>
+      Explination of term
+    </dd>
+  </dl>
+
+
+  <!-- ex2 -->
+
+  <dl class="dl-set-width">
+    <dt>
+      Term
+    </dt>
+    <dd>
+      Explination of term
+    </dd>
+
+    <dt>
+      Term
+    </dt>
+    <dd>
+      Explination of term
+    </dd>
+    <dd>
+      Explination of term
+    </dd>
+    <dd>
+      Explination of term
+    </dd>
+  </dl>
+
+*/

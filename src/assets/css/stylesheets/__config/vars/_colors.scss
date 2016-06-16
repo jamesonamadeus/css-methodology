@@ -1,0 +1,76 @@
+/** --------------------------------------------------------------------
+
+  Colors:
+
+--------------------------------------------------------------------- */
+
+// Primary Brand Colors
+// ----------------------------------------------
+
+$c-light-green:               #7ace6a !default;
+$c-green:                     #31b517 !default;
+$c-dark-green:                #20810d !default;
+
+$c-light-gold:                #fbe672 !default;
+$c-gold:                      #FAB914 !default;
+$c-dark-gold:                 #d0ac1d !default;
+
+$c-light-red:                 #e33d3d !default;
+$c-red:                       #b63232 !default;
+$c-dark-red:                  #881c1c !default;
+
+$c-light-blue:                #6589f2 !default;
+$c-blue:                      #4464c2 !default;
+$c-dark-blue:                 #304c9d !default;
+
+
+// Additional Colors
+// ----------------------------------------------
+$c-black:                     #000 !default;
+$c-almost-black:              #111 !default;
+$c-off-black:                 #2a2a2a !default;
+
+$c-off-white:                 #f8f8f8 !default;
+$c-almost-white:              #fafafa !default;
+$c-white:                     #fff !default;
+
+$c-darkest-grey:              #444 !default;
+$c-darker-grey:               #666 !default;
+$c-dark-grey:                 #949494 !default;
+
+$c-grey:                      #ccc !default;
+
+$c-light-grey:                #d5d5d5 !default;
+$c-lighter-grey:              #e7e9ed !default;
+$c-lightest-grey:             #f2f2f2 !default;
+
+$c-blue-grey:                 #789696 !default;
+
+// weird grays
+$c-darkest-gray:              $c-darkest-grey;
+$c-darker-gray:               $c-darker-grey;
+$c-dark-gray:                 $c-dark-grey;
+
+$c-gray:                      $c-grey;
+
+$c-light-gray:                $c-light-grey;
+$c-lighter-gray:              $c-lighter-grey;
+$c-lightest-gray:             $c-lightest-grey;
+
+
+
+// Messaging Colors
+// ----------------------------------------------
+
+$c-info:                      $c-light-blue !default;
+$c-error:                     $c-red !default;
+$c-success:                   $c-green !default;
+$c-warning:                   $c-dark-gold !default;
+
+
+
+// Branding Colors
+// ----------------------------------------------
+
+$c-primary:                   $c-green !default;
+$c-secondary:                 $c-gold !default;

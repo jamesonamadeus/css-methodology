@@ -1,0 +1,38 @@
+/** --------------------------------------------------------------------
+
+  <mark> Element
+
+  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark
+  for usage of the mark element
+
+--------------------------------------------------------------------- */
+
+$mark--bg:                          $c-gold !default;
+$mark--color:                       $c-off-black !default;
+$mark--radius:                      .125em !default;
+$mark--padding:                     .25em .5em !default;
+
+// ---------------------------------------------------------------------
+
+// IE 8/9 doesn't highlight background by default
+mark,
+.#{$ns}txt-highlight {
+  background: $mark--bg; // *
+  border-radius: $mark--radius;
+  color: $mark--color;
+  display: inline-block;
+  padding: $mark--padding;
+  vertical-align: text-bottom;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    Something something something or other
+    <mark>marked content</mark> and continuing on...
+  </p>
+
+*/

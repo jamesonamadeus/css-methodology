@@ -1,0 +1,139 @@
+/** --------------------------------------------------------------------
+
+  Text Input Styling
+
+  By default, text inputs will be styled using their native
+  selectors, e.g. type="text", type="email", etc.
+
+  This is to ensure that all inputs will be styled the same.
+
+  However if you are absolutely sure that there is 100% no chance
+  that any 3rd party inputs will be injected into your site/appliation,
+  or that you will have the ability to add classes to injectd inputs,
+  then you can set $txt-input--native-styling to false, and only the
+  single selector of .#{$ns}text-input will be needed to style
+  input elements and textareas.
+
+--------------------------------------------------------------------- */
+
+// Global form elements
+$form-font-weight:                      inherit !default;
+
+// Native vs Class
+$txt-input--native-styling:             true !default;
+
+// Form Text Inputs
+$txt-input--bg-color:                   $c-white !default;
+$txt-input--border:                     1px solid $c-light-grey !default;
+$txt-input--bs:                         inset 0 2px 0 0 $c-lightest-grey !default;
+$txt-input--color:                      $c-off-black !default;
+$txt-input--font-family:                inherit !default;
+$txt-input--font-size:                  inherit !default;
+$txt-input--margin:                     .5em 0 !default;
+$txt-input--min-height:                 36px !default;
+$txt-input--padding:                    6px .5em 4px !default;
+$txt-input--radius:                     2px !default;
+
+  // States
+  // * Prevent layout from changing by faking a wider border with inset box shadow
+  $txt-input--focus-bg:                 $c-white !default;
+  $txt-input--focus-border-color:       $c-light-blue !default;
+  $txt-input--focus-bs:                 inset 0 0 0 1px $c-light-blue !default; // *
+
+  $txt-input--readonly--border-color:   $c-light-grey !default;
+  $txt-input--readonly--bs:             inset 0 0 0 1px $c-dark-grey !default;
+  $txt-input--readonly--color:          $c-dark-grey !default;
+
+// ---------------------------------------------------------------------
+
+// Basic reset / normalizing for form elements
+%reset--form-elements {
+  font-size: $txt-input--font-size;
+  font-weight: $form-font-weight;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+}
+
+%base-text-input-styling {
+  -webkit-appearance: none;
+  background-color: $txt-input--bg-color;
+  border-radius: $txt-input--radius;
+  border: $txt-input--border;
+  box-shadow: $txt-input--bs;
+  color: $txt-input--color;
+  display: block;
+  font-family: $txt-input--font-family;
+  min-height: $txt-input--min-height;
+  outline: 0;
+  padding: $txt-input--padding;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  &:focus {
+    background-color: $txt-input--focus-bg;
+    border-color: $txt-input--focus-border-color;
+    box-shadow: $txt-input--focus-bs;
+  }
+}
+
+//------------------------------------------------------------------------
+
+// General styling for inputs
+input {
+  @extend %reset--form-elements;
+}
+
+// if a user
+@if $txt-input--native-styling != false {
+
+  input[type="text"] {
+    @extend %base-text-input-styling;
+  }
+
+}
+
+.#{$ns}text-input {
+  @extend %base-text-input-styling;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <input type="text" />
+  </div>
+
+*/
+
+
+// Input Readonly States
+input {
+
+  // Read Only input styling
+  &[readonly],
+  &[readonly]:focus {
+    border-color: $txt-input--readonly--border-color !important;
+    color: $txt-input--readonly--color !important;
+  }
+
+  &[readonly]:focus {
+    box-shadow: $txt-input--readonly--bs !important;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <input type="text" readonly />
+  </div>
+
+*/

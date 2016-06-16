@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Page Load Fade in
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+    <style>
+
+    .init-onload-reveal .onload-reveal {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+      .onload-reveal {
+        transform: translateY(-20px);
+        transition: transform .25s .2s ease-in-out,
+                    opacity .25s .2s ease-in-out;
+        opacity: 0;
+      }
+
+      .onload-reveal--delay-1 {
+        transition: transform .25s .6s ease-in-out,
+                    opacity .25s .6s ease-in-out;
+      }
+
+      .onload-reveal--delay-2 {
+        transition: transform .25s .9s ease-in-out,
+                    opacity .25s .9s ease-in-out;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="page">
+
+      <header role="banner">
+        <div class="content-area onload-reveal">
+          <h1>
+            On Load Content Reveal
+          </h1>
+        </div>
+      </header>
+
+      <main role="main">
+        <article role="article" class="content-area onload-reveal onload-reveal--delay-1">
+          <h2>
+            Revealing Content with CSS Transitions and a tiny bit of JavaScript
+          </h2>
+          <p>
+            The required CSS and JavaScript to create the content reveal animation
+            for this example page is quite minimal.
+          </p>
+
+          <p>
+            The following classes are required:
+          </p>
+
+          <pre><code>
+  .init-onload-reveal // added to &lt;html> via JavaScript
+
+  .onload-reveal
+
+  .onload-reveal--delay-1
+
+  .onload-reveal--delay-2
+          </code></pre>
+        </article>
+      </main>
+
+      <footer role="contentinfo">
+        <div class="content-area onload-reveal onload-reveal--delay-2">
+          <p>
+            Just some footer stuff here.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      var html = document.querySelector('html'); // IE8 +
+
+      // classList only has partial support in IE 10+
+      // but full support with Edge (IE 12)
+      // but more importantly it is still not supported with
+      // Opera Mini 5-8, at all.
+      html.classList.remove('no-js');
+      html.classList.add('init-onload-reveal');
+    </script>
+
+  </body>
+</html>

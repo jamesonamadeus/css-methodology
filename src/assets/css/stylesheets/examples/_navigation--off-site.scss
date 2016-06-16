@@ -1,0 +1,121 @@
+/** --------------------------------------------------------------------
+
+  Off-site Navigation
+
+--------------------------------------------------------------------- */
+
+
+// ---------------------------------------------------------------------
+
+@media screen and ( max-width: $bp-medium ) {
+
+  .off-site-navs {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    max-width: 100px;
+    transform: translateX(200px);
+    transition: transform .2s .3s ease-in-out,
+                max-width .2s .3s ease-in-out;
+    width: 100%;
+    z-index: 10;
+
+    > * {
+      opacity: 0;
+      transition: opacity .2s ease-in-out,
+                  visibility .2s ease-in-out;
+      visibility: hidden;
+    }
+
+    &:before {
+      background: rgba($c-off-black, .75);
+      content: '';
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 100%;
+      speak: none;
+      top: 0;
+      transition: width .35s .5s ease-in-out,
+                  opacity .35s .5s ease-in-out;
+      width: 0vw;
+    }
+
+    &[aria-expanded="true"] {
+      max-width: 380px;
+      transform: translateX(0px);
+      transition: transform .2s .2s ease-in-out,
+                  max-width .2s .2s ease-in-out;
+
+      > * {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .2s .7s ease-in-out;
+      }
+
+
+      &:before {
+        opacity: 1;
+        transition: width .2s .2s ease-in-out,
+                    opacity .2s .2s ease-in-out;
+        width: 100vw;
+      }
+    }
+  }
+
+
+
+  .off-site-nav {
+    bottom: 0;
+    height: 0%;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    transform-origin: center center;
+    transform: scale(.2) translateY(200px);
+    width: 0%;
+    z-index: 10;
+
+
+
+    > * {
+      opacity: 0;
+      transition: opacity .2s ease-in-out,
+                  visibility .2s ease-in-out;
+      visibility: hidden;
+    }
+
+    &[aria-expanded="true"] {
+      transform: scale(1) translateY(0px);
+      transition: transform .4s .2s ease-in-out,
+                  width .4s .2s ease-in-out,
+                  height .4s .2s ease-in-out;
+      height: 100%;
+      overflow: auto;
+      width: 100%;
+
+      > * {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+}
+
+
+
+.pause-document-scroll,
+.pause-document-scroll body {
+  overflow: hidden;
+}
+
+
+
+.off-site-nav[aria-expanded="true"] {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}

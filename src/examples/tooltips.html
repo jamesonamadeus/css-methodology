@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      ARIA Tooltips
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+  </head>
+  <body id="body">
+
+
+  <div id="page" class="txt-center">
+
+    <h1 class="content-area">
+      ARIA Tooltips
+    </h1>
+
+
+    <div class="content-area">
+      <span class="a11y-tip">
+        <span class="a11y-tip__trigger">
+          Tooltip Trigger span
+        </span>
+
+        <span class="a11y-tip__help">
+          Tooltip content goes here
+        </span>
+      </span>
+    </div>
+
+    <div class="content-area">
+      <span class="a11y-tip a11y-tip--no-delay">
+        <a href="#!" class="a11y-tip__trigger">
+          Link w/top tooltip</a>
+
+        <span class="a11y-tip__help a11y-tip__help--top">
+          Activate this link to go somewhere!
+        </span>
+      </span>
+    </div>
+
+    <div class="content-area">
+      <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+      <span class="a11y-tip">
+        <span class="a11y-tip__trigger">totam rem aperiam,</span>
+        <span class="a11y-tip__help a11y-tip__help--top">
+          tip to describe this ipsum.
+        </span>
+      </span>
+      eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+      </p>
+    </div>
+
+    <div class="content-area">
+      <span class="a11y-tip">
+        <button type="button" class="a11y-tip__trigger" aria-describedby="tt_id">
+          Button w/bottom tooltip
+        </button>
+
+        <span id="tt_id" role="tooltip" class="a11y-tip__help a11y-tip__help--bottom">
+          Buttons do things on the page. Activate it to perform an action.
+        </span>
+      </span>
+    </div>
+
+
+    <div class="content-area">
+      <label for="test" class="display-block">
+        Input with right tooltip
+      </label>
+      <span class="a11y-tip">
+        <input id="test" placeholder="enter text" class="a11y-tip__trigger" aria-describedby="test_desc" type="text">
+
+        <span id="test_desc" role="tooltip" class="a11y-tip__help a11y-tip__help--right">
+          Enter something here. Text would be fine.
+        </span>
+      </span>
+    </div>
+
+
+    <div class="content-area">
+      <span class="a11y-tip">
+        <button type="button" class="a11y-tip__trigger btn--secondary" aria-describedby="ttx">
+          Button w/left tooltip
+        </button>
+
+        <span id="ttx" role="tooltip" class="a11y-tip__help a11y-tip__help--left">
+          This is another button!
+        </span>
+      </span>
+    </div>
+
+
+ </div>
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.concat.js"></script>
+
+
+  </body>
+</html>

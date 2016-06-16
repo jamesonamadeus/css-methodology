@@ -1,0 +1,33 @@
+/** --------------------------------------------------------------------
+
+  Smart Center Alignment
+
+  This pattern will center align all child elements, like normal
+  text align center.  However all child elements that are wrapped
+  with the .txt-smart-center__content class will center align until
+  they are of equal width of the parent container. Then, the text
+  within the wrapper will be left aligned.
+--------------------------------------------------------------------- */
+
+.#{$ns}txt-smart-center {
+  text-align: center;
+
+  &__content {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="txt-smart-center">
+
+    <span class="txt-smart-center__content">
+      Centered Text
+    </span>
+  </p>
+
+*/

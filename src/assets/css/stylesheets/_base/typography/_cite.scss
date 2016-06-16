@@ -1,0 +1,39 @@
+/** --------------------------------------------------------------------
+
+  <cite> Element
+
+  Usage of the Cite <cite> element
+
+  Use the citation element to represent reference to a creative work.
+
+  It must include the title, or the name of the author, or provide
+  URL reference.
+
+  Combine with the cite attribute on a <blockquote> or <q> element
+  when citing an online resource.
+
+--------------------------------------------------------------------- */
+
+// declare vars here
+
+// ---------------------------------------------------------------------
+
+cite {
+  @extend .#{$ns}txt-bold;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    <q cite="http://source_address">Quote goes here</q>.
+  </p>
+
+  <p>
+    More information can be found at
+    <cite>citation here</cite>.
+  </p>
+
+*/

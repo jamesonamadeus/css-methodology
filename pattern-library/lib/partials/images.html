@@ -1,0 +1,177 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Image Element
+      </h1>
+      <p>
+        Intro here
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Example of a broken image
+    </div>
+    <img src="brokes" alt="this is a purposfully broken image" />
+
+    <div class="cs-pattern-intro">
+      Example of a typical image
+    </div>
+    <img src="../dist/assets/images/portrait-hero.jpg" alt="a dog wrapped in a blanket, sitting in a path in the woods" />
+
+    <div class="cs-pattern-intro">
+      Image with a longdesc attribute
+    </div>
+    <img src="../dist/assets/images/portrait-hero.jpg" alt="dog" longdesc="../dist/images/longdesc.html" />
+
+    <p>
+      Alternatively, use <code>&lt;figure> /  &lt;figcaption></code> for longer descriptions that should be visible to all users, or <code>aria-describedby</code> and visually hidden text for screen reader only longer descriptions.
+    </p>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Figure Containing an Image
+      </h1>
+      <p>
+        Intro here
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="cs-pattern-intro">
+      Figure without a caption
+    </div>
+    <figure>
+      <img src="../dist/assets/images/portrait-hero.jpg" alt="a dog wrapped in a blanket, sitting in a path in the woods" />
+    </figure>
+
+    <!--
+
+      Figure With Caption
+
+      Note: when using both alternative text and a figure caption, the figure caption
+      should take on the bulk of the image description, and the alternative text can
+      be reduced to minimal information. Never duplicate the alternative text to be used
+      as the figure caption, as screen readers will then present a user with duplicate
+      information.
+
+    -->
+    <div class="cs-pattern-intro">
+      Figure with a caption
+    </div>
+    <figure>
+      <img src="../dist/assets/images/portrait-hero.jpg" alt="a dog wrapped in a blanket, sitting in a path in the woods" />
+      <figcaption>
+        <p>
+          Fig. 1: A dog wrapped in a blanket
+        </p>
+      </figcaption>
+    </figure>
+
+    <div class="cs-pattern-intro">
+      Figure with a caption before the image.
+    </div>
+    <figure>
+      <figcaption>
+        <p>
+          Caption before image example.
+        </p>
+      </figcaption>
+      <img src="../dist/assets/images/portrait-hero.jpg" alt="a dog wrapped in a blanket, sitting in a path in the woods" />
+    </figure>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Picture Element
+      </h1>
+      <p>
+        Intro here
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <picture>
+      <source srcset="../dist/assets/images/lg-hero.jpg, ../dist/assets/images/hi-res-hero.jpg 2x" media="(min-width: 600px)"></source>
+      <source srcset="../dist/assets/images/portrait-hero.jpg, ../dist/assets/images/lg-hero.jpg 2x"></source>
+      <img alt="image alt text goes here" src="../dist/assets/images/portrait-hero.jpg" />
+    </picture>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Iconography
+      </h1>
+      <p>
+        When implementing icons, care should be taken to determine whether the icon is decorative or instructional.
+      </p>
+      <p>
+        If decorative, it may be optimal to implement the icon as a background image, or as an image with a blank alt attribute. If the icon is not purely decoration, and does not have adequate accompanying text, ensure to supply descriptive alt text, or hidden
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Basic Implementation
+    </div>
+
+    <span class="icon-callout">
+      svg
+    </span>
+
+
+    <div class="cs-pattern-intro">
+      Has UI Importance
+    </div>
+
+    <span class="icon-callout">
+      svg
+      <span class="sr-only">
+        Appropriate Name Here
+      </span>
+    </span>
+
+
+    <div class="cs-pattern-intro">
+      No UI Importance
+    </div>
+    
+    <span class="icon-callout" aria-hidden="true">
+      svg potentially add role="presentation" 
+    </span>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+

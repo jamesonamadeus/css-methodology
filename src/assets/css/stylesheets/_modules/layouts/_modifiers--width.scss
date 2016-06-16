@@ -1,0 +1,174 @@
+/** --------------------------------------------------------------------
+
+  Width Modifier Classes
+
+  These classes are required by _float-layout.scss
+
+  Do not apply styling to these as their purpose is for width only.
+
+--------------------------------------------------------------------- */
+
+$width-list: 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100;
+$decimal-list: 33, 66;
+
+//------------------------------------------------------------------------
+
+// spit out whole number classes
+@each $widths in $width-list {
+  .width-#{$widths} {
+    width: $widths * 1%;
+  }
+}
+
+// decimal numbers need special maths
+@each $widths in $decimal-list {
+  .width-#{$widths} {
+    width: $widths * 1.010101%;
+  }
+}
+
+@media screen and ( min-width: $bp-small ) {
+
+  // spit out whole number classes
+  @each $widths in $width-list {
+    .width-#{$widths}--sm {
+      width: $widths * 1%;
+    }
+  }
+
+  // decimal numbers need special maths
+  @each $widths in $decimal-list {
+    .width-#{$widths}--sm {
+      width: $widths * 1.010101%;
+    }
+  }
+} // end bp-small
+
+
+@media screen and ( min-width: $bp-portrait ) {
+
+  // spit out whole number classes
+  @each $widths in $width-list {
+    .width-#{$widths}--portrait {
+      width: $widths * 1%;
+    }
+  }
+
+  // decimal numbers need special maths
+  @each $widths in $decimal-list {
+    .width-#{$widths}--portrait {
+      width: $widths * 1.010101%;
+    }
+  }
+} // end bp-medium
+
+
+
+@media screen and ( min-width: $bp-medium ) {
+
+  // spit out whole number classes
+  @each $widths in $width-list {
+    .width-#{$widths}--md {
+      width: $widths * 1%;
+    }
+  }
+
+  // decimal numbers need special maths
+  @each $widths in $decimal-list {
+    .width-#{$widths}--md {
+      width: $widths * 1.010101%;
+    }
+  }
+} // end bp-medium
+
+
+
+@media screen and ( min-width: $bp-large ) {
+
+  // spit out whole number classes
+  @each $widths in $width-list {
+    .width-#{$widths}--lg {
+      width: $widths * 1%;
+    }
+  }
+
+  // decimal numbers need special maths
+  @each $widths in $decimal-list {
+    .width-#{$widths}--lg {
+      width: $widths * 1.010101%;
+    }
+  }
+} // end bp-large
+
+
+@media screen and ( min-width: $bp-1024 ) {
+
+  // spit out whole number classes
+  @each $widths in $width-list {
+    .width-#{$widths}--1024 {
+      width: $widths * 1%;
+    }
+  }
+
+  // decimal numbers need special maths
+  @each $widths in $decimal-list {
+    .width-#{$widths}--1024 {
+      width: $widths * 1.010101%;
+    }
+  }
+} // end bp-1024
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="width-50">
+    <label for="example">
+      Message:
+    </label
+    <textarea id="example"></textarea>
+  </div>
+
+*/
+
+
+
+
+
+/** --------------------------------------------------------------------
+
+  Max & Width Modifiers
+
+--------------------------------------------------------------------- */
+
+$mmw-list: 200, 300, 400, 600;
+
+//------------------------------------------------------------------------
+
+@each $widths in $mmw-list {
+  .mxw-#{$widths} {
+    max-width: $widths * 1px;
+  }
+
+  .mw-#{$widths} {
+    min-width: $widths * 1px;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="width-90 mxw-400">
+    Be 90% wide...but really never more
+    than 400px wide.
+  </div>
+
+
+  <button type="button" class="mw-200">
+    Button w/a 200px min width
+  </button>
+
+*/

@@ -1,0 +1,88 @@
+/** --------------------------------------------------------------------
+
+  Inline Modal Windows
+
+--------------------------------------------------------------------- */
+
+// vars go here
+
+// ---------------------------------------------------------------------
+
+.inline-modal {
+  background: $c-white;
+  border: 1px solid $c-light-grey;
+  box-shadow: 0 2px 3px rgba(0,0,0,.3);
+  border-radius: 2px;
+  max-width: 600px;
+  min-height: 100px;
+  min-width: 440px;
+  position: fixed;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+  z-index: 24;
+
+  &__header {
+    border-bottom: 1px solid $c-light-grey;
+    background: $c-dark-grey;
+    color: $c-white;
+    padding: 16px;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    padding: 20px 16px;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__outro {
+    padding: 0 16px 16px;
+    text-align: right;
+  }
+}
+
+.opened-inline-modal .inline-modal,
+.opened-inline-modal .inline-modal__pointer {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+.inline-modal__pointer {
+  @include triangle (18px, #E0E2E7, top);
+  left: 12px;
+  position: absolute;
+  top: 100%;
+  z-index: 26;
+
+  &:before {
+    @include triangle (16px, $c-white, top);
+    left: -18px;
+    position: absolute;
+    top: -18px;
+    z-index: 25;
+  }
+
+  &:after {
+    @include triangle (20px, rgba(0,0,0,.1), top);
+    left: -22px;
+    position: absolute;
+    top: -18px;
+    z-index: 1;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+
+*/

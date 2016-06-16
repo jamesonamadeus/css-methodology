@@ -1,0 +1,46 @@
+/** --------------------------------------------------------------------
+
+  Alignment Modifiers
+
+--------------------------------------------------------------------- */
+
+.#{$ns}txt-center {
+  text-align: center;
+}
+
+.#{$ns}txt-left {
+  text-align: left;
+}
+
+.#{$ns}txt-right {
+  text-align: right;
+
+  &--sm {
+    text-align: left;
+
+    @media screen and ( min-width: $bp-small ) {
+      text-align: right;
+    }
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="txt-center">
+    Centered Text
+  </p>
+
+
+  <div class="txt-center">
+    <div class="display-inline-block">
+      <p>
+        Also useful for aligning
+        inline block elements.
+      </p>
+    </div> <!-- /.display-inline-block -->
+  </div> <!-- /.txt-center -->
+
+*/

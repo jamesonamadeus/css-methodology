@@ -1,0 +1,163 @@
+/** ----------------------------------------------------------------------------
+
+  Coloring Modifiers
+
+ ---------------------------------------------------------------------------- */
+
+// declare vars here
+
+//------------------------------------------------------------------------
+
+.#{$ns}color-primary {
+  color: $c-primary ;
+}
+
+.#{$ns}color-secondary {
+  color: $c-secondary ;
+}
+
+.#{$ns}color-default {
+  color: $body--color ;
+}
+
+
+// Modify text color when on a dark background
+.#{$ns}color-inverse {
+  color: $c-white !important;
+}
+
+
+// Text Coloring for validation/invalid/error messaging
+.#{$ns}color-success {
+  color: $c-success;
+}
+
+.#{$ns}color-warning {
+  color: $c-warning;
+}
+
+.#{$ns}color-info {
+  color: $c-info;
+}
+
+.#{$ns}color-error {
+  color: $c-error;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="color-error">
+    Error Text
+  </p>
+
+  <p>
+    Text that
+    <span class="color-warning">calls out a warning</span>.
+  </p>
+
+*/
+
+
+/** --------------------------------------------------------------------
+
+  Background Color Classes
+
+--------------------------------------------------------------------- */
+
+.#{$ns}bg-color-error {
+  background-color: $c-error !important;
+}
+
+.#{$ns}bg-color-info {
+  background-color: $c-info !important;
+}
+
+.#{$ns}bg-color-success {
+  background-color: $c-success !important;
+}
+
+.#{$ns}bg-color-warning {
+  background-color: $c-warning !important;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="color-error">
+    Error Text
+  </p>
+
+  <p>
+    Text that
+    <span class="color-warning">calls out a warning</span>.
+  </p>
+
+*/
+
+
+
+/** --------------------------------------------------------------------
+
+  Border Color Classes
+
+--------------------------------------------------------------------- */
+
+.#{$ns}border-color-error {
+  border-color: $c-error !important;
+}
+
+.#{$ns}border-color-info {
+  border-color: $c-info !important;
+}
+
+.#{$ns}border-color-success {
+  border-color: $c-success !important;
+}
+
+.#{$ns}border-color-warning {
+  border-color: $c-warning !important;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!--
+    example of an input that has an error,
+    so .border-color-error was applied to the element.
+  -->
+
+  <div class="form-row">
+
+    <label for="example">
+      Example Label:
+
+      <input type="text"
+             id="unique_ID"
+             class="border-color-error" />
+
+      <span class="input-message" id="unique_error_id">
+       Error/warning message goes here
+      </span>
+    </label>
+  </div> <!-- /.form-row -->
+
+*/
+
+
+
+/** --------------------------------------------------------------------
+
+  Custom Text Selection Highlight
+
+  Change the text highlight color of user selected text.
+
+--------------------------------------------------------------------- */
+
+@include select-text( $select-text--bg, $select-text--color, none );

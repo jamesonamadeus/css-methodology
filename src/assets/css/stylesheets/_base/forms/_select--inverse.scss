@@ -1,0 +1,58 @@
+/** --------------------------------------------------------------------
+
+  Alternate Select Element Styling
+
+--------------------------------------------------------------------- */
+
+$select-inverse--bg:               $c-light-blue !default;
+$select-inverse--border-color:     $c-light-blue !default;
+$select-inverse--outline:          1px solid darken($txt-input--focus-border-color, 15%) !default;
+$select-inverse--color:           $c-white !default;
+
+$select-inverse__arrow--bg:       lighten($c-light-blue, 16%) !default;
+
+$select-inverse--focus-state:      inset 0 0 0 1px $c-dark-blue !default;
+$select-inverse--focus-ring--text-shadow:       0 0 0 $c-white !default;
+
+
+//------------------------------------------------------------------------
+
+.#{$ns}select-box--inverse {
+  background: $select-inverse--bg;
+  border-color: $select-inverse--border-color;
+
+  &:after {
+    background-color: $select-inverse__arrow--bg;
+  }
+
+  select {
+    color: $select-inverse--color;
+
+    &:focus {
+      box-shadow: $select-inverse--focus-state;
+    }
+  }
+
+  select:-moz-focusring {
+    text-shadow: $select-inverse--focus-ring--text-shadow;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <label for="select-id-here">
+    Select Something
+  </label>
+
+  <div class="select-box select-box--inverse">
+    <select id="select-id-here">
+      <option>...</option>
+      <option>...</option>
+      <option>...</option>
+    </select>
+  </div>
+
+*/

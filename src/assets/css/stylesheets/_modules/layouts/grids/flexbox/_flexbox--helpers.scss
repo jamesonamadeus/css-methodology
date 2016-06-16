@@ -1,0 +1,66 @@
+/** --------------------------------------------------------------------
+
+  Flexbox Helper Classes
+
+--------------------------------------------------------------------- */
+
+// vars here
+
+//------------------------------------------------------------------------
+
+// align flex elements to the bottom of
+// the flex-area
+.flex-align-bottom {
+  @include align-self(flex-end);
+}
+
+
+
+// Change the order of flex-area children
+@for $i from 1 through 5 {
+
+  .flex-order-#{$i} {
+    @include order($i);
+  }
+
+} // end @for
+
+
+@media screen and ( min-width: $bp-small ) {
+
+  @for $i from 1 through 5 {
+
+    .flex-order-#{$i}--sm {
+      @include order($i);
+    }
+
+  } // end @for
+
+}
+
+
+//
+.flex-end {
+  @include justify-content(flex-end);
+
+  &--sm {
+
+    @media screen and (min-width: $bp-small) {
+      @include justify-content(flex-end);
+    }
+  }
+
+  &--portrait {
+
+    @media screen and (min-width: $bp-portrait) {
+      @include justify-content(flex-end);
+    }
+  }
+
+  &--md {
+
+    @media screen and (min-width: $bp-medium) {
+      @include justify-content(flex-end);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/** --------------------------------------------------------------------
+
+  Measurement Units
+
+  Base measurement units like margin & padding off from a standard base,
+  so if it ever changes, it will only need to be updated in a single location
+
+--------------------------------------------------------------------- */
+
+$base-unit:         4px !default;
+$base-unit2:        $base-unit * 2 !default; // 8px
+$base-unit3:        $base-unit * 3 !default; // 12px
+$base-unit4:        $base-unit * 4 !default; // 16px
+$base-unit5:        $base-unit * 5 !default; // 20px
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  .example {
+    border-radius $base-unit;
+  }
+
+*/

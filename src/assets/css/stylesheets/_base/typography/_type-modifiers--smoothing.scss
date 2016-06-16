@@ -1,0 +1,29 @@
+/** ----------------------------------------------------------------------------
+
+  Text Rendering on OSX
+
+  These classes really only work on OSX, and results vary
+  with type faces.
+
+ ---------------------------------------------------------------------------- */
+
+.#{$ns}txt-smooth-thin {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$ns}txt-smooth-auto {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="txt-smooth-thin">
+    This text will be all smoothy n' such.
+  </p>
+
+*/

@@ -1,0 +1,131 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Heros</h1>
+      <p>
+        Responsive Hero areas with centered or bottom aligned messaging. Utilizes <code>&lt;picture></code> for main feature image.
+      </p>
+      <p>
+        See the HTML view for additional comments about the semantics of heros.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <!--
+
+      A hero can be a top level section of a document:
+        <header role="banner">
+          ...
+        </header>
+        <section class="hero">
+          ...
+        </section>
+
+        or
+
+        <header role="banner">
+          <nav>...</nav>
+          <div class="hero">
+            ...
+          </div>
+        </header>
+
+      or can be a child of the main content of the document:
+
+        <main>
+          <header class="hero">
+            ...
+          </header>
+        </main>
+
+    -->
+
+    <div class="cs-pattern-intro">
+      Bottom Aligned Hero Message
+    </div>
+
+    <section class="hero">
+
+      <div class="hero__feature">
+        <picture>
+          <source srcset="../dist/assets/images/lg-hero.jpg, ../dist/assets/images/hi-res-hero.jpg 2x" media="(min-width: 600px)"></source>
+          <source srcset="../dist/assets/images/portrait-hero.jpg, ../dist/assets/images/lg-hero.jpg 2x"></source>
+          <img alt="image alt text goes here" src="../dist/assets/images/portrait-hero.jpg" />
+        </picture>
+      </div> <!--/.hero__feature -->
+
+      <div class="hero__content hero__content--bottom-overlay">
+        <div class="hero__content__inner">
+
+          <div class="flex-area flex-area--no-gutter flex-area--mt-0">
+            <div class="flex-w-100 flex-order-2">
+              <h1 class="hero__content__title">
+                Your page specific title goes here.
+              </h1>
+            </div>
+            <div class="flex-w-100 flex-order-1">
+              <div class="hero__content__title-meta">
+                <p>
+                  Meta intro tag goes here
+                </p>
+              </div><!--/.hero__content__lead-bar-->
+            </div>
+          </div>
+
+          <div class="hero__content__message">
+            <p>
+              Strip steak shankle corned beef boudin pork loin flank beef ribeye pork leberkas sausage. Bacon short ribs shank, filet mignon chicken prosciutto kevin sirloin drumstick alcatra ball tip.
+            </p>
+          </div><!--/.hero-message-->
+
+        </div><!--.hero__content-inner-->
+      </div><!--/.hero__content-->
+
+    </section>
+
+
+    <div class="cs-pattern-intro">
+      Center Aligned Hero Message
+    </div>
+    <section class="hero">
+
+      <div class="hero__feature">
+        <picture>
+          <source srcset="../dist/assets/images/lg-hero.jpg, ../dist/assets/images/hi-res-hero.jpg 2x" media="(min-width: 600px)"></source>
+          <source srcset="../dist/assets/images/portrait-hero.jpg, ../dist/assets/images/lg-hero.jpg 2x"></source>
+          <img alt="image alt text goes here" src="../dist/assets/images/portrait-hero.jpg" />
+        </picture>
+      </div> <!--/.hero__feature -->
+
+      <div class="hero__content hero__content--center-overlay">
+        <div class="hero__content__inner">
+
+          <h1 class="hero__content__title">
+            Your page specific title goes here.
+          </h1>
+
+
+          <div class="hero__content__title-meta">
+            <p>
+              Meta data goes here
+            </p>
+          </div><!--/.hero__content__lead-bar-->
+
+          <div class="hero__content__message">
+            <p>
+              Strip steak shankle corned beef boudin pork loin flank beef ribeye pork leberkas sausage. Bacon short ribs shank, filet mignon chicken prosciutto kevin sirloin drumstick alcatra ball tip.
+            </p>
+          </div><!--/.hero-message-->
+
+        </div><!--.hero__content-inner-->
+      </div><!--/.hero__content-->
+
+    </section>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+

@@ -1,0 +1,71 @@
+/** --------------------------------------------------------------------
+
+  Jump Link Navigation for Keyboard Users
+
+--------------------------------------------------------------------- */
+
+$skip-link--bg-color:                 $link--color !default;
+$skip-link--color:                    $c-white !default;
+$skip-link--padding:                  16px !default;
+
+$skip-link--has-transition:           true !default;
+
+$skip-link--focus--offset:            .5em !default;
+
+// ---------------------------------------------------------------------
+
+.skip-links {
+  left: 0;
+  list-style: none;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  z-index: 9999;
+
+  a {
+    @extend .move-off-screen;
+    background: $skip-link--bg-color;
+    color: $skip-link--color;
+    display: block;
+    opacity: 0;
+    padding: $skip-link--padding;
+    white-space: nowrap;
+
+    @if $skip-link--has-transition == true {
+      transform: translateX(-16px);
+      transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+    }
+
+
+    &:focus {
+      left: $skip-link--focus--offset;
+      opacity: 1;
+      top: $skip-link--focus--offset;
+
+      @if $skip-link--has-transition == true {
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <ul class="skip-links" aria-label="Skip Links">
+    <li>
+      <a href="#example_uri">
+        Keyboard Jump Link
+      </a>
+    </li>
+    <li>
+      <a href="#example_uri2">
+        Keyboard Jump Link 2
+      </a>
+    </li>
+  </ul>
+
+*/

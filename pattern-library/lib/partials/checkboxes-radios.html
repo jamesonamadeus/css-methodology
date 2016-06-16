@@ -1,0 +1,485 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Check Box Inputs
+      </h1>
+      <p>
+        Examples of native Check Boxes (unstyled) and the
+        required mark-up pattern to create custom radio buttons
+        that still utilize the native HTML element.
+      </p>
+
+      <p>
+        Wrap checkboxes in a <code>fieldset</code> with a
+        <code>.form-row</code> class for consistent form element layout.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <form method="#"
+          action="#"
+          class="float-grid">
+      <fieldset class="width-100 width-50--sm">
+        <legend>
+          Unstyled Check Boxes
+        </legend>
+
+        <div class="form-row">
+          <input type="checkbox" id="chk2" name="chk2" />
+          <label for="chk2">
+            Unchecked (default)
+          </label>
+        </div>
+
+        <div class="form-row">
+          <input type="checkbox" id="chk1" name="chk1" disabled />
+          <label for="chk1">
+            Disabled
+          </label>
+        </div>
+
+        <div class="form-row">
+          <input type="checkbox" id="chk4" name="chk4" checked />
+          <label for="chk4">
+            :checked
+          </label>
+        </div>
+
+        <div class="form-row">
+          <input type="checkbox" id="chk5" name="chk5" disabled checked />
+          <label for="chk5">
+            Disabled &amp; :checked
+          </label>
+        </div>
+      </fieldset>
+
+
+      <fieldset class="width-100 width-50--sm">
+        <legend>
+          Styled Check Boxes
+        </legend>
+
+        <div class="form-row">
+          <label class="custom-cr" for="customCheck1">
+            <input type="checkbox"
+                   id="customCheck1"
+                   name="customCheck1" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Unchecked (default)
+            </span>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="custom-cr" for="customCheck2">
+            <input type="checkbox"
+                   id="customCheck2"
+                   name="customCheck2"
+                   checked />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Checked by Default
+            </span>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="custom-cr" for="customCheck2error">
+            <input type="checkbox"
+                   id="customCheck2error"
+                   name="customCheck2error"  />
+            <span class="custom-cr__icon border-color-error"></span>
+            <span class="custom-cr__content">
+              with Error
+            </span>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="custom-cr" disabled for="customCheck3">
+            <input type="checkbox"
+                   id="customCheck3"
+                   name="customCheck3"
+                   disabled />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Disabled
+            </span>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="custom-cr" disabled for="customCheck4">
+            <input type="checkbox"
+                   id="customCheck4"
+                   name="customCheck4"
+                   disabled checked />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Checked &amp; Disabled
+            </span>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="custom-cr custom-cr--lg" for="customCheck1a">
+            <input type="checkbox"
+                   id="customCheck1a"
+                   name="customCheck1a" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg
+            </span>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+
+    <hr />
+
+    <form action="#" method="POST">
+      <fieldset>
+        <legend>
+          Horizontal Check boxes
+        </legend>
+
+        <div class="form-row">
+          <label class="custom-cr mr-12" for="customCheck_row1C">
+            <input type="checkbox"
+                   id="customCheck_row1C"
+                   name="customCheck_row1C" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr 1
+            </span>
+          </label>
+
+          <label class="custom-cr mr-12" for="customCheck_row2C">
+            <input type="checkbox"
+                   id="customCheck_row2C"
+                   name="customCheck_row2C" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr 2
+            </span>
+          </label>
+
+          <label class="custom-cr mr-12" for="customCheck_row3C">
+            <input type="checkbox"
+                   id="customCheck_row3C"
+                   name="customCheck_row3C" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr 3
+            </span>
+          </label>
+        </div>  <!-- /.form-row -->
+
+      </fieldset>
+    </form>
+
+    <hr />
+
+    <form action="#" method="POST">
+      <fieldset>
+        <legend>
+          Horizontal Check boxes (large)
+        </legend>
+
+        <div class="form-row">
+          <label class="custom-cr custom-cr--lg mr-12" for="customCheck_row1">
+            <input type="checkbox"
+                   id="customCheck_row1"
+                   name="customCheck_row1" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg 1
+            </span>
+          </label>
+
+          <label class="custom-cr custom-cr--lg mr-12" for="customCheck_row2">
+            <input type="checkbox"
+                   id="customCheck_row2"
+                   name="customCheck_row2" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg 2
+            </span>
+          </label>
+
+          <label class="custom-cr custom-cr--lg mr-12" for="customCheck_row3">
+            <input type="checkbox"
+                   id="customCheck_row3"
+                   name="customCheck_row3" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg 3
+            </span>
+          </label>
+        </div>  <!-- /.form-row -->
+
+      </fieldset>
+    </form>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Radio Buttons
+      </h1>
+      <p>
+        Examples of native Radio Buttons (unstyled) and the
+        required mark-up pattern to create custom radio buttons
+        that still utilize the native HTML element.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <form method="#"
+          action="#"
+          class="float-grid">
+      <fieldset class="width-100 width-50--sm">
+        <legend>
+          Radio (unstyled)
+        </legend>
+
+        <div class="form-row">
+          <label for="rd1a">
+            <input type="radio" id="rd1a" name="rd1a"> Radio default
+          </label>
+        </div>
+        <div class="form-row">
+          <label for="rd4a">
+            <input type="radio" id="rd4a" name="rd1a" disabled> Radio disabled
+          </label>
+        </div>
+        <div class="form-row">
+          <label for="rdc">
+            <input type="radio" id="rdc" name="rd1a" checked> Radio :checked by default
+          </label>
+        </div>
+        <div class="form-row">
+          <label for="rdc1">
+            <input type="radio" id="rdc1" name="rnew" disabled checked> Radio Disabled &amp; :checked
+          </label>
+        </div>
+
+      </fieldset> <!-- /.width-100 -->
+
+      <fieldset class="width-100 width-50--sm">
+        <legend>
+          Radio (styled)
+        </legend>
+
+          <div class="form-row">
+            <label class="custom-cr" for="customRadio1">
+              <input type="radio"
+                     id="customRadio1"
+                     name="customRadio" />
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                Radio Button default
+              </span>
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="custom-cr custom-cr--lg" for="customRadio1LG">
+              <input type="radio"
+                     id="customRadio1LG"
+                     name="customRadio" />
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                Radio Button Large
+              </span>
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="custom-cr" for="customRadio2">
+              <input type="radio"
+                     id="customRadio2"
+                     name="customRadio"
+                     checked />
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                Radio Button :checked by default
+              </span>
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="custom-cr" disabled for="customRadio3">
+              <input type="radio"
+                     id="customRadio3"
+                     name="customRadio"
+                     disabled />
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                Radio Button Disabled
+              </span>
+            </label>
+          </div>
+          <div class="form-row">
+            <label class="custom-cr" disabled for="customRadio4">
+              <input type="radio"
+                     id="customRadio4"
+                     name="customRadio"
+                     disabled />
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                Radio Button :checked &amp; Disabled
+              </span>
+            </label>
+          </div>
+
+      </fieldset>
+
+    </form>
+
+    <hr />
+
+    <form action="#" method="POST">
+      <fieldset>
+        <legend>
+          Horizontal Radios
+        </legend>
+
+        <div class="form-row">
+          <label class="custom-cr mr-12" for="customRadio1_row1">
+            <input type="radio"
+                   id="customRadio1_row1"
+                   name="customRadio1_rowX" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Label 1
+            </span>
+          </label>
+
+          <label class="custom-cr mr-12" for="customRadio1_row2">
+            <input type="radio"
+                   id="customRadio1_row2"
+                   name="customRadio1_rowX" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Label 2
+            </span>
+          </label>
+
+          <label class="custom-cr mr-12" for="customRadio1_row3">
+            <input type="radio"
+                   id="customRadio1_row3"
+                   name="customRadio1_rowX" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              Label 3
+            </span>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+
+    <hr />
+
+    <form action="#" method="POST">
+      <fieldset>
+        <legend>
+          Horizontal Radios (large)
+        </legend>
+
+        <div class="form-row">
+          <label class="custom-cr custom-cr--lg mr-12" for="customRadio_row1">
+            <input type="radio"
+                   id="customRadio_row1"
+                   name="customRadio_rowX" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg 1
+            </span>
+          </label>
+
+          <label class="custom-cr custom-cr--lg mr-12" for="customRadio_row2">
+            <input type="radio"
+                   id="customRadio_row2"
+                   name="customRadio_rowX" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg 2
+            </span>
+          </label>
+
+          <label class="custom-cr custom-cr--lg mr-12" for="customRadio_row3">
+            <input type="radio"
+                   id="customRadio_row3"
+                   name="customRadio_rowX" />
+            <span class="custom-cr__icon"></span>
+            <span class="custom-cr__content">
+              .custom-cr--lg 3
+            </span>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Pills</h1>
+      <p>Check Box or Radio Button Pills</p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+<div class="cr-pill">
+  <input type="checkbox" name="cbpill" id="cbpill1" />
+  <label class="btn btn--generic btn--sm" for="cbpill1">
+    Check 1
+  </label>
+  <input type="checkbox" name="cbpill" id="cbpill2" />
+  <label class="btn btn--generic btn--sm" for="cbpill2">
+    Check 2
+  </label>
+</div>
+
+
+<div class="cr-pill">
+  <input type="radio" name="rbtnPill" id="rbtn1a" checked />
+  <label class="btn btn--generic" for="rbtn1a">
+    Choice 1
+  </label>
+  <input type="radio" name="rbtnPill" id="rbtn2a" />
+  <label class="btn btn--generic" for="rbtn2a">
+    Choice 2
+  </label>
+  <input type="radio" name="rbtnPill" id="rbtn3a" />
+  <label class="btn btn--generic" for="rbtn3a">
+    Choice 3
+  </label>
+</div>
+
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

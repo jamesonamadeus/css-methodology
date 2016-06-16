@@ -1,0 +1,35 @@
+/** --------------------------------------------------------------------
+
+  Date Input Elements
+
+--------------------------------------------------------------------- */
+
+$date-input--native-styling:         $txt-input--native-styling !default;
+
+//------------------------------------------------------------------------
+
+@if $date-input--native-styling != false {
+
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="time"] {
+    @extend input[type="text"];
+  }
+  
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="enter_date">
+      Enter Date
+    </label>
+    <input type="date" id="enter_date" />
+  </div>
+
+*/

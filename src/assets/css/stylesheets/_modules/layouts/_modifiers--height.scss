@@ -1,0 +1,37 @@
+/** --------------------------------------------------------------------
+
+ Height Modifiers
+
+--------------------------------------------------------------------- */
+
+$mmh-list: 200, 400, 600;
+
+//------------------------------------------------------------------------
+
+@each $height in $mmh-list {
+  .max-height-#{$height} {
+    max-width: $height * 1px;
+  }
+
+  .min-height-#{$height} {
+    min-width: $height * 1px;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="max-height-400">
+    This element will have a max-height of 400px.
+
+    It better have an overflow class
+    on it as well...
+  </div>
+
+  <div class="min-height-200">
+    This element will have a min-height of 200px.
+  </div>
+
+*/

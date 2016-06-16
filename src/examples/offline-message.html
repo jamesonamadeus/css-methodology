@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Offline Alert
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+    <style>
+    /*  #offline_alert {
+        display: none;
+      }
+*/
+      [offline="true"] #offline_alert {
+        display: block;
+      }
+    </style>
+
+  </head>
+  <body id="body">
+
+    <div id="page" class="content-area">
+
+      <div aria-hidden="true" tabindex="-1" id="offline_alert" class="message-block message-block--error">
+        <p>
+          You appear to be offline.
+        </p>
+      </div>
+
+    </div>
+
+    <!--
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.concat.js"></script> -->
+    <script>
+      // credit: http://codepen.io/joe-watkins/pen/PNMGeZ
+      var offlineMsg = document.getElementById("offline_alert");
+
+      function _showOfflineAlert () {
+
+        document.getElementsByTagName("html")[0].setAttribute( "offline", 'true' );
+        offlineMsg.setAttribute( "aria-hidden", "false" );
+        offlineMsg.classList.add('is-active');
+
+        setTimeout( function () {
+          offlineMsg.focus();
+        }, 400 );
+
+      }
+
+      function _hideOfflineAlert () {
+
+        document.getElementsByTagName("html")[0].setAttribute( "offline" , 'false' );
+        offlineMsg.setAttribute( "aria-hidden", "true" );
+        offlineMsg.classList.remove('is-active');
+
+      }
+
+      window.addEventListener( "offline", _showOfflineAlert, 'false' );
+
+      window.addEventListener( "online", _hideOfflineAlert, 'false' );
+    </script>
+  </body>
+</html>

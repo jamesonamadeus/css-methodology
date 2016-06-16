@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Fade Out Header on Scroll
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+
+    <style>
+      .site-navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,.76);
+        z-index: 19;
+        padding: 12px;
+      }
+
+      .site-navigation__listing {
+        float: right;
+      }
+
+      .site-navigation__listing a {
+        color: #fff;
+      }
+
+      .hero {
+        background: #2a2a2a;
+        color: #fff;
+        height: 600px;
+        top: 0;
+        position: fixed;
+        width: 100%;
+      }
+
+      .hero__img {
+        background-image: url(../assets/images/banner-photo.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        left: -1%;
+        position: absolute;
+        top: 0;
+        width: 102%;
+      }
+
+
+
+      .hero-scroll {
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 700px;
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%)  translateZ(0);
+        transform-origin: center center;
+        width: 90%;
+      }
+
+      .hero-scroll__title {
+        color: #fff;
+      }
+
+      .hero__content {
+        position: relative;
+        top: 0;
+        height: 100%;
+        z-index: 3;
+      }
+
+    </style>
+  </head>
+  <body id="body">
+
+  <div class="page">
+  <header role="banner" id="site_banner">
+
+    <nav role="navigation" id="nav_container" class="site-navigation" aria-label="Main">
+      <a href="#!" title="home">
+        logo
+      </a>
+
+      <!--   <a href="#main_menu">
+          Menu
+        </a> -->
+
+      <ul class="site-navigation__listing list-horizontal has-pipes" id="main_menu">
+        <li>
+          <a>
+            <span class="is-current sr-only">
+              Current Page
+            </span>
+            Nav Item 1
+          </a>
+        </li>
+        <li>
+          <a href="#!">
+            Nav Item 2
+          </a>
+        </li>
+        <li>
+          <a href="#!">
+            Nav Item 3
+          </a>
+        </li>
+      </ul>
+    </nav> <!-- /.site-navigation -->
+
+    <div class="hero" id="site_banner">
+      <div class="hero__img"></div>
+      <div class="hero__content content-area">
+
+        <div class="hero-scroll">
+
+          <div class="mxw-600 m-center txt-center" data-action="fade-scroll">
+            <h1 class="hero-scroll__title txt-up-5 mb-20">
+              Article/page title goes here and it should be a few lines long to see how this works
+            </h1>
+            <p>
+              Classification Tag
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+    <div style="box-shadow: 0 0 20px rgba(0,0,0,.1); background: #fafafa; padding: 40px 50px; margin-top: 600px;font-size: 28px; z-index: 3; position: relative;">
+      <p>
+        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
+      </p>
+      <p>
+        Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+      </p>
+      <p>
+        Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+      </p>
+      <p>
+        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+      </p>
+    </div>
+
+    </div> <!-- /.page -->
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.min.js"></script>
+    <script>
+      var $win = $(window);
+
+      $win.scroll( function() {
+          var $value = $(this).scrollTop();
+
+          var $heroArea = $('.hero-scroll');
+          var $heroImg = $('.hero__img')
+
+          if ($value > 0 ) {
+            $heroArea.css({
+              'margin-top': '-' + $value/4 + 'px',
+              'opacity': 1 - (($value/60) * 0.08)
+            });
+
+
+
+            var scaleAmt = 1.0 + ($value / 10000);
+
+
+            $heroImg.css({
+              'top': '-' + $value/8 + 'px',
+              'opacity': (1 - (($value/40) * 0.06)),
+              'transform': 'scale(' + scaleAmt + ')'
+            });
+
+          }
+
+          else if ($value <= 10 ) {
+            $heroArea.removeAttr('style');
+            $heroImg.removeAttr('style');
+          }
+
+      });
+
+    </script>
+  </body>
+</html>

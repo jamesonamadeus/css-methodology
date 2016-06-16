@@ -1,0 +1,59 @@
+/** --------------------------------------------------------------------
+
+  Figure & Figure Caption
+
+--------------------------------------------------------------------- */
+ 
+$figure--margin:                      $base-margin auto $base-margin !default;
+
+$figurecaption--margin:               auto !default;
+$figurecaption--padding:              12px 0 0 !default;
+
+//------------------------------------------------------------------------
+
+figure {
+  @extend %html5-block;
+  margin: $figure--margin;
+
+  img {
+    display: block;;
+  }
+}
+
+figcaption {
+  @extend %html5-block;
+  margin: $figurecaption--margin;
+  padding: $figurecaption--padding;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <figure>
+    <!--
+      main figure element goes here
+    -->
+    <figcaption>
+      <p>
+        WORDS!
+      </p>
+    </figcaption>
+  </figure>
+
+  <!-- or -->
+
+  <figure>
+    <figcaption>
+      <p>
+        WORDS!
+      </p>
+    </figcaption>
+    <!--
+      main figure element goes here
+    -->
+  </figure>
+
+*/

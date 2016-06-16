@@ -1,0 +1,32 @@
+/** --------------------------------------------------------------------
+
+  <del> Element
+
+  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del
+
+  Applicable for situations where we may be building an application
+  that has version control or a confirmation process for content editing.
+
+--------------------------------------------------------------------- */
+
+$del--opacity:                          .7 !default;
+
+// ---------------------------------------------------------------------
+
+del {
+  opacity: $del--opacity;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    <del>
+      This content has been deleted
+    </del>
+    This content has not been deleted.
+  </p>
+
+*/

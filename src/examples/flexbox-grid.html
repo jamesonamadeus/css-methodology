@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Flexbox Grid
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <style>
+    .demo-block {
+      background: #ccc;
+      padding: 4px;
+    }
+    .page {
+      padding: 30px;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="page">
+
+          <div class="flex-area">
+      <div class="flex-w-100 flex-w-50--sm">
+        <div class="demo-block">
+          100 / 50
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm">
+        <div class="demo-block">
+          100 / 50
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm flex-w-33--md">
+        <div class="demo-block">
+          100 / 50 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm flex-w-33--md">
+        <div class="demo-block">
+          100 / 50 / 33
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-60--portrait">
+        <div class="demo-block">
+          100 / 60
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-40--portrait">
+        <div class="demo-block">
+          100 / 40
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-area">
+      <div class="flex-w-100 flex-w-50--sm flex-w-60--portrait flex-w-70--md flex-w-80--lg">
+        <div class="demo-block">
+          100 / 50 / 60 / 70 / 80
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--sm flex-w-40--portrait flex-w-30--md flex-w-20--lg">
+        <div class="demo-block">
+          100 / 50 / 40 / 40 / 20
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 mt-20">Non-Wrapping Grids</div>
+      <div class="flex-area">
+        <div class="flex-w-70"><div class="demo-block">70%</div></div>
+        <div class="flex-w-30"><div class="demo-block">30%</div></div>
+      </div>
+
+      <div class="flex-area">
+        <div class="flex-w-50 flex-w-75--portrait">
+          <div class="demo-block">50 / 75</div>
+        </div>
+        <div class="flex-w-50 flex-w-25--portrait">
+          <div class="demo-block">50 / 25</div>
+        </div>
+      </div>
+
+
+
+    <div class="mb-12 mt-20">
+      Extra Top/Bottom Margin
+    </div>
+      <div class="flex-area flex-area--add-buffer">
+        <div class="flex-w-70"><div class="demo-block">70%</div></div>
+        <div class="flex-w-30"><div class="demo-block">30%</div></div>
+      </div>
+
+      <div class="flex-area">
+        <div class="flex-w-50 flex-w-75--portrait">
+          <div class="demo-block">50 / 75</div>
+        </div>
+        <div class="flex-w-50 flex-w-25--portrait">
+          <div class="demo-block">50 / 25</div>
+        </div>
+      </div>
+
+
+    <div class="mb-12 mt-20">
+      Remove Bottom Margins from Flex Columns <small>(demo blocks still have margins)</small>
+    </div>
+      <div class="flex-area flex-area--mt-0">
+        <div class="flex-w-70"><div class="demo-block">70%</div></div>
+        <div class="flex-w-30"><div class="demo-block">30%</div></div>
+      </div>
+
+      <div class="flex-area">
+        <div class="flex-w-50 flex-w-75--portrait">
+          <div class="demo-block">50 / 75</div>
+        </div>
+        <div class="flex-w-50 flex-w-25--portrait">
+          <div class="demo-block">50 / 25</div>
+        </div>
+      </div>
+
+
+
+    <div class="mb-12 mt-20">
+      Remove Gutters
+    </div>
+    <div class="flex-area flex-area--no-gutter">
+      <div class="flex-w-100 flex-w-60--portrait">
+        <div class="demo-block">
+          100 / 60
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-40--portrait">
+        <div class="demo-block">
+          100 / 40
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 mt-20">
+      2x Gutters
+    </div>
+    <div class="flex-area flex-area--2x-gutter">
+      <div class="flex-w-100 flex-w-60--portrait">
+        <div class="demo-block">
+          100 / 60
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-40--portrait">
+        <div class="demo-block">
+          100 / 40
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-33--md">
+        <div class="demo-block">
+          100 / 33
+        </div>
+      </div>
+    </div>
+
+
+
+
+    </div> <!-- /.page -->
+
+  </body>
+</html>

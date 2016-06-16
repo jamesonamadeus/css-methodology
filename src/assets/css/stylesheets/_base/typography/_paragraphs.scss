@@ -1,0 +1,63 @@
+/** --------------------------------------------------------------------
+
+  Paragraph Element
+
+  Paragraphs inherit the base type settings set to the HTML/Body
+  elements (_base-elements.scss).  However if you want those to
+  change for whatever reason, update the variable values below.
+
+--------------------------------------------------------------------- */
+
+// default
+$p--font-size:                         inherit !default;
+$p--line-height:                       inherit !default;
+$p--font-weight:                       inherit !default;
+
+// large paragraphs
+$p--large--font-size:                  1.125em !default;
+$p--large--line-height:                1.55 !default;
+
+//------------------------------------------------------------------------
+
+// base text styling
+.txt-base {
+  font-size: $p--font-size;
+  font-weight: $p--font-weight;
+  line-height: $p--line-height;
+  margin-bottom: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+
+// paragraph element
+p {
+  @extend .txt-base;
+}
+
+
+// large text styling
+.txt-p--lg {
+  font-size: $p--large--font-size;
+  line-height: $p--large--line-height;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    Paragraph text goes here
+  </p>
+
+  <!-- or -->
+
+  <h3 class="txt-base">
+    Heading styled to look like paragraph
+  </h3>
+
+*/

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      A11Y Tabs
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+  </head>
+  <body>
+
+    <div class="page">
+
+      <!--
+        Example tab mark-up starts here
+      -->
+      <header class="content-area content-area--divider-bottom">
+        <h1>
+          Tabs
+        </h1>
+        <p>
+          <a href="https://www.w3.org/TR/2013/WD-wai-aria-practices-20130307/#tabpanel"" target="_blank">ARIA 1.1 Recommendation Tabs</a> and Tabs not conforming to ARIA 1.1 Recommendations.
+        </p>
+      </header>
+
+
+      <section class="content-area content-area--divider-bottom">
+
+        <h2 class="txt-up-3 mb-20">
+          ARIA 1.1 Tabs
+        </h2>
+
+        <div class="tab-container mb-20" data-action="a11y-tabs" id="no_tabs_by_def1">
+
+          <section class="tab-panel js-tabs__panel" data-tab-label="Tab 1">
+            <h2>Heading of Panel 1</h2>
+            <p>
+              Paragraph text goes here and fills up the panel
+              with super useful information that you'll
+              absolutely love to read.
+              <a href="#">this is here to test in panel keyboard controls</a>
+            </p>
+            <h3>Another heading</h3>
+            <p>
+              and some more text
+            </p>
+          </section> <!-- /.tab-panel -->
+
+          <section class="tab-panel js-tabs__panel" data-tab-label="Tab 2">
+            <h2>Heading of Panel 2</h2>
+            <p>
+              Paragraph text goes here and fills up the panel
+              with super useful information that you'll
+              absolutely love to read.
+              <a href="#">this is here to test in panel keyboard controls</a>
+            </p>
+          </section> <!-- /.tab-panel -->
+
+          <section class="tab-panel js-tabs__panel" data-tab-label="Tab 3">
+            <h2>Heading of Panel 3</h2>
+            <p>
+              Paragraph text goes here and fills up the panel
+              with super useful information that you'll
+              absolutely love to read.
+              <a href="#">this is here to test in panel keyboard controls</a>
+            </p>
+          </section> <!-- /.tab-panel -->
+
+        </div> <!-- /.tab-container -->
+
+      </section>
+
+
+
+      <section class="content-area">
+
+        <h2 class="txt-up-3 mb-20">
+          Generated Tabs (not using ARIA recommendation)
+        </h2>
+
+        <div class="tab-container" data-action="a11y-tabs" data-aria="false" id="no_tabs_by_def">
+
+          <section class="tab-panel js-tabs__panel" data-tab-label="First Tab Example">
+            <div class="content-area">
+              <h2>Heading of Panel 1</h2>
+              <p>
+                Paragraph text goes here and fills up the panel
+                with super useful information that you'll
+                absolutely love to read.
+                <a href="#">this is here to test in panel keyboard controls</a>
+              </p>
+              <h3>Another heading</h3>
+              <p>
+                And another paragraph.
+              </p>
+            </div>
+          </section> <!-- /.tab-panel -->
+          <section class="tab-panel js-tabs__panel" data-tab-label="Tab no. 2">
+            <div class="content-area">
+              <h2>Heading of Panel 2</h2>
+              <p>
+                Paragraph text goes here and fills up the panel
+                with super useful information that you'll
+                absolutely love to read.
+                <a href="#">this is here to test in panel keyboard controls</a>
+              </p>
+            </div>
+          </section> <!-- /.tab-panel -->
+          <section class="tab-panel js-tabs__panel" data-tab-label="The Last Tab">
+            <div class="content-area">
+              <h2>Heading of Panel 3</h2>
+              <p>
+                Paragraph text goes here and fills up the panel
+                with super useful information that you'll
+                absolutely love to read.
+                <a href="#">this is here to test in panel keyboard controls</a>
+              </p>
+            </div>
+          </section> <!-- /.tab-panel -->
+
+        </div> <!-- /.tab-container -->
+
+      </section>
+
+
+    </div> <!-- /.page (demo layout) -->
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.min.js"></script>
+
+  </body>
+</html>

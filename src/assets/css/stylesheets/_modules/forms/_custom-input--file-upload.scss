@@ -1,0 +1,84 @@
+/** --------------------------------------------------------------------
+
+  Custom File Upload Input
+
+--------------------------------------------------------------------- */
+
+// $upload-input--bg:            '' !default;
+$upload-input--padding:             $txt-input--padding !default;
+
+  // States
+  $upload-input--disabled-color:    $c-grey !default;
+  $upload-input--focus-bg:          $txt-input--focus-bg !default;
+  $upload-input--focus-bs:          $txt-input--focus-bs !default;
+
+$upload-input__btn--padding:        6px 16px !default;
+$upload-input__btn--right:          6px !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}custom-file {
+
+  &__input-wrap {
+    @include truncate-text(100%);
+    padding-right: 120px;
+  }
+
+  label {
+    display: block;
+    margin: 0;
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
+
+  }
+
+  input {
+    @extend %hide-input--cr;
+  }
+
+  &.is-focused .#{$ns}text-input {
+    background: $upload-input--focus-bg;
+    box-shadow: $upload-input--focus-bs;
+  }
+
+} // .#{$ns}custom-file
+
+.#{$ns}btn.#{$ns}btn--file-input {
+  line-height: 1;
+  margin: auto;
+  padding: $upload-input__btn--padding;
+  pointer-events: none;
+  position: absolute;
+  right: $upload-input__btn--right;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!--
+    The following is the base mark-up required to get this
+    component setup. JavaScript adds the remaining mark-up
+    required for this component.
+  -->
+
+  <div data-action="custom-file" id="file_up_2">
+    <label for="input_file2" disabled>
+      <span class="txt-label">
+        Upload a File
+      </span>
+
+      <div class="text-input custom-file__input-wrap">
+        <input type="file" id="input_file2" class="custom-file__input" />
+      </div>
+    </label>
+  </div>
+
+*/

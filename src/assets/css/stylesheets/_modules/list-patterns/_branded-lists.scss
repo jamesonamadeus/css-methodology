@@ -1,0 +1,48 @@
+/** --------------------------------------------------------------------
+
+  Color Branded Lists
+
+  Color brand bullets/numbers while keeping main list copy
+  the same color as default body text.
+
+--------------------------------------------------------------------- */
+
+$branded-list__text--color:                $body--color !default;
+$branded-list__bullets--color:             $c-primary !default;
+
+// ---------------------------------------------------------------------
+
+.list--branded {
+  color: $branded-list__bullets--color;
+
+  li > span,
+  li > p {
+    color: $branded-list__text--color;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <ul class="list--branded">
+    <li>
+      <p>...</p>
+    </li>
+    <li>
+      <span>...</span>
+    </li>
+  </ul>
+
+  <ol class="list--branded">
+    <li>
+      <p>...</p>
+    </li>
+    <li>
+      <span>...</span>
+    </li>
+  </ol>
+
+*/

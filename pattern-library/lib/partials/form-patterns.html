@@ -1,0 +1,368 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Forgot Password Input Pattern
+      </h1>
+      <p>
+        Forgot password links should be placed last in the DOM order,
+        with the input label, input, and any error message appearing before it.
+      </p>
+      <p>
+        The forgot password link is often positioned to the top/right of the element,
+        and that can be done via the <code>.link--forgot-pw</code> class being added to the link element (or if applicable, it's direct parent container).
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="form-row">
+      <label for="login_pw">
+        Password
+      </label>
+
+      <input type="password"
+             class="border-color-error"
+             placeholder="Enter Your Password..."
+             name="login_pw"
+             id="login_pw"
+             aria-describedby="password_input_msg" />
+
+      <p class="input-message color-warning" id="password_input_msg">
+        error message here
+      </p>
+
+      <a class="link--forgot-pw" href="#!">
+        Forgot Password?
+      </a>
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Sign Up For Email Block
+      </h1>
+      <p>
+        ...
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <section class="content-area content-area--callout txt-center">
+
+      <h1 class="txt-up-4">
+        Intro title to this section
+      </h1>
+
+      <form method="get"
+            action="#"
+            class="mb-20 mt-20 display-inline-block group group--pill"
+            data-action="float-labels">
+
+        <div class="form-row mxw-600">
+
+          <label class="float-label float-label--lg-text-input" for="newspaper_email">
+            Your Email:
+          </label>
+
+          <input type="email" placeholder="your_email@email.com" class="js-has-float-label text-input--lg" name="email" id="newspaper_email">
+        </div>
+
+        <div class="form-row">
+          <button id="newspaper_signup_btn" class="btn--ghost" type="submit">
+            Subscribe
+          </button>
+        </div>
+
+      </form>
+
+    </section>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Text Inputs with JS Interactions
+      </h1>
+      <p>
+        Styling for text inputs of types other than 'text'
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+
+    <div class="form-row">
+      <label for="searchSite1">
+        Search with clear button:
+      </label>
+
+      <div class="position-relative" role="search">
+        <input type="search"
+               name="searchSite1"
+               id="searchSite1"
+               class="input-search has-clear-btn"
+               placeholder="Search for..." />
+        <button type="button" class="btn btn--clear">
+          <span class="sr-only">
+            Clear Input
+          </span>
+          <span aria-hidden="true">&#x2a09;</span>
+        </button>
+      </div>
+    </div>
+
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Float Labels
+      </h1>
+      <p>
+        Using labels as 'placeholders' that move out of the way
+        on input focus, and when user entered data is present, the
+        labels stay out of the way.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <form action="#" method="post" data-action="float-labels">
+      <div class="form-row">
+        <label class="float-label" for="name">
+          Name:
+        </label>
+        <input type="text" id="name" title="Name Field" class="js-has-float-label" />
+      </div>
+
+      <div class="form-row">
+        <label class="float-label" for="email">
+          Email:
+        </label>
+        <input type="email" id="email" title="Email Field" class="js-has-float-label" />
+      </div>
+
+      <div class="form-row">
+        <label class="float-label" for="comments">
+          Comments:
+        </label>
+        <textarea id="comments" title="Comments Field" class="js-has-float-label"></textarea>
+      </div>
+    </form>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Accessible, Styleable Number Input Pattern
+      </h1>
+      <p>
+        Number inputs aren't easily styleable, so we can use
+        the following pattern to (jQuery plug-in) to recreate
+        native number inputs that are aesthetically customizable
+        and accessible.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="form-row">
+      <label for="unique_ID_num_input">
+        Input w/no manual input allowed:
+      </label>
+      <div class="number-input-area">
+        <input type="number"
+               id="unique_ID_num_input"
+               name="unique_ID_num_input"
+               min="1"
+               step="1"
+               value="1"
+               class="js-numbler"
+               readonly />
+
+        <div class="btn-pill-area btn-pill-area--numbers">
+          <button type="button"
+                  class="btn--primary js-num-up"
+                  aria-controls="unique_ID_num_input">
+            <span class="sr-only">
+              Increase
+            </span>
+            <span aria-hidden="true">+</span>
+          </button>
+
+          <button type="button"
+                  class="btn--primary js-num-down"
+                  aria-controls="unique_ID_num_input">
+            <span class="sr-only">
+              Decrease
+            </span>
+            <span aria-hidden="true">-</span>
+          </button>
+        </div> <!-- end .btn-pill-area- -numbers -->
+      </div> <!-- end .number-input-area -->
+    </div>
+
+    <div class="form-row">
+      <label for="unique_ID_num_input_2">
+        Using icons for + / -:
+      </label>
+      <div class="number-input-area">
+        <input type="number"
+               id="unique_ID_num_input_2"
+               name="unique_ID_num_input_2"
+               min="1"
+               step="1"
+               value="1"
+               class="js-numbler" />
+
+        <div class="btn-pill-area btn-pill-area--numbers">
+          <button type="button"
+                  class="btn--primary btn--num-up js-num-up"
+                  aria-controls="unique_ID_num_input_2">
+            <span class="sr-only">
+              Increase
+            </span>
+          </button>
+
+          <button type="button"
+                  class="btn--primary btn--num-down js-num-down"
+                  aria-controls="unique_ID_num_input_2">
+            <span class="sr-only">
+              Decrease
+            </span>
+          </button>
+        </div> <!-- end .btn-pill-area- -numbers -->
+      </div> <!-- end .number-input-area -->
+    </div>
+
+
+    <div style="background: #313742; padding: 4px;">
+      <div class="form-row">
+        <label for="unique_ID2">
+          Inverse Number Input:
+        </label>
+        <div class="number-input-area">
+          <input type="number"
+                 id="unique_ID2"
+                 name="unique_ID2"
+                 min="1"
+                 step="1"
+                 value="1"
+                 class="js-numbler text-input--inverse" />
+
+          <div class="btn-pill-area btn-pill-area--numbers">
+            <button type="button"
+                    class="btn--primary btn--num-up js-num-up"
+                    aria-controls="unique_ID2">
+              <span class="sr-only">
+                Increase
+              </span>
+            </button>
+
+            <button type="button"
+                    class="btn--destroy btn--num-down js-num-down"
+                    aria-controls="unique_ID2">
+              <span class="sr-only">
+                Decrease
+              </span>
+            </button>
+          </div> <!-- end .btn-pill-area- -numbers -->
+        </div> <!-- end .number-input-area -->
+      </div>
+    </div> <!-- /ui kit style div -->
+
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Forgot Password Input Pattern
+      </h1>
+      <p>
+        Forgot password links should be placed last in the DOM order,
+        with the input label, input, and any error message appearing before it.
+      </p>
+      <p>
+        The forgot password link is often positioned to the top/right of the element,
+        and that can be done via the <code>.link--forgot-pw</code> class being added to the link element (or if applicable, it's direct parent container).
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <form action="#" method="post">
+
+      <div class="message-block message-block--error is-static">
+        <p>
+          Your submission has the following errors:
+        </p>
+        <ul class="list-last-child-0">
+          <li id="error_msg_1">Error description message</li>
+          <li id="error_msg_2">Error description message 2</li>
+        </ul>
+      </div>
+
+      <div class="form-row">
+        <label for="input_with_error">
+          Input Label
+        </label>
+        <input type="text"
+               id="input_with_error"
+               name="input_with_error"
+               class="border-color-error"
+               aria-describedby="error_msg_1"
+               />
+      </div>
+
+      <div class="form-row">
+        <label for="input_with_error_2">
+          Input Label
+        </label>
+        <input type="text"
+               id="input_with_error_2"
+               name="input_with_error_2"
+               class="border-color-error"
+               aria-describedby="error_msg_2"
+               />
+      </div>
+
+    </form>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

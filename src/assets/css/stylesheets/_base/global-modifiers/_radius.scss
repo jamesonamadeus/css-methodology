@@ -1,0 +1,34 @@
+/** --------------------------------------------------------------------
+
+  Display & Positioning Classes
+
+  ** NOTE: display none is located in the _visibility.scss file **
+
+--------------------------------------------------------------------- */
+
+$base--radius:                          6px !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}no-radius {
+  border-radius: 0;
+}
+
+.#{$ns}add-radius {
+  border-radius:$base--radius;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="add-radius">
+    ...
+  </div>
+
+  <button type="button" class="no-radius">
+    ...
+  </button>
+
+*/

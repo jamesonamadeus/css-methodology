@@ -1,0 +1,68 @@
+/** --------------------------------------------------------------------
+
+  Input Modifier Classes
+
+  Class to use on a message to display below
+  an input field that has an error.
+
+--------------------------------------------------------------------- */
+
+$input-message--font-size:             14 !default;
+$input-message--margin:                0 !default;
+$input-message--padding-top:           6px !default;
+
+$input-message__icon--spacing:         26px !default;
+$input-message__icon--bg-position:     0 7px !default;
+
+$input-message--error--icon-bg-img:    url(../icons/icon-error.svg) !default;
+$input-message--warning--icon-bg-img:  url(../icons/icon-warning.svg) !default;
+
+//------------------------------------------------------------------------
+
+.input-message {
+  @include font-size( $input-message--font-size );
+  display: none;
+  margin: $input-message--margin;
+  padding-top: $input-message--padding-top;
+}
+
+// based on the border-color (visual indicator of input's state),
+// then update the input message to have an appropriate bg icon
+[class*="border-color-"] ~ .input-message {
+  background-position: $input-message__icon--bg-position;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.border-color-error ~ .input-message {
+  background-image: $input-message--error--icon-bg-img;
+  padding-left: $input-message__icon--spacing;
+}
+
+.border-color-warning ~ .input-message {
+  background-image: $input-message--warning--icon-bg-img;
+  background-size: 20px auto;
+  padding-left: $input-message__icon--spacing;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="unique_ID">
+     Input Label
+    </label>
+    
+    <input type="text"
+           id="unique_ID"
+           class="border-color-error"
+           aria-describedby="unique_error_id" />
+
+    <p class="input-message" id="unique_error_id">
+     Error/warning message goes here
+    </p>
+  </div>
+
+*/

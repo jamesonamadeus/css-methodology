@@ -1,0 +1,100 @@
+/** --------------------------------------------------------------------
+
+  Breadcrumb Navigation
+
+--------------------------------------------------------------------- */
+
+$crumbs--font-size:                     .8em !default;
+$crumbs--font-weight:                   600 !default;
+$crumbs--margin:                        0 0 30px !default;
+
+$crumbs--li--margin-bottom:             1em !default;
+
+$crumbs__link--color:                   $link--color !default;
+
+$crumbs__divider--color:                inherit;
+$crumbs__divider--margin:               0 4px !default;
+
+//------------------------------------------------------------------------
+
+.crumbs {
+  font-size: $crumbs--font-size;
+  font-weight: $crumbs--font-weight;
+  margin: $crumbs--margin;
+
+  li, // *
+  a {
+    @if $crumbs__link--color != $link--color {
+      color: $crumbs__link--color;
+    }
+    display: inline-block;
+    // text-decoration: none;
+  }
+  // *
+  // in the event that placeholder links aren't used for
+  // the current page, and instead text is only wrapped
+  // with the <li>, give base <li> and <a> the same styling.
+
+  a {
+
+    &:link:hover,
+    &:link:focus {
+      text-decoration: none;
+      // only :link hovers should get an underline
+      // placeholder links shouldn't have a hover state/underlines
+    }
+  }
+
+  li {
+    margin-bottom: $crumbs--li--margin-bottom;
+
+    &:after {
+      color: $crumbs__divider--color;
+      content: "/";
+      display: inline-block;
+      font-weight: $crumbs--font-weight;
+      margin: $crumbs__divider--margin;
+      speak: none;
+    }
+
+    &:first-child {
+      text-transform: uppercase;
+    }
+
+    &:last-child { // "active crumb"
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <nav role="navigation">
+    <h3 class="sr-only">
+      You are here
+    </h3>
+
+    <ol class="crumbs">
+      <li>
+        <a href="#!" title="back to #">
+          Index Name
+        </a>
+      </li>
+      <li>
+        <a href="#!" title="back to #">
+          Sub Page Name
+        </a>
+      </li>
+      <li>
+        <a>Current Page Name</a> <!-- active crumb -->
+      </li>
+    </ol>
+  </nav>
+
+*/

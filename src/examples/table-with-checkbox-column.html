@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Table with Check Box Column
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+  </head>
+  <body id="body">
+
+    <div id="page" class="content-area">
+
+      <div class="scroll-container">
+
+        <table class="table table--has-tr-border" id="user_table">
+          <caption>
+            table caption
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">
+                Name
+              </th>
+              <th scope="col">
+                Role
+              </th>
+              <th scope="col">
+                Favorite Color
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="has-checkbox-col">
+              <th class="has-checkbox-col__cell">
+                <div class="has-checkbox-col__cell__container">
+                  <label class="mb-0" for="checkbox_1">
+                    Scott
+                  </label>
+                  <input class="has-checkbox-col__checkbox" type="checkbox" id="checkbox_1" name="checkbox_1" checked="">
+                  <span class="sr-only has-checkbox-col__cell__state-desc">
+                    is selected for deletion
+                  </span>
+                </div>
+              </th>
+              <td>
+                Developer
+              </td>
+              <td>
+                Dark
+              </td>
+            </tr>
+            <tr class="has-checkbox-col">
+              <th scope="row" class="has-checkbox-col__cell">
+                <div class="has-checkbox-col__cell__container">
+                  <label class="mb-0" for="checkbox_2">
+                    Oscar
+                  </label>
+                  <input class="has-checkbox-col__checkbox" type="checkbox" id="checkbox_2" name="checkbox_2">
+                  <span class="sr-only has-checkbox-col__cell__state-desc">
+                    is selected for deletion
+                  </span>
+                </div>
+              </th>
+              <td>
+                Grouch
+              </td>
+              <td>
+                Green
+              </td>
+            </tr>
+            <tr class="has-checkbox-col">
+              <th scope="row" class="has-checkbox-col__cell">
+                <!-- <div class="has-checkbox-col__cell__container"> -->
+                  <label class="custom-cr" for="checkbox_3">
+                    <input type="checkbox" name="checkbox_3" id="checkbox_3">
+                    <span class="custom-cr__icon has-checkbox-col__checkbox"></span>
+                    Bobby
+                    <span class="sr-only has-checkbox-col__cell__state-desc">
+                      is selected for deletion
+                    </span>
+                  </label>
+
+                <!-- </div> -->
+              </th>
+              <td>
+                Unemployed
+              </td>
+              <td>
+                Blue
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> <!-- /.scroll-container -->
+
+      <div class="content-area txt-center">
+        <button type="button" id="remove" class="btn--destroy" aria-controls="user_table">
+          Remove Checked Rows from table
+        </button>
+        <p id="remove_msg" class="display-none">
+          The selected rows have been deleted.
+        </p>
+      </div>
+
+    </div> <!-- /#page -->
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script>
+      $('#remove').on('click', function () {
+        var $checked = $('#user_table').find('input[type="checkbox"]'),
+            $msg = $('#remove_msg');
+
+        $checked.each( function () {
+
+          if ( $(this).is(':checked') ) {
+            $(this).closest('tr').remove();
+          }
+
+        });
+
+        $msg.removeClass('display-none').attr('aria-live', 'polite');
+
+      });
+    </script>
+
+  </body>
+</html>

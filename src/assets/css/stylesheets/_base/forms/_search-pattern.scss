@@ -1,0 +1,120 @@
+/** --------------------------------------------------------------------
+
+  Search Input Element
+
+--------------------------------------------------------------------- */
+
+$search-group__btn--bg:                        none !default;
+$search-group__btn--border:                    6px solid rgba($c-blue, 0);
+$search-group__btn--radius:                    0 !default;
+$search-group__btn--width:                     36px !default;
+
+//------------------------------------------------------------------------
+
+.search-group {
+
+
+  &__label {
+
+  }
+
+  // wrapper specifically for the input & submit button
+  // allows for label & overall group wrapper to have
+  // margin, padding, etc, without adding to the vertical
+  // height of the input + btn area, which will be important
+  // for the vertical alignment of the input + btn
+  &__input-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__btn {
+    background: $search-group__btn--bg;
+    border: $search-group__btn--border;
+    bottom: 0;
+    border-radius: $search-group__btn--radius;
+    box-shadow: none;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    width: $search-group__btn--width;
+    z-index: 9;
+
+    svg {
+      // position: relative;
+      // top: 5px;
+      transform-origin: center center;
+      transform: scale(.9);
+      // transform: scale(1); //translateY(-50%)
+      width: 100%;
+
+      > g {
+        stroke: $c-dark-grey;
+        transition: stroke .2s ease-in-out;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background: $c-light-blue;
+      border: 6px solid rgba($c-light-blue, 1);
+
+      svg {
+         //translateY(-50%)
+
+        > g {
+          stroke: $c-white;
+        }
+      }
+    }
+
+  }
+
+  &__input {
+    margin: 0;
+    padding-right: 45px !important;
+    // !important forces this class to override the
+    // more specific input[type="search"] padding...
+
+    &:focus + .search-group__btn {
+      @extend .search-group__btn:focus;
+    }
+  }
+
+}
+
+
+.has-text {
+  .search-group__btn {
+    @extend .search-group__btn:focus;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <form action="#!" method="post">
+    <div class="search-group" role="search">
+      <label for="search_input">
+        Search for:
+      </label>
+
+      <div class="search-group__input-wrapper">
+        <input type="search"
+               id="search_input"
+               class="search-group__input" />
+
+        <button type="submit" class="search-group__btn">
+          Submit Search
+        </button>
+      </div>
+    </div>
+  </form>
+
+*/

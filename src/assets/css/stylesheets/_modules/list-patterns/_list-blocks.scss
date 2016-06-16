@@ -1,0 +1,122 @@
+/** --------------------------------------------------------------------
+
+  List Blocks
+
+  ...
+
+--------------------------------------------------------------------- */
+
+$list-block__item--border:        1px solid $c-grey !default;
+$list-block__item--padding:       12px !default;
+
+$list-block-container--bg:        $c-white !default;
+$list-block-container--border:    $list-block__item--border !default;
+$list-block-container--margin:    0 0 2em !default;
+
+$list-block__item--even-bg:       $c-off-white !default;
+
+//------------------------------------------------------------------------
+
+.list-block {
+  @extend .list-clean;
+
+  // list items
+  li {
+    border-bottom: $list-block__item--border;
+    margin-top: 0;
+    padding: $list-block__item--padding;
+    position: relative;
+
+    &:nth-child(2n) {
+      background: $list-block__item--even-bg;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  // children elements
+  &__meta {
+    @extend .txt-down-2;
+    @extend .#{$ns}txt-bold;
+  }
+
+  &__label > :last-child {
+    margin-bottom: .75em;
+
+    @media screen and (min-width: $bp-small) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__action {
+
+    @media screen and (min-width: $bp-small) {
+      text-align: right;
+    }
+  }
+
+  // modifiers
+  &--has-border {
+    background: $list-block-container--bg;
+    border: $list-block-container--border;
+    margin-bottom: $list-block-container--margin;
+  }
+
+  &--dotted-dividers {
+
+    li {
+      border-bottom-style: dotted;
+    }
+  }
+
+  &--dashed-dividers {
+
+    li {
+      border-bottom-style: dashed;
+    }
+  }
+}
+
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+<ul class="list-block">
+  <li>
+    <div class="flex-area flex-area--v-center">
+      <div class="flex-w-100 flex-w-70--sm">
+        <p class="list-block__label">
+          List Item Label
+        </p>
+      </div>
+      <div class="flex-w-100 flex-w-30--sm flex-end--sm">
+        <button class="btn--small" type="button">
+          List Item Action
+        </button>
+      </div>
+    </div>
+  </li>
+
+  <li>
+    <div class="flex-area flex-area--v-center">
+      <div class="flex-w-100 flex-w-70--sm">
+        <p class="list-block__label">
+          List Item Label
+        </p>
+      </div>
+      <div class="flex-w-100 flex-w-30--sm flex-end--sm">
+        <button class="btn--small" type="button">
+          List Item Action
+        </button>
+      </div>
+    </div>
+  </li>
+
+</ul>
+
+*/

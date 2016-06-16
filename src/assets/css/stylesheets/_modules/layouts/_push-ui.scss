@@ -1,0 +1,438 @@
+/** --------------------------------------------------------------------
+
+  Push UI
+
+  Base styling for an area of the UI where left/right hidden drawers
+  can be expanded into view, and push the main content, resulting in a
+  narrower area for the main content to live in
+
+--------------------------------------------------------------------- */
+
+$push-ui--border:               1px solid $c-light-grey !default;
+
+$push-ui--right-drawer--width:            390px !default;
+$push-ui--left-drawer--width:              320px !default;
+
+$push-ui--open-btn--width:                 44px !default;
+$push-ui--hide-expand-btn--hw:             60px !default; // height & width
+
+// ---------------------------------------------------------------------
+
+.push-ui {
+  // keep absolutely positioned content relative to the
+  // main push-ui parent container, while making sure that
+  // content that extends outside of it's bounds are always
+  // hidden from view.
+  height: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  -ms-overflow-style: none;
+  padding: 0 $push-ui--open-btn--width;
+  position: relative;
+  transition: padding-left .2s ease-in-out,
+              padding-right .2s ease-in-out;
+
+  // if a right drawer exists, add a right border
+  &__center--border-right {
+    border-right: $push-ui--border;
+  }
+
+  // if a left drawer exists, add a left border
+  &__center--border-left {
+    border-left: $push-ui--border;
+  }
+
+  // if there is only to be a left or right drawer,
+  // remove the padding from either side as there
+  // doesn't need to be any for a non-existing button
+  &--left-only {
+    padding-right: 0;
+  }
+
+  &--right-only {
+    padding-left: 0;
+  }
+
+
+  // For use when a right side panel is available,
+  // but only accessible when a user performs a
+  // certain action (checking check boxes)
+  //
+  // toggle this class to set the
+  // padding right / right open button to shown
+  &--hidden-state {
+    padding-right: 0;
+
+    > .push-ui__open-btn[data-push-ui-btn='right'] {
+      display: none;
+    }
+  }
+
+  // if the left drawer is open, update the left
+  // side padding to accommodate the drawer
+  &[data-push-state="left"],
+  .push-ui--left-state {
+    padding-left: $push-ui--left-drawer--width;
+  }
+
+  // if the right drawer is open, update the right
+  // side padding to accommodate the drawer
+  &[data-push-state="right"],
+  &.push-ui--right-state {
+    padding-right: $push-ui--right-drawer--width;
+  }
+
+  // center and drawer default height and widths
+  &__center,
+  &__drawer {
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+  }
+
+
+  // center content shouldn't get a focus outline when focus
+  // is forced to that area.
+  &__center,
+  &__center:focus {
+    outline: none;
+  }
+
+
+  // drawers are absolutely positioned to allow for 100% height and
+  // to easily slide on/off canvas
+  // transforms perform better than resetting left or right properties
+  // so transfroms are used to slide the drawers in via css transisions
+  &__drawer {
+    position: absolute;
+    top: 0;
+    transition: transform .2s ease-in-out, max-width .3s ease-in-out;
+    visibility: hidden;
+    z-index: 5;
+
+    &[aria-expanded="true"],
+    &.is-expanded {
+      transform: translateX(0px);
+      visibility: visible;
+    }
+
+    // allow for a slight sliver of the content area to show when
+    // a right drawer is expanded
+    &.is-expanded {
+      max-width: 98%;
+    }
+
+
+    // drawer header area, fixed to the top of a drawer
+    &__header {
+      background: $c-grey;
+      height: $push-ui--hide-expand-btn--hw;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    // headers for sections within a drawer
+    // not fixed, but relative in case they need to
+    // also act as toggle menu triggers
+    &__sub-header {
+      border-bottom: $push-ui--border;
+      padding: 20px;
+      position: relative;
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // sub header title text
+    &__title {
+      color: $c-white;
+      line-height: 60px;
+      margin: 0;
+      padding: 0 60px 0 12px;
+    }
+
+    // content areas of drawer need 100% height with overflow so they
+    // can be scrollable
+    &__content {
+      height: 100%;
+      overflow: auto;
+      z-index: 3;
+
+      &__area {
+        padding-top: $push-ui--hide-expand-btn--hw;
+      }
+    }
+
+    // left drawer
+    // these are styled with light colors
+    &--left {
+      left: 0;
+      max-width: $push-ui--left-drawer--width;
+      transform: translateX(-$push-ui--left-drawer--width);
+
+      .push-ui__drawer__sub-header {
+        background: lighten($c-off-white, 2.5%);
+      }
+
+      .push-ui__drawer__content {
+        background: $c-white;
+      }
+    }
+    // end left drawer
+
+    // right drawer
+    // right drawers are styled with dark colors
+    &--right {
+      max-width: $push-ui--right-drawer--width;
+      right: 0;
+      transform: translateX($push-ui--right-drawer--width);
+
+      .push-ui__drawer__sub-header {
+        background: $c-dark-grey;
+      }
+
+      .push-ui__drawer__content {
+        background-color: $c-grey;
+        color: $c-white;
+      }
+    }
+    // end right drawer
+  }
+}
+
+
+// fixed sub headers
+// for instances where a sub header should be fixed to the
+// top of the side drawer
+// e.g.
+// when building a group and the top element is the editable
+// name of that group
+.has-fixed-sub-header {
+  padding-top: 62px;
+  position: relative;
+
+  .push-ui__drawer__sub-header {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+
+
+
+// the center panel fades out and becomes inaccessible when the right drawer
+// is expanded, as the content should not be accessible by keyboard focus
+// when it can not actually be accessed visually.
+.partial-fade-out {
+  @include animation(.5s .2s partialFade forwards);
+}
+
+@include keyframe ( partialFade ) {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: .3;
+    visibility: hidden;
+  }
+}
+
+
+// ---------------------------------------------------------------------
+// Push UI Specific Buttons
+// ---------------------------------------------------------------------
+
+.push-ui__open-btn,
+.push-ui__hide-btn,
+.push-ui__expand-btn {
+  background: $c-grey;
+  border-color: $c-grey;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 1.4em;
+  height: $push-ui--hide-expand-btn--hw;
+  line-height: $push-ui--hide-expand-btn--hw;
+  padding: 0;
+  z-index: 3;
+
+  &:hover,
+  &:focus {
+    background: darken($c-grey, 12%);
+  }
+
+  &:active {
+    transform: none;
+  }
+}
+
+// open button specific styling
+.push-ui__open-btn {
+  background: none;
+  border: none;
+  height: 100%;
+  min-height: 60px;
+  position: absolute;
+  top: 0;
+  width: $push-ui--open-btn--width;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: rgba(0,0,0,.05);
+
+    &:after {
+      background: darken($c-grey, 12%);
+    }
+  }
+
+  // apply the appropriate icomoon icon
+  &:after {
+    background: $c-grey;
+    border-color: $c-grey;
+    content: ">";
+    left: 0;
+    line-height: $push-ui--hide-expand-btn--hw;
+    position: absolute;
+    top: 0;
+    width: $push-ui--open-btn--width;
+  }
+
+  &[data-push-ui-btn="right"]:after {
+    content: "<";
+  }
+
+  // if a right drawer button, stick to the right
+  &[data-push-ui-btn="right"] {
+    right: 0
+  }
+
+  // if a left drawer button, stick to the left
+  &[data-push-ui-btn="left"] {
+    left: 0;
+  }
+
+  // if a panel is open, then we should hide the button,
+  // as it shouldn't be accessible by keyboard controls
+  &.is-open {
+    display: none;
+  }
+}
+
+// hide and expand specific styling
+.push-ui__hide-btn,
+.push-ui__expand-btn {
+  background: rgba(0,0,0,.1);
+  border: none;
+  position: absolute;
+  top: 0;
+  width: $push-ui--hide-expand-btn--hw;
+}
+
+.push-ui__expand-btn {
+  right: $push-ui--hide-expand-btn--hw;
+
+  &:before,
+  &:after {
+    content: "<";
+    position: relative;
+  }
+
+  &:before {
+    left: 7px;
+  }
+
+  &:after {
+    right: 7px;
+  }
+}
+
+// hide button right drawer styling
+.push-ui__hide-btn:after {
+  content: "X";
+}
+
+// set position of the right hide button
+.push-ui__drawer--right .push-ui__hide-btn {
+  right: 0;
+}
+
+// hide button left drawer styling
+.push-ui__drawer--left .push-ui__hide-btn {
+  right: 0;
+
+  &:after {
+    content: "<";
+  }
+}
+
+
+
+
+// in instances of expand + hide buttons
+// add a border between them
+.push-ui__expand-btn + .push-ui__hide-btn {
+  background: rgba(0,0,0,.2);
+
+  &:hover,
+  &:focus {
+    background: rgba(0,0,0,.3);
+  }
+}
+
+
+
+// if right is expanded, then don't allow left button to be seen
+.expanded-right [data-push-ui-btn="left"] {
+  @include animation(.5s .2s hideLeft forwards);
+}
+
+@include keyframe ( hideLeft ) {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: .3;
+    transform: translateX(-70px);
+    visibility: hidden;
+  }
+}
+
+
+// if right is expanded, then don't allow left button to be seen
+// .expanded-left [data-push-ui-btn="right"] {
+//   @include animation(.5s .2s hideRight forwards);
+// }
+
+// @include keyframe ( hideRight ) {
+//   from {
+//     opacity: 1;
+//     transform: translateX(0px);
+//   }
+
+//   to {
+//     transform: translateX(70px);
+//     opacity: .3;
+//     visibility: hidden;
+//   }
+// }
+
+
+
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+
+*/

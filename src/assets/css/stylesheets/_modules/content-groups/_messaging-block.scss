@@ -1,0 +1,137 @@
+/** --------------------------------------------------------------------
+
+  Messaging Block
+
+--------------------------------------------------------------------- */
+
+$message-block--bg:                 $c-light-grey !default;
+$message-block--border:             1px solid $c-grey !default;
+$message-block--padding:            1.25em !default;
+$message-block--position:           fixed !default;
+$message-block--right-position:     .75em !default;
+$message-block--left-position:      .75em !default;
+$message-block--y-position:         .75em !default;
+$message-block--y-from:             200px !default;
+$message-block--opacity-start:      .1 !default;
+$message-block--max-width:          800px !default;
+
+$message-block--margin:             $base-margin !default;
+
+//------------------------------------------------------------------------
+
+.message-block {
+  background: $message-block--bg;
+  border: $message-block--border;
+  bottom: $message-block--y-position;
+  left: $message-block--right-position;
+  margin: auto;
+  max-width: $message-block--max-width;
+  opacity: $message-block--opacity-start;
+  padding: $message-block--padding;
+  position: $message-block--position;
+  right: $message-block--right-position;
+  transform: translateY($message-block--y-from);
+  transition: transform .2s ease-in-out,
+              opacity .2s ease-in-out;
+  visibility: hidden;
+  z-index: 0;
+
+  // active state for message block
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0px);
+    visibility: visible;
+    z-index: 20;
+  }
+
+  &.is-static {
+    margin-bottom: $message-block--margin;
+    opacity: 1;
+    position: static;
+    transform: none;
+    visibility: visible;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &__dismiss-btn {
+    @include font-size(22);
+    background: rgba(0,0,0,.25);
+    border-radius: 0;
+    bottom: 0;
+    box-shadow: none;
+    color: $c-white;
+    overflow: hidden;
+    padding: 0 20px !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &:hover,
+    &:focus {
+      background: rgba(0,0,0,.5);
+      transform: none;
+    }
+  }
+
+  // allow for room for the dismissal button
+  &--has-dismiss {
+    padding-right: 40px;
+  }
+
+  &--success {
+    background-color: $c-success;
+    border-color: darken($c-success, 15%);
+    color: $c-white;
+
+    .message-block__dismiss-btn,
+    a,
+    a:hover,
+    a:focus {
+      color: $c-white;
+    }
+  }
+
+  &--warning {
+    background-color: $c-warning;
+    border-color: darken($c-warning, 15%);
+    color: $c-white;
+
+    .message-block__dismiss-btn,
+    a,
+    a:hover,
+    a:focus {
+      color: $c-white;
+    }
+  }
+
+  &--error {
+    background-color: $c-error;
+    border-color: darken($c-error, 15%);
+    color: $c-white;
+
+    .message-block__dismiss-btn,
+    a,
+    a:hover,
+    a:focus {
+      color: $c-white;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+
+
+*/

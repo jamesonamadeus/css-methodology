@@ -1,0 +1,94 @@
+/** --------------------------------------------------------------------
+
+  Floats
+
+--------------------------------------------------------------------- */
+
+$float--spacing--margin-lr:           $base-margin !default;
+$float--spacing--margin-tb:           $base-margin !default;
+
+$float--breakout-margin:              -5% !default;
+
+$include-float--breakout:             true !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}float-left {
+  float: left;
+
+  // only allow floating from small viewport and up
+  @media screen and ( min-width: $bp-small ) {
+    &--sm {
+      float: left;
+    }
+  }
+}
+
+
+.#{$ns}float-right {
+  float: right;
+
+  // only allow floating from small viewport and up
+  @media screen and ( min-width: $bp-small ) {
+    &--sm {
+      float: right;
+    }
+  }
+}
+
+
+// Apply gutters to floated elements to ensure
+// appropriate whitespace between the floated
+// element and page content
+.#{$ns}float-left--spacing {
+  margin-bottom: $float--spacing--margin-tb;
+  margin-right: $float--spacing--margin-lr;
+  margin-top: $float--spacing--margin-tb;
+}
+
+
+.#{$ns}float-right--spacing {
+  margin-bottom: $float--spacing--margin-tb;
+  margin-top: $float--spacing--margin-tb;
+  margin-left: $float--spacing--margin-lr;
+
+  @media screen and ( max-width: $bp-small ) {
+    &.float-right--sm {
+      margin-left: 0;
+    }
+  }
+}
+
+@if $include-float--breakout == true {
+
+  // Allow floats to 'breakout' of the main content
+  // wrapped, allowing for elements to have greater
+  // visual emphasis
+  .#{$ns}float-left--breakout {
+    margin-bottom: $float--spacing--margin-tb;
+    margin-left: $float--breakout-margin;
+    margin-right: $float--spacing--margin-lr;
+    margin-top: $float--spacing--margin-tb;
+  }
+
+
+  .#{$ns}float-right--breakout {
+    margin-bottom: $float--spacing--margin-tb;
+    margin-left: $float--spacing--margin-lr;
+    margin-right: $float--breakout-margin;
+    margin-top: $float--spacing--margin-tb;
+  }
+
+} // if
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    <img src="#" alt="alternative text here" class="float-right" />
+    Text goes here, but image will be aligned to the top right.
+  </p>
+
+*/

@@ -1,0 +1,58 @@
+/** --------------------------------------------------------------------
+
+  Small Element / Type
+
+  @requires _paragraph.scss
+
+--------------------------------------------------------------------- */
+
+$txt-down-1:                    14 !default;
+$txt-down-1--line-height:       1.4 !default;
+
+$txt-down-2:                    12 !default;
+$txt-down-2--line-height:       1.5 !default;
+
+$txt-down-3:                    10.5 !default;
+$txt-down-3--line-height:       1.4 !default;
+
+//------------------------------------------------------------------------
+
+small,
+.txt-down-1 {
+  @include font-size($txt-down-1);
+  line-height: $txt-down-1--line-height;
+}
+
+.txt-down-2 {
+  @include font-size($txt-down-2);
+  line-height: $txt-down-2--line-height;
+}
+
+.txt-down-3 {
+  @include font-size($txt-down-3);
+  line-height: $txt-down-3--line-height;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="txt-down-1">
+    Smaller paragraph style
+  </p>
+
+  <small>
+    Same styling as above
+  </small>
+
+  <p class="txt-down-2">
+    Even smaller styling
+  </p>
+
+  <p class="txt-down-3">
+    Legal copy you probably don't actually
+    want people reading...
+  </p>
+
+*/

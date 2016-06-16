@@ -1,0 +1,69 @@
+/** --------------------------------------------------------------------
+
+  Label Element
+
+--------------------------------------------------------------------- */
+
+$label--font-size:                  $body--txt-base !default;
+$label--margin:                     $base-unit !default;
+
+$label--is-required--color:         $c-error !default;
+$label--is-required--content:       '*' !default;
+
+$label--is-optional--color:         $c-grey !default;
+$label--is-optional--content:       '(optional)' !default;
+$label--is-optional--font-size:     .825em !default;
+$label--is-optional--font-style:    italic !default;
+
+//------------------------------------------------------------------------
+
+label,
+.#{$ns}txt-label {
+  display: inline-block;
+  margin-bottom: $label--margin;
+
+  @if $label--font-size != $body--txt-base {
+    font-size: $label--font-size;
+  }
+
+  &[for] {
+    cursor: pointer;
+  }
+
+  &.is-required:after {
+    color: $label--is-required--color;
+    content: $label--is-required--content;
+    display: inline-block;
+    speak: none;
+  }
+
+  &.is-optional:after {
+    color: $label--is-optional--color;
+    content: $label--is-optional--content;
+    display: inline-block;
+    font-size: $label--is-optional--font-size;
+    font-style: $label--is-optional--font-style;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <label for="input_id" class="is-optional">
+    Label Text
+  </label>
+  <input type="text" id="input_id" />
+
+  <label for="n1a">
+    <input type="checkbox" name="n1a" id="n1a" />
+    Label Text
+  </label>
+
+  <input type="radio" name="r_group" id="n2" />
+  <label for="n2">
+    Label Text
+  </label>
+
+*/

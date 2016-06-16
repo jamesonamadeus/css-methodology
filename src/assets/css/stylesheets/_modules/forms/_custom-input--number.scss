@@ -1,0 +1,150 @@
+/** --------------------------------------------------------------------
+
+  Custom Number Input Element
+
+--------------------------------------------------------------------- */
+
+$number-input__btn--bg:           $c-blue !default;
+
+$number-input--padding-right:     66px !default;
+$number-input__btn--min-width:    32px !default;
+
+$number-input--height:            36px !default;
+
+$number-input__btn--up-icon:      url('../icons/icon-plus.svg') !default;
+$number-input__btn--down-icon:    url('../icons/icon-minus.svg') !default;
+
+//------------------------------------------------------------------------
+
+// remove native spinner from number inputs
+.clean-input-number::-webkit-inner-spin-button,
+.clean-input-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+
+// clean for firefox. (combining the selectors
+// somehow cancel each other out in both browsers,
+// so these selectors must stay separated to actually
+// work because reasons.)
+.clean-input-number {
+  -moz-appearance: textfield;
+}
+
+
+// ---------------------------------------------------------------------
+// Styled custom number input area w/JS buttons
+// ---------------------------------------------------------------------
+
+// container of input & styled buttons.
+// this could be used on a .form-row if need be
+.number-input-area {
+  position: relative;
+
+  input {
+    height: $number-input--height; // *
+    padding-right: $number-input--padding-right;
+
+    // * set height because otherwise webkit will
+    //   render it based on ???? makes room for up/down buttons
+  }
+}
+
+.no-js .number-input-area {
+  padding-right: 0;
+}
+
+// container for the +/- buttons that goes
+// after the input[type="button"] element in
+// the DOM order.
+.btn-pill-area--numbers {
+  display: none;
+  height: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  button {
+    border-radius: 0 !important;
+    float: left;
+    height: 100%;
+    margin: 0; // fix for safari
+    min-width: $number-input__btn--min-width !important;
+    padding: 0 !important;
+
+    &:first-of-type {
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+  }
+}
+
+.text-input--inverse + .btn-pill-area--numbers button :first-of-type {
+  border-right: 1px solid rgba(0,0,0,.2);
+}
+
+
+// updates to number input buttons icons
+.btn--num-down {
+  background-image: $number-input__btn--down-icon;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.btn--num-up {
+  background-image: $number-input__btn--up-icon;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <!--
+    required classes for additional styling:
+    • .#{$ns}btn
+    • .btn-pill-area
+    • .sr-only
+
+    all classes prefixed with 'js' are for JavaScript purposes only
+    and should not be used as styling hooks.
+  -->
+
+  <div class="number-input-area">
+    <label for="unique_id">
+      Label for input:
+    </label>
+    <input type="number" class="js-numbler" name="unique_id" id="unique_id" />
+
+    <div class="btn-pill-area btn-pill-area--numbers">
+      <button class="js-num-up" type="button">
+        <span class="sr-only">
+          Increase
+        </span>
+        <span aria-hidden="true">+</span>
+      </button>
+
+      <button class="js-num-down" type="button">
+        <span class="sr-only">
+          Decrease
+        </span>
+        <span aria-hidden="true">-</span>
+      </button>
+    </div> <!-- end .number-controls -->
+  </div>
+
+
+  <!--
+    if using icon moon, remove the
+    <span aria-hidden="true">+</span>
+    & <span aria-hidden="true">-</span>
+    and instead use
+    btn--num-up and btn--num-down classes
+  -->
+
+*/

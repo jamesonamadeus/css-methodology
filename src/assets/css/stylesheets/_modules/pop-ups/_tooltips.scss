@@ -1,0 +1,236 @@
+/** --------------------------------------------------------------------
+
+  A11Y Tool Tips
+
+--------------------------------------------------------------------- */
+
+$tip-bg:                              fade-out($c-blue, .1);
+$tip-base-size:                       12px;
+$tip-arrow-size:                     6px;
+
+$tip__trigger--border-bottom:         1px dotted $c-darker-grey !default;
+
+$tip--compile-bottom:                    true !default;
+$tip--compile-left:                   false !default;
+$tip--compile-right:                  false !default;
+
+$tip--delay:                          1s !default;
+$tip--no-delay:                       .18s !default;
+
+// ---------------------------------------------------------------------
+
+// parent wrapper
+.a11y-tip {
+  display: inline-block;
+  position: relative;
+
+  // element that triggers the tooltip (help) pop-up
+  &__trigger {
+
+    // if not an element that has inherit focus, add visual
+    // affordance to let users know this element is not just
+    // regular text.
+    &[tabindex] {
+      border-bottom: $tip__trigger--border-bottom;
+    }
+
+    // on hover/focus of the trigger, reveal the help which
+    // is placed directly after the trigger in the DOM
+    // (as you would not describe something before you know
+    // what that something is.)
+    &[aria-describedby]:hover + ,
+    &[aria-describedby]:focus + {
+
+      .a11y-tip__help,
+      .a11y-tip__help:after {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .a11y-tip__help {
+
+        &,
+        &:after {
+          transform: translate(-50%, 0px);
+        }
+
+        @media screen and ( min-width: $bp-small ) {
+
+          @if $tip--compile-left == true {
+            &--left,
+            &--left:after{
+              transform: translate(0px, -50%);
+            }
+          } // end if
+
+          @if $tip--compile-right == true {
+            &--right,
+            &--right:after {
+              transform: translate(0px, -50%);
+            }
+          } // end if
+
+        } // end @media
+
+      } // .a11y-tip__help
+
+    } // end :hover, :focus
+
+  }
+
+  // by default tooltips have a 1s delay to mimic native tooltips
+  // but if you want/need tooltips to show up faster, use this class
+  &--no-delay {
+
+    .a11y-tip__help,
+    .a11y-tip__help:after {
+      transition: opacity $tip--no-delay ease-in-out,
+                  transform $tip--no-delay ease-in-out;
+    }
+  }
+}
+
+
+[role="tooltip"].a11y-tip__help {
+  background: $tip-bg;
+  border-radius: 4px;
+  color: $c-white;
+  font-size: $tip-base-size + 2;
+  left: 50%;
+  margin-top: 6px + $tip-arrow-size;
+  max-width: 400px;
+  min-width: 220px;
+  opacity: 0;
+  padding: .5em 1em;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  transform: translate(-50%, 10px);
+  width: 100%;
+  z-index: 10;
+  transition: opacity .2s $tip--delay ease-in-out;
+  transform-style: preserve-3d;
+  visibility: hidden;
+
+  &:after {
+    @include triangle( $tip-arrow-size, $tip-bg, bottom );
+    bottom: 100%;
+    content: '';
+    left: 50%;
+    margin-top: 6px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, 10px);
+    z-index: 10;
+    transition: opacity .2s $tip--delay ease-in-out;
+    transform-style: preserve-3d;
+    visibility: hidden;
+  }
+
+
+  @if $tip--compile-bottom == true {
+    // reposition tip to the top
+    &--top {
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: 6px + $tip-arrow-size;
+      transform-origin: center top;
+      transform: translate(-50%, 10px);
+
+      // cancel bottom default styling
+      margin-top: 0;
+      top: auto;
+
+      &:after {
+        @include triangle( $tip-arrow-size, $tip-bg, top );
+        left: 50%;
+        margin-bottom: 6px;
+        top: 100%;
+        transform-origin: center top;
+        transform: translate(-50%, -10px);
+
+        // cancel bottom default styling
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  // Left and Right positions are only useful on larger sized
+  // screens.  So they should go back to the bottom default
+  // positioning/styling when a screen isn't wide enough.
+  @media screen and (min-width: $bp-small) {
+
+    @if $tip--compile-left == true {
+      &--left {
+        margin-right: 5px + $tip-arrow-size;
+        right: 100%;
+        top: 50%;
+        transform: translate(10px, -50%);
+
+        // cancel bottom default styling
+        left: auto;
+        margin-top: 0;
+
+        &:after {
+          @include triangle( $tip-arrow-size, $tip-bg, left );
+          left: 100%;
+          margin-right: 5px;
+          top: 50%;
+          transform: translate(-10px, -50%);
+
+          // cancel bottom default styling
+          margin-top: 0;
+        }
+      }
+    } // end @if left
+
+
+    @if $tip--compile-right == true {
+      &--right {
+        left: 100%;
+        margin-left: 5px + $tip-arrow-size;
+        top: 50%;
+        transform: translate(10px, -50%);
+
+        // cancel bottom default styling
+        margin-top: 0;
+
+        &:after {
+          @include triangle( $tip-arrow-size, $tip-bg, right );
+          margin-left: 5px;
+          right: 100%;
+          top: 50%;
+          transform: translate(10px, -50%);
+
+          // cancel bottom default styling
+          bottom: auto;
+          left: auto;
+          margin-top: 0;
+        }
+      }
+    } // end @if right
+  }
+}
+
+
+// hide tool tips if the ESC key is hit
+.a11y-tip--hide .a11y-tip__help {
+  display: none;
+}
+
+
+.no-js .a11y-tip__help:not([role]) {
+  font-size: .85em;
+
+  &:before {
+    content: "(";
+  }
+
+  &:after {
+    content: ")";
+  }
+}

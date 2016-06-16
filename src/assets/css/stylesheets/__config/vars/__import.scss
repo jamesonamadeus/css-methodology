@@ -1,0 +1,21 @@
+/** --------------------------------------------------------------------
+
+  Variables
+
+--------------------------------------------------------------------- */
+
+// Import variables used throughout the project.
+// Some of these may be used quite frequently, while others not at all.
+
+// These should replace the need for hard coded values within the Sass files.
+
+
+@import
+
+// Default Var library
+'media-breaks',       // default library of media break points
+'colors',             // brand and updated 'web-safe' colors
+'base-units',         // sets a standard unit for spacing within a project
+
+// Default Font Family Variables
+'typography';

@@ -1,0 +1,113 @@
+/** --------------------------------------------------------------------
+
+  Table: Custom Table Styling
+
+--------------------------------------------------------------------- */
+
+$table--bg-alt:                       $c-light-grey !default;
+$table--bg-stripes:                   $c-off-white !default;
+
+$table__caption--background:          $c-lightest-grey !default;
+$table__caption--border-bottom:       1px solid $table--border--color !default;
+
+$table__head--background:             $c-off-white !default;
+$table__head--border-bottom:          1px solid $table--border--color !default;
+
+$table--small--font-size:             .825em !default;
+$table--small--padding:               $base-unit2 !default;
+
+
+//------------------------------------------------------------------------
+
+.table {
+
+  // styling for captions if they exist
+  caption {
+    background: $table__caption--background;
+    border: $table__caption--border-bottom;
+  }
+
+  &__head {
+    background: $table__head--background;
+    border-bottom: $table__head--border-bottom;
+  }
+
+  &__body {
+
+    // apply to parent of <tr>s (table, tbody, thead, etc.)
+    // that should receive the zebra striping
+    tr:nth-child(2n) {
+      background: $table--bg-stripes;
+    }
+
+  }
+
+  &--clean-borders {
+    border: 0;
+
+    .table__head,
+    tr,
+    th,
+    td {
+      border: 0;
+    }
+  }
+
+  &--equal-cols {
+    table-layout: fixed;
+  }
+
+
+  // MODIFIERS
+
+  &--sm {
+    font-size: $table--small--font-size;
+
+    th,
+    td {
+      padding: $table--small--padding;
+    }
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <table class="table">
+    <caption>
+      Table Caption
+    </caption>
+    <thead class="table__head">
+      <tr>
+        <th scope="col">
+          heading
+        </th>
+        <th scope="col">
+          heading
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      <tr>
+        <td>
+          table cell
+        </td>
+        <td>
+          table cell
+        </td>
+      </tr>
+      <tr>
+        <td>
+          table cell
+        </td>
+        <td>
+          table cell
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+*/

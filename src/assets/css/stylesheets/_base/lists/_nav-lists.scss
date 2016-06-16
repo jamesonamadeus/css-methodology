@@ -1,0 +1,44 @@
+/** --------------------------------------------------------------------
+
+  Default Navigation Element/Children Styling
+
+--------------------------------------------------------------------- */
+
+nav {
+
+  ul,
+  ol {
+    @extend .#{$ns}list-clean;
+  }
+
+  li {
+    margin: 0;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <nav role="navigation" aria-label="Main" id="main_nav">
+    <ul>
+      <li>
+        <a href="#!">
+          Nav Item 1
+        </a>
+      </li>
+      <li>
+        <a href="#!">
+          Nav Item 2
+        </a>
+      </li>
+      <li>
+        <a href="#!">
+          Nav Item 3
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+*/

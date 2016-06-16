@@ -1,0 +1,54 @@
+/** --------------------------------------------------------------------
+
+  Generic Knockout Buttons
+
+  @requires: btn--default variables
+
+--------------------------------------------------------------------- */
+
+$btn--ko--bg:              transparent !default;
+$btn--ko--alt-bg:          $btn--ko--bg !default;
+$btn--ko--color:           $btn--color !default;
+$btn--ko--border-color:    $btn--color !default;
+$btn--ko--bs:              inset 0 0 0 1px $btn--color !default;
+
+// states
+$btn--ko--alt-bg:          transparent !default;
+$btn--ko--alt-bs:          inset 0 0 0 2px rgba($btn--ko--color, 0) !default;
+$btn--ko--alt-bs--active:  inset 0 0 0 2px rgba($btn--ko--color, 1) !default;
+$btn--ko--alt-color:       $btn--ko--color !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}btn--knockout {
+  background-color: $btn--ko--bg;
+  border-color: $btn--ko--border-color;
+  box-shadow: $btn--ko--bs;
+  color: $btn--ko--color;
+
+  &:focus,
+  &:hover {
+    background-color: $btn--ko--alt-bg;
+    box-shadow: $btn--ko--alt-bs;
+    color: $btn--ko--alt-color;
+  }
+
+  &:active,
+  &.is-active {
+    background: $btn--ko--alt-bg;
+    box-shadow: $btn--ko--alt-bs--active;
+    color: $btn--ko--alt-color;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <button type="button" class="btn--knockout">
+    ...
+  </button>
+
+*/

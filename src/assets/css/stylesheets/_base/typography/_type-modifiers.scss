@@ -1,0 +1,83 @@
+/** ----------------------------------------------------------------------------
+
+  Text Decoration: Visual Modifiers
+
+ ---------------------------------------------------------------------------- */
+
+// underline text w/out adding semantic meaning
+.#{$ns}txt-underline {
+  text-decoration: underline;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    I want to have
+    <span class="txt-underline">
+      underlined text here
+    </span>.
+
+    However this underline has no semantic value.
+  </p>
+
+*/
+
+
+// remove underlines, while keeping semantic meaning (if exists)
+.#{$ns}txt-no-underline {
+  text-decoration: none;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a class="txt-no-underline">Link Label</a>
+
+  <!-- or -->
+
+  <p>
+    I have an <u class="txt-no-underline">element that has been underlined</u>
+    but I want to take away visually semantic indication of that for no
+    good reason.
+  </p>
+
+*/
+
+
+// uppercase text without butchering how text is read
+// by screen readers.
+.#{$ns}txt-uppercase {
+  text-transform: uppercase;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a class="txt-upper">
+    Uppercase Link Label
+  </a>
+
+*/
+
+
+.#{$ns}txt-nowrap {
+  white-space: nowrap;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <th class="txt-nowrap">
+    Text won't wrap to new line
+  </th>
+
+*/

@@ -1,0 +1,314 @@
+/** --------------------------------------------------------------------
+
+  Hamburger Menu Button
+
+  The Hamburger menu consists of 3 separate elements
+    1. The button element which contains the Burger Icon and
+       text label. All JS is tied to this element.
+
+    2. A span containing the text label of the button,
+       which should contain the text "menu", or possibly
+       "Navigation" or "Nav" (if the latter, the span should be)
+       swapped out with an <abbr> element.
+
+    3. A span for the actual Burger Icon (created with CSS). This icon
+       changes from a burger icon to a X depending on if the menu
+       is opened or closed (determined by the aria-expanded attribute
+       currently assigned to the button.)
+
+--------------------------------------------------------------------- */
+
+// Button Container Configuration
+$burger-btn--bg:                      darken($btn--primary--bg, 15%) !default; // *
+  $burger-btn--bg--alt:               darken($btn--primary--bg, 10%) !default;
+$burger-btn--bs:                      0 !default;
+$burger-btn--pad:                     1em !default;
+$burger-btn--position:                fixed !default;
+  $burger-btn--position__Y:           .5em !default;
+  $burger-btn--position__X:           .5em !default;
+  $burger-btn--align-right:           true !default;
+  $burger-btn--align-top:             true !default;
+$burger-btn--z-index:                 12 !default;
+$burger-btn--has-transition:          true !default;
+
+$burger-btn--is-pressed--bg:          $c-off-black !default;
+  $burger-btn--is-pressed--bg--alt:   $c-black !default;
+
+
+// Burger Text Label Configuration
+$burger-btn__label--color:            $c-white !default;
+$burger-btn__label--txt-transform:    uppercase !default;
+
+
+// Burger Icon Configuration
+$burger-btn__icon--color:             $c-white !default;
+  $burger-btn__icon--color--alt:      $c-off-white !default;
+$burger-btn__icon--width:             1.25em !default;
+  $burger-btn__icon--width--alt:      1.333em !default;
+$burger-btn__icon--position:          top !default; // **
+
+// * set a value of default to inherit the default value
+// from the main <button> styling
+
+// ** values: top, left, right
+
+
+@mixin burgerPadding () {
+  @if $burger-btn__icon--position == top {
+    padding: $burger-btn--pad*2.5 $burger-btn--pad $burger-btn--pad;
+  }
+  @else if $burger-btn__icon--position == left {
+    padding: $burger-btn--pad $burger-btn--pad $burger-btn--pad ($burger-btn--pad*2 + $burger-btn__icon--width/1.5);
+  }
+  @else if $burger-btn__icon--position == right {
+    padding: $burger-btn--pad ($burger-btn--pad*2 + $burger-btn__icon--width/1.5) $burger-btn--pad $burger-btn--pad;
+  }
+}
+
+//------------------------------------------------------------------------
+
+.#{$ns}btn--menu {
+  @include burgerPadding;
+  background: $burger-btn--bg;
+  box-shadow: $burger-btn--bs;
+  display: none;
+  margin: auto;
+  position: $burger-btn--position;
+  overflow: hidden;
+  text-transform: $burger-btn__label--txt-transform;
+  z-index: $burger-btn--z-index;
+
+  // Button should only appear at screen sizes
+  // where the main menu goes off screen
+  @media screen and (max-width: $bp-medium) {
+    display: block;
+  }
+
+  // if transitions are set to true
+  @if $burger-btn--has-transition == true {
+    transition: padding ease-in-out .2s .4s;
+  }
+
+  @if $burger-btn--position != relative {
+
+    @if $burger-btn--align-right == true {
+      right: $burger-btn--position__X;
+    }
+    @else {
+      left: $burger-btn--position__X;
+    }
+
+    @if $burger-btn--align-top == true {
+      top: $burger-btn--position__Y;
+    }
+    @else {
+      bottom: $burger-btn--position__Y;
+    }
+  } // end position if
+
+  &:hover,
+  &:focus {
+    @include burgerPadding;
+
+    @if $burger-btn--bg != default {
+      background: $burger-btn--bg--alt;
+    }
+
+    outline: none;
+  }
+
+  // animation of hamburger on hover when closed
+  @if $burger-btn--has-transition == true {
+    &[aria-expanded="false"]:hover,
+    &[aria-expanded="false"]:focus {
+      .#{$ns}btn--menu__icon {
+        width: $burger-btn__icon--width--alt;
+      }
+
+      .#{$ns}btn--menu__icon:before {
+        top: -8px;
+      }
+
+      .#{$ns}btn--menu__icon:after {
+        bottom: -8px;
+      }
+    }
+  }
+
+  // restyle menu button / make transition when open
+  &[aria-expanded="true"] {
+    background: $burger-btn--is-pressed--bg;
+    min-width: 1px;
+    padding: 1em 1.6em;
+
+    &:hover,
+    &:focus {
+      background: $burger-btn--is-pressed--bg--alt;
+
+      .#{$ns}btn--menu__icon:before,
+      .#{$ns}btn--menu__icon:after {
+        background: $burger-btn__icon--color--alt;
+      }
+    }
+
+    // changes to label when expanded
+    .#{$ns}btn--menu__label {
+      color: rgba($burger-btn__label--color, 0);
+      font-size: 1px;
+      opacity: 0;
+    }
+
+    // changes to icon when expanded
+    .#{$ns}btn--menu__icon {
+      background: transparent;
+      bottom: 0;
+      top: 0;
+      transition: transform .2s .4s;
+
+      &:before,
+      &:after {
+        background: $burger-btn__icon--color--alt;
+        bottom: 0;
+        top: 0;
+      }
+
+      // rotate lines to create X
+      &:after {
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+} // end .#{$ns}btn--menu
+
+
+
+// --------------------------------------------------------
+// Button Label
+// --------------------------------------------------------
+.#{$ns}btn--menu__label {
+  color: $burger-btn__label--color;
+  font-size: inherit;
+  opacity: 1;
+  pointer-events: none;
+
+  @if $burger-btn--has-transition == true {
+    transition: font-size ease-in-out .2s .4s,
+                opacity ease-in-out .2s;
+  }
+} // end .#{$ns}btn menu label
+
+
+
+// --------------------------------------------------------
+// Menu button Icon (hamburger / X combo)
+// --------------------------------------------------------
+.#{$ns}btn--menu__icon {
+  background: $burger-btn__icon--color;
+  height: 2px;
+  margin: auto;
+  pointer-events: none;
+  position: absolute;
+  width: $burger-btn__icon--width;
+
+  // if transitions are set to true
+  @if $burger-btn--has-transition == true {
+    transition: .2s all ease-in-out;
+  }
+
+  // position options for icon
+  @if $burger-btn__icon--position == top {
+    left: 0;
+    right: 0;
+    top: 1.25em;
+  }
+  @else if $burger-btn__icon--position == left {
+    bottom: 0;
+    left: $burger-btn--pad;
+    top: 0;
+  }
+  @else if $burger-btn__icon--position == right {
+    bottom: 0;
+    right: $burger-btn--pad;
+    top: 0;
+  }
+
+  &:before,
+  &:after {
+    background: $burger-btn__icon--color;
+    border-radius: $base-unit;
+    content: '';
+    height: 2px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    speak: none;
+    width: 100%;
+
+    // if transitions are set to true
+    @if $burger-btn--has-transition == true {
+      transition: transform .2s 0s, top .2s, bottom .2s;
+    }
+  }
+
+  &:before {
+    top: -6px;
+  }
+
+  &:after {
+    bottom: -6px;
+  }
+} // end .#{$ns}btn menu icon
+
+
+// On touch devices remove hover/focus states
+// so as not to trigger them / have them 'stick' on touch.
+.is-touch-device {
+
+  .#{$ns}btn--menu {
+
+    &:hover,
+    &:focus {
+      background: inherit;
+      box-shadow: inherit;
+    }
+
+    &[aria-expanded="false"]:hover,
+    &[aria-expanded="false"]:focus {
+
+      .#{$ns}btn--menu__icon {
+        right: 14px;
+        width: 20px;
+      }
+
+      .#{$ns}btn--menu__icon:before {
+        top: -6px;
+      }
+
+      .#{$ns}btn--menu__icon:after {
+        bottom: -6px;
+      }
+    }
+  }
+} // end .is-touch-device
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="#main_menu"
+     class="btn--menu"
+     data-action="open-menu"
+     data-overlay="true"
+     title="Navigation Menu">
+    <span class="btn--menu__icon" aria-hidden="true"></span>
+    <span class="btn--menu__label">
+      Menu
+    </span>
+  </a>
+
+*/

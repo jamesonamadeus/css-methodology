@@ -1,0 +1,63 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Silent Classes</h1>
+      <p>
+        Classes that are only instantiated if they are invoked by @extend
+        in normal CSS classes.
+      </p>
+      <p>
+        Many of these are being used in base elements to normalize
+        properties that are repeated among various selectors.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <ul>
+      <li>%reset--spacing &mdash; margin and padding 0</li>
+      <li>%reset--border &mdash; border and outline 0</li>
+      <li>%help &mdash; visual styling for elements with helpful [title] text</li>
+    </ul>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Mixins</h1>
+      <p>
+        Reusable swatches of CSS properties that may have values that can be updated.
+        Please see the documentation within each <code>__config > helpers</code> file
+        for additional information for proper usage.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <ul>
+      <li>@include animation( animation values )</li>
+      <li>@include keyframe( name )</li>
+      <li>@include maintain-ratio( # # )</li>
+      <li>@include move-off-screen ( )</li>
+      <li>@include image-2x( img, width, height )</li>
+      <li>@include scrollbar( sizing, main-color, secondary-color )</li>
+      <li>@include triangle( size, color, direction )</li>
+      <li>@include font-size( # )</li>
+      <li>@include select-text( background, color, shadow )</li>
+      <li>@include font-face ( family, path, weight, style )</li>
+      <li>@include preserve-3d ()</li>
+      <li>@include truncate-text ( width )</li>
+      <li>@include vendor ( property, value, browser flags )</li>
+    </ul>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+

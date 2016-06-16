@@ -1,0 +1,42 @@
+/** --------------------------------------------------------------------
+
+  Output Element
+
+  Useful if you need to display the output of a dynamic input element
+  to the end user in a semantically appropriate element.
+
+--------------------------------------------------------------------- */
+
+$output--margin:                               .5em 0 !default;
+
+//------------------------------------------------------------------------
+
+output {
+  display: block;
+  margin: $output--margin;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <form oninput="result.value=parseInt(range_input_a.value)">
+
+    <label for="range_input">
+      Label Text
+    </label>
+
+    <input type="range"
+           value="30"
+           name="range_input_a"
+           id="range_input">
+
+    <output class="text-input" name="result">
+      80
+    </output>
+
+  </form>
+
+*/

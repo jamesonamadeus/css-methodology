@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      'Styled' Native Inputs
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+  </head>
+  <body id="body">
+
+    <div class="content-area content-area--divider-bottom mxw-600">
+      <h1 class="txt-up-5">
+        'Styled' Native Inputs
+      </h1>
+      <p>
+        Customized styles for native input elements by hiding said inputs from view,
+        and then recreating them utilizing labels, spans and CSS trickery.
+      </p>
+    </div>
+
+
+   <div class="content-area mxw-600">
+
+      <h3 class="txt-up-2">
+        Custom File Upload
+      </h3>
+
+      <div data-action="custom-file" id="file_up_1">
+        <label for="input_file1">
+          <span class="txt-label">
+            Upload a File
+          </span>
+
+          <div class="text-input custom-file__input-wrap">
+            <input type="file" id="input_file1" class="custom-file__input" />
+          </div>
+        </label>
+      </div>
+
+
+      <h3 class="txt-up-2">
+        Custom Multiple File Upload
+      </h3>
+
+      <div data-action="custom-file" id="file_up_3">
+        <label for="input_file3">
+          <span class="txt-label">
+            Upload a File
+          </span>
+
+          <div class="text-input custom-file__input-wrap">
+            <input type="file" multiple id="input_file3" class="custom-file__input" />
+          </div>
+        </label>
+      </div>
+
+      <hr />
+
+      <h3 class="txt-up-2">
+        Custom Radio Buttons &amp; Check Boxes
+      </h3>
+
+      <form action="#!" method="post" class="mt-12">
+
+        <fieldset class="form-row">
+          <legend>
+            What are your thoughts on ice cream?
+            <small>(check all that apply)</small>
+          </legend>
+          <div class="form-row mt-0">
+            <label class="custom-cr" for="customCheck1">
+              <input id="customCheck1" name="customCheck1" type="checkbox">
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                It's super great
+              </span>
+            </label>
+          </div>
+
+          <div class="form-row mt-0">
+            <label class="custom-cr" for="customCheck2">
+              <input id="customCheck2" name="customCheck2" type="checkbox">
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                I prefer salty foods, thanks...
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-row">
+          <legend>
+            But, do you love ice cream?
+          </legend>
+          <div class="form-row mt-0">
+            <label class="custom-cr" for="customRadio2">
+              <input id="customRadio2" name="customRadio" type="radio">
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                Yes
+              </span>
+            </label>
+          </div>
+
+          <div class="form-row mt-0">
+            <label class="custom-cr" for="customRadio1">
+              <input id="customRadio1" name="customRadio" type="radio">
+              <span class="custom-cr__icon"></span>
+              <span class="custom-cr__content">
+                No
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+
+        <hr />
+
+        <h3 class="txt-up-2">
+          Styled Select Box
+        </h3>
+
+        <div class="form-row mb-20">
+          <label for="select-id-here0">
+            What's your favorite animal?
+          </label>
+          <div class="select-box">
+            <select id="select-id-here0">
+              <option selected disabled class="display-none">Make a selection</option>
+              <option>Dog</option>
+              <option>Cat</option>
+              <option>Fish</option>
+            </select>
+          </div>
+        </div>
+
+      </form> <!-- /.content-area -->
+
+    </div> <!-- /page -->
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.min.js"></script>
+  </body>
+</html>

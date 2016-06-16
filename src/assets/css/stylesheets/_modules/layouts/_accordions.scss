@@ -1,0 +1,93 @@
+/** --------------------------------------------------------------------
+
+  A11Y Accordion
+
+--------------------------------------------------------------------- */
+
+$accordion__trigger--bg-color:                  $c-off-white !default;
+  $accordion__trigger--active--bg-color:        $c-dark-blue !default;
+  $accordion__trigger--alt--bg-color:           $c-light-blue !default;
+$accordion__trigger--color:                     $c-blue !default;
+  $accordion__trigger--active--color:           $c-white !default;
+$accordion__trigger--padding:                   .5em 1em !default;
+$accordion__trigger--txt-transform:             none !default;
+
+$accordion__panel--bg-color:                    inherit !default;
+$accordion__panel--padding:                     20px !default;
+
+
+$accordion--no-js-functionality:                false !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}accordion {
+
+  &__trigger {
+    background-color: $accordion__trigger--bg-color;
+    color: $accordion__trigger--color;
+    cursor: pointer;
+    display: block;
+    padding: $accordion__trigger--padding;
+    text-decoration: none;
+    text-transform: $accordion__trigger--txt-transform;
+
+    &.is-active {
+      background-color: $accordion__trigger--active--bg-color;
+      color: $accordion__trigger--active--color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $accordion__trigger--alt--bg-color;
+      color: $accordion__trigger--active--color;
+    }
+
+  }
+
+  &__panel {
+    background-color: $accordion__panel--bg-color;
+    display: none;
+    padding: $accordion__panel--padding;
+  }
+
+  // if there's no JavaScript
+  .no-js &__trigger {
+    color: inherit;
+  }
+
+  .no-js &__panel {
+    display: block;
+  }
+}
+
+
+button.#{$ns}accordion__trigger {
+  @extend .#{$ns}accordion__trigger;
+  box-shadow: none;
+  border-radius: 0;
+  text-align: left;
+  width: 100%;
+}
+
+
+
+@if $accordion--no-js-functionality == true {
+  .no-js a + .#{$ns}accordion__panel {
+    display: none;
+  }
+
+  .no-js .#{$ns}accordion__panel:target {
+    display: block;
+  }
+}
+
+
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+
+*/

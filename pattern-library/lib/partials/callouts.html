@@ -1,0 +1,127 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Callout Blockquote</h1>
+      <p>
+        Add some pop.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <figure class="blockquote-callout">
+      <blockquote class="blockquote-callout__quote">
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        </p>
+      </blockquote>
+      <figcaption class="blockquote-callout__source">
+        <cite>
+          Peter Smitherson,
+          President and CEO,
+          Some Company
+        </cite>
+      </figcaption>
+    </figure>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Messaging Blocks</h1>
+      <p>
+        Messaging blocks for various application/user feedback states.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <!--
+
+      .is-active
+      added to .message-block to transition message block
+      in from bottom of the page.
+
+      Message should stay in place for [undefined amount of time.  4 seconds?]
+      and then the message block should fade out.  Hitting the
+      .js-message-dismiss-btn should trigger the same fade out animation.
+
+      Clicking the undo link should undo whatever the last saved action was.
+
+      Since this application is supposed to 'auto save' at various points,
+      it is still unclear as to how far back undo should go...
+
+    -->
+
+    <div class="message-block txt-center is-active" style="position: static" aria-live="polite">
+      <p>
+        Message goes here.
+        <a href="#!">Undo</a>
+      </p>
+    </div>
+
+    <br />
+
+    <div class="message-block message-block--success is-active" style="position: static" aria-live="polite">
+      <h3 class="txt-up-2">
+        Title of message goes here
+      </h3>
+      <p>
+        Message goes here. Message goes here. Message goes here. Message goes here.
+      </p>
+    </div>
+
+    <br />
+
+    <div class="message-block message-block--warning is-active" style="position: static" aria-live="polite">
+      <p>
+        Message goes here.
+        <a href="#!">Undo</a>
+      </p>
+    </div>
+
+    <br />
+
+    <div class="message-block message-block--error is-active" style="position: static" role="alert">
+      <p>
+        Message goes here.
+        <a href="#!">Undo</a>
+      </p>
+    </div>
+
+    <br />
+
+    <div class="message-block message-block--has-dismiss is-active" style="position: static" aria-live="polite">
+      <p>
+        Message goes here.
+        <a href="#!">Undo</a>
+      </p>
+      <button type="button" class="js-message-dismiss-btn message-block__dismiss-btn">
+        <span class="sr-only">
+          Dismiss this message
+        </span>
+        <span aria-hidden="true">&#x2a09;</span>
+     </button>
+    </div>
+
+    <br />
+
+    <div class="message-block message-block--error message-block--has-dismiss is-active" style="position: static" aria-live="polite">
+      <p>
+        Message goes here.
+      </p>
+      <button type="button" class="js-message-dismiss-btn message-block__dismiss-btn">
+        <span class="sr-only">
+          Dismiss this message
+        </span>
+        <span aria-hidden="true">&#x2a09;</span>
+     </button>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,41 @@
+/** --------------------------------------------------------------------
+
+  Web safe Fonts Families
+
+  Ready made fall back fonts for when Typekit inevitably hangs
+
+--------------------------------------------------------------------- */
+
+// sans serif
+$f-arial:           Arial, "Helvetica Neue", Helvetica;
+$f-arial-black:     "Arial Black", Gadget;
+$f-helvetica:       "Helvetica Neue", Helvetica, Roboto, Arial;
+$f-lucida:          "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode";
+
+$f-sans-serif:      sans-serif;
+
+
+// serif
+$f-courier:         "Courier New", Courier, monospace;
+$f-georgia:         Georgia, "Times New Roman", Times;
+$f-tahoma:          Tahoma, Geneva;
+$f-times:           "Times New Roman", Times;
+$f-verdana:         Verdana, Geneva;
+
+$f-serif:           serif;
+
+
+// mono
+$f-monospace:       monospace;
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  .example {
+    font-family: "Open Sans", $f-arial, $f-sans-serif;
+  }
+
+*/

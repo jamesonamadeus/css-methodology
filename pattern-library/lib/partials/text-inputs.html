@@ -1,0 +1,473 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Basic Text Inputs
+      </h1>
+      <p>
+        Standard styling for text inputs and their states. Wrap inputs in the
+        <code>.form-row</code> class to create consistent form layouts
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Form row wrapper > label + input pattern
+    </div>
+
+    <div class="form-row">
+      <label for="txt0">
+        Input Label
+      </label>
+      <input type="text"
+             name="txt0"
+             id="txt0" />
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Form row wrapper > label > input pattern
+    </div>
+
+    <div class="form-row">
+      <label for="txt0aa">
+        Input Label
+
+        <input type="text"
+               name="txt0aa"
+               id="txt0aa" />
+      </label>
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Disabled Text Input
+    </div>
+
+    <div class="form-row">
+      <label for="txt2">
+        Input Label
+      </label>
+      <input type="text"
+             name="txt2"
+             id="txt2"
+             disabled />
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Read Only Text Input
+    </div>
+
+    <div class="form-row">
+      <label for="textExample3">
+        Input Label
+      </label>
+      <input id="textExample3"
+             name="textExample3"
+             type="text"
+             value="Mark Summers"
+             readonly />
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Input with Datalist
+    </div>
+
+    <div class="form-row">
+      <label for="textExample2">
+        Input Label
+      </label>
+      <input id="textExample2"
+             type="text"
+             list="datalist" />
+
+      <datalist id="datalist">
+        <option value="1">
+          Option 1
+        </option>
+        <option value="2">
+          Option 2
+        </option>
+        <option value="3">
+          Option 3
+        </option>
+      </datalist>
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Text Inputs with Descriptions
+      </h1>
+      <p>
+        Examples of text inputs that have coupled descriptions. Namely inputs with error/warning messages and required or optional inputs that give context as to why the field is required, or an indicator that the field is optional.
+      </p>
+      <p>
+        Error messages should appear next to the form field that has the error to give appropriate context, and be linked to the input via an aria-describedby attribute. See the form patterns section for an alternate error pattern if the optimal pattern shown below is not possible to implement.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Input with error message (message within label)
+    </div>
+
+    <div class="form-row">
+      <label for="unique_ID_has_error1" class="display-block">
+        Input Label
+
+        <input type="text"
+               id="unique_ID_has_error1"
+               name="unique_ID_has_error1"
+               class="border-color-error" />
+
+        <span class="input-message color-error" id="unique_error_id">
+          Error message goes here.
+        </span>
+      </label>
+    </div>
+
+    <div class="cs-pattern-intro">
+      Input with error message (aria-describedby)
+    </div>
+
+    <div class="form-row">
+      <label for="unique_ID_has_error2">
+        Input Label
+      </label>
+      <input type="text"
+             id="unique_ID_has_error2"
+             name="unique_ID_has_error2"
+             class="border-color-error"
+             aria-describedby="unique_error_id"  />
+
+      <p class="input-message color-error" id="unique_error_id">
+        Error message goes here.
+      </p>
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Success Message
+    </div>
+
+    <div class="form-row">
+      <label for="txt_input_mod_2">
+        Input Label
+      </label>
+      <input type="text"
+             class="border-color-success"
+             id="txt_input_mod_2"
+             aria-describedby="txt_input_mod_2_msg" />
+
+      <p class="input-message color-success" id="txt_input_mod_2_msg">
+        Completed!
+      </p>
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Warning Message
+    </div>
+
+    <div class="form-row">
+      <label for="txt_input_mod_3" class="display-block">
+        Has Warning
+
+        <input type="text"
+               class="border-color-warning"
+               id="txt_input_mod_3"
+               aria-describedby="txt_input_mod_3_msg" />
+
+        <p class="input-message color-warning" id="txt_input_mod_3_msg">
+          Looks like you entered "X" when you should have entered "Y"...
+        </p>
+      </label>
+
+    </div>
+
+    <hr />
+
+
+    <div class="cs-pattern-intro">
+      Required Input with accompanying required instructions
+    </div>
+
+    <div class="form-row">
+      <label for="txt_required" class="is-required">
+        Required Input
+        <span class="sr-only">
+          required
+        </span>
+      </label>
+      <input type="text"
+             name="txt_required"
+             id="txt_required"
+             class="input--has-tooltip"
+             aria-required="true"
+             aria-describedby="input_help_area" />
+
+      <p id="input_help_area" role="tooltip">
+        Instructions for required input so
+        that people don't enter invalid info.
+      </p>
+    </div>
+
+
+    <div class="cs-pattern-intro">
+      Optional Input
+    </div>
+
+    <div class="form-row">
+      <label for="txt_optional" class="is-optional">
+        Input Label
+      </label>
+      <input type="text"
+             name="txt_optional"
+             id="txt_optional" />
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Text Inputs [type="x"]
+      </h1>
+      <p>
+        Styling for text inputs of types other than 'text'. See more examples of text inputs with extended browser functionality in 'Special Inputs'.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="form-row">
+      <label for="emailExample">
+        Email Input
+      </label>
+      <input id="emailExample" type="email" placeholder="johnsmith@fakename.com" />
+    </div>
+
+    <div class="form-row">
+      <label for="txt3">
+        Number Input
+      </label>
+      <input type="number" name="txt3" id="txt3" />
+    </div>
+
+    <div class="form-row">
+      <label for="passwordExample">
+        Password Input
+      </label>
+      <input id="passwordExample" type="password" placeholder="abc123..." />
+    </div>
+
+    <div class="form-row" role="search">
+      <label for="search_input">
+        Search Input
+      </label>
+      <input type="search"
+             name="search_input"
+             id="search_input"
+             placeholder="Search for..." />
+    </div>
+
+    <div class="form-row">
+      <label for="telExample">
+        Telephone Input
+      </label>
+      <input id="telExample" type="tel" placeholder="555-555-5555" pattern="[0-9]*" />
+    </div>
+
+    <div class="form-row">
+      <label for="urlExample">
+        URL Input
+      </label>
+      <input id="urlExample" type="url" placeholder="http://..." />
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Alternate Style Inputs
+      </h1>
+      <p>
+        Inputs that don't fit the general styling, or are restyled to
+        fit onto inverse backgrounds.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Transparent Inputs with visually hidden label
+    </div>
+
+    <div class="form-row">
+      <label class="sr-only" for="transparent_input">
+        Visually Hidden Text Label
+      </label>
+      <input type="text" value="Default Group Name" placeholder="Name contept group..." class="text-input--transparent" name="transparent_input" id="transparent_input">
+    </div>
+
+
+  <div class="cs-pattern-intro">
+    Inverse inputs
+  </div>
+
+  <div style="background: #313742;" class="content-area">
+    <div class="form-row">
+      <label for="txt33">
+        Input Label
+      </label>
+      <input class="text-input--inverse" type="text" name="txt33" id="txt33" placeholder="placeholder text" />
+    </div>
+
+    <div class="form-row">
+      <label for="txt44">
+        Input Label (disabled input)
+      </label>
+      <input class="text-input--inverse" type="text" name="txt44" id="txt44" disabled placeholder="disabled">
+    </div>
+
+    <div class="form-row">
+      <label for="txt55">
+        Text Input [readonly]
+      </label>
+      <input id="txt55" name="txt55" class="text-input--inverse" type="text" placeholder="John Smith..." value="Mark Summers" readonly />
+    </div>
+
+
+    <div class="cs-pattern-intro" style="color: #fff;">
+      Transparent Input with visually hidden label
+    </div>
+
+    <div class="form-row">
+      <label class="sr-only" for="transparent_input">
+        Visually Hidden Input Label
+      </label>
+      <input type="text" value="Default Group Name" placeholder="Name contept group..." class="text-input--transparent text-input--transparent--inverse" name="transparent_input" id="transparent_input">
+    </div>
+
+  </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Textarea
+      </h1>
+      <p>
+        Used for long-form input from an end user.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="form-row">
+      <label for="textAreaEx1">
+        Textarea
+      </label>
+      <textarea id="textAreaEx1"
+                name="textAreaEx1"
+                placeholder="Placeholder text..."></textarea>
+    </div>
+
+    <div class="form-row" style="background: #444; padding: 12px;">
+      <label for="textAreaEx22">
+        Inverse Textarea
+      </label>
+      <textarea id="textAreaEx22"
+                name="textAreaEx22"
+                class="text-input--inverse"
+                placeholder="Placeholder text..."></textarea>
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Modifiers
+      </h1>
+      <p>
+        Classes that help modify the visual appearance of a text input or textarea.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Small Inputs
+    </div>
+
+    <div class="form-row">
+      <label for="txt_sm">
+        Input label
+      </label>
+      <input type="text" id="txt_sm" class="text-input--sm" value="Small" />
+    </div>
+
+    <div class="cs-pattern-intro">
+      Large Inputs
+    </div>
+
+    <div class="form-row">
+      <label for="txt_lg">
+        Input label
+      </label>
+      <input type="text" id="txt_lg" class="text-input--lg" value="Large" />
+    </div>
+
+    <div class="cs-pattern-intro">
+      Max-width Inputs
+    </div>
+
+    <div class="form-row">
+      <label for="txt_max">
+        Input label
+      </label>
+      <input type="text" id="txt_max" class="text-input--max-width" value="Max-width" />
+    </div>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

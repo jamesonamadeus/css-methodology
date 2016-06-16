@@ -1,0 +1,37 @@
+/** --------------------------------------------------------------------
+
+  Media Elements: Images & SVG
+
+--------------------------------------------------------------------- */
+
+$img--color:              $c-red !default;
+
+$img__after--bg:          $c-white !default;
+$img__after--content:     "sorry, the above image is broken." !default;
+
+//------------------------------------------------------------------------
+
+img {
+  @extend %reset--border;
+  color: $img--color;
+  font-style: normal;
+  max-width: 100%;
+  position: relative;
+
+  &:after {
+    background: $img__after--bg;
+    display: block;
+    content: $img__after--content;
+  }
+}
+
+
+// Corrects overflow issue in IE 9-11
+svg:not(:root) {
+  overflow: hidden;
+}
+
+
+// picture {
+
+// }

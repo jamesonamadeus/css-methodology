@@ -1,0 +1,30 @@
+/** --------------------------------------------------------------------
+
+  Color Input
+
+--------------------------------------------------------------------- */
+
+$color-input--native-styling:         $txt-input--native-styling !default;
+
+$color-input--max-width:                      400px !default;
+
+//------------------------------------------------------------------------
+
+input[type="color"] {
+  @if $color-input--native-styling != false {
+    @extend input[type="text"];
+  }
+
+  max-width: $color-input--max-width;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <input type="color" placeholder="Choose a color..." />
+  </div>
+
+*/

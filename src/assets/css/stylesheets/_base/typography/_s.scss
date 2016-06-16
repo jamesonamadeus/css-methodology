@@ -1,0 +1,32 @@
+/** --------------------------------------------------------------------
+
+  <s> Element
+
+  See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s
+
+--------------------------------------------------------------------- */
+
+$s--opacity:                        .7 !default;
+
+// ---------------------------------------------------------------------
+
+s,
+.#{$ns}txt-strike {
+  opacity: $s--opacity;
+  text-decoration: line-through;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <s>
+    striked words
+  </s>
+
+  <span class="txt-strike">
+    Striked words without semantic meaning
+  </span>
+
+*/

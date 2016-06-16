@@ -1,0 +1,154 @@
+/** --------------------------------------------------------------------
+
+  Site Hero Area
+
+--------------------------------------------------------------------- */
+
+$hero--bg-color:                                $c-off-black !default;
+
+$hero__title--color:                            $c-white !default;
+$hero__title--font-size:                        40 !default;
+$hero__title--font-size--lg:                    50 !default;
+$hero__title--weight:                           400 !default;
+$hero__title--line-height:                      1.1 !default;
+$hero__title--margin:                           0 0 8px !default;
+
+$hero__title__meta--padding:                    .25em !default;
+
+// overlay options
+$hero__content--bottom-overlay:                 true !default;
+$hero__content--center-overlay:                 true !default;
+$hero__content--has-transitions:                true !default;
+
+// content styling
+$hero__content--padding:                        20px !default;
+
+$hero__content--overlay--opacity--lg:           .45 !default;
+$hero__content--overlay--color:                 $c-off-white !default;
+$hero__content--overlay--color--lg:             $c-white !default;
+
+$hero__content--center-overlay--padding:        200px !default;
+
+$hero__content__inner--max-width:               1000px !default;
+
+$hero__feature--min-height:                     200px !default;
+
+//------------------------------------------------------------------------
+
+.hero {
+  background-color: $hero--bg-color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  overflow: hidden;
+  position: relative;
+
+  &__feature {
+    min-height: $hero__feature--min-height;
+
+    img,
+    picture,
+    video {
+      display: block;
+      width: 100%;
+    }
+
+  } // __feature
+
+
+  &__content {
+    background: rgba($hero--bg-color, 0);
+    color: $hero__content--overlay--color !important;
+    padding: $hero__content--padding;
+    transform: translate(0px, 0%);
+
+    @if $hero__content--has-transitions == true {
+        transition: transform .2s ease-in-out,
+                    color .3s .2s ease-in-out;
+    }
+
+    @if $hero__content--bottom-overlay == true {
+
+      &--bottom-overlay {
+
+        @media screen and ( min-width: $bp-medium ) {
+          background: rgba($hero--bg-color, $hero__content--overlay--opacity--lg);
+          color: $hero__content--overlay--color--lg !important;
+          left: 0;
+          position: absolute;
+          top: 100%;
+          transform: translate(0px, -100%);
+          width: 100%;
+        }
+
+      } // --bottom-overlay
+
+    } // if
+
+
+    @if $hero__content--center-overlay == true {
+
+      &--center-overlay {
+
+        @media screen and ( min-width: $bp-medium ) {
+          background: rgba($hero--bg-color, $hero__content--overlay--opacity--lg);
+          color: $hero__content--overlay--color--lg;
+          left: 0;
+          padding-left: $hero__content--center-overlay--padding;
+          padding-right: $hero__content--center-overlay--padding;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          transform: translate(0px, -50%);
+          width: 100%;
+        }
+      } // --center-overlay
+
+    } // if
+
+
+    &__inner { // *
+      margin: auto;
+      max-width: $hero__content__inner--max-width;
+    } // __inner
+
+
+    &__title { // typically <h1>
+      @include font-size($hero__title--font-size);
+      color: $hero__title--color;
+      font-weight: $hero__title--weight;
+      line-height: $hero__title--line-height;
+      margin: $hero__title--margin;
+
+      @if $hero__content--has-transitions == true {
+        transition: font-size .25s linear;
+      }
+
+      @media screen and ( min-width: $bp-medium ) {
+        @include font-size($hero__title--font-size--lg);
+      }
+    } // __title
+
+
+    &__title-meta {
+      padding-top: $hero__title__meta--padding;
+    }
+
+    .flex-order-1 > &__title-meta {
+      padding-top: 0;
+    }
+
+
+    &__message {
+
+    } // __message
+
+  } // __content
+
+  // *
+  // __inner can be optional depending on the design,
+  // so that is why children of __inner do not have
+  // "__inner" as part of their class name.
+
+
+} // .hero

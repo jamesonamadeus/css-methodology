@@ -1,0 +1,401 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Links</h1>
+      <p>
+        Utilize anchor elements to link to new documents, or to sections within a current document.
+      </p>
+      <p>
+        By default anchor elements that have href attributes and can receive tab focus via keyboard controls. Only in FireFox on Mac OSX does an accessibility
+        flag need to be enabled within the system settings for a user to tab to anchor elements.
+      </p>
+    </div>
+
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Default Link
+    </div>
+    <p>
+      <a href="#!">
+        Go to some page
+      </a>
+    </p>
+
+    <!--
+
+        Default anchor element w/title
+
+        A standard element with a defined href and title attribute.
+
+        Keep in mind that title attributes are not accessible to screen readers and should not repeat the label of the link. The appropriate usage of a title attribute on a link is if the link text and the title of the page it links to do not match in a meaningful way.  e.g. 'learn more'
+
+    -->
+    <div class="cs-pattern-intro">
+      Default Link with class of no-underline
+    </div>
+    <p>
+      <a href="#!" class="no-underline">
+        Go to some page
+      </a>
+    </p>
+
+
+    <div class="cs-pattern-intro">
+      Default Link with Title
+    </div>
+    <p>
+      <a href="#about.html" title="About Us">
+        Meet Our Team
+      </a>
+    </p>
+
+
+    <!--
+
+        Placeholder links (links without href)
+
+        Useful for 'current page' navigation links, as the href
+        can be removed from a navigation link, making it unclickable/focusable
+        in a navigation.
+    -->
+    <div class="cs-pattern-intro">
+      Placeholder Link
+    </div>
+    <p>
+      <a>
+        Link without an href attribute
+      </a>
+    </p>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Read More Link Pattern
+      </h1>
+      <p>
+        By their selves; "Read More", "Learn More", "View" links that typically appear at the end of short lead-ins to larger articles, do not provide enough unique context for assistive technologies.
+      </p>
+      <p>
+        This pattern uses the <code>title</code> attribute and visually hidden text to
+        extend the visual link text to provide the needed context these links usually lack.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <p>
+      <a href="#!" title="Read more about 'this topic'">
+        Read More
+        <span class="sr-only">
+          about 'this topic'
+          <!-- replace 'this topic' with title of article/leadin/etc.' -->
+        </span>
+      </a>
+    </p>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Mailto &amp; Telephone Links
+      </h1>
+      <p>
+        If a phone number or email is utilized as the visible text for a mailto or telephone link, then there is no special pattern needed.
+      </p>
+      <p>
+        If the phone number or email is not the visible text for either of these types of links, then be sure to add them as the value of the title attribute.
+      </p>
+      <p>
+        In some cases it may make sense to use the 'read more' pattern with these links, especially in situations where there are multiple points of contact and the link text is not descriptive enough for assistive technologies to differentiate between them.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+
+    <div class="cs-pattern-intro">
+      Mailto Link
+    </div>
+    <p>
+      <a href="mailto:fake-email@not-a-real-email.ninja">
+        fake-email@not-a-real-email.ninja
+      </a>
+    </p>
+
+
+    <div class="cs-pattern-intro">
+      Mailto Link with Title
+    </div>
+    <p>
+      <a href="mailto:fake-email@not-a-real-email.ninja"
+         title="fake-email@not-a-real-email.ninja">
+        Email Us!
+      </a>
+    </p>
+
+
+    <hr />
+
+
+    <div class="cs-pattern-intro">
+      Telephone Link
+    </div>
+    <p>
+      <a href="tel:15555555555">
+        1.555.555.5555
+      </a>
+    </p>
+
+
+    <div class="cs-pattern-intro">
+      Telephone Link with Title
+    </div>
+    <p>
+      <a href="tel:15555555555"
+         title="1.555.555.5555">
+        Call Us!
+      </a>
+    </p>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>
+        Alternate Link Styles
+      </h1>
+      <p>
+        These alternate styles are for use when links need to be given stronger
+        visual emphasis or altered styling due to the standard styling not working
+        well with a component or landmark's visual styling.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Call to action link
+    </div>
+    <p>
+      <a href="#!" class="link--cta">
+        Find out more
+        <span class="sr-only">
+          about this topic
+        </span>
+      </a>
+    </p>
+
+
+    <div class="cs-pattern-intro">
+      Inverse Link
+    </div>
+    <p style="background: #222; padding: 20px;">
+      <a href="#about.html" class="link--inverse">
+        About Us
+      </a>
+    </p>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Skip Links</h1>
+      <p>
+        Skip links allow users to instantly move focus from
+        one area of a document to another. The href of these
+        links points to a URI prefaced with a # and followed by
+        the ID of the element to which focus should be shifted.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Visible Skip Link
+    </div>
+
+    <a href="#skip_link" class="link--landmark">
+      Visible Skip Link
+    </a>
+
+
+    <div class="cs-pattern-intro">
+      Invisible Skip Link Group<br />
+      <small>
+        Tab through document to see hidden skip links to
+          content sections
+      </small>
+    </div>
+
+    <ul class="skip-links">
+      <li>
+        <a href="#example_uri">
+          Keyboard SKip Link
+        </a>
+      </li>
+      <li>
+        <a href="#example_uri_2">
+          Keyboard SKip Link 2
+        </a>
+      </li>
+    </ul>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Hamburger Menus</h1>
+      <p>
+        Hamburger Menus can be either links or buttons depending on your no-js solution.
+      </p>
+      <p>
+        If used as a link, a no-js solution would require usage of the :target pseudo selector to open the menu, and a revealed close link to be a trigger to hide the menu again.
+      </p>
+      <p>
+        If used as a button, the hamburger menu should not exist without js, and the target menu/nav should be revealed by default, regardless of screen size.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+   <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Example using uni-code and basic link setup
+    </div>
+
+    <a href="#main_menu" class="txt-no-underline">
+      &#x2630; Menu
+    </a>
+
+    <div class="cs-pattern-intro">
+      Customizable Hamburger Menu Trigger
+    </div>
+
+    <a href="#main_menu"
+       class="btn--menu"
+       data-action="open-menu"
+       data-overlay="true"
+       title="Navigation Menu" style="position: relative; display: inline-block;">
+      <span class="btn--menu__icon"></span>
+      <span class="btn--menu__label">
+        Menu
+      </span>
+    </a>
+
+    <p class="txt-down-1" style="margin-top: 20px;">
+      Note: by default this hamburger example takes on styles from the standard button styling. However, unlike other buttons, this particular element is not meant to be paired with other button helper classes, as the custom styling for it is very specific.
+    </p>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Back to Top Link</h1>
+      <p>
+        Without JavaScript, this link should still return a user to the top of the
+        page, just without the animation effect that JavaScript provides.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Standard link with URI target of #banner <small>(if there was a #banner at the top of the page to shift focus to)</small>
+    </div>
+
+    <a href="#banner">
+      Back to Top
+    </a>
+
+    <hr />
+
+
+    <div class="cs-pattern-intro">
+      JS back to top link that is revealed after the page
+      has been scrolled enough to necessitate it.
+    </div>
+    <a style="position: absolute;" href="#cs-banner" class="link--back-to-top" data-action="back-to-top">
+      <span class="sr-only">
+        Go back to top of the page
+      </span>
+    </a>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Close</h1>
+      <p>
+        In instances where an overlay or some other type of component
+        can obscure content, even when JavaScript is turned off, then
+        a close trigger should be a link as opposed to a button. In these
+        instances, on activation of the close trigger, we need to ensure
+        that the URI points to the most logical ID to return a user's focus to.
+      </p>
+      <p>
+        In instances where a component can not be opened without JS, then this may as well be a button element, too.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <p class="mb-0">
+      Close link:button
+    </p>
+
+    <a href="#x"
+       class="no-underline txt-up-3"
+       aria-controls="ID_of_thing_to_close"
+       aria-label="Close">
+      <span aria-hidden="true">&#x2a09;</span>
+    </a>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

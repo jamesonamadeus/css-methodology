@@ -1,0 +1,115 @@
+/** --------------------------------------------------------------------
+
+  Visibility Styles
+
+--------------------------------------------------------------------- */
+
+// completely hidden from screen readers and browsers
+[hidden],
+template, // *[1]
+.#{$ns}display-none {
+  display: none;
+}
+
+// move an element off screen and remove it from the
+// normal DOM flow, but don't hide it beyond
+// it just being outside of the viewport
+// see __config > helpers > _off-screen.scss
+.#{$ns}move-off-screen {
+  @include move-off-screen;
+}
+
+
+// Hides only from browser rendering, but still
+// accessible by screen readers & keyboard controls
+.#{$ns}sr-only {
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none;
+  width: 1px !important;
+}
+
+
+// set the opacity and visibility of an element to be visually
+// hidden, and invisible to screen readers, but NOT remove it from
+// it's normal place in the DOM.
+// This class will allow for transitions to occur on the element,
+// as a normal display: none negates transition effects.
+// use this in combination with unique positioning (absolute, relative)
+// or transform effects
+.#{$ns}is-invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// why to use .#{$ns}is-visible:
+// in instances where an element is originally rendered with visibility: hidden,
+// this class can be added to it via JavaScript to update it's visability to be
+// shown to the user as well as screen readers
+.#{$ns}is-visible {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+
+// use this when we want take text out of a visible element,
+// but want the text to still create the space it would
+// normally take up in the DOM.
+// If this behavior is not actually desired, use the
+// .#{$ns}sr-only class instead
+.#{$ns}replace-text {
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+
+// Change opacity of elements without effecting
+// screen readers or DOM layout.
+// knock down opacity of entire element / its contents
+.#{$ns}opacity-25 {
+  opacity: .25;
+}
+
+.#{$ns}opacity-50 {
+  opacity: .5;
+}
+
+.#{$ns}opacity-75 {
+  opacity: .75;
+}
+
+
+// allow an element to be vertically resized using
+// default browser functionality
+.#{$ns}resize-vertical {
+  resize: vertical;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="sr-only">
+    Hidden from sight, but not hidden from
+    screen readers or search engines.
+  </div>
+
+
+  <h3 class="is-visible">
+    Forced visibility on an element so it is
+    viewable by browsers and screen readers.
+  </h3>
+
+
+  <span class="example">
+    <span class="replace-text">
+      This text has been removed from view, but is
+      still accessible by screen readers.
+    </span>
+  </span>
+
+*/

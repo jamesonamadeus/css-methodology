@@ -1,0 +1,39 @@
+/** --------------------------------------------------------------------
+
+  Native Select Element
+
+--------------------------------------------------------------------- */
+
+// vars go here
+
+//------------------------------------------------------------------------
+
+// Base Element Normalization
+select {
+  @extend %reset--form-elements;
+  width: 100%;
+}
+
+optgroup {
+  @extend .#{$ns}txt-bold;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <label for="select-id-here">
+    Select Something
+  </label>
+
+  <select id="select-id-here">
+    <option>...</option>
+    <option>...</option>
+    <optgroup label="Example Group">
+      <option>...</option>
+      <option>...</option>
+    </optgroup>
+  </select>
+
+*/

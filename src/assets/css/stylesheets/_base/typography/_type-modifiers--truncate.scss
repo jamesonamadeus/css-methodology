@@ -1,0 +1,30 @@
+/** ----------------------------------------------------------------------------
+
+  Text Truncate
+
+  Still readable by screen readers, but lobbed off visually
+
+ ---------------------------------------------------------------------------- */
+
+$txt-truncate--hover--bg:                 $c-off-white !default;
+$txt-truncate--hover--padding:            $base-unit !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}txt-truncate {
+  @include truncate-text(100%);
+  vertical-align: bottom;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div>
+    <h3 class="txt-truncate">
+      Long string of text goes here which gets an ellipses
+    </h3>
+  </div>
+
+*/

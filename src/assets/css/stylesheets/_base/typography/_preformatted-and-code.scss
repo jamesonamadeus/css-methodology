@@ -1,0 +1,73 @@
+/** --------------------------------------------------------------------
+
+  pre, kbd, code, samp
+
+  <pre> Element
+
+  Note: Carriage returns create extra white space within <pre>
+  elements. While it isn't the most readable source code,
+  negating any white space and carriage returns within a <pre>
+  will render the content as expected in the browser.
+
+--------------------------------------------------------------------- */
+
+$ckps--font-family:             $f-monospace, $f-monospace !default;
+$ckps--font-size:               .9em !default;
+
+$cks--background:               $c-off-black !default;
+$cks--padding:                  .25em !default;
+$cks--color:                    $c-light-grey !default;
+
+// if a code, kbd or samp is a child of a <p> or <li>
+$cks--border-radius:            2px !default;
+
+$pre__code--line-height:        1.5 !default;
+
+//------------------------------------------------------------------------
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $ckps--font-family; // * 1
+  font-size: $ckps--font-size; // * 2
+  // 1. Correct the inheritance and scaling of font size in all browsers.
+  // 2. Correct the odd `em` font sizing in all browsers.
+}
+
+code,
+kbd,
+samp {
+  background: $cks--background;
+  color: $cks--color;
+  display: inline-block;
+  padding: $cks--padding;
+
+  p > &,
+  li > & {
+    border-radius: $cks--border-radius;
+  }
+}
+
+pre {
+  @extend %reset--spacing;
+  overflow: auto;
+  white-space: pre-wrap;
+
+  code {
+    display: block;
+    line-height: $pre__code--line-height;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <pre><code>.example {
+  background: #f00;
+  width: 80%;
+  }</code></pre>
+
+*/

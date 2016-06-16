@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"path": "src/assets/css/stylesheets"
+		},
+		{
+			"path": "src/assets/js"
+		},
+		{
+			"path": "src/examples"
+		},
+		{
+			"path": "src/includes"
+		},
+		{
+			"path": "pattern-library/lib/partials"
+		}
+	]
+}

@@ -1,0 +1,28 @@
+/** --------------------------------------------------------------------
+
+  Off Screen Menu Overlay
+
+  Used with the a11y.hamburger.js
+
+  When a menu is opened and uses the overlay option, a div
+  with this class is created to obscure content beneath.
+
+--------------------------------------------------------------------- */
+
+.off-screen-menu-overlay {
+  background: rgba(0,0,0,.75);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 90;
+  transform: translateX(-100px);
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+  transform-origin: center center;
+}
+
+.menu-is-open .off-screen-menu-overlay {
+  opacity: 1;
+  transform: translateX(0px);
+}

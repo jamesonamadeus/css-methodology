@@ -1,0 +1,143 @@
+/** --------------------------------------------------------------------
+
+  Article (page) Header
+
+  Styling for the interior page specific headers that are
+  in the typical article format.
+
+--------------------------------------------------------------------- */
+
+$article-header--border:                       1px solid $c-lighter-grey !default;
+$article-header--padding:                      $base-margin !default;
+
+$article-header__title--font-size:             $txt-up-5 !default;
+$article-header__title--margin-bottom:         0 !default;
+
+$article-header__sub--font-size:               14 !default;
+$article-header__sub--margin:                  .5em 0 0 !default;
+
+$article-header__intro--margin:                $base-margin 0 0 !default;
+
+$article-header__topic--bg:                    $c-off-white !default;
+$article-header__topic--border:                1px solid $c-lightest-grey !default;
+$article-header__topic--color:                 $c-dark-grey !default;
+$article-header__topic--font-size:             13 !default;
+$article-header__topic--margin:                0 0 .25em !default;
+$article-header__topic--padding:               .25em !default;
+$article-header__topic--weight:                600 !default;
+
+$article-header__meta--margin:                 $article-header__sub--margin !default;
+
+//------------------------------------------------------------------------
+
+.article-header {
+  border-bottom: $article-header--border;
+  padding-bottom: $article-header--padding;
+
+  // remove default bottom padding and border from
+  // the article-header component.
+  &--no-border {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &__heading {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__title,
+    &__topic,
+    &__sub {
+      width: 100%;
+    }
+
+    &__title {
+      @include font-size($article-header__title--font-size);
+      margin-bottom: $article-header__title--margin-bottom;
+      order: 2;
+    }
+
+    &__topic {
+      @include font-size($article-header__topic--font-size);
+      color: $article-header__topic--color;
+      font-weight: $article-header__topic--weight;
+      margin: $article-header__topic--margin;
+      order: 1;
+
+      span {
+        background: $article-header__topic--bg;
+        border: $article-header__topic--border;
+        display: inline-block;
+        padding: $article-header__topic--padding;
+        vertical-align: bottom;
+      }
+    }
+
+    &__sub {
+      @include font-size($article-header__sub--font-size);
+      margin: $article-header__sub--margin;
+      order: 3;
+    }
+  }
+
+  &__intro {
+    margin: $article-header__intro--margin;
+  }
+
+  &__meta,
+  &__share {
+    margin: $article-header__meta--margin;
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+
+  <header class="article-header">
+
+    <div class="article-header__heading">
+      <h2 class="article-header__heading__title">
+        Title Goes here
+      </h2>
+
+      <!-- only include if needed -->
+      <p class="article-header__heading__topic">
+        Type of article
+      </p>
+
+      <!-- only include if needed -->
+      <p class="article-header__heading__sub">
+        Sub-heading/short descriptive sentence
+      </p>
+    </div>
+
+    <!-- only include if needed -->
+    <div class="article-header__meta">
+      <!-- add action components here -->
+    </div><!--/.article-header__meta-->
+
+    <!-- only include if needed -->
+    <div class="article-header__intro">
+      <p>
+        Short intro paragraph...
+      </p>
+
+      <!-- only include if needed -->
+      <figure>
+        <img alt="Abstract placeholder image"
+             src="http://lorempixel.com/1400/350/abstract/" />
+      </figure>
+    </div>
+
+    <!-- only include if needed -->
+    <div class="article-header__share">
+      <!-- add action components here -->
+    </div><!--/.article-header__share-->
+
+  </header>
+
+*/

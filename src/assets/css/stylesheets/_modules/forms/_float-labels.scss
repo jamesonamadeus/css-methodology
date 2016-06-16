@@ -1,0 +1,91 @@
+/** --------------------------------------------------------------------
+
+  Float Labels
+
+  @requires .form-row from _containers.scss
+
+--------------------------------------------------------------------- */
+
+$float-label--color:              $body--color !default;
+$float-label--font-size:          inherit !default;
+$float-label--left:               .5em !default;
+$float-label--padding:            .5em .25em !default;
+
+$float-label--focused--color:     #51b5f8 !default;
+
+//------------------------------------------------------------------------
+
+.float-label {
+  color: $float-label--color;
+  font-size: $float-label--font-size;
+  left: $float-label--left;
+  padding: $float-label--padding;
+  position: absolute;
+  z-index: 3;
+
+  // this gets added by js
+  &--transition {
+    transition: padding .1s ease-in-out,
+                left .2s ease-in-out;
+  }
+
+  &--lg-text-input {
+    top: .825em;
+  }
+}
+
+
+// these two states have overlapping styling
+.has-text .float-label,
+.is-focused .float-label {
+  padding: 0em;
+  top: -1.25em;
+}
+
+/*
+  When focused, update styling
+*/
+.is-focused .float-label {
+  color: $float-label--focused--color;
+
+}
+
+/*
+  If an input/textarea has text,
+  also get that label out of the way
+*/
+.has-text .float-label {
+  left: 0em;
+}
+
+
+// no JavaScript?
+// float labels just go back to
+// being normally positioned labels
+.no-js {
+
+  .float-label {
+    padding: 0;
+    position: static;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <form action="#" method="post" data-action="float-labels">
+    <div class="form-row">
+      <label class="float-label" for="name">
+        Name:
+      </label>
+      <input id="name"
+             title="Name Field"
+             class="js-has-float-label"
+             type="text">
+    </div>
+  </form>
+
+*/

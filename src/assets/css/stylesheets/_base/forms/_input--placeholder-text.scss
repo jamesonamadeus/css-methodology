@@ -1,0 +1,53 @@
+/** --------------------------------------------------------------------
+
+  Form Elements: Input Element Placeholder Text Styling
+
+  If placeholder text needs to be styled on an individual clase/element
+  basis, then include the init code within that selector to
+  restyle it for that particular use case
+
+--------------------------------------------------------------------- */
+
+$ph-vendor-list: "::-moz-", ":-ms-input-", "::-ms-input-", "::webkit-input-";
+
+$txt-input--placeholder-text:         $c-darker-grey !default;
+$txt-input--placeholder-text--dark:   $c-light-grey !default;
+
+
+@mixin placeholder-text (
+  $c-text: $txt-input--placeholder-text,
+  $f-style: italic
+) {
+  color: $c-text;
+  font-style: $f-style;
+}
+
+// ---------------------------------------------------------------------
+
+// init
+
+// unofficial vendor prefixes
+@each $ph in $ph-vendor-list {
+  #{$ph}placeholder {
+    @include placeholder-text( $txt-input--placeholder-text, italic );
+  }
+}
+
+// CSS Level 4 standard
+:placeholder-shown {
+  @include placeholder-text( $txt-input--placeholder-text, italic );
+}
+
+
+.text-input--inverse {
+  @each $ph in $ph-vendor-list {
+    &#{$ph}placeholder {
+      @include placeholder-text( $c-lighter-grey, italic );
+    }
+  }
+
+  // CSS Level 4 standard
+  &:placeholder-shown {
+    @include placeholder-text( $c-lighter-grey, italic );
+  }
+}

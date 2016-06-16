@@ -1,0 +1,35 @@
+/** --------------------------------------------------------------------
+
+  Input Sizing Modifier
+
+--------------------------------------------------------------------- */
+
+$input--lg--padding:                        1em !default;
+
+$input--sm--font-size:                      14 !default;
+$input--sm--padding:                        .35em !default;
+
+//------------------------------------------------------------------------
+
+.text-input--lg {
+  padding-top: $input--lg--padding !important;
+  padding-bottom: $input--lg--padding !important;
+}
+
+.text-input--sm {
+  @include font-size ($input--sm--font-size);
+  min-height: 1px !important;
+  padding-top: $input--sm--padding !important;
+  padding-bottom: $input--sm--padding !important;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <input type="text" class="text-input--lg" />
+  </div>
+
+*/

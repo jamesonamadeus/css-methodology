@@ -1,0 +1,118 @@
+/** --------------------------------------------------------------------
+
+  Table: Has Check box Column
+
+  For instances where a table row has a check box, it's a common design
+  pattern to have the check box appear in it's own column, as the first
+  cell in a table row.
+
+  The issue here is that this isn't a particularly good place for the
+  check box, semantically, as it supplants the location of where the
+  <th scope="row"> should be in the DOM.
+
+  This style pattern allows for the check box to be marked-up in the
+  semantically correct position (as part of the <th>) but be positioned
+  by CSS, utilizing a :before pseudo element, to appear in it's own
+  table column.
+
+--------------------------------------------------------------------- */
+
+$check-col--width:                      48px !default;
+
+$check-col-divider--color:              $table--border--color !default;
+$check-col-divider--left:               39px !default;
+$check-col-divider--width:              1px !default;
+
+$check--col__checkbox--left:            10px !default;
+$check--col__checkbox--top:             1em !default;
+
+$check--col__checkbox--custom--left:    0 !default;
+$check--col__checkbox--custom--top:     .25em !default;
+
+//------------------------------------------------------------------------
+
+.has-checkbox-col {
+
+  &__cell {
+    position: relative;
+
+    &:before {
+      background: $check-col-divider--color;
+      content: '';
+      height: 100%;
+      left: $check-col-divider--left;
+      position: absolute;
+      top: 0;
+      width: $check-col-divider--width;
+    }
+
+    &__state-desc {
+      display: none;
+    }
+  }
+
+  &__checkbox {
+    left: $check--col__checkbox--left;
+    position: absolute;
+    top: $check--col__checkbox--top;
+
+    &.custom-cr__icon {
+      left: $check--col__checkbox--custom--left;
+      top: $check--col__checkbox--custom--top;
+    }
+  }
+
+  .txt-label,
+  label {
+    display: block;
+    padding-left: $check-col--width;
+    white-space: normal;
+  }
+}
+
+// makes __state-desc audible/visible when
+// input has been checked.
+input:checked ~ .has-checkbox-col__cell__state-desc {
+  display: inline;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p class="sr-only" id="uid_chkbx_instructions">
+    Check to allow for this row to be
+    [insert action(s) e.g. deleted, archived, etc]
+  </p>
+
+  <table class="table table--has-tr-border">
+    <tbody>
+      <tr class="has-checkbox-col">
+        <th scope="row" class="has-checkbox-col__cell">
+          <div class="has-checkbox-col__cell__container">
+            <label class="mb-0" for="checkbox_2">
+              Row Title
+
+            <input class="has-checkbox-col__checkbox"
+                   id="checkbox_2"
+                   name="checkbox_2"
+                   type="checkbox">
+              <span class="sr-only has-checkbox-col__cell__state-desc">
+                is set for deletion
+              </span>
+            </label>
+          </div>
+        </th>
+        <td>
+          ...
+        </td>
+        <td>
+          ...
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+*/

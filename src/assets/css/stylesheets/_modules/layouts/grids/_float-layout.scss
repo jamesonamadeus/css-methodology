@@ -1,0 +1,80 @@
+/** --------------------------------------------------------------------
+
+  Float Based Grid
+
+--------------------------------------------------------------------- */
+
+$float-grid--spacing-unit:                $base-margin !default;
+$float-grid--spacing-unit--2x:            $float-grid--spacing-unit * 2 !default;
+
+//------------------------------------------------------------------------
+
+// A container for each row of our layout.
+// Simply styled with only a base margin-bottom and extending the clearfix
+// class, a row can also have helper classes added onto it for other general
+// styling purposes.
+.float-grid {
+  @extend .clearfix;
+  margin-left: (-$float-grid--spacing-unit);
+
+  &--2x-gutter.float-grid {
+    margin-left: (-$float-grid--spacing-unit--2x);
+
+    > [class*="width-"] {
+      padding-left: $float-grid--spacing-unit--2x;
+    }
+  }
+
+  &--no-gutter.float-grid {
+    margin-left: 0;
+
+    > [class*="width-"] {
+      padding-left: 0;
+    }
+  }
+
+  // The grid columns within a row.
+  // Do not apply styling to this class as its purpose is for layout only.
+  > [class*="width-"] {
+    float: left;
+    margin-top: $float-grid--spacing-unit;
+    min-height: 1px;
+    padding-left: $float-grid--spacing-unit;
+    position: relative;
+
+    &.float-right {
+      float: right;
+    }
+
+    &.mt-0--md {
+      @media screen and (min-width: $bp-small ) and ( max-width: $bp-medium ) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  @media screen and ( max-width: $bp-small ) {
+    .float-grid > .width-100:first-child {
+      margin-top: 0;
+    }
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="float-grid">
+    <div class="width-50">...</div>
+    <div class="width-50">...</div>
+  </div>
+
+  <!-- 2x gutter -->
+  <div class="float-grid float-grid--2x-gutter">
+    <div class="width-50">...</div>
+    <div class="width-50">...</div>
+  </div>
+
+*/

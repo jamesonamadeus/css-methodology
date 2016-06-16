@@ -1,0 +1,59 @@
+/** --------------------------------------------------------------------
+
+  Scrollable Containers
+
+--------------------------------------------------------------------- */
+
+$scrollable--border:              1px solid $c-light-grey !default;
+$scrollable__child--min-width:    600px !default;
+
+$scrollable__child__table-cols:   200px !default;
+
+//------------------------------------------------------------------------
+
+.#{$ns}scroll-container {
+  border: $scrollable--border;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  // child element(s) need to have a min-width set
+  > {
+    margin-bottom: 0;
+    min-width: $scrollable__child--min-width;
+  }
+
+  > table {
+    border: none;
+
+    caption {
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+
+    tfoot tr:last-of-type,
+    tbody tr:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  // if child element is a table
+  @media screen and ( max-width: $scrollable__child--min-width ) {
+    th,
+    td {
+      min-width: $scrollable__child__table-cols;
+    }
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="scrollable">
+    ...
+  </div>
+
+*/

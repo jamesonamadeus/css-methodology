@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Image Grid Example
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+    <style>
+      .blocked__container {
+        background: #303030;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blocked__container picture,
+      .blocked__container img {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+       /* -webkit-filter: blur(0px);
+        filter: blur(0px);
+        transition: filter .2s .3s ease-in-out;*/
+      }
+
+      .blocked__container__content {
+        background: rgba(255,255,255,.75);
+        padding: 20px;
+        position: relative;
+        transition: transform .2s ease-in-out;
+        z-index: 2;
+      }
+
+      .blocked__container__content:before,
+      .blocked__container__content:after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        content: '';
+        speak: none;
+        height: 0%;
+        transition: height .4s ease-in-out;
+        background: rgba(130,10,50,.7);
+        z-index: 3;
+      }
+
+      .blocked__container__content:before {
+        top: 100%;
+      }
+
+      .blocked__container__content:after {
+        bottom: 100%;
+      }
+
+      @media screen and (min-width: 480px) {
+      /*  .blocked__container:hover picture,
+        .blocked__container:hover img {
+          -webkit-filter: blur(6px);
+          filter: blur(6px);
+        }*/
+
+        .blocked__container:hover .blocked__container__content {
+          transform: translate(0, -10%);
+        }
+
+        .blocked__container:hover .blocked__container__content:before,
+        .blocked__container:hover .blocked__container__content:after {
+          height: 400%;
+        }
+
+        .blocked__container__content {
+          left: 0;
+          position: absolute;
+          right: 0;
+          text-align: center;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+
+      .flex-area li {
+        margin: 0!important;
+      }
+    </style>
+
+  </head>
+  <body id="body" style="padding: 80px">
+
+    <section class="blocked flex-area flex-area--no-gutter flex-area--mt-0">
+
+      <div class="flex-w-100 flex-w-50--portrait">
+
+        <div class="blocked__container">
+          <picture>
+            <source srcset="http://lorempixel.com/1000/1000/, http://lorempixel.com/1400/1400/ 2x" media="(min-width: 600px)"></source>
+            <source srcset="http://lorempixel.com/600/600/, http://lorempixel.com/1000/1000/ 2x"></source>
+            <img alt="image alt text goes here" src="http://lorempixel.com/600/600/" />
+          </picture>
+
+          <div class="blocked__container__content">
+            <h1>
+              Title
+            </h1>
+            <p>
+              And an intro paragraph or something or other or some other or.
+            </p>
+          </div>
+
+        </div> <!-- /.blocked__container -->
+
+      </div>
+
+      <div class="flex-w-100 flex-w-50--portrait">
+        <ul class="flex-area txt-center list-clean flex-area--no-gutter">
+          <li class="flex-w-100 flex-w-50--sm">
+
+            <div class="blocked__container">
+              <picture>
+                <source srcset="http://lorempixel.com/500/500/, http://lorempixel.com/700/700/ 2x" media="(min-width: 600px)"></source>
+                <source srcset="http://lorempixel.com/400/400/, http://lorempixel.com/500/500/ 2x"></source>
+                <img alt="image alt text goes here" src="http://lorempixel.com/500/500/" />
+              </picture>
+
+              <div class="blocked__container__content">
+                <p>
+                  Short Text block here
+                </p>
+              </div>
+
+            </div> <!-- /.blocked__container -->
+
+          </li>
+
+          <li class="flex-w-100 flex-w-50--sm">
+
+            <div class="blocked__container">
+
+              <picture>
+                <source srcset="http://lorempixel.com/500/500/, http://lorempixel.com/700/700/ 2x" media="(min-width: 600px)"></source>
+                <source srcset="http://lorempixel.com/400/400/, http://lorempixel.com/500/500/ 2x"></source>
+                <img alt="image alt text goes here" src="http://lorempixel.com/500/500/" />
+              </picture>
+
+              <div class="blocked__container__content">
+                <p>
+                  Possibly a line or two like this
+                </p>
+              </div>
+
+            </div> <!-- /.blocked__container -->
+
+          </li>
+
+          <li class="flex-w-100 flex-w-50--sm">
+
+            <div class="blocked__container">
+
+              <picture>
+                <source srcset="http://lorempixel.com/500/500/, http://lorempixel.com/700/700/ 2x" media="(min-width: 600px)"></source>
+                <source srcset="http://lorempixel.com/400/400/, http://lorempixel.com/500/500/ 2x"></source>
+                <img alt="image alt text goes here" src="http://lorempixel.com/500/500/" />
+              </picture>
+
+              <div class="blocked__container__content">
+                <p>
+                  But this isn't an area meant for long form text
+                </p>
+              </div>
+
+            </div> <!-- /.blocked__container -->
+          </li>
+
+          <li class="flex-w-100 flex-w-50--sm">
+
+            <div class="blocked__container">
+
+              <picture>
+                <source srcset="http://lorempixel.com/500/500/, http://lorempixel.com/700/700/ 2x" media="(min-width: 600px)"></source>
+                <source srcset="http://lorempixel.com/400/400/, http://lorempixel.com/500/500/ 2x"></source>
+                <img alt="image alt text goes here" src="http://lorempixel.com/500/500/" />
+              </picture>
+
+              <div class="blocked__container__content">
+                <p>
+                  if you want that
+                </p>
+                <p>
+                  use another pattern.
+                </p>
+              </div>
+
+            </div> <!-- /.blocked__container -->
+
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+  </body>
+</html>

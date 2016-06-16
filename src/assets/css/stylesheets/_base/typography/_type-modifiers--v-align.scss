@@ -1,0 +1,52 @@
+/** --------------------------------------------------------------------
+
+  Vertical Alignment Modifiers
+
+  Useful for aligning inline-block or table cell content
+
+--------------------------------------------------------------------- */
+
+.#{$ns}v-align {
+
+  &-mid,
+  &__all-mid > * {
+    vertical-align: middle;
+  }
+
+  &-bottom {
+    vertical-align: bottom;
+  }
+
+  &-top {
+    vertical-align: top;
+  }
+
+  &-text-bottom {
+    vertical-align: text-bottom;
+  }
+
+  &-baseline {
+    vertical-align: baseline;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <table>
+    <tbody>
+      <tr>
+        <td class="v-align-mid">
+          ...
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- or -->
+
+  <img src="#!" alt="" class="v-align-text-bottom" />
+
+*/

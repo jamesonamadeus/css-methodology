@@ -1,0 +1,720 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists</h1>
+      <p>
+        Standard usage of ordered and unordered lists.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Unordered List
+    </div>
+
+    <ul>
+      <li>list item</li>
+      <li>list item</li>
+      <li>List item w/nested list
+        <ul>
+          <li>This is a nested list item</li>
+          <li>a second nested list item</li>
+          <li>
+            Inception...
+            <ul>
+              <li>This is a nested list item</li>
+              <li>a second nested list item</li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul>
+          <li>This is also a nested list item</li>
+          <li>a second nested list item</li>
+          <li>
+            Inception...
+            <ul>
+              <li>This is a nested list item</li>
+              <li>a second nested list item</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Ordered List
+    </div>
+
+    <ol>
+      <li>Ordered List</li>
+      <li>list item</li>
+      <li>
+        list item
+        <ol>
+          <li>nested Ordered List</li>
+          <li>list item</li>
+          <li>
+            list item
+            <ol>
+              <li>doubled nested Ordered List</li>
+              <li>list item</li>
+              <li>list item</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists: General Modifiers</h1>
+      <p>
+        Common list modifiers to remove inherit styling, change bullet styles and update bullet/number positioning.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Clean Lists
+    </div>
+    <ol class="list-clean">
+      <li>list item w/ parent ol.list-clean</li>
+      <li>list item</li>
+      <li>list item</li>
+    </ol>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Number Lists
+    </div>
+    <ul class="list-number">
+      <li>for instances where you want a numbered list, but there's literally no actual semantic order to the list.</li>
+      <li>e.g. 10 facts about eggs.</li>
+      <li>...</li>
+    </ul>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Inside Lists
+    </div>
+    <ol class="list-inside" style="max-width: 200px;">
+      <li>list item w/ parent ol.list-inside</li>
+      <li>
+        a max width of 200px has been added to the
+        <code>&lt;ol></code> to demonstrate
+        text wrapping for inside-lists</li>
+        <li>list item
+      </li>
+    </ol>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Multi Column Lists</h1>
+      <p>
+        Multi-column lists currently require a custom component to be created,
+        as multi-column CSS does not currently allow for consistent behavior
+        of column breaking across browsers, where some browsers still don't even support it.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="flex-area" role="list">
+      <div class="flex-w-100 flex-w-50--md">
+        <div role="listitem">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </div>
+        <div role="listitem">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.
+        </div>
+        <div role="listitem">
+          Sed ut perspiciatis unde omnis iste natus error sit.
+        </div>
+      </div>
+      <div class="flex-w-100 flex-w-50--md">
+        <div role="listitem">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </div>
+        <div role="listitem">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Branded Lists</h1>
+      <p>
+        The easiest, most browser consistent way to have bullets colored differently than the list text requires the text to be wrapped in a &lt;span>.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <ul class="list--branded">
+      <li><span>normal text with 'branded' bullet</span></li>
+      <li><span>...</span></li>
+      <li><span>...</span></li>
+    </ul>
+
+    <hr />
+
+    <ol class="list--branded">
+      <li><span>normal text with 'branded' number</span></li>
+      <li><span>...</span></li>
+      <li><span>...</span></li>
+    </ol>
+
+  </div>
+</section>
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Horizontal Lists</h1>
+      <p>
+        Horizontal lists extend the .list-clean class, so only the .list-horizontal class is required.  Use the .has-pipes class on the parent list element to
+        add dividers between list elements.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <ol class="list-horizontal">
+      <li>ol.list-horizontal</li>
+      <li>...</li>
+      <li>...</li>
+    </ol>
+
+    <hr />
+
+    <ul class="list-horizontal has-pipes">
+      <li>ul.has-pipes</li>
+      <li>...</li>
+      <li>...</li>
+    </ul>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists: Meta</h1>
+      <p>
+        Unordered list of metadata with label.
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="meta-list">
+      <p class="meta-list__title">
+        Tags:
+      </p>
+
+      <ul class="meta-list__listing">
+        <li class="meta-list__listing__item">
+          <a href="#!">
+            Tag Name
+          </a>
+        </li>
+        <li class="meta-list__listing__item">
+          <a href="#!">
+            Tag Name Goes
+          </a>
+        </li>
+        <li class="meta-list__listing__item">
+          <a href="#!">
+            Tag Name Here
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists: Blocks</h1>
+      <p>
+        Add 'block' styling to lists. Adds bottom borders and zebra striping by default.
+      </p>
+      <p>
+        Additional helper classes include:<br />
+        .list-block--has-border<br />
+        .list-block--dotted-dividers<br />
+        .list-block--dashed-dividers<br />
+        .list-block--has-checks <small>(see next example)</small>
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <ul class="list-block">
+      <li>
+        <div class="flex-area flex-area--mt-0 flex-area--v-center">
+          <div class="list-block__label flex-w-100 flex-w-70--sm">
+            <p>
+              List Item Label
+            </p>
+          </div>
+          <div class="flex-w-100 flex-w-30--sm list-block__action">
+            <button type="button" class="btn--sm">
+              List Item Action
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="flex-area flex-area--mt-0 flex-area--v-center">
+          <div class="list-block__label flex-w-100 flex-w-70--sm">
+            <p>
+              List Item Label
+            </p>
+          </div>
+          <div class="flex-w-100 flex-w-30--sm list-block__action">
+            <button type="button" class="btn--sm">
+              List Item Action
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="flex-area flex-area--mt-0 flex-area--v-center">
+          <div class="list-block__label flex-w-100 flex-w-70--sm">
+            <p>
+              List Item Label
+            </p>
+          </div>
+          <div class="flex-w-100 flex-w-30--sm list-block__action">
+            <button type="button" class="btn--sm">
+              List Item Action
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <hr />
+
+    <ul class="list-block list-block--has-border">
+      <li>
+        <div class="flex-area flex-area--mt-0 flex-area--v-center">
+          <div class="flex-w-100 flex-w-70--sm">
+            <div class="flex-area flex-area--mt-0">
+              <div class="list-block__label flex-w-100 flex-order-2">
+                <p>
+                  List Item Label
+                </p>
+              </div>
+              <div class="flex-order-1 flex-w-100">
+                <p class="list-block__meta">
+                  Meta data
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-w-100 flex-w-30--sm list-block__action">
+            <button type="button" class="btn--sm">
+              List Item Action
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="flex-area flex-area--mt-0 flex-area--v-center">
+          <div class="list-block__label flex-w-100 flex-w-70--sm">
+            <p>
+              List Item Label
+            </p>
+          </div>
+          <div class="flex-w-100 flex-w-30--sm list-block__action">
+            <button type="button" class="btn--sm">
+              List Item Action
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="flex-area flex-area--mt-0 flex-area--v-center">
+          <div class="list-block__label flex-w-100 flex-w-70--sm">
+            <p>
+              List Item Label
+            </p>
+          </div>
+          <div class="flex-w-100 flex-w-30--sm list-block__action">
+            <button type="button" class="btn--sm">
+              List Item Action
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists: Blocks w/checkboxes</h1>
+      <p>
+        Ordered listing of messages with both unstyled
+        and styled checkbox examples. (use one or the other)
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <ol id="msg_list" class="list-block list-block--has-border list-block--dashed-dividers list-block--has-checks">
+      <li>
+        <div class="flex-area flex-area--mt-0">
+          <div class="flex-order-2 flex-w-100">
+            <label for="check_input_1">
+              <input type="checkbox" name="allard" aria-describedby="msg_subject_1" id="check_input_1" />
+            </label>
+            <a href="#!" id="msg_subject_1">
+              This is my subject line. I have a question for you!
+            </a>
+          </div> <!-- /.flex-order-2 -->
+          <div class="flex-order-1 flex-w-100">
+            <p class="list-block__meta flex-order-1">
+              <span class="txt-badge">New</span>
+              Sent by Dan Allard
+              <time datetime="2016-09-15T17:23">yesterday at 5:23pm</time>
+            </p>
+          </div>
+        </div> <!-- /.flex-order-1 -->
+      </li>
+
+      <li>
+        <div class="flex-area flex-area--mt-0">
+          <div class="flex-order-2 flex-w-100">
+            <label for="check_input_2">
+              <input type="checkbox" name="mnw" aria-describedby="msg_subject_2" id="check_input_2" />
+            </label>
+            <a href="#!" id="msg_subject_2">
+                This is my subject line. I have a question for you!
+              </a>
+          </div> <!-- /.flex-order-2 -->
+          <div class="flex-order-1 flex-w-100">
+            <p class="list-block__meta flex-order-1">
+              Sent by Worm McWormenstien
+              <time datetime="2016-09-15T100:34">yesterday at 12:34am</time>
+            </p>
+          </div> <!-- /.flex-order-1 -->
+        </div>
+      </li>
+
+      <li>
+        <div class="flex-area flex-area--mt-0">
+          <div class="flex-order-2 flex-w-100">
+            <label class="custom-cr" for="check_input_4">
+              <input type="checkbox" name="con" aria-describedby="msg_subject_3" id="check_input_4" />
+              <span class="custom-cr__icon"></span>
+            </label>
+            <a href="#!" id="msg_subject_3">
+              This is my subject line. I have a question for you!
+            </a>
+          </div> <!-- /.flex-order-2 -->
+          <div class="flex-order-1 flex-w-100">
+            <p class="txt-down-1 flex-order-1">
+              Sent by Michael Connors
+              <time datetime="2016-04-15T09:12">April 15, 2015 at 9:12pm</time>
+            </p>
+          </div> <!-- /.flex-order-1 -->
+        </div>
+      </li>
+    </ol>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists: Definition Lists</h1>
+      <p>
+      Appropriate for marking up content metadata, providing meaning (definition) behind a term title.
+    </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+    <div class="cs-pattern-intro">single term and desc.</div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        desc
+      </dd>
+    </dl>
+
+    <hr />
+
+    <div class="cs-pattern-intro">multiple terms and single desc.</div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dt>
+        Alt Title
+      </dt>
+      <dd>
+        desc
+      </dd>
+    </dl>
+
+    <hr />
+
+    <div class="cs-pattern-intro">single term and multiple desc.</div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        desc 1
+      </dd>
+      <dd>
+        desc 2
+      </dd>
+    </dl>
+
+    <hr />
+
+    <div class="cs-pattern-intro">multiple terms and desc.</div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        desc
+      </dd>
+      <dt>
+        Title 2
+      </dt>
+      <dd>
+        desc 2
+      </dd>
+    </dl>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Clean &lt;dl>
+    </div>
+
+    <dl class="list-clean">
+      <dt>
+        Title
+      </dt>
+      <dd>
+        desc
+      </dd>
+      <dt>
+        Title 2
+      </dt>
+      <dd>
+        desc 2
+      </dd>
+    </dl>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      &lt;dl> with child &lt;ul>
+    </div>
+
+    <dl class="list-clean dl-contacts">
+
+      <dt>
+        Customer Support
+      </dt>
+
+      <dd>
+        <ul class="list-clean">
+          <li>
+            <b class="txt-uppercase txt-down-1">Toll Free:</b>
+            <a href="tel:+15555555555">
+              1.555.555.5555
+            </a>
+          </li>
+          <li>
+            <b class="txt-uppercase txt-down-1">Local:</b>
+            <a href="tel:+15555555555">
+              1.555.555.5555
+            </a>
+          </li>
+          <li>
+            <b class="txt-uppercase txt-down-1">Email:</b>
+            <a href="mailto:support@email.com">
+              support@email.com
+            </a>
+          </li>
+          <li>
+            <b class="txt-uppercase txt-down-1">Web:</b>
+            <a href="#!">
+              www.www.com
+            </a>
+          </li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr />
+
+    <dl class="list-clean dl-contacts mxw-200">
+
+      <dt>
+        Customer Support <small>(w/flexbox)</small>
+      </dt>
+
+      <dd>
+        <ul class="list-clean">
+          <li class="flex-area flex-area--mt-0">
+            <div class="flex-w-50">
+              <b class="txt-uppercase txt-down-1">Toll Free:</b>
+            </div>
+            <div class="flex-w-50">
+              <a href="tel:+15555555555">
+                1.555.555.5555
+              </a>
+            </div>
+          </li>
+          <li class="flex-area flex-area--mt-0">
+            <div class="flex-w-50">
+              <b class="txt-uppercase txt-down-1">Local:</b>
+            </div>
+            <div class="flex-w-50">
+              <a href="tel:+15555555555">
+                1.555.555.5555
+              </a>
+            </div>
+          </li>
+          <li class="flex-area flex-area--mt-0">
+            <div class="flex-w-50">
+              <b class="txt-uppercase txt-down-1">Email:</b>
+            </div>
+            <div class="flex-w-50">
+              <a href="mailto:support@email.com">
+                support@email.com
+              </a>
+            </div>
+          </li>
+          <li class="flex-area flex-area--mt-0">
+            <div class="flex-w-50">
+              <b class="txt-uppercase txt-down-1">Web:</b>
+            </div>
+            <div class="flex-w-50">
+              <a href="#!">
+                www.www.com
+              </a>
+            </div>
+          </li>
+        </ul>
+      </dd>
+    </dl>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->
+
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Lists: Fixed width Term Column Definition Lists</h1>
+      <p>
+        ....
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+<!-- ex1 -->
+
+  <dl class="dl-set-width">
+    <dt>
+      Term 1
+    </dt>
+    <dd>
+      Explanation of term 1
+    </dd>
+    <dd>
+      Second Explanation of term 1
+    </dd>
+
+    <dt>
+      Term 2
+    </dt>
+    <dd>
+      Explanation of term 2
+    </dd>
+
+    <!-- return to normal <dl> flow -->
+    <dt>
+      Term
+    </dt>
+    <dd>
+      Explanation of term
+    </dd>
+  </dl>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

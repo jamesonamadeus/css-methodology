@@ -1,0 +1,40 @@
+/** --------------------------------------------------------------------
+
+  Media Query Break Points
+
+  ems are set via a 16px base value for the style sheet.
+  If the base font value is altered from the default 16px
+  baseline, then the break points corresponding pixel values
+  will be altered accordingly.
+
+--------------------------------------------------------------------- */
+
+$bp-mini:           25em !default;        // 400px
+$bp-tiny:           30em !default;        // 480px
+$bp-small:          41.25em !default;     // 660px
+$bp-portrait:       47.9375em !default;   // 767px
+$bp-medium:         53.75em !default;     // 860px
+$bp-large:          59.375em !default;    // 950px
+$bp-1024:           64em !default;        // 1024px
+$bp-wide:           75em !default;        // 1200px
+$bp-xlarge:        100em !default;        // 1600px
+
+
+/**
+
+  Example Usage:
+  -----------------------------------------------------------
+
+  @media screen and ( max-width: $bp-large ) {
+    .class {
+      ...
+    }
+  }
+
+  .other-class {
+    @media screen and ( max-height: $bp-medium ) {
+      color: #f00;
+    }
+  }
+
+*/

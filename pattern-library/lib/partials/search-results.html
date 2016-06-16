@@ -1,0 +1,189 @@
+<section class="cs-content-section">
+
+  <header class="cs-content-header">
+    <div class="cs-content-heading">
+      <h1>Search Result</h1>
+      <p>
+        These results have the anchor element as a child of the heading. In these examples, the images are merely meant to be decorative and representative of a
+        screen shot of the search result page, or an image of a product, which would be adequately described by the result title. If these images are used in an instance where they provide information that is not represented in the result title or description, then contextually appropriate alt text should be added.
+      </p>
+
+      <p>
+        The below examples outline the mark-up patterns required to have images left or right align with all result information, or just the information below the title.
+      </p>
+
+      <p>
+        At small screen sizes, the below examples either change the image size to allow for continued left or right alignment, while the final example forces the image to stack inline with the rest of the content, relative to its position in the DOM order.
+      </p>
+
+      <p>
+        Note: images will requite an onClick event to match the search result URL.  There should not be a separate &lt;a> that wraps the image, as that would create duplicative links. Alternatively,
+      </p>
+    </div>
+  </header><!--/.cs-content-header-->
+
+  <div class="cs-content">
+
+    <div class="cs-pattern-intro">
+      Left aligned Images
+    </div>
+
+    <ul class="list-clean search-results">
+
+      <li class="search-results__item">
+        <h2 class="search-results__item__title">
+          <a href="#!ex1">
+            Title of page to link to
+          </a>
+        </h2>
+        <div class="search-results__item__details">
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+          <div class="search-results__item__img-wrap">
+            <img src="../dist/assets/images/puppy.jpg" alt="" />
+          </div>
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+      <li class="search-results__item">
+        <div class="search-results__item__details">
+          <h2 class="search-results__item__title">
+            <a href="#!ex2">
+              Title of page to link to
+            </a>
+          </h2>
+
+          <div class="search-results__item__img-wrap">
+            <img src="../dist/assets/images/puppy.jpg" alt="" />
+          </div>
+
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+    </ul>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Right aligned Images
+    </div>
+
+    <ul class="list-clean search-results search-results--right-images">
+      <li class="search-results__item">
+        <div class="search-results__item__details">
+          <h2 class="search-results__item__title">
+            <a href="#!ex3">
+              Title of page to link to
+            </a>
+          </h2>
+
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+          <div class="search-results__item__img-wrap">
+            <img src="../dist/assets/images/puppy.jpg" alt="" />
+          </div>
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+      <li class="search-results__item">
+        <h2 class="search-results__item__title">
+          <a href="#!ex4">
+            Title of page to link to
+          </a>
+        </h2>
+        <div class="search-results__item__details">
+          <div class="search-results__item__img-wrap">
+            <img src="../dist/assets/images/puppy.jpg" alt="" />
+          </div>
+
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+    </ul>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Images that Stack on small screens
+    </div>
+
+    <ul class="list-clean search-results search-results--stacked-images">
+      <li class="search-results__item">
+        <div class="search-results__item__details">
+          <h2 class="search-results__item__title">
+            <a href="#!ex5">
+              Title of page to link to
+            </a>
+          </h2>
+
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+          <div class="search-results__item__img-wrap">
+            <img src="../dist/assets/images/puppy.jpg" alt="" />
+          </div>
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+      <li class="search-results__item">
+        <h2 class="search-results__item__title">
+          <a href="#!ex6">
+            Title of page to link to
+          </a>
+        </h2>
+        <div class="search-results__item__details">
+          <div class="search-results__item__img-wrap">
+            <img src="../dist/assets/images/puppy.jpg" alt="" />
+          </div>
+
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+    </ul>
+
+  </div><!--/.cs-content-->
+</section><!--/.cs-content-section-->

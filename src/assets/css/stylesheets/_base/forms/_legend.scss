@@ -1,0 +1,78 @@
+/** --------------------------------------------------------------------
+
+  Legend Element
+
+
+  Normalize.css v4 uses this as the default legend styling:
+  color: inherit; // 2
+  display: table; // 1
+  max-width: 100%; // 1
+  padding: 0; // 3
+  white-space: normal; // 1
+
+  1. Correct the text wrapping in Edge and IE.
+  2. Correct the color inheritance from `fieldset` elements in IE.
+  3. Remove the padding so developers are not caught out when they zero out
+     `fieldset` elements in all browsers.
+
+--------------------------------------------------------------------- */
+
+$legend--font-size:                     $txt-up-2 !default;
+$legend--margin-left:                   -.25em !default;
+$legend--padding:                       0 .25em !default;
+
+//------------------------------------------------------------------------
+
+legend,
+.#{$ns}legend {
+  @include font-size($legend--font-size);
+  color: inherit; // correct color inheritance in IE
+  display: inline-block;
+  margin-left: $legend--margin-left;
+  max-width: 100%;
+  padding: $legend--padding;
+  white-space: normal;
+
+  // sometimes we may need a legend to be styled like
+  // a label. This will make the legend look like a label.
+  &.#{$ns}txt-label {
+    @include font-size($label--font-size);
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <fieldset>
+    <legend>
+      Grouping Title
+    </legend>
+
+    <ul>
+      <li>
+        <input type="radio" name="r_group" id="r_1" />
+        <label for="r_1">
+          Option 1
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="r_group" id="r_2" />
+        <label for="r_2">
+          Option 2
+        </label>
+      </li>
+      <li>
+        <input type="radio" name="r_group" id="r_3" />
+        <label for="r_3">
+          Option 3
+        </label>
+      </li>
+    </ul>
+  </fieldset>
+
+*/

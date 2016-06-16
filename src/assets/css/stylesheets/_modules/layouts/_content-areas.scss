@@ -1,0 +1,151 @@
+/** --------------------------------------------------------------------
+
+  Content Areas
+
+  Classes that style the foundation for content area containers.
+
+  These contains can range from a full page wrapper (.page) to
+  individual content sections (.content-area).
+
+--------------------------------------------------------------------- */
+
+// content-areas
+$content-area--border-style:        1px solid $c-grey !default;
+$content-area--spacing:             $base-margin !default;
+$content-area--max-width:           1100px !default;
+$content-area--margin:              0 auto !default;
+
+$content-area--wide--max-width:     1600px !default;
+
+$content-area--offset-bg:           $c-off-white !default;
+
+// primary callout
+$content-area--callout--bg:         lighten($c-light-blue, 30%) !default;
+$content-area--callout--border:     1px solid darken($c-light-blue, 15%) !default;
+$content-area--callout--radius:     4px !default;
+$content-area--callout--color:      inherit !default;
+
+// Do we need additional callout styles? If not, set to false
+$content-area--callout--2--init:    true !default;
+$content-area--callout--3--init:    true !default;
+$content-area--callout--4--init:    true !default;
+
+// secondary callout
+$content-area--callout-2--bg:       lighten($c-light-gold, 12%) !default;
+$content-area--callout-2--border:   1px solid darken($c-light-gold, 15%) !default;
+$content-area--callout-2--radius:   4px !default;
+$content-area--callout-2--color:    inherit !default;
+
+// tertiary callout
+$content-area--callout-3--bg:       $c-dark-red !default;
+$content-area--callout-3--border:   1px solid darken($c-dark-red, 10%) !default;
+$content-area--callout-3--radius:   12px 0 0 12px !default;
+$content-area--callout-3--color:    $c-off-white !default;
+
+// quaternary callout
+$content-area--callout-4--bg:       $c-darkest-grey !default;
+$content-area--callout-4--border:   1px solid $c-off-black !default;
+$content-area--callout-4--radius:   0 !default;
+$content-area--callout-4--color:    $c-white !default;
+
+//------------------------------------------------------------------------
+
+.content-area {
+  margin: $content-area--margin;
+  max-width: $content-area--max-width;
+  padding: $content-area--spacing;
+
+  > .content-area {
+    padding: 1.25em 0;
+    max-width: 100%;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  // make a content-area slightly standout
+  // from other content areas
+  &--offset {
+    background: $content-area--offset-bg;
+  }
+
+  // significantly callout a content area
+  // with modified visual styling
+  &--callout {
+    background: $content-area--callout--bg;
+    border: $content-area--callout--border;
+    border-radius: $content-area--callout--radius;
+
+    @if $content-area--callout--2--init == true {
+      &-secondary {
+        background: $content-area--callout-2--bg;
+        border: $content-area--callout-2--border;
+        border-radius: $content-area--callout-2--radius;
+        color: $content-area--callout-2--color;
+      }
+    } // end if
+
+    @if $content-area--callout--3--init == true {
+      &-tertiary {
+        background: $content-area--callout-3--bg;
+        border: $content-area--callout-3--border;
+        border-radius: $content-area--callout-3--radius;
+        color: $content-area--callout-3--color;
+      }
+    } // end if
+    @if $content-area--callout--4--init == true {
+      &-quaternary {
+        background: $content-area--callout-4--bg;
+        border: $content-area--callout-4--border;
+        border-radius: $content-area--callout-4--radius;
+        color: $content-area--callout-4--color;
+      }
+    } // end if
+  } // end --callout
+
+  // a wider content area
+  &--wide {
+    max-width: $content-area--wide--max-width;
+  }
+
+  // run the full width and remove any border radius
+  // that could potentially be set on the content-area
+  &--full-width {
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  &--divider-bottom {
+    border-bottom: $content-area--border-style;
+  }
+
+  &--divider-top {
+    border-top: $content-area--border-style;
+  }
+
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="content-area">
+    ...
+  </div>
+
+  <div class="content-area content-area--callout">
+    ...
+  </div>
+
+  <div class="content-area content-area--offset content-area--wide">
+    ...
+  </div>
+
+*/

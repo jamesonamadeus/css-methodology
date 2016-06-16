@@ -1,0 +1,89 @@
+/** --------------------------------------------------------------------
+
+  Email Links
+
+  In the event that email links should be styled
+  differently than normal page links, these selectors will
+  allow for that, without requiring any additional classes.
+
+--------------------------------------------------------------------- */
+
+// email
+$email-link--include:           true !default;
+$email-link--color:             $link--color !default;
+  $email-link--color--alt:      $link--color--alt !default;
+
+// telephone
+$telephone-link--include:       true !default;
+$link--color--tel:              $link--color !default;
+  $link--color--tel--alt:       $link--color--alt !default;
+
+// ---------------------------------------------------------------------
+
+%email-telephone-shared {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+// ---------------------------------------------------------------------
+
+@if $telephone-link--include == true {
+
+  a[href^="tel:"] {
+    @extend %email-telephone-shared;
+    // don't need to redeclare this if it is the same
+    // as normal link colors
+    @if $link--color--tel !=  $link--color {
+      color: $link--color--tel;
+    }
+
+    &:hover,
+    &:focus {
+      @if $link--color--tel--alt !=  $link--color--alt {
+        color: $link--color--tel--alt;
+      }
+    }
+  }
+
+} // if
+
+
+
+@if $email-link--include == true {
+
+  a[href^="mailto:"] {
+    @extend %email-telephone-shared;
+    // don't need to redeclare this if it is the same
+    // as normal link colors
+    @if $email-link--color !=  $link--color {
+      color: $email-link--color;
+    }
+
+    &:hover,
+    &:focus {
+      @if $email-link--color--alt !=  $link--color--alt {
+        color: $email-link--color--alt;
+      }
+    }
+  }
+
+} // if
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="mailto:nope@fakesite.ninja">
+    Email Link
+  </a>
+
+  <a href="tel:15555555555">
+    Telephone Link
+  </a>
+
+*/

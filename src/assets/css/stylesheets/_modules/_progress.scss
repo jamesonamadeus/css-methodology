@@ -1,0 +1,73 @@
+/** --------------------------------------------------------------------
+
+  Progress Element
+
+--------------------------------------------------------------------- */
+
+$progress--bg:    #45494c linear-gradient(to bottom, #45494c 0, #43484a 100%)!default;
+$progress__bar--bg:   #558dc2 linear-gradient(to bottom, #558dc2 0, #4682bd 100%)!default;
+
+$progress--border:        none !default;
+$progress--height:        20px !default;
+$progress--padding:       2px !default;
+$progress--bs:            0 2px 2px rgba(0, 0, 0, 0.35) inset !default;
+$progress--max-width:     25em !default;
+
+$progress__bar--bs:       0 1px 0 rgba(255, 255, 255, 0.35) inset !default;
+$progress--radius:        2px !default;
+
+//------------------------------------------------------------------------
+
+progress {
+  @include vendor(appearance, none, $o: false, $ms: false);
+  @extend %reset--media-elements;
+  background: $progress--bg;
+  border: $progress--border;
+  border-radius: $progress--radius;
+  box-shadow: $progress--bs;
+  height: $progress--height;
+  max-width: $progress--max-width;
+  padding: $progress--padding;
+  vertical-align: baseline; // correct v-align in chrome/FF/Opera
+  width: 100%;
+
+  // Webkit needs this additional rule to style background of <progress>
+  &[value]::-webkit-progress-bar {
+    background: $progress--bg;
+  }
+
+  // Style <progress> value
+  &::-moz-progress-bar {
+    background: $progress__bar--bg;
+    border-radius: $progress--radius;
+    box-shadow: $progress__bar--bs;
+  }
+
+  &::-webkit-progress-value {
+    background: $progress__bar--bg;
+    border-radius: $progress--radius;
+    box-shadow: $progress__bar--bs;
+  }
+
+  // Style <progress> if there is no value assigned (defaults to 100% width)
+  &:not([value])::-moz-progress-bar {
+    background: none;
+    box-shadow: none;
+  }
+
+  &:not([value])::-webkit-progress-bar {
+    background: none;
+    box-shadow: none;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <progress max="100" value="0">
+    70 % <!-- current value -->
+  </progress>
+
+*/

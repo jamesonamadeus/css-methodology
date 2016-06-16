@@ -1,0 +1,36 @@
+/** --------------------------------------------------------------------
+
+  Inverse Links
+
+  Links that have been modified to work on the inverse of the
+  normal background color.
+
+  e.g. dark links on a light background or the default of
+       lighter links for a darker background
+
+--------------------------------------------------------------------- */
+
+$link--inverse--color:         $c-gold !default;
+$link--inverse--color--alt:    lighten($link--inverse--color, 10%) !default;
+
+// ---------------------------------------------------------------------
+
+.#{$ns}link--inverse {
+  color: $link--inverse--color;
+
+  &:hover,
+  &:focus {
+    color: $link--inverse--color--alt;
+  }
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="#link" class="link--inverse">
+    Link style on inverse bg
+  </a>
+
+*/

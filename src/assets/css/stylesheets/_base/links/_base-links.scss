@@ -1,0 +1,93 @@
+/** --------------------------------------------------------------------
+
+  Anchor Element
+
+  standard styling for <a> elements as well as a class
+  that can be used to allow other elements to look like links.
+
+  The .link class should only be used on elements that have been
+  modified by JavaScript to take on the exact functionality of
+  normal links, or to style elements that are wrapped by
+  an <a> element/style pattern that have removed normal link
+  styling.
+
+--------------------------------------------------------------------- */
+
+$link--color:                     $c-blue !default;
+$link--color--alt:                darken($c-dark-blue, 10%) !default;
+$link--color--visited:            false !default;
+
+$link--placeholder--color:        $body--color !default;
+
+// include touch highlight
+$link--include-touch-highlight:   true !default;
+$link--touch-highlight-color:     rgba($link--color--alt, .1) !default;
+
+
+// ---------------------------------------------------------------------
+
+a {
+  // * Removes grey background color from active links in IE10
+  background-color: transparent; // *
+  color: $link--color;
+  text-decoration: underline;
+
+  @if $link--include-touch-highlight == true {
+    // additional affordance to interacting
+    // with links on webkit touch
+    -webkit-tap-highlight-color: $link--touch-highlight-color;
+  }
+
+  @if $link--color--visited != false {
+    &:visited {
+      color: $link--color--visited
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link--color--alt;
+    outline-width: 0;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+
+// if there is no href, this is a placeholder link
+// so style it differently
+a:not([href]),
+a:not([href]):hover {
+  color: $link--placeholder--color;
+  text-decoration: none;
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <a href="http://www.mywebsite.com">
+    Text goes here
+  </a>
+
+  <!-- placeholder -->
+  <a>
+    Text goes here
+  </a>
+
+  <!-- false link -->
+  <span class="link">
+    Not a link
+    (ask yourself how you came to this decision)
+  </span>
+
+*/

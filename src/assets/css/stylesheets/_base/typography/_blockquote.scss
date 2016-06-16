@@ -1,0 +1,92 @@
+/** --------------------------------------------------------------------
+
+  Blockquote Patterns
+
+--------------------------------------------------------------------- */
+
+$blockquote--color:                     $c-dark-grey !default;
+$blockquote--font-style:                italic !default;
+$blockquote--line-height:               1.7 !default;
+$blockquote--margin:                    0 !default;
+
+$blockquote__p--margin-top:             .5em !default;
+
+$blockquote--quote-mark--padding-left:  20px !default;
+
+$blockquote__quote-mark--font-size:     54 !default;
+$blockquote__quote-mark--margin:        -12px 0 0 -28px !default;
+
+$blockquote__source--border:            1px solid $c-grey !default;
+$blockquote__source--color:             $c-dark-grey !default;
+$blockquote__source--font-size:         13 !default;
+$blockquote__source--font-style:        normal !default;
+$blockquote__source--margin:            1em 0 0 !default;
+$blockquote__source--padding:           6px 12px !default;
+
+// ---------------------------------------------------------------------
+
+blockquote { 
+  color: $blockquote--color;
+  font-style: $blockquote--font-style;
+  margin: $blockquote--margin;
+  position: relative;
+
+  &.quote-mark {
+    padding-left: $blockquote--quote-mark--padding-left;
+
+    &:before {
+      @include font-size ( $blockquote--quote-mark--font-size );
+      content: '\“';
+      float: left;
+      line-height: 1;
+      margin: $blockquote--quote-mark--margin;
+      pointer-events: none;
+    }
+  }
+
+  p {
+    line-height: $blockquote--line-height;
+    margin: 0;
+
+    + p {
+      margin-top: $blockquote__p--margin-top;
+    }
+  }
+
+  + figcaption {
+    @include font-size( $blockquote__source--font-size );
+    border-left: $blockquote__source--border;
+    color: $blockquote__source--color;
+    line-height: $blockquote--line-height;
+    margin: $blockquote__source--margin;
+    padding: $blockquote__source--padding;
+
+    cite {
+      font-style: $blockquote__source--font-style;
+    }
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <figure>
+
+    <blockquote>
+      <p>
+        ...
+      </p>
+    </blockquote>
+
+    <figcaption>
+      <cite>
+        ...
+      </cite>
+    </figcaption>
+
+  </figure>
+
+*/

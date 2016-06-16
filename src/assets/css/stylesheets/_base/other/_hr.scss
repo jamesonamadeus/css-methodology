@@ -1,0 +1,69 @@
+/** --------------------------------------------------------------------
+
+  HR Element
+
+  A <hr> element is meant to represent a paragraph level
+  thematic break / to signify the end of a thematic section
+  and start of another.
+
+--------------------------------------------------------------------- */
+
+$hr--bg:             $c-lighter-grey !default;
+$hr--border:         none !default;
+$hr--height:         1px !default;
+$hr--margin:         28px 0 !default;
+
+$hr--inverse--bg:    $c-off-black !default;
+
+//------------------------------------------------------------------------
+
+hr {
+  background: $hr--bg;
+  border: 0;
+  border-bottom: $hr--border;
+  display: block;
+  height: $hr--height;
+  margin: $hr--margin;
+  overflow: visible; // Edge & IE
+}
+
+.hr--inverse {
+  background: $hr--inverse--bg;
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <p>
+    Paragraph concluding theme one of an overall topic.
+  </p>
+
+  <hr />
+
+  <p>
+    Paragraph starting a second theme of an overall topic.
+  </p>
+
+
+  <!-- OR -->
+
+  <div>...</div>
+
+  <hr /> <!-- signifying shift in content but not in topic -->
+
+  <div>...</div>
+
+  <!--
+    OR don't use a <hr> at all
+    as the following has the same semantic
+    meaning as using a <hr />
+  -->
+
+  <section>...</section>
+
+  <section>...</section>
+
+*/
+

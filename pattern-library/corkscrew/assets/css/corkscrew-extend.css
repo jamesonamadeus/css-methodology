@@ -1,0 +1,165 @@
+/* page banner */
+.cs-banner {
+  background: #5a6464;
+  width: 300px;
+}
+
+.cs-body > div {
+  overflow: hidden;
+}
+
+.cs-content-section {
+  max-width: 1600px;
+}
+
+.cs-main > .cs-container {
+  padding-left: 300px;
+}
+
+@media screen and (max-width: 800px) {
+  .cs-banner {
+    position: static;
+  }
+
+  .cs-main > .cs-container {
+    padding-left: 0;
+  }
+}
+
+a[href="#cs-templates"],
+a[href="#cs-examples"] {
+  background: #000;
+  display: block;
+  margin-top: 16px;
+  pointer-events: none;
+  text-decoration: none !important;
+}
+
+.cs-fts-nav li a {
+  border: 0;
+  color: #ddd;
+  padding: 4px;
+  text-decoration: underline;
+}
+
+.cs-fts-nav li a:hover,
+.cs-fts-nav li a:focus {
+  color: #fff;
+}
+
+.cs-fts-nav li.is-active a,
+.cs-fts-nav li.is-active a:hover,
+.cs-fts-nav li.is-active a:focus {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+
+/* page footer */
+.cs-footer {
+
+}
+
+/* section headers */
+.cs-content-header {
+
+}
+
+.cs-content-heading > p + p {
+  margin-top: 12px;
+}
+
+/* buttons */
+.cs-button {
+  background: #FCC029 ;
+  color: #5a6464 ;
+  font-size: 12px !important;
+  text-transform: none !important;
+  padding: 8px 12px !important;
+  line-height: 1 !important;
+}
+
+.cs-button:hover,
+.cs-button:focus,
+.cs-button:active {
+  background: #FACE5D;
+  color: #5a6464;
+}
+
+
+
+.cs-view-html textarea {
+  font-size: 14px;
+  height: 300px;
+  max-height: 500px;
+  resize: vertical;
+}
+
+
+.demo-block {
+  background: rgba(0,0,0,.2);
+  margin-bottom: 4px!important;
+  padding: 2px;
+}
+
+.grid .demo-block {
+  margin-bottom: 0!important;
+}
+
+
+.cs-pattern-intro {
+  color: #91c850;
+  font-weight: 600;
+  margin-bottom: 14px;
+  margin-top: 24px;
+}
+
+* > .cs-pattern-intro:first-child {
+  margin-top: 0;
+}
+
+
+.cs-content {
+  position: relative;
+  margin-top: 20px;
+}
+
+/*.cs-content .modal-overlay {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+}*/
+
+.cs-hide-show-example {
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background: #aaf;
+}
+
+.cs-content-heading p,
+.cs-content-heading li {
+  font-size: 14px !important;
+}
+
+
+.cs-multi-col--3 {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
+
+
+.cs-color-wrap {
+  vertical-align: top;
+}
+
+
+
+
+.modal-overlay[aria-hidden="false"] {
+  z-index: 99999 !important; /* lol */
+}

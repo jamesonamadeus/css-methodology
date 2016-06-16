@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Template Example
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+
+    <style>
+
+    .init-onload-reveal .onload-reveal {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+      .onload-reveal {
+        transform: translateY(-20px);
+        transition: transform .25s .2s ease-in-out,
+                    opacity .25s .2s ease-in-out;
+        opacity: 0;
+      }
+
+      .onload-reveal--delay-1 {
+        transition: transform .25s .6s ease-in-out,
+                    opacity .25s .6s ease-in-out;
+      }
+
+      .onload-reveal--delay-2 {
+        transition: transform .25s .9s ease-in-out,
+                    opacity .25s .9s ease-in-out;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="page">
+
+      <header role="banner" class="page__banner">
+
+        <nav role="navigation" class="page__banner__nav">
+          <ul class="page__banner__nav__list content-area">
+            <li>
+              <a href="#!">
+                Link
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="content-area onload-reveal">
+          <h1>
+            Example Header
+          </h1>
+        </div>
+      </header>
+
+      <main role="main" aria-label="Content" class="page__main">
+        <div class="content-area onload-reveal onload-reveal--delay-1">
+          <p>
+            content area
+          </p>
+        </div>
+      </main>
+
+      <footer role="contentinfo" class="page__footer">
+        <div class="content-area onload-reveal onload-reveal--delay-2">
+          <p>
+            footer
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      var html = document.querySelector('html'); // IE8 +
+
+      // classList only has partial support in IE 10+
+      // but full support with Edge (IE 12)
+      // but more importantly it is still not supported with
+      // Opera Mini 5-8, at all.
+      html.classList.remove('no-js');
+      html.classList.add('init-onload-reveal');
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,91 @@
+/** --------------------------------------------------------------------
+
+  Check Box & Radio "Button" Pills
+
+--------------------------------------------------------------------- */
+
+$cr-pill--radius:             4px !default;
+$cr-pill--checked--bg:        darken($btn--active-bg, 10%) !default;
+$cr-pill--checked--color:     $btn--active-color !default;
+$cr-pill--margin:             0 0 1em !default;
+
+$cr-pill--focused--bg:        darken($btn--alt-bg, 5%) !default;
+$cr-pill--focused--color:     $btn--alt-color !default;
+
+//------------------------------------------------------------------------
+
+.cr-pill {
+  margin: $cr-pill--margin;
+  overflow: hidden;
+  position: relative;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @extend %hide-input--cr;
+  }
+
+  // text label styling
+  label.#{$ns}btn {
+    border-radius: 0;
+    float: left;
+    border-left-color: rgba(0,0,0,.4);
+    margin-left: -1px; // fixes spacing issue in some browsers
+
+
+    &:first-of-type {
+      border-radius: $cr-pill--radius 0 0 $cr-pill--radius !important;
+      margin-left: 0; // don't want a negative margin on the first child
+    }
+
+    &:last-of-type {
+      border-radius: 0 $cr-pill--radius $cr-pill--radius 0 !important;
+    }
+  }
+
+
+  // update label based on input states
+  input:checked + label {
+    background: $cr-pill--checked--bg;
+    color: $cr-pill--checked--color;
+  }
+
+  input:focus + label {
+    background-color: $cr-pill--focused--bg;
+    color: $cr-pill--focused--color;
+  }
+}
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="cr-pill">
+    <input type="checkbox" id="cbpill1" name="cbpill">
+    <label for="cbpill1" class="btn">
+      Check 1
+    </label>
+    <input type="checkbox" id="cbpill2" name="cbpill">
+    <label for="cbpill2" class="btn">
+      Check 2
+    </label>
+  </div>
+
+
+  <div class="cr-pill">
+    <input type="radio" checked="" id="rbtn1a" name="rbtnPill">
+    <label for="rbtn1a" class="btn">
+      Choice 1
+    </label>
+    <input type="radio" id="rbtn2a" name="rbtnPill">
+    <label for="rbtn2a" class="btn">
+      Choice 2
+    </label>
+    <input type="radio" id="rbtn3a" name="rbtnPill">
+    <label for="rbtn3a" class="btn">
+      Choice 3
+    </label>
+  </div>
+
+*/

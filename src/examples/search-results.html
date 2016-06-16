@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>
+      Search Results
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script>
+      // remove no-js and add 'js' & 'has-js' to the HTML
+      document.documentElement.className = document.documentElement.className.replace('no-js', " ");
+      document.documentElement.className += ' js has-js ';
+    </script>
+    <link rel="stylesheet" href="../assets/css/app.css" />
+  </head>
+  <body id="body">
+
+    <div class="page" style="padding-bottom: 80px;">
+
+      <div class="content-area" style="max-width: 900px;">
+        <h1 class="txt-up-5">
+          Search Results Patterns
+        </h1>
+        <p>
+          These results have the anchor element as a child of the heading. In these examples, the images are merely meant to be decorative and representative of a
+          screen shot of the search result page, or an image of a product, which would be adequately described by the result title. If these images are used in an instance where they provide information that is not represented in the result title or description, then contextually appropriate alt text should be added.
+        </p>
+
+        <p>
+          The below examples outline the mark-up patterns required to have images left or right align with all result information, or just the information below the title.
+        </p>
+
+        <p>
+          At small screen sizes, the below examples either change the image size to allow for continued left or right alignment, while the final example forces the image to stack inline with the rest of the content, relative to its position in the DOM order.
+        </p>
+
+        <hr />
+      </div>
+
+
+
+      <div class="content-area" style="max-width: 900px;">
+
+        <h2 class="txt-up-3 mb-20">
+          Left aligned Images
+        </h2>
+
+        <ul class="list-clean search-results">
+
+          <li class="search-results__item">
+            <h2 class="search-results__item__title">
+              <a href="#!ex1">
+                Title of page to link to
+              </a>
+            </h2>
+            <div class="search-results__item__details">
+              <p class="search-results__item__meta">
+                url/topic/tag/other meta
+              </p>
+
+              <p class="search-results__item__desc">
+                Descriptive paragraph describing the topic of the
+                linked to resource.
+              </p>
+              <div class="search-results__item__img-wrap">
+                <img src="../assets/images/small-screen-hero.jpg" alt="" />
+              </div>
+            </div> <!-- /.search-results__item__details -->
+          </li>
+
+          <li class="search-results__item">
+            <div class="search-results__item__details">
+              <h2 class="search-results__item__title">
+                <a href="#!ex2">
+                  Title of page to link to
+
+                  <div class="search-results__item__img-wrap">
+                    <img src="../assets/images/small-screen-hero.jpg" alt="" />
+                  </div>
+                </a>
+              </h2>
+
+              <p class="search-results__item__meta">
+                url/topic/tag/other meta
+              </p>
+
+              <p class="search-results__item__desc">
+                Descriptive paragraph describing the topic of the
+                linked to resource.
+              </p>
+
+            </div> <!-- /.search-results__item__details -->
+          </li>
+
+        </ul>
+
+
+        <hr />
+
+        <h2 class="txt-up-3 mb-20">
+          Right aligned Images
+        </h2>
+
+        <ul class="list-clean search-results search-results--right-images">
+          <li class="search-results__item">
+            <div class="search-results__item__details">
+              <h2 class="search-results__item__title">
+                <a href="#!ex3">
+                  Title of page to link to
+                </a>
+              </h2>
+
+              <p class="search-results__item__meta">
+                url/topic/tag/other meta
+              </p>
+
+              <p class="search-results__item__desc">
+                Descriptive paragraph describing the topic of the
+                linked to resource.
+              </p>
+              <div class="search-results__item__img-wrap">
+                <img src="../assets/images/small-screen-hero.jpg" alt="" />
+              </div>
+            </div> <!-- /.search-results__item__details -->
+          </li>
+
+          <li class="search-results__item">
+            <h2 class="search-results__item__title">
+              <a href="#!ex4">
+                Title of page to link to
+              </a>
+            </h2>
+            <div class="search-results__item__details">
+              <div class="search-results__item__img-wrap">
+                <img src="../assets/images/small-screen-hero.jpg" alt="" />
+              </div>
+
+              <p class="search-results__item__meta">
+                url/topic/tag/other meta
+              </p>
+
+              <p class="search-results__item__desc">
+                Descriptive paragraph describing the topic of the
+                linked to resource.
+              </p>
+
+            </div> <!-- /.search-results__item__details -->
+          </li>
+
+        </ul>
+
+
+        <hr />
+
+        <h2 class="txt-up-3 mb-20">
+          Images that Stack on small screens
+        </h2>
+
+        <ul class="list-clean search-results search-results--stacked-images">
+          <li class="search-results__item">
+            <div class="search-results__item__details">
+              <h2 class="search-results__item__title">
+                <a href="#!ex5">
+                  Title of page to link to
+                </a>
+              </h2>
+
+              <p class="search-results__item__meta">
+                url/topic/tag/other meta
+              </p>
+
+              <p class="search-results__item__desc">
+                Descriptive paragraph describing the topic of the
+                linked to resource.
+              </p>
+              <div class="search-results__item__img-wrap">
+                <img src="../assets/images/small-screen-hero.jpg" alt="" />
+              </div>
+            </div> <!-- /.search-results__item__details -->
+          </li>
+
+          <li class="search-results__item">
+            <h2 class="search-results__item__title">
+              <a href="#!ex6">
+                Title of page to link to
+              </a>
+            </h2>
+            <div class="search-results__item__details">
+              <div class="search-results__item__img-wrap">
+                <img src="../assets/images/small-screen-hero.jpg" alt="" />
+              </div>
+
+              <p class="search-results__item__meta">
+                url/topic/tag/other meta
+              </p>
+
+              <p class="search-results__item__desc">
+                Descriptive paragraph describing the topic of the
+                linked to resource.
+              </p>
+
+            </div> <!-- /.search-results__item__details -->
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/vendor.min.js"></script>
+
+    <script>
+      ;(function ( w, doc ) {
+
+      'use strict';
+
+      var searchResults = {};
+
+      searchResults.init = function () {
+
+        var resultsCount = doc.querySelectorAll('.search-results__item').length,
+            resultsLink = doc.querySelectorAll('.search-results__item__title a'),
+            resultsImg = doc.querySelectorAll('.search-results__item__img-wrap img');
+
+        if ( resultsCount > 0 ) {
+
+          for ( var i = 0; i < resultsCount; i++ ) {
+
+            var getHref = resultsLink[i].getAttribute('href')
+
+            resultsImg[i].setAttribute('onclick', 'location.href="'+getHref+'"');
+
+          }
+
+        }
+
+      }; // end searchResults.init
+
+
+      // Get this searchResults going!
+      searchResults.init();
+
+
+    })( this, this.document );
+
+    </script>
+
+  </body>
+</html>

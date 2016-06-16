@@ -1,0 +1,82 @@
+/** --------------------------------------------------------------------
+
+  Social Icons
+
+--------------------------------------------------------------------- */
+
+$icon-callout--bg-color:             $c-primary !default;
+$icon-callout--hw:                   32px !default;
+$icon-callout--radius:               100% !default;
+
+$icon-callout--hw--sm:               16px !default;
+$icon-callout--hw--lg:               64px !default;
+
+//------------------------------------------------------------------------
+
+.icon-callout {
+  background: $icon-callout--bg-color;
+  border-radius: $icon-callout--radius;
+  display: inline-block;
+  height: $icon-callout--hw;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  width: $icon-callout--hw;
+
+  &--sm {
+    height: $icon-callout--hw--sm;
+    width: $icon-callout--hw--sm;
+  }
+
+  &--lg {
+    height: $icon-callout--hw--lg;
+    width: $icon-callout--hw--lg;
+  }
+
+
+  // reinclude if we want to pull in social specific 
+  // background colors.
+  // &--twitter {
+
+  // }
+
+  // &--linkedin {
+
+  // }
+
+  // &--facebook {
+
+  // }
+
+  // &--google {
+
+  // }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+  
+  <!-- base -->
+  <span class="icon-callout">
+    <!-- svg or what not goes here -->
+  </span>
+
+  <!-- has UI importance -->
+  <span class="icon-callout">
+    <!-- svg or what not goes here -->
+    <span class="sr-only">
+      Appropriate Name Here
+    </span>
+  </span>
+
+
+  <!-- has no UI importance -->
+  <span class="icon-callout" aria-hidden="true">
+    <!-- svg or what not goes here
+         potentially add role="presentation" -->
+  </span>
+
+*/

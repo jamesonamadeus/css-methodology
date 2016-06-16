@@ -1,0 +1,31 @@
+/** --------------------------------------------------------------------
+
+  Email Input Element
+
+--------------------------------------------------------------------- */
+
+$email-input--native-styling:         $txt-input--native-styling !default;
+
+//------------------------------------------------------------------------
+
+@if $email-input--native-styling != false {
+
+  input[type="email"] {
+    @extend input[type="text"];
+  }
+
+}
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="form-row">
+    <label for="enter_email">
+      Enter Email
+    </label>
+    <input type="email" id="enter_email" placeholder="you@yoursite.com" />
+  </div>
+
+*/

@@ -1,0 +1,73 @@
+/** --------------------------------------------------------------------
+
+  Sidebar Navigation Styling
+
+--------------------------------------------------------------------- */
+
+
+//------------------------------------------------------------------------
+
+.sidebar-nav {
+
+  > ul {
+    @include font-size(18);
+  }
+
+  li {
+    padding: 2px 0;
+
+    + li {
+      margin-top: 28px;
+    }
+
+    &.is-current {
+      border-left: 4px solid $c-green;
+
+      > a {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  a {
+    color: $c-dark-grey;
+    display: block;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+  }
+
+} // .sidebar-nav
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <nav role="navigation" aria-label="Secondary"
+       class="sidebar-nav aside-block"
+       id="sidebar_nav">
+
+    <ul class="list-clean">
+      <li>
+        <a href="#!">
+          ...
+        </a>
+      </li>
+      <li class="is-current">
+        <a href="#!">
+          ...
+          <span class="sr-only">
+            current page
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+*/

@@ -1,0 +1,163 @@
+/** --------------------------------------------------------------------
+
+  Define Variables used for these components
+
+--------------------------------------------------------------------- */
+
+// primary brand font
+$f-brand--fallback:         $f-helvetica, $f-lucida, $f-sans-serif !default;
+$f-brand:                   'Source Sans Pro', $f-sans-serif !default;
+
+// secondary brand font
+$f-brand-secondary--fallback:       $f-georgia, $f-times, $f-serif !default;
+$f-brand-secondary:                 $f-brand-secondary--fallback !default;
+
+
+// Body
+$body--bg:                    $c-white !default;
+
+// Base Type Settings
+$body--color:                 $c-darkest-grey !default;
+$body--txt-base:              16 !default;
+$body--line-height:           1.5 !default;
+$body--text-shadow:           none !default;
+
+// weight styling
+$font-weight-define:          weight !default; //*
+
+$body--weight--normal:        400 !default; //**
+  $body--weight--bold:        600 !default; //**
+  $body--weight--bolder:      700 !default; //**
+  $body--weight--light:       300 !default; //**
+  $body--weight--lighter:     200 !default; //**
+
+// italic styling
+$body--style--italic:         italic !default; //***
+
+//*
+// VALUES:  weight or family
+// If a font-family requires individual font-families to be
+// set for their different weights/styles, then set
+// $font-weight-define to 'family'
+
+//**
+// VALUES: 100 - 900 || null
+// If the font-family being used allows for various weights,
+// set the weights to these variables.  If a weight is not
+// being used, then set it to 'null'
+
+
+//***
+// VALUES: normal or italic || font-family
+
+
+$base-margin:               1.25em !default;
+
+// Text Selection
+$select-text--bg:           darken($c-primary, 5%) !default;
+$select-text--color:        $c-white !default;
+
+
+// disabled
+$disabled--opacity:         .58 !default;
+
+/** --------------------------------------------------------------------
+
+  Basic HTML + Body styling
+
+--------------------------------------------------------------------- */
+
+html {
+  box-sizing: border-box; // set border box
+
+     -moz-text-size-adjust: 100%; //*
+      -ms-text-size-adjust: 100%; //*
+  -webkit-text-size-adjust: 100%; //*
+  // * Prevent text size adjust after device orientation
+  //   change, without disabling user zoom.
+}
+
+
+// all elements will now inherit border-box from
+// html, which is now also less specific than
+// the earlier borer-box fix, for instances
+// where you need another box-sizing value.
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+html,
+body {
+  @extend %reset--spacing;
+  background: $body--bg;
+  color: $body--color;
+  font-family: $f-brand;
+  font-size: $body--txt-base + px;
+  font-weight: normal;
+  height: 100%;
+  line-height: $body--line-height;
+  text-rendering: optimizeLegibility;
+
+  @if $body--text-shadow != none {
+    text-shadow: $body--text-shadow;
+  }
+}
+
+
+
+/** --------------------------------------------------------------------
+
+  Disabled Attribute
+
+--------------------------------------------------------------------- */
+
+[disabled] {
+  cursor: default;
+  opacity: $disabled--opacity;
+  pointer-events: none;
+}
+
+
+/** --------------------------------------------------------------------
+
+  Block Level Elements
+
+--------------------------------------------------------------------- */
+
+// Give HTML5 elements block display, which is not defined in IE 8/9
+// Note: additional HTML5 elements (such as nav) also extend the
+// .display-block class. These elements are located in their own
+// individual .scss files
+%html5-block,
+article,
+aside,
+canvas,
+details,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+
+
+/** --------------------------------------------------------------------
+
+  Standardize Margins
+
+--------------------------------------------------------------------- */
+
+*:last-child {
+  margin-bottom: 0;
+}
+
+*:first-child {
+  margin-top: 0;
+}
