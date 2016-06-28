@@ -22,8 +22,8 @@ $tab-panel--padding:                    20px !default;
   $tab-list__item--alt-bg:              $link--color !default;
   $tab-list__item--alt-color:           $c-white !default;
 
-  $tab-list__item--selected--bg:        $c-white !default;
-  $tab-list__item--selected--color:     $c-darkest-grey !default;
+  $tab-list__item--selected--bg:        $c-blue !default;
+  $tab-list__item--selected--color:     $c-off-white !default;
 
   $tab-list__item--selected--bg--alt:   $c-light-blue !default;
   $tab-list__item--selected--color--alt:   $c-white !default;
@@ -77,7 +77,7 @@ $tab-panel--padding:                    20px !default;
 
     &:hover,
     &:focus {
-      background: $tab-list__item--alt-bg;
+      background: lighten($tab-list__item--alt-bg, 10%);
       color: $tab-list__item--alt-color;
       outline: none;
     }
@@ -95,7 +95,7 @@ $tab-panel--padding:                    20px !default;
 
       &:hover,
       &:focus {
-        background: $tab-list__item--selected--bg--alt;
+        background: lighten($tab-list__item--selected--bg, 10%);
         color: $tab-list__item--selected--color--alt;
       }
 
@@ -123,7 +123,7 @@ $tab-panel--padding:                    20px !default;
 
 .#{$ns}tab-panel {
   background: $tab-panel--bg;
-  border-bottom: $tab-list__item--border;
+  border-bottom: none;
   min-height: $tab-panel--min-height;
   padding: $tab-panel--padding;
 
@@ -238,4 +238,3 @@ $tab-panel--padding:                    20px !default;
     border-right: none;
   }
 }
-

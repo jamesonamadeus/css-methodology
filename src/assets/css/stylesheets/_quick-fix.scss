@@ -1,5 +1,18 @@
 // Quick fix
 
 .more-info {
-  padding-bottom: 20px !important;
+  padding-bottom: $content-area--spacing-ext !important;
+}
+
+.box--underline {
+  border-bottom: 3px solid $c-primary;
+  text-align: center;
+  // background: lighten($c-primary, 45%);
+  background: lighten($c-primary, 25%);
+  color: $c-white;
+  padding: 0 10px;
+
+  @media screen and ( min-width: $bp-medium ) {
+    text-align: left;
+  }
 }

@@ -959,7 +959,7 @@ sup {
 
 --------------------------------------------------------------------- */
 blockquote {
-  color: #949494;
+  color: #449AB3;
   font-style: italic;
   margin: 0;
   position: relative;
@@ -5771,7 +5771,7 @@ button.accordion__trigger {
   text-decoration: none;
 }
 .tab-list__item:hover, .tab-list__item:focus {
-  background: #449AB3;
+  background: #65afc5;
   color: #fff;
   outline: none;
 }
@@ -5779,19 +5779,19 @@ button.accordion__trigger {
   pointer-events: none;
 }
 .tab-list__item[aria-selected='true'], .tab-list__item.is-selected {
-  background: #fff;
+  background: #449AB3;
   border-bottom: 1px solid transparent;
-  color: #444;
+  color: #f8f8f8;
   z-index: 2;
 }
 .tab-list__item[aria-selected='true']:hover, .tab-list__item[aria-selected='true']:focus, .tab-list__item.is-selected:hover, .tab-list__item.is-selected:focus {
-  background: #6589f2;
+  background: #65afc5;
   color: #fff;
 }
 
 .tab-panel {
   background: #fff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: none;
   min-height: 200px;
   padding: 20px;
 }
@@ -5903,7 +5903,7 @@ button.accordion__trigger {
   padding: 1.25em;
 }
 .content-area > .content-area {
-  padding: 1.25em 0;
+  padding: 1.625em 0;
   max-width: 100%;
 }
 .content-area > .content-area:first-child {
@@ -10426,7 +10426,20 @@ input:checked ~ .has-checkbox-col__cell__state-desc {
 }
 
 .more-info {
-  padding-bottom: 20px !important;
+  padding-bottom: 1.625em !important;
+}
+
+.box--underline {
+  border-bottom: 3px solid #449AB3;
+  text-align: center;
+  background: #9dccda;
+  color: #fff;
+  padding: 0 10px;
+}
+@media screen and (min-width: 53.75em) {
+  .box--underline {
+    text-align: left;
+  }
 }
 
 /*

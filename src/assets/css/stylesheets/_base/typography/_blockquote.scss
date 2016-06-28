@@ -4,7 +4,7 @@
 
 --------------------------------------------------------------------- */
 
-$blockquote--color:                     $c-dark-grey !default;
+$blockquote--color:                     $c-primary !default;
 $blockquote--font-style:                italic !default;
 $blockquote--line-height:               1.7 !default;
 $blockquote--margin:                    0 !default;
@@ -25,7 +25,7 @@ $blockquote__source--padding:           6px 12px !default;
 
 // ---------------------------------------------------------------------
 
-blockquote { 
+blockquote {
   color: $blockquote--color;
   font-style: $blockquote--font-style;
   margin: $blockquote--margin;
