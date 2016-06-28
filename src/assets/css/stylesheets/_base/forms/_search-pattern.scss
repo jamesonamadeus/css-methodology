@@ -88,6 +88,7 @@ $search-group__btn--width:                     36px !default;
 
 
 .has-text {
+
   .search-group__btn {
     background: $c-light-blue;
     border: 6px solid $c-light-blue;
@@ -102,8 +103,9 @@ $search-group__btn--width:                     36px !default;
       stroke: $c-white;
     }
 
-  }
-}
+  } //.search-group__btn
+
+} //.has-text
 
 /**
 

@@ -39,7 +39,8 @@ $tip--no-delay:                       .18s !default;
     // (as you would not describe something before you know
     // what that something is.)
     &[aria-describedby]:hover + ,
-    &[aria-describedby]:focus + {
+    &[aria-describedby]:not(.a11y-tip__trigger--toggle):focus +,
+    &[aria-describedby][aria-expanded="true"] {
 
       .a11y-tip__help,
       .a11y-tip__help:after {

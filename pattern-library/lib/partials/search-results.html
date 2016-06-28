@@ -25,10 +25,58 @@
   <div class="cs-content">
 
     <div class="cs-pattern-intro">
-      Left aligned Images
+      No Images
     </div>
 
     <ul class="list-clean search-results">
+
+      <li class="search-results__item">
+        <h2 class="search-results__item__title">
+          <a href="#!ex1">
+            Title of page to link to
+          </a>
+        </h2>
+        <div class="search-results__item__details">
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+      <li class="search-results__item">
+        <div class="search-results__item__details">
+          <h2 class="search-results__item__title">
+            <a href="#!ex2">
+              Title of page to link to
+            </a>
+          </h2>
+
+          <p class="search-results__item__meta">
+            url/topic/tag/other meta
+          </p>
+
+          <p class="search-results__item__desc">
+            Descriptive paragraph describing the topic of the
+            linked to resource.
+          </p>
+
+        </div> <!-- /.search-results__item__details -->
+      </li>
+
+    </ul>
+
+    <hr />
+
+    <div class="cs-pattern-intro">
+      Left aligned Images
+    </div>
+
+    <ul class="list-clean search-results search-results--left-images">
 
       <li class="search-results__item">
         <h2 class="search-results__item__title">
@@ -137,12 +185,16 @@
       Images that Stack on small screens
     </div>
 
-    <ul class="list-clean search-results search-results--stacked-images">
+    <ul class="list-clean search-results search-results--left-images search-results--stacked-images">
       <li class="search-results__item">
         <div class="search-results__item__details">
           <h2 class="search-results__item__title">
             <a href="#!ex5">
               Title of page to link to
+
+              <span class="search-results__item__img-wrap">
+                <img src="../dist/assets/images/puppy.jpg" alt="" />
+              </span>
             </a>
           </h2>
 
@@ -154,9 +206,6 @@
             Descriptive paragraph describing the topic of the
             linked to resource.
           </p>
-          <div class="search-results__item__img-wrap">
-            <img src="../dist/assets/images/puppy.jpg" alt="" />
-          </div>
         </div> <!-- /.search-results__item__details -->
       </li>
 
@@ -167,9 +216,9 @@
           </a>
         </h2>
         <div class="search-results__item__details">
-          <div class="search-results__item__img-wrap">
-            <img src="../dist/assets/images/puppy.jpg" alt="" />
-          </div>
+          <span class="search-results__item__img-wrap">
+              <img src="../dist/assets/images/puppy.jpg" alt="" />
+            </span>
 
           <p class="search-results__item__meta">
             url/topic/tag/other meta

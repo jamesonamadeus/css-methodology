@@ -7,9 +7,13 @@
 
   a11yTT.init = function () {
 
-    var $ttContainer  = $('.a11y-tip'),
-        ttTrigger     = '.a11y-tip__trigger',
-        ttTheTip      = '.a11y-tip__help';
+    var $ttContainer          = $('.a11y-tip'),
+        ttToggleClass         = 'a11y-tip--toggle',
+        ttToggle              = '.'+ttToggleClass,
+        ttTriggerClass        = 'a11y-tip__trigger',
+        ttTriggerToggleClass  = 'a11y-tip__trigger--toggle',
+        ttTrigger             = '.'+ttTriggerClass,
+        ttTheTip              = '.a11y-tip__help';
 
 
     var setup = function () {
@@ -21,6 +25,7 @@
         var $self = $(this),
             $trigger = $self.find(ttTrigger),
             $tip = $self.find(ttTheTip);
+
 
         // if a trigger is not an inherently focusable element, it'll need a
         // tabindex. But if it can be inherently focused, then don't set a tabindex
@@ -43,6 +48,24 @@
         // the role of tooltip set, then set it.
         if ( !$tip.attr('role') ) {
           $tip.attr('role', 'tooltip');
+        }
+
+
+        // if a tip container has ttToggleClass,
+        // we need to make sure the trigger is a button
+        if ( $self.hasClass(ttToggleClass) ) {
+
+          var $this = $(this),
+              $originalTrigger = $this.find(ttTrigger).html().trim(),
+              $newButton = '<button type="button" class="'+ttTriggerClass+' '+ttTriggerToggleClass+'"/>',
+              $getTipId = $this.find(ttTheTip).attr('id');
+
+          $this.find(ttTrigger).replaceWith($newButton);
+          $this.find(ttTrigger).append($originalTrigger).attr({
+            'aria-describedby': $getTipId,
+            'aria-expanded': 'false'
+          });
+
         }
 
         // end the loop, increase count by 1
@@ -73,6 +96,18 @@
 
       if ( $parent.hasClass('a11y-tip--hide') ) {
         $parent.removeClass('a11y-tip--hide');
+      }
+
+    });
+
+    $('.'+ttTriggerToggleClass).on('click', function ( e ) {
+      var $this = $(this);
+
+      if ( $this.attr('aria-expanded') === 'true' ) {
+        $this.attr('aria-expanded', 'false');
+      }
+      else if ( $this.attr('aria-expanded') === 'false' ) {
+        $this.attr('aria-expanded', 'true');
       }
 
     });

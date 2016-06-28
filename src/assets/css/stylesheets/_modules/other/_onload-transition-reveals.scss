@@ -1,0 +1,67 @@
+/** --------------------------------------------------------------------
+
+  Onload Reveal
+
+  @requires JavaScript
+
+  Short content transition initiated on page load by adding the
+  .init-onload-reveal via JS.
+
+  Without JavaScript, there is no transition/hidden content.
+
+--------------------------------------------------------------------- */
+
+$onload--timer:           .25s !default;
+$onload--delay-1:         .6s !default;
+$onload--translate-from:  -20px !default;
+
+// ---------------------------------------------------------------------
+
+.js {
+
+  &.init-onload-reveal .onload-reveal {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+
+  .onload-reveal--x {
+    transform: translate($onload--translate-from, 0px);
+  }
+
+  .onload-reveal--y {
+    transform: translate(0px, $onload--translate-from);
+  }
+
+  .onload-reveal {
+    transition: transform $onload--timer .2s ease-in-out,
+                opacity $onload--timer .2s ease-in-out;
+    opacity: 0;
+  }
+
+  .onload-reveal--delay-1 {
+    transition: transform $onload--timer $onload--delay-1 ease-in-out,
+                opacity $onload--timer $onload--delay-1 ease-in-out;
+  }
+
+  .onload-reveal--delay-2 {
+    transition: transform $onload--timer .9s ease-in-out,
+                opacity $onload--timer .9s ease-in-out;
+  }
+
+} //.js
+
+
+/**
+
+  Example Mark-up:
+  -----------------------------------------------------------
+
+  <div class="onload-reveal onload-reveal--y">
+    ...
+  </div>
+
+  <div class="onload-reveal onload-reveal--delay-1 onload-reveal--x">
+    ...
+  </div>
+
+*/

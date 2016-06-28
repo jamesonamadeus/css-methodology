@@ -13,8 +13,8 @@
 
 --------------------------------------------------------------------- */
 
-$link--color:                     $c-blue !default;
-$link--color--alt:                darken($c-dark-blue, 10%) !default;
+$link--color:                     $c-primary !default;
+$link--color--alt:                darken($c-primary, 10%) !default;
 $link--color--visited:            false !default;
 
 $link--placeholder--color:        $body--color !default;

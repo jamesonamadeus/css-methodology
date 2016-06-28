@@ -17,6 +17,7 @@ $card--border:                          1px solid $card--border-color !default;
 $card--border-radius:                   $base-unit !default;
 $card--border--accent:                  6px solid $card--border-color--accent !default;
 
+$card--bs:                              0 3px 10px rgba(0,0,0,.15) !default;
 
 // title
 $card__title--font-size:                22 !default;
@@ -79,6 +80,10 @@ $card__action--no-padding--margin-top:  $card--spacing !default;
   @if $card--border-radius != 0 {
     border-radius: $card--border-radius;
   } // @if
+
+  @if $card--bs != none {
+    box-shadow: $card--bs;
+  }
 
   @if $card--border--accent != false {
 

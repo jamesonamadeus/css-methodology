@@ -22,19 +22,29 @@ $message-block--margin:             $base-margin !default;
 .message-block {
   background: $message-block--bg;
   border: $message-block--border;
-  bottom: $message-block--y-position;
-  left: $message-block--right-position;
   margin: auto;
   max-width: $message-block--max-width;
   opacity: $message-block--opacity-start;
   padding: $message-block--padding;
-  position: $message-block--position;
-  right: $message-block--right-position;
-  transform: translateY($message-block--y-from);
-  transition: transform .2s ease-in-out,
-              opacity .2s ease-in-out;
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
   visibility: hidden;
   z-index: 0;
+
+  &--is-fixed {
+    left: $message-block--right-position;
+    position: $message-block--position;
+    right: $message-block--right-position;
+  }
+
+  &--top {
+    top: $message-block--y-position;
+    transform: translateY($message-block--y-from);
+
+  }
+
+  &--bottom {
+    bottom: $message-block--y-position;
+  }
 
   // active state for message block
   &.is-active {

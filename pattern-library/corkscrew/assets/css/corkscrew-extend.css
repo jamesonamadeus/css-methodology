@@ -163,3 +163,10 @@ a[href="#cs-examples"] {
 .modal-overlay[aria-hidden="false"] {
   z-index: 99999 !important; /* lol */
 }
+
+
+
+html,
+body.cs-body {
+  height: auto !important;
+}

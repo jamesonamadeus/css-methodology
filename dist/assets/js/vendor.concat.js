@@ -848,7 +848,6 @@ $('.js-dropdown').drop();
         },
 
 
-
         // setup general keyboard controls for the burger/menu
         kbdTrigger = function ( e ) {
 
@@ -866,6 +865,7 @@ $('.js-dropdown').drop();
         },
 
 
+        // Close menu with escape key
         escClose = function ( e ) {
 
           keyCode = ( e.keyCode ? e.keyCode : e.which );
@@ -888,7 +888,8 @@ $('.js-dropdown').drop();
         },
 
 
-        //
+        // clicking outside the menu, when an overlay is open
+        // should close the menu.
         outSideClick = function ( e ) {
 
           if ( $html.hasClass('menu-is-open') && optionalOverlay ) {
@@ -934,8 +935,7 @@ $('.js-dropdown').drop();
         $doc.on( 'click', '.'+overlayEl, outSideClick );
         $self.on( 'click', flippingBurgers.bind(this) );
         $self.on( 'keydown', kbdTrigger.bind(this) );
-
-        $doc.on('keydown', escClose );
+        $doc.on( 'keydown', escClose );
 
         // restrict tab focus on elements only inside menu window
         if ( optionalOverlay ) {
@@ -1996,7 +1996,7 @@ $('.js-dropdown').drop();
                   // attribute on the panel,
                   // OR the first heading (h1-h6) in the tab
                   // OR just call it Tab + # cause lol naming stuff
-                  $grabLabel = $this.attr('data-tab-label') || $this.find(':header:first-child').text() || 'Tab' + $panelNum,
+                  $grabLabel = $this.attr('data-tab-label') || $this.find(':header').first().text() || 'Tab' + $panelNum,
 
                   // Put it all together as a new <li>tab</li>
                   $createTabItem = '<li><a href="#'+$grabID+'" class="tab-list__item '+tabBtn.split('.')[1]+'">'+$grabLabel+'</a></li>';
@@ -2371,9 +2371,13 @@ $('.js-dropdown').drop();
 
   a11yTT.init = function () {
 
-    var $ttContainer  = $('.a11y-tip'),
-        ttTrigger     = '.a11y-tip__trigger',
-        ttTheTip      = '.a11y-tip__help';
+    var $ttContainer          = $('.a11y-tip'),
+        ttToggleClass         = 'a11y-tip--toggle',
+        ttToggle              = '.'+ttToggleClass,
+        ttTriggerClass        = 'a11y-tip__trigger',
+        ttTriggerToggleClass  = 'a11y-tip__trigger--toggle',
+        ttTrigger             = '.'+ttTriggerClass,
+        ttTheTip              = '.a11y-tip__help';
 
 
     var setup = function () {
@@ -2385,6 +2389,7 @@ $('.js-dropdown').drop();
         var $self = $(this),
             $trigger = $self.find(ttTrigger),
             $tip = $self.find(ttTheTip);
+
 
         // if a trigger is not an inherently focusable element, it'll need a
         // tabindex. But if it can be inherently focused, then don't set a tabindex
@@ -2407,6 +2412,24 @@ $('.js-dropdown').drop();
         // the role of tooltip set, then set it.
         if ( !$tip.attr('role') ) {
           $tip.attr('role', 'tooltip');
+        }
+
+
+        // if a tip container has ttToggleClass,
+        // we need to make sure the trigger is a button
+        if ( $self.hasClass(ttToggleClass) ) {
+
+          var $this = $(this),
+              $originalTrigger = $this.find(ttTrigger).html().trim(),
+              $newButton = '<button type="button" class="'+ttTriggerClass+' '+ttTriggerToggleClass+'"/>',
+              $getTipId = $this.find(ttTheTip).attr('id');
+
+          $this.find(ttTrigger).replaceWith($newButton);
+          $this.find(ttTrigger).append($originalTrigger).attr({
+            'aria-describedby': $getTipId,
+            'aria-expanded': 'false'
+          });
+
         }
 
         // end the loop, increase count by 1
@@ -2437,6 +2460,18 @@ $('.js-dropdown').drop();
 
       if ( $parent.hasClass('a11y-tip--hide') ) {
         $parent.removeClass('a11y-tip--hide');
+      }
+
+    });
+
+    $('.'+ttTriggerToggleClass).on('click', function ( e ) {
+      var $this = $(this);
+
+      if ( $this.attr('aria-expanded') === 'true' ) {
+        $this.attr('aria-expanded', 'false');
+      }
+      else if ( $this.attr('aria-expanded') === 'false' ) {
+        $this.attr('aria-expanded', 'true');
       }
 
     });
@@ -2925,41 +2960,6 @@ function toggleState ( el, attrb, onState, offState ) {
   });
 
 } )( this.document );
-;(function ( $ ) {
-
-  // Clear text from input button
-
-  'use strict';
-
-  var $clearInputBtn = $('[data-action="clear"]'),
-      $hasClearBtn = $('.has-clear-btn'),
-      $prevVal = $hasClearBtn.val(),
-      $currentVal;
-
-  $clearInputBtn.on('click', function () {
-    var $this = $(this);
-    $this.parent().children($hasClearBtn).val('');
-    $this.removeClass('is-visible');
-    $this.parent().children($hasClearBtn).focus();
-  });
-
-  $hasClearBtn.on('keyup', function () {
-    $currentVal = $(this).val();
-
-    if ($currentVal !== $prevVal ) {
-      $(this).next($clearInputBtn).addClass('is-visible');
-    }
-  });
-
-  $hasClearBtn.on('blur', function () {
-
-    if ( $(this).val().length === 0 ) {
-      $(this).next($clearInputBtn).removeClass('is-visible');
-    }
-  });
-
-})( jQuery );
-
 
 $(function () {
   var $loadMoreBtn = $('[data-action="load-more"]');
@@ -3110,7 +3110,7 @@ $(function () {
       return this.each( function () {
 
         var id = this.id,
-            $self = $('#' +  id),
+            $self = $('#' + id),
 
 
         // setup the custom file upload widget(s)

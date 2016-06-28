@@ -170,7 +170,6 @@
         },
 
 
-
         // setup general keyboard controls for the burger/menu
         kbdTrigger = function ( e ) {
 
@@ -188,6 +187,7 @@
         },
 
 
+        // Close menu with escape key
         escClose = function ( e ) {
 
           keyCode = ( e.keyCode ? e.keyCode : e.which );
@@ -210,7 +210,8 @@
         },
 
 
-        //
+        // clicking outside the menu, when an overlay is open
+        // should close the menu.
         outSideClick = function ( e ) {
 
           if ( $html.hasClass('menu-is-open') && optionalOverlay ) {
@@ -256,8 +257,7 @@
         $doc.on( 'click', '.'+overlayEl, outSideClick );
         $self.on( 'click', flippingBurgers.bind(this) );
         $self.on( 'keydown', kbdTrigger.bind(this) );
-
-        $doc.on('keydown', escClose );
+        $doc.on( 'keydown', escClose );
 
         // restrict tab focus on elements only inside menu window
         if ( optionalOverlay ) {

@@ -25,7 +25,7 @@
       return this.each( function () {
 
         var id = this.id,
-            $self = $('#' +  id),
+            $self = $('#' + id),
 
 
         // setup the custom file upload widget(s)
