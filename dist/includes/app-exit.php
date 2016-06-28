@@ -27,6 +27,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="assets/js/vendor.concat.js"></script>
+    <script src="corkscrew/assets/js/corkscrew.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>

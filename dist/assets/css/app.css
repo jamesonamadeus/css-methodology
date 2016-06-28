@@ -1144,7 +1144,7 @@ th,
 --------------------------------------------------------------------- */
 a {
   background-color: transparent;
-  color: #4464c2;
+  color: #449AB3;
   text-decoration: underline;
   -webkit-tap-highlight-color: rgba(36, 57, 118, 0.1);
 }
@@ -1476,7 +1476,6 @@ button object {
   background: #fafafa;
   border: 1px solid #ccc;
   color: #949494;
-  box-shadow: 0px 2px 0px 0px #ccc;
   -webkit-transition: background-color .15s ease-in-out;
           transition: background-color .15s ease-in-out;
 }
@@ -1510,7 +1509,6 @@ button object {
   background-color: #f8f8f8;
   border-color: #7b7b7b;
   color: #7b7b7b;
-  box-shadow: 0px 0px 0px 0px rgba(204, 204, 204, 0);
 }
 
 /**
@@ -1547,10 +1545,9 @@ button object {
 
 --------------------------------------------------------------------- */
 .btn--primary {
-  background: #4464c2;
-  border: 1px solid #4464c2;
+  background: #449AB3;
+  border: 1px solid #449AB3;
   color: #f8f8f8;
-  box-shadow: 0px 2px 0px 0px #304c9d;
 }
 .btn--primary:hover, .btn--primary:focus {
   background-color: #304c9d;
@@ -2288,7 +2285,7 @@ input[type="radio"] + .custom-cr__icon:after {
   border-radius: 100%;
 }
 input[type="radio"]:checked + .custom-cr__icon:after {
-  background: #4464c2;
+  background: #449AB3;
   height: 70%;
   width: 70%;
 }
@@ -2519,7 +2516,7 @@ select {
 }
 .search-group__btn {
   background: none;
-  border: 6px solid rgba(68, 100, 194, 0);
+  border: 6px solid rgba(68, 154, 179, 0);
   bottom: 0;
   border-radius: 0;
   box-shadow: none;
@@ -2546,16 +2543,35 @@ select {
   -webkit-transition: stroke .2s ease-in-out;
           transition: stroke .2s ease-in-out;
 }
-.search-group__btn:hover, .search-group__btn:focus, .search-group__input:focus + .search-group__btn, .has-text .search-group__btn {
-  background: #6589f2;
-  border: 6px solid #6589f2;
+.search-group__btn:hover, .search-group__btn:focus {
+  background: #449AB3;
+  border: 6px solid #449ab3;
 }
-.search-group__btn:hover svg > g, .search-group__btn:focus svg > g, .search-group__input:focus + .search-group__btn svg > g, .has-text .search-group__btn svg > g {
+.search-group__btn:hover svg > g, .search-group__btn:focus svg > g {
   stroke: #fff;
 }
 .search-group__input {
   margin: 0;
   padding-right: 45px !important;
+}
+.search-group__input:focus + .search-group__btn {
+  background: #6589f2;
+  border: 6px solid #6589f2;
+}
+.search-group__input:focus + .search-group__btn svg > g {
+  stroke: #fff;
+}
+
+.has-text .search-group__btn {
+  background: #6589f2;
+  border: 6px solid #6589f2;
+}
+.has-text .search-group__btn:hover, .has-text .search-group__btn:focus {
+  background: #449AB3;
+  border-color: #449AB3;
+}
+.has-text .search-group__btn svg > g {
+  stroke: #fff;
 }
 
 /**
@@ -5666,7 +5682,7 @@ ul.flex-area {
 --------------------------------------------------------------------- */
 .accordion__trigger, button.accordion__trigger {
   background-color: #f8f8f8;
-  color: #4464c2;
+  color: #449AB3;
   cursor: pointer;
   display: block;
   padding: 0.5em 1em;
@@ -5674,11 +5690,11 @@ ul.flex-area {
   text-transform: none;
 }
 .accordion__trigger.is-active {
-  background-color: #304c9d;
+  background-color: #449AB3;
   color: #fff;
 }
 .accordion__trigger:hover, .accordion__trigger:focus {
-  background-color: #6589f2;
+  background-color: #65afc5;
   color: #fff;
 }
 .accordion__panel {
@@ -5748,14 +5764,14 @@ button.accordion__trigger {
   background: #f8f8f8;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  color: #4464c2;
+  color: #449AB3;
   display: block;
   padding: 12px 16px;
   position: relative;
   text-decoration: none;
 }
 .tab-list__item:hover, .tab-list__item:focus {
-  background: #4464c2;
+  background: #449AB3;
   color: #fff;
   outline: none;
 }
@@ -5763,13 +5779,13 @@ button.accordion__trigger {
   pointer-events: none;
 }
 .tab-list__item[aria-selected='true'], .tab-list__item.is-selected {
-  background: #fff;
+  background: #449AB3;
   border-bottom: 1px solid transparent;
-  color: #444;
+  color: #fff;
   z-index: 2;
 }
 .tab-list__item[aria-selected='true']:hover, .tab-list__item[aria-selected='true']:focus, .tab-list__item.is-selected:hover, .tab-list__item.is-selected:focus {
-  background: #6589f2;
+  background: #6db3c7;
   color: #fff;
 }
 
@@ -5898,6 +5914,9 @@ button.accordion__trigger {
 }
 .content-area--offset {
   background: #f8f8f8;
+}
+.content-area--clear {
+  padding: 0;
 }
 .content-area--callout {
   background: #f2f5fe;
@@ -7293,20 +7312,20 @@ button.accordion__trigger {
 --------------------------------------------------------------------- */
 .btn--primary-knockout {
   background-color: transparent;
-  border: 1px solid #4464c2;
+  border: 1px solid #449AB3;
   box-shadow: inset 0 0 0 1px #304c9d;
-  color: #4464c2;
+  color: #449AB3;
 }
 .btn--primary-knockout:focus, .btn--primary-knockout:hover {
   background-color: transparent;
-  border-color: #4464c2;
-  box-shadow: inset 0 0 0 2px rgba(68, 100, 194, 0);
-  color: #4464c2;
+  border-color: #449AB3;
+  box-shadow: inset 0 0 0 2px rgba(68, 154, 179, 0);
+  color: #449AB3;
 }
 .btn--primary-knockout:active, .btn--primary-knockout.is-active {
   background: transparent;
-  box-shadow: inset 0 0 0 2px #4464c2;
-  color: #4464c2;
+  box-shadow: inset 0 0 0 2px #449ab3;
+  color: #449AB3;
 }
 
 /**
@@ -7414,7 +7433,7 @@ button.accordion__trigger {
   border-radius: 0;
   border: none;
   box-shadow: none;
-  color: #4464c2 !important;
+  color: #449AB3 !important;
   padding: 0 !important;
   text-shadow: none;
   text-transform: none;
@@ -7465,7 +7484,7 @@ button.accordion__trigger {
 --------------------------------------------------------------------- */
 .btn--menu {
   padding: 2.5em 1em 1em;
-  background: #2e468c;
+  background: #2f6a7c;
   box-shadow: 0;
   display: none;
   margin: auto;
@@ -7485,7 +7504,7 @@ button.accordion__trigger {
 }
 .btn--menu:hover, .btn--menu:focus {
   padding: 2.5em 1em 1em;
-  background: #344f9f;
+  background: #367a8e;
   outline: none;
 }
 .btn--menu[aria-expanded="false"]:hover .btn--menu__icon, .btn--menu[aria-expanded="false"]:focus .btn--menu__icon {
@@ -8029,7 +8048,7 @@ button.accordion__trigger {
   font-size: 16px;
   font-size: 1rem;
   bottom: 0;
-  color: #4464c2;
+  color: #449AB3;
   padding: 20px;
   position: absolute;
   right: 0;
@@ -8211,19 +8230,19 @@ button.accordion__trigger {
 
 --------------------------------------------------------------------- */
 .blockquote-callout {
-  margin: 2em 0;
+  margin: 8px 0 1em 0;
   overflow: hidden;
 }
 .blockquote-callout__quote, .blockquote-callout__quote p {
-  font-size: 28px;
-  font-size: 1.75rem;
-  color: #31b517;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #449AB3;
   font-style: italic;
   line-height: 1.5;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
 .blockquote-callout__source {
-  border-left: 3px solid #31b517;
+  border-left: 3px solid #2a2a2a;
   padding: 0.3em 1em;
   float: right;
 }
@@ -9220,7 +9239,7 @@ input.text-input--transparent--inverse:focus {
 }
 
 [role="tooltip"].a11y-tip__help {
-  background: rgba(68, 100, 194, 0.9);
+  background: rgba(68, 154, 179, 0.9);
   border-radius: 4px;
   color: #fff;
   font-size: 14px;
@@ -9251,7 +9270,7 @@ input.text-input--transparent--inverse:focus {
   height: 0;
   speak: none;
   width: 0;
-  border-color: transparent transparent rgba(68, 100, 194, 0.9) transparent;
+  border-color: transparent transparent rgba(68, 154, 179, 0.9) transparent;
   border-bottom-style: solid;
   bottom: 100%;
   content: '';
@@ -9287,7 +9306,7 @@ input.text-input--transparent--inverse:focus {
   height: 0;
   speak: none;
   width: 0;
-  border-color: rgba(68, 100, 194, 0.9) transparent transparent transparent;
+  border-color: rgba(68, 154, 179, 0.9) transparent transparent transparent;
   border-top-style: solid;
   left: 50%;
   margin-bottom: 6px;
@@ -9330,6 +9349,7 @@ input.text-input--transparent--inverse:focus {
   top: 0;
   width: 100%;
   opacity: 0;
+  visibility: hidden;
   z-index: 90;
   -webkit-transform: translateX(-100px);
           transform: translateX(-100px);
@@ -9343,6 +9363,7 @@ input.text-input--transparent--inverse:focus {
   opacity: 1;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
+  visibility: visible;
 }
 
 /** --------------------------------------------------------------------
@@ -9359,7 +9380,7 @@ input.text-input--transparent--inverse:focus {
   z-index: 9999;
 }
 .skip-links a {
-  background: #4464c2;
+  background: #449AB3;
   color: #fff;
   display: block;
   opacity: 0;
@@ -9403,7 +9424,7 @@ input.text-input--transparent--inverse:focus {
 
 --------------------------------------------------------------------- */
 .link--back-to-top {
-  background: #4464c2;
+  background: #449AB3;
   border-radius: 4px 4px 0 0;
   bottom: 0;
   opacity: 0;
@@ -9434,7 +9455,7 @@ input.text-input--transparent--inverse:focus {
   width: 25px;
 }
 .link--back-to-top:hover, .link--back-to-top:focus {
-  background-color: #344f9f;
+  background-color: #367a8e;
 }
 .link--back-to-top:active:after {
   -webkit-transform: translateY(2px);
@@ -10077,6 +10098,22 @@ input:checked ~ .has-checkbox-col__cell__state-desc {
  Site Header (banner)
 
 --------------------------------------------------------------------- */
+.page__banner {
+  margin-top: 8px;
+  text-align: center;
+}
+.page__banner .logo {
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.nav-menu__item a {
+  font-size: 20px;
+  font-weight: 300;
+  padding: 14px 20px !important;
+  text-decoration: none;
+}
+
 /** --------------------------------------------------------------------
 
   Site Hero Area
@@ -10232,7 +10269,7 @@ input:checked ~ .has-checkbox-col__cell__state-desc {
 }
 @media screen and (min-width: 53.75em) {
   .nav-menu__item:hover > a, .nav-menu__item:focus > a, .nav-menu__item.child-has-focus > a {
-    background: #4464c2;
+    background: #449AB3;
     color: #fff;
   }
 }
@@ -10249,7 +10286,7 @@ input:checked ~ .has-checkbox-col__cell__state-desc {
 .nav-menu__item:hover .children a, .nav-menu__item:focus .sub-menu a,
 .nav-menu__item:focus .children a, .nav-menu__item.child-has-focus .sub-menu a,
 .nav-menu__item.child-has-focus .children a {
-  color: #4464c2;
+  color: #449AB3;
 }
 .nav-menu__item:hover .sub-menu a:hover, .nav-menu__item:hover .sub-menu a:focus,
 .nav-menu__item:hover .children a:hover,
@@ -10316,6 +10353,14 @@ input:checked ~ .has-checkbox-col__cell__state-desc {
   Site Footer
 
 --------------------------------------------------------------------- */
+.page__footer {
+  text-align: center;
+}
+
+.more-info {
+  padding-bottom: 20px !important;
+}
+
 /*
 CSS accecss : FALSE
 */

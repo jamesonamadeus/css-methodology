@@ -16,6 +16,7 @@
   top: 0;
   width: 100%;
   opacity: 0;
+  visibility: hidden;
   z-index: 90;
   transform: translateX(-100px);
   transition: transform .2s ease-in-out, opacity .2s ease-in-out;
@@ -25,4 +26,5 @@
 .menu-is-open .off-screen-menu-overlay {
   opacity: 1;
   transform: translateX(0px);
+  visibility: visible;
 }

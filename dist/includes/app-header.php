@@ -21,17 +21,16 @@
   </li>
 </ul><!--/.skip-links-->
 
-<header role="banner" class="banner" id="banner_landmark">
-  <?php include 'includes/main-navigation.php'; ?>
+<header role="banner" class="banner page__banner" id="banner_landmark">
 
   <div class="content-area content-area--clear branding">
 
     <div class="branding__inner">
-      <!-- <h3>
+      <h3>
         <a href="index.php" class="logo">
-          CSS Methodology
+          CSS Methodology 101
         </a>
-      </h3> -->
+      </h3>
 
       <a href="#main_menu"
          class="btn--menu"
@@ -46,4 +45,6 @@
     </div><!--/.branding-inner-->
 
   </div><!--/.content-area-->
+
+  <?php include 'includes/main-navigation.php'; ?>
 </header><!--/.banner-->

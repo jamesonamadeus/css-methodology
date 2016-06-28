@@ -5,8 +5,8 @@
 --------------------------------------------------------------------- */
 
 $accordion__trigger--bg-color:                  $c-off-white !default;
-  $accordion__trigger--active--bg-color:        $c-dark-blue !default;
-  $accordion__trigger--alt--bg-color:           $c-light-blue !default;
+  $accordion__trigger--active--bg-color:        $c-blue !default;
+  $accordion__trigger--alt--bg-color:           lighten($c-blue, 10%) !default;
 $accordion__trigger--color:                     $c-blue !default;
   $accordion__trigger--active--color:           $c-white !default;
 $accordion__trigger--padding:                   .5em 1em !default;

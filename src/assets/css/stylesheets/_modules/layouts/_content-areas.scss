@@ -74,6 +74,12 @@ $content-area--callout-4--color:    $c-white !default;
     background: $content-area--offset-bg;
   }
 
+  //  clear the padding and max-width
+  &--clear {
+    // max-width: none;
+    padding: 0;
+  }
+
   // significantly callout a content area
   // with modified visual styling
   &--callout {

@@ -45,11 +45,8 @@ $search-group__btn--width:                     36px !default;
     z-index: 9;
 
     svg {
-      // position: relative;
-      // top: 5px;
       transform-origin: center center;
       transform: scale(.9);
-      // transform: scale(1); //translateY(-50%)
       width: 100%;
 
       > g {
@@ -60,16 +57,13 @@ $search-group__btn--width:                     36px !default;
 
     &:hover,
     &:focus {
-      background: $c-light-blue;
-      border: 6px solid rgba($c-light-blue, 1);
+      background: $c-blue;
+      border: 6px solid rgba($c-blue, 1);
 
-      svg {
-         //translateY(-50%)
-
-        > g {
-          stroke: $c-white;
-        }
+      svg > g {
+        stroke: $c-white;
       }
+
     }
 
   }
@@ -81,7 +75,12 @@ $search-group__btn--width:                     36px !default;
     // more specific input[type="search"] padding...
 
     &:focus + .search-group__btn {
-      @extend .search-group__btn:focus;
+      background: $c-light-blue;
+      border: 6px solid $c-light-blue;
+
+      svg > g {
+        stroke: $c-white;
+      }
     }
   }
 
@@ -90,7 +89,19 @@ $search-group__btn--width:                     36px !default;
 
 .has-text {
   .search-group__btn {
-    @extend .search-group__btn:focus;
+    background: $c-light-blue;
+    border: 6px solid $c-light-blue;
+
+    &:hover,
+    &:focus {
+      background: $c-blue;
+      border-color: $c-blue;
+    }
+
+    svg > g {
+      stroke: $c-white;
+    }
+
   }
 }
 

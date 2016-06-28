@@ -9,5 +9,22 @@
 //------------------------------------------------------------------------
 
 .page__banner {
+  margin-top: 8px;
+  text-align: center;
 
+  .logo {
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+}
+
+.nav-menu__item {
+
+  a {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 14px 20px !important;
+    text-decoration: none;
+  }
 }

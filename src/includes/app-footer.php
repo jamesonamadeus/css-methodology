@@ -2,7 +2,7 @@
   <div class="content-area">
 
     <nav id="nav-footer" class="page__footer__nav" role="navigation">
-      <ul class="list-horizontal has-pipes">
+      <!-- <ul class="list-horizontal has-pipes">
         <li>
           <a href="#!">
             About
@@ -13,7 +13,7 @@
             Contact
           </a>
         </li>
-      </ul>
+      </ul> -->
     </nav><!--/.page__footer__nav-->
 
     <div class="page__footer__outro">

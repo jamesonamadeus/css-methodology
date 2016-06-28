@@ -1,6 +1,6 @@
 <?php
-  $title = 'Page Title | Site Title';
-  $desc = 'Page description here';
+  $title = 'CSS Methodology';
+  $desc = 'the overview';
   include 'includes/app-enter.php';
 ?>
 
@@ -22,7 +22,7 @@
         </picture>
       </div> <!--/.hero__feature -->
 
-      <div class="hero__content hero__content--bottom-overlay">
+      <div class="hero__content hero__content--center-overlay">
         <div class="hero__content__inner">
 
           <div class="flex-area flex-area--no-gutter flex-area--mt-0">
@@ -41,14 +41,16 @@
           </div>
 
           <div class="hero__content__message">
-            <p>CSS Methodology is a formal way to structure for architecting CSS in a way that grants us to develop, upkeep, and scale the front-end in a strategic route with minimal, isolated modules. As opposed to as one immense piece of insoluble code.</p>
-            <p>Familiarizing oneself with various CSS Methodologies is influential as it gives the opportunity to produce ascendable code for share to the open-source and community.</p>
+            <p class="txt-p--lg">CSS Methodology is a formal method in writing scalable and maintainable frontend code.</p>
+            <p class="txt-p--lg">"Just enough" overview to start writing scalable code right away.</p>
+            <p></p>
           </div><!--/.hero-message-->
 
         </div><!--.hero__content-inner-->
       </div><!--/.hero__content-->
 
     </section>
+
     </div>
   </main>
 
