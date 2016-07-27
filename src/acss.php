@@ -19,17 +19,18 @@
         <h2 class="txt-up-4 mb-20">
             The 101
         </h2>
-          <blockquote class="txt-up-3">Think of code as irreducible building blocks such as legos.</blockquote>
+          <blockquote class="txt-up-3">Think of your code as irreducible building blocks such as legos.</blockquote>
       </section>
 
       <section class="content-area content-area--divider-bottom">
         <h2 class="txt-up-4 mb-20">
-            3 Points
+            Points To Know
         </h2>
         <ul>
-          <li class="txt-up-1">Each individual code (lego piece) does not pertain to a specific context but rather has the ability and range to be reused through out a project.</li>
-          <li class="txt-up-1">Each class for most part is associated to one particular style. Thus, the class names are simple abbreviations of the declaration. (e.g. a class named "M-10" represents margin: 10px) Similar to the syntax of zen coding.</li>
-          <li class="txt-up-1">Most importantly, the elements are styled through the markup with classes that are mapped with declarations. Inline styling without the @style.</li>
+          <li class="txt-up-1">A method that utilizes one declaration (single property &amp; value) per selector (class).</li>
+          <li class="txt-up-1">The elements are styled through the markup with classes that are mapped with declarations. Inline styling without the @style, (almost).</li>
+          <li class="txt-up-1">Atomic CSS is (almost) like inline styling except that it is real CSS, thus cacheable. In addition, ACSS can do media queries and psuedo classes unlike inline styling.</li>
+          <li class="txt-up-1">Each individual code (lego piece) does not pertain to a specific context but rather has the ability and range to be reused through out a project. Maxmize on re-use.</li>
         </ul>
       </section>
 
