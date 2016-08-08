@@ -10442,6 +10442,18 @@ input:checked ~ .has-checkbox-col__cell__state-desc {
   }
 }
 
+.C\(\#fff\) {
+  color: #fff;
+}
+
+.Bgc\(\#449ab3\) {
+  background-color: #449ab3;
+}
+
+.Bgc\(\#2f6a7c\) {
+  background-color: #2f6a7c;
+}
+
 /*
 CSS accecss : FALSE
 */

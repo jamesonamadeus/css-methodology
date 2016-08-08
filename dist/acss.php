@@ -19,19 +19,80 @@
         <h2 class="txt-up-4 mb-20">
             The 101
         </h2>
-          <blockquote class="txt-up-3">Think of code as irreducible building blocks such as legos.</blockquote>
+          <blockquote class="txt-up-3">Think of your code as irreducible building blocks such as legos.</blockquote>
       </section>
 
       <section class="content-area content-area--divider-bottom">
         <h2 class="txt-up-4 mb-20">
-            3 Points
+            Points To Know
         </h2>
         <ul>
-          <li class="txt-up-1">Each individual code (lego piece) does not pertain to a specific context but rather has the ability and range to be reused through out a project.</li>
-          <li class="txt-up-1">Each class for most part is associated to one particular style. Thus, the class names are simple abbreviations of the declaration. (e.g. a class named "M-10" represents margin: 10px) Similar to the syntax of zen coding.</li>
-          <li class="txt-up-13">Most importantly, the elements are styled through the markup with classes that are mapped with declarations. Inline styling without the @style.</li>
+          <li class="txt-up-1">A method that utilizes one declaration (single property &amp; value) per selector (class).</li>
+          <li class="txt-up-1">The elements are styled through the markup with classes that are mapped with declarations. Inline styling without the @style, (almost).</li>
+          <li class="txt-up-1">Atomic CSS is (almost) like inline styling except that it is real CSS, thus cacheable. In addition, ACSS can do media queries and psuedo classes unlike inline styling.</li>
+          <li class="txt-up-1">Each individual code (lego piece) does not pertain to a specific context but rather has the ability and range to be reused through out a project. Maxmize on re-use.</li>
+          <li class="txt-up-1">It is not for every project. Yes, it is a fantastic approach for large sites, but not as beneficial for the smaller sites.</li>
         </ul>
       </section>
+
+      <section class="content-area content-area--divider-bottom">
+        <h2 class="txt-up-4 mb-20">
+          Development
+        </h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" class="C(#fff) Bgc(#449ab3)">
+                Advantage
+              </th>
+              <th scope="col" class="C(#fff) Bgc(#2f6a7c)">
+                Disadvantage
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Less Bloat
+              </td>
+              <td>
+                Bloat CSS If Not Maintained
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Quick Prototyping
+              </td>
+              <td>
+                "Clutters" the HTML
+              </td>
+            </tr><tr>
+              <td>
+                Better Caching
+              </td>
+              <td>
+                Not ideal for Smaller Projects
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Less Class Name Abstractions
+              </td>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Minimal CSS Maintenance
+              </td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
 
       <section class="content-area content-area--divider-bottom">
         <h2 class="txt-up-4 mb-20">
@@ -160,27 +221,24 @@
                 <p class="txt-bold">
                   How did Atomic CSS come to be and what was your path getting there?
                 </p>
-                <figure class="blockquote-callout">
-                  <blockquote class="blockquote-callout__quote">
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                    </p>
-                  </blockquote>
-                </figure>
-
-                <p class="txt-bold">
-                  Could you share any lessons learned during the development of ACSS?
-                </p>
-                <figure class="blockquote-callout">
-                  <blockquote class="blockquote-callout__quote">
-                    <p>
-                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                    </p>
-                  </blockquote>
-                </figure>
+                <div class="auth-response">
+                  <p>I was working for Yahoo! Small Business in 2010 when Yahoo! decided to "move the engineering effort” from Sunnyvale (California) to Bangalore (India). At the time, we were in the process of redesigning yahoosmallbusiness.com and my manager (Michael Montesano), asked me if there was a way to minimize how much CSS would be written after the hand-off. To address his concern, we came up with a bunch of what we called “helper” classes which were meant to help devs implement more design changes/tweaks without bloating the styles sheets too much.</p>
+                  <p>2 years later we were tasked to re-do my.yahoo.com. We had the rare opportunity to start something from scratch and Michael (then director of engineering) gave us "carte blanche” to achieve goals like:</p>
+                  <ul>
+                    <li>Creating as little CSS as possible</li>
+                    <li>Preventing styles sheets from ballooning</li>
+                    <li>Reducing module dependancies</li>
+                    <li>Facilitating team collaboration</li>
+                  </ul>
+                  <p>To achieve those goals, we created a style sheet that was roughly 90% "Atomic CSS" and 10% classic CSS (“semantic” selectors). We called that core styles sheet “Stencil” (it is Steve Carlson who came up with the name “Stencil”)</p>
+                  <p>We were lucky to work with an awesome team who didn’t complain while we're changing things over and over again, sometimes pulling the rug under their feet. Thanks to them, we were able to iterate a lot and learned tremendously during that process.</p>
+                  <p>Following the release of my.yahoo, I wrote “Challenging Best Practice” which was published by Smashing Magazine.</p>
+                  <p>After that, we decided to switch to a more complex syntax to give authors complete freedom of the styles they used and to make sure every rule in our styles sheets was relevant. Instead of on-boarding many opinionated styles, authors were able to create their own styles by using properties/values of their choice. The tool that made this possible is Atomizer (built by Renato Iwashima). Atomizer is Atomic CSS on steroids (ACSS), it does not only add new rules to a styles sheet, it also removes obsolete ones, which prevents bloat from building up.</p>
+                  <p>We then released http://acss.io, which is a solution that addresses problems many said were not possible to solve using a “Atomic CSS" approach (RWD, pseudo-classes, descendant selectors, etc.)</p>
+                </div>
               </section>
 
-              <section class="tab-panel js-tabs__panel" data-tab-label="Dave Carlson">
+              <section class="tab-panel js-tabs__panel" data-tab-label="Steve Carlson">
                 <p class="txt-bold">
                   How did Atomic CSS come to be and what was your path getting there?
                 </p>
@@ -214,15 +272,6 @@
                     </p>
                   </blockquote>
                 </figure>
-              </section>
-              <section class="tab-panel js-tabs__panel" data-tab-label="Sansa Stark">
-                <h2>Sansa Stark</h2>
-                <p>
-                  Paragraph text goes here and fills up the panel
-                  with super useful information that you'll
-                  absolutely love to read.
-                  <a href="#">this is here to test in panel keyboard controls</a>
-                </p>
               </section>
             </div>
 
